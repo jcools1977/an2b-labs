@@ -1,0 +1,31 @@
+{
+  "built": "phase 1",
+  "seed": 7,
+  "raw_files": {
+    "train-v1.1.json": {
+      "url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json",
+      "sha256": "3527663986b8295af4f7fcdff1ba1ff3f72d07d61a20f487cb238a6ef92fd955"
+    },
+    "dev-v1.1.json": {
+      "url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json",
+      "sha256": "95aa6a52d5d6a735563366753ca50492a658031da74f301ac5238b03966972c9"
+    }
+  },
+  "tokenizer": {
+    "repo": "unsloth/Meta-Llama-3.1-8B-Instruct",
+    "vocab_sha256": "d88413ace7cb84e340e3ac365bf2022d57c9d2f008aded0c9b4a19e28fb9b129"
+  },
+  "filters": {
+    "min_tokens": 200,
+    "max_tokens": 400,
+    "max_q_per_passage": 2
+  },
+  "counts": {
+    "eval_pairs": 500,
+    "eval_unique_passages": 250,
+    "eval_qualifying_passages": 405,
+    "train_pairs": 2000,
+    "train_unique_passages": 1002,
+    "train_qualifying_passages": 3585
+  }
+}
