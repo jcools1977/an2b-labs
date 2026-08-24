@@ -27,5 +27,13 @@
     "train_pairs": 2000,
     "train_unique_passages": 1002,
     "train_qualifying_passages": 3585
+  },
+  "models": {
+    "mlx-community/Qwen3-8B-4bit": {
+      "hf_commit": "545dc4251c05440727734bcd94334791f6ab0192"
+    },
+    "mlx-community/Meta-Llama-3.1-8B-Instruct-8bit": {
+      "hf_commit": "142d428004044c37c441272c91316251d9aecc58"
+    }
   }
 }
