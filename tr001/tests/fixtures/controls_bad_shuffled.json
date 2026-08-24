@@ -1,0 +1,12 @@
+{
+  "_fixture": "control 2 violated: latents from the wrong passage still help, meaning the soft prompt is a generic instruction; checker must reject",
+  "seed": 1,
+  "config": {"M": 32, "K": 32},
+  "f1": {
+    "c3_latent_handoff": 63.0,
+    "c4_no_context": 18.0,
+    "control_random_adapter": 19.5,
+    "control_shuffled_pairing": 45.0,
+    "control_ablated_soft_prompt": 19.0
+  }
+}

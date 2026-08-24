@@ -1,0 +1,12 @@
+{
+  "_fixture": "control 1 violated: random-init adapter still scores far above floor, meaning B answers from priors; checker must reject",
+  "seed": 1,
+  "config": {"M": 32, "K": 32},
+  "f1": {
+    "c3_latent_handoff": 63.0,
+    "c4_no_context": 18.0,
+    "control_random_adapter": 41.0,
+    "control_shuffled_pairing": 20.2,
+    "control_ablated_soft_prompt": 19.0
+  }
+}
