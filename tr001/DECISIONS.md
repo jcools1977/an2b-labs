@@ -158,3 +158,15 @@ program runs. The HF commit hash of each downloaded snapshot is recorded in
 rule, applied to the models themselves: a future re-download that silently
 pulls a requantized build is caught by hash, not by confusion. All
 experiment loads pin these revisions.
+
+## D14. Identity-test sabotage modes: offset and mean-collapse, not scale
+The first red run of the injection identity test used a uniform 0.9 scale
+as one sabotage and it was NOT detected: Llama's first per-block operation
+is RMSNorm, which erases uniform magnitude changes, so scale is invisible
+by construction and proves nothing about the wiring. The mode was replaced
+with mean-collapse (every position becomes the sequence mean: realistic
+magnitudes, content destroyed), which is the failure shape of a dead
+adapter. Recorded because it is a live example of why sabotage fixtures
+must themselves be watched failing: a plausible-looking red case can be
+structurally unable to go red. Corollary for later phases: any control
+that perturbs only vector magnitudes is suspect under RMSNorm.

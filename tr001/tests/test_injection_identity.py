@@ -32,8 +32,11 @@ MAX_TOKENS = 30
 def sabotage(embeds, mode):
     if mode == "offset":  # roll one position: right vectors, wrong nerves
         return mx.concatenate([embeds[:, -1:], embeds[:, :-1]], axis=1)
-    if mode == "scale":  # right positions, wrong magnitudes
-        return embeds * 0.9
+    if mode == "collapse":  # every position becomes the sequence mean:
+        # realistic magnitudes, content destroyed. The failure shape of a
+        # dead adapter. (A uniform scale sabotage was tried first and is
+        # useless here: the block's leading RMSNorm erases it, D14.)
+        return mx.broadcast_to(embeds.mean(axis=1, keepdims=True), embeds.shape)
     raise ValueError(mode)
 
 
@@ -60,7 +63,7 @@ def main():
     violations = []
 
     if args.self_test:
-        for mode in ("offset", "scale"):
+        for mode in ("offset", "collapse"):
             out = greedy_from_embeddings(model, tokenizer, sabotage(embeds, mode), MAX_TOKENS)
             caught = out != ref
             result[f"sabotage_{mode}_detected"] = caught
