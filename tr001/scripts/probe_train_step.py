@@ -57,7 +57,6 @@ def main():
 
     mx.reset_peak_memory()
     model, tokenizer = load_b()
-    d_b = model.model.embed_tokens.weight.shape[1]
 
     prompt = tokenizer.apply_chat_template(
         [{"role": "user", "content": f"Answer with a short span only.\nQuestion: {row['question']}"}],
@@ -67,6 +66,9 @@ def main():
     prompt_emb = model.model.embed_tokens(mx.array(prompt)[None])
     ans_emb = model.model.embed_tokens(mx.array(ans_ids)[None])
     act_dtype = prompt_emb.dtype
+    # Embedding width from an actual output: the quantized layer's stored
+    # weight is packed, so its shape lies about the real dimension.
+    d_b = prompt_emb.shape[-1]
 
     latent = mx.array(latent_np)  # fp32
     adapter = nn.Linear(latent.shape[-1], M_SOFT * d_b)  # fp32 (D6: adapter stays full precision)
