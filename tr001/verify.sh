@@ -31,6 +31,20 @@ else
 fi
 
 echo
+echo "== 5. Injection identity (Phase 2 gate: sabotage red, clean green) =="
+if .venv/bin/python -c "import mlx.core" 2>/dev/null; then
+  .venv/bin/python tests/test_injection_identity.py --self-test >/dev/null || {
+    echo "INJECTION IDENTITY: FAIL (see results/injection_identity.json)"
+    fail=1
+  }
+  grep -q '"violations": \[\]' results/injection_identity.json 2>/dev/null \
+    && echo "injection identity holds (sabotage detected, clean identical)"
+else
+  echo "MISSING: MLX environment; identity gate can only verify on the experiment machine"
+  fail=1
+fi
+
+echo
 if [ "$fail" -ne 0 ]; then
   echo "VERIFY: FAIL"
   exit 1
