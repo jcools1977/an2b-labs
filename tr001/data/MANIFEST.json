@@ -32,8 +32,8 @@
     "mlx-community/Qwen3-8B-4bit": {
       "hf_commit": "545dc4251c05440727734bcd94334791f6ab0192"
     },
-    "mlx-community/Meta-Llama-3.1-8B-Instruct-8bit": {
-      "hf_commit": "142d428004044c37c441272c91316251d9aecc58"
+    "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit": {
+      "hf_commit": "241a666dad6cb93c8ff213d39a7f34a36bf26db4"
     }
   }
 }
