@@ -53,6 +53,16 @@ are **invalidated wholesale**: delete the entire cache and re-extract
 everything. Never patch a cache. Model B is unquantized bf16 during adapter
 training (gradients traverse frozen B).
 
+**Revision, 2026-08-24, before any Phase 2 code:** legion measures 16 GB
+RAM, and bf16 B is ~16 GB of weights alone, so the paragraph above cannot
+hold as written. Model B therefore runs **quantized for training and eval
+alike**: one quantization level, chosen at environment build as the largest
+that leaves training headroom (measure, do not assume), then used for every
+condition C1-C4 and every control, so all comparisons share the same ruler.
+Gradients still traverse the frozen quantized B to reach the adapter. The
+chosen level, and the measured peak memory of the first training config,
+get recorded here.
+
 ## D7. Pooling is a sweep dimension inside the 20-config cap
 The protocol allows last-4-layer concat as an alternative to final-layer
 mean pooling. Allocation, fixed now: **linear/final-layer 6 configs,

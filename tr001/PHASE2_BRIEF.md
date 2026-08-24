@@ -13,9 +13,9 @@ first; nothing here overrides either.
    final-layer hidden states, cached to disk for all 2,500 passages in one
    pass. Extraction config (model revision, quantization, pooling) recorded
    with the cache per D6; any later change invalidates the cache wholesale.
-3. Model B (Llama 3.1 8B Instruct, MLX, unquantized bf16 for training):
-   embedding-level injection path that prepends M soft vectors to the token
-   embeddings.
+3. Model B (Llama 3.1 8B Instruct, MLX, quantized per the D6 revision:
+   legion has 16 GB RAM, bf16 does not fit): embedding-level injection path
+   that prepends M soft vectors to the token embeddings.
 4. Generation and answer extraction wiring, shared by all four conditions.
 
 ## Hard gate: tokenizer verification is an assert, not a manual check
@@ -48,10 +48,14 @@ existing checks.
 
 ## Memory evidence
 
-bf16 Llama 8B plus adapter gradients and activations on 32-vector prefixes
-over short sequences should fit comfortably, but capture the actual peak
-memory in the first training config's log, so the D6 note about a
-quantization fallback is evidence-based either way, used or not.
+Legion has 16 GB RAM (measured 2026-08-24), which rules out bf16 B; the D6
+revision moves B to a single quantization level for all conditions. At
+environment build, start from the largest level that plausibly fits (8-bit
+is ~8.5 GB of weights) and **measure**: capture peak memory for one
+extraction pass, one training step, and one generation, and record the
+chosen level plus measured peaks in DECISIONS D6. If 8-bit training does
+not leave headroom, drop to 4-bit rather than fighting swap; a run that
+thrashes proves nothing about the mechanism.
 
 ## What Phase 2 does not do
 
