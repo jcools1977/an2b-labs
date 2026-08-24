@@ -1,5 +1,6 @@
 {
   "_comment": "D7/D20: the entire 20-config cap, enumerated before config 1 trains. Tiers run in order; a tier runs only if all earlier tiers failed the dev bar (D21). No config 21.",
+  "_wallclock": "D23: ~1.9 h train + ~10 min dev eval per config at batch 1. Tier 1 is one night; the 20-config worst case is ~four nights. Still running on day three is planned, not stuck.",
   "budget": {
     "epochs": 2,
     "batch_size": 1,

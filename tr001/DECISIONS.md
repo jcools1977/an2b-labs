@@ -275,3 +275,22 @@ clears the dev bar, tiers 2-4 do not run, which is the protocol's
 "escalate only if linear fails" as written, evaluated without peeking at
 the held-out set. This supersedes the D7 phrasing "or the run stops on a
 PASS": under D19 there is no PASS to see until selection is over.
+
+## D22. Dev-side baselines get the D18 treatment
+The dev bar inherits C2-dev and C4-dev, so a quietly broken dev-side
+baseline (a summarizer behaving differently on dev passages, a truncation
+bug biting only certain lengths) would corrupt tier decisions without
+ever touching the guarded held-out numbers. Both splits are
+same-distribution SQuAD, so dev-side and eval-side baselines must land
+within shouting distance: **|C2-dev F1 - C2-eval F1| or |C4-dev F1 -
+C4-eval F1| above 10 points is a plumbing alarm** (exit nonzero, halt,
+diagnose), not a distribution finding. Checked in code by the dev
+baselines run, which requires the eval-side numbers to exist first.
+
+## D23. Sweep wall-clock arithmetic, stated before it surprises anyone
+Batch 1 (pinned by D20; batching would change effective learning-rate
+dynamics and invalidate the pre-declared LR grid, so the temptation is
+pre-refused), 2 epochs over 1,750 pairs at ~1.93 s/step is ~1.9 h of
+training plus ~10 min of dev eval per config. Tier 1 (6 configs) is one
+night; the full 20-config worst case is roughly four nights. "The sweep
+is still running" on day three is planned, not stuck.

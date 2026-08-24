@@ -128,11 +128,27 @@ def main():
     # They are defined for the held-out eval field only.
     alarms = []
     if args.split == "dev":
-        results.pop("d18_alarms", None)
+        # D22: dev-side baselines must land near their eval-side
+        # counterparts; a large gap is a plumbing alarm, and the eval-side
+        # numbers must exist first so this check can never be skipped.
+        eval_path = TR_ROOT / "results" / "baselines.json"
+        if not eval_path.exists():
+            raise SystemExit("D22: run eval-side baselines before dev-side")
+        eval_results = json.load(open(eval_path))
+        for cond in ("c2", "c4"):
+            if cond in results and cond in eval_results:
+                gap = abs(results[cond]["f1"] - eval_results[cond]["f1"])
+                if gap > 10:
+                    alarms.append(
+                        f"{cond} dev/eval F1 gap {gap:.1f} > 10: plumbing alarm (D22)"
+                    )
+        results["d22_alarms"] = alarms
         with open(results_path, "w") as fh:
             json.dump(results, fh, indent=2)
+        for a in alarms:
+            print(f"ALARM: {a}")
         print(f"wrote {results_path}; peak {mx.get_peak_memory()/2**30:.2f} GB")
-        return 0
+        return 1 if alarms else 0
     if "c1" in results and results["c1"]["f1"] < 60:
         alarms.append(f"C1 F1 {results['c1']['f1']:.1f} < 60: plumbing alarm (D18)")
     if "c4" in results and results["c4"]["f1"] > 35:
