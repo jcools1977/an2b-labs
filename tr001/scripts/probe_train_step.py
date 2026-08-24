@@ -70,8 +70,12 @@ def main():
     # weight is packed, so its shape lies about the real dimension.
     d_b = prompt_emb.shape[-1]
 
-    latent = mx.array(latent_np)  # fp32
-    adapter = nn.Linear(latent.shape[-1], M_SOFT * d_b)  # fp32 (D6: adapter stays full precision)
+    latent = mx.array(latent_np).astype(mx.bfloat16)
+    # D6: adapter in bf16 (full exponent range). fp32 measured 8.6 GB of
+    # adapter state (537M params + grads + Adam moments), which blew the
+    # headroom rule even with a 4-bit model; bf16 halves it.
+    adapter = nn.Linear(latent.shape[-1], M_SOFT * d_b)
+    adapter.set_dtype(mx.bfloat16)
     targets = mx.array(ans_ids)
 
     def loss_fn(ad, use_soft):
