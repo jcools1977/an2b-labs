@@ -87,12 +87,18 @@ the check. The overlap fixture exercises exactly this. `normalize()` lives
 in `checks/check_leakage.py` and the split builder imports it, so the
 builder and the checker cannot drift apart.
 
-## D10. Answer scoring uses official SQuAD normalization
+## D10. Answer scoring uses official SQuAD normalization, max over golds
 EM and F1 use the official SQuAD evaluation normalization (lowercase, strip
-articles a/an/the, strip punctuation, collapse whitespace), with F1 taken as
-the max over the gold answer set. This keeps the numbers comparable to the
-literature and slightly affects where the 5-point margin lands, which is why
-it is fixed here, before any numbers exist.
+articles a/an/the, strip punctuation, collapse whitespace), and **both EM
+and F1 are taken as the max over the full gold answer set**, never against
+the first gold only. Single-reference scoring would understate every
+condition unevenly: paraphrase-prone conditions (C2's summary-mediated
+answers especially) lose more than extraction-faithful ones, which would
+silently move the C3-minus-C2 gap. eval.jsonl carries the full gold list
+(D11) precisely so the scorer can do this; a scorer found reading only
+`answers[0]` is a bug, not a choice. This keeps the numbers comparable to
+the literature and slightly affects where the 5-point margin lands, which
+is why it is fixed here, before any numbers exist.
 
 ## D11. Data provenance and split construction
 - Training pairs come from SQuAD v1.1 `train-v1.1.json`; eval pairs come
