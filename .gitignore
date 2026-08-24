@@ -13,3 +13,6 @@ __pycache__/
 # Large local artifacts never committed: model weights, cached latents
 tr*/cache/
 tr*/checkpoints/
+
+# Raw downloads, reproducible via data/MANIFEST.json URLs and checksums
+tr*/data/raw/

@@ -6,13 +6,19 @@ eval set; any overlap is a hard failure. Also fails on an empty or missing
 file, because a leakage check that passes on no data proves nothing.
 
 Both files are JSONL, one object per line, with a "passage" field.
-Normalization (DECISIONS.md D5): lowercase, collapse all whitespace runs to
-a single space, strip, SHA-256.
+Normalization (DECISIONS.md D5): lowercase, replace every non-alphanumeric
+character with a space, collapse whitespace runs, strip, SHA-256. Aggressive
+on purpose: SQuAD contains cosmetically edited near-duplicate passages, and
+a punctuation-only twin must not straddle the split.
 """
 import hashlib
 import json
 import re
 import sys
+
+
+def normalize(text):
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9]", " ", text.lower())).strip()
 
 
 def passage_hashes(path):
@@ -26,8 +32,7 @@ def passage_hashes(path):
             passage = row.get("passage")
             if not isinstance(passage, str) or not passage.strip():
                 raise ValueError(f"{path}:{lineno}: missing or empty 'passage'")
-            norm = re.sub(r"\s+", " ", passage.lower()).strip()
-            hashes.add(hashlib.sha256(norm.encode("utf-8")).hexdigest())
+            hashes.add(hashlib.sha256(normalize(passage).encode("utf-8")).hexdigest())
     return hashes
 
 

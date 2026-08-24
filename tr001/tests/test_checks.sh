@@ -38,7 +38,7 @@ expect_fail "compute mismatch M>K" \
 expect_pass "healthy controls fixture" \
   python3 checks/check_controls.py tests/fixtures/controls_good.json
 
-expect_fail "train/eval passage overlap (case and whitespace varied)" \
+expect_fail "train/eval passage overlap (case, whitespace and punctuation varied)" \
   python3 checks/check_leakage.py tests/fixtures/leak_overlap/train.jsonl tests/fixtures/leak_overlap/eval.jsonl
 expect_pass "disjoint train/eval sets" \
   python3 checks/check_leakage.py tests/fixtures/leak_clean/train.jsonl tests/fixtures/leak_clean/eval.jsonl
