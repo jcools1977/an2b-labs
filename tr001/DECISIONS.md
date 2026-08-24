@@ -192,3 +192,44 @@ adapter. Recorded because it is a live example of why sabotage fixtures
 must themselves be watched failing: a plausible-looking red case can be
 structurally unable to go red. Corollary for later phases: any control
 that perturbs only vector magnitudes is suspect under RMSNorm.
+
+## D15. Scorer proves parity with the official SQuAD script
+The scorer (`lib/scoring.py`) gets its own red-then-green: on a synthetic
+prediction set with deliberately varied answers (exact matches,
+paraphrases, article and punctuation variants, empty and partial answers),
+its aggregate EM and F1 must equal the vendored official evaluate-v1.1.py
+output, and deliberately broken scorer variants (no article stripping,
+first-gold-only) must be caught by the same parity check. D10 pinned the
+rules; parity with the reference implementation proves the code obeys
+them. The official script is vendored with recorded provenance and SHA-256.
+
+## D16. C2 summary generation: A generates, so A's chat template applies
+Extraction raw-encodes because A only reads (D12); C2 is the first place
+A generates, so it uses its instruct chat template, with Qwen 3's thinking
+mode explicitly disabled (enable_thinking=False): a hidden reasoning block
+would burn generation budget and is not part of the summary channel.
+Summaries are question-blind, matching the latent channel, which is also
+question-blind. The K-token budget is enforced as a **hard cap in Model
+B's tokens** (the pricing ruler C3's M=32 vectors are matched against):
+A generates with a generous cap, and the summary is truncated to exactly
+K=32 tokens of B's tokenizer. Truncation-after-generation is the harder
+reading: a mid-sentence cut costs C2 nothing relative to C3, which gets
+exactly 32 vectors with no grace either.
+
+## D17. Deterministic decoding everywhere in eval
+Greedy (argmax) decoding for A's summaries and B's answers in every
+condition and control. Eval-time generation has no entropy to replicate;
+the experiment seeds govern data splitting and adapter training only.
+Consequence, logged rather than hidden: C1, C2, and C4 involve no
+training and no sampling, so they are identical across the two protocol
+seeds and are computed once, entering both seeds' results tables as the
+same numbers. Only C3 and the controls vary by seed.
+
+## D18. Expectation bands, stated before any numbers exist
+Sanity alarms, not criteria; they trigger investigation of the harness,
+never iteration on the mechanism. An 8B instruct model reading the
+passage (C1) should land roughly 65-90 F1 on SQuAD-style extraction; the
+no-context floor (C4) should be low but nonzero, roughly 3-30 F1, since
+some questions leak their answers. C1 below 60 or C4 above 35 is a
+plumbing alarm: halt, diagnose the harness, and record what was found.
+Written now so a broken harness cannot be rationalized as a finding.

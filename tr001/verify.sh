@@ -45,6 +45,10 @@ else
 fi
 
 echo
+echo "== 6. Scorer parity with official SQuAD script (red variants must be caught) =="
+python3 tests/test_scorer_parity.py --self-test || fail=1
+
+echo
 if [ "$fail" -ne 0 ]; then
   echo "VERIFY: FAIL"
   exit 1
