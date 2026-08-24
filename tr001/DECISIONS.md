@@ -138,3 +138,23 @@ is why it is fixed here, before any numbers exist.
 - Tokenizer for length accounting (D4) is loaded from an ungated mirror of
   Llama 3.1 8B Instruct; Phase 2 must verify the production Model B build's
   tokenizer has the same vocab hash before any C2/C3 numbers are produced.
+
+## D12. Model A pools raw passage tokens, no chat template
+Qwen 3's chat template prepends role tokens and can inject thinking-mode
+scaffolding; any of that wrapping would pollute the mean-pooled state with
+template tokens that have nothing to do with the passage. Model A never
+generates (it only reads), so extraction uses the plain tokenizer-encode
+path, stated as a requirement because it is exactly the default a helpful
+library applies silently. The asymmetry is chosen: Model B's text
+conditions (C1, C2, C4) do use the instruct chat template, because B is
+answering questions and that is the model's operating mode.
+
+## D13. Model revisions pinned by HF commit hash
+mlx-community repos are updated in place (requantized, tokenizer tweaks,
+config fixes), so a bare repo name is a moving target over the months this
+program runs. The HF commit hash of each downloaded snapshot is recorded in
+`data/MANIFEST.json` under `models`, next to the vocab hash
+(`scripts/record_model_revisions.py`). Same logic as D6's cache-invalidation
+rule, applied to the models themselves: a future re-download that silently
+pulls a requantized build is caught by hash, not by confusion. All
+experiment loads pin these revisions.

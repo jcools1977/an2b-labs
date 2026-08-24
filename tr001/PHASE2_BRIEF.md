@@ -8,11 +8,19 @@ first; nothing here overrides either.
 ## Scope
 
 1. Environment build from `requirements.txt` (record any forced pin change
-   in DECISIONS D9 before producing anything).
+   in DECISIONS D9 before producing anything). After the model downloads,
+   run `scripts/record_model_revisions.py` (D13) so each snapshot's HF
+   commit hash is pinned in MANIFEST.json; all experiment loads use those
+   revisions explicitly.
 2. Model A (Qwen 3 8B, MLX): forward pass over a passage, mean-pooled
    final-layer hidden states, cached to disk for all 2,500 passages in one
    pass. Extraction config (model revision, quantization, pooling) recorded
    with the cache per D6; any later change invalidates the cache wholesale.
+   **Extraction encodes the raw passage, never the chat template** (D12):
+   Qwen 3's template prepends role tokens and can inject thinking-mode
+   scaffolding, which would pollute the pooled state. A only reads; plain
+   tokenizer-encode is both correct and simpler. B's text conditions do use
+   the instruct chat template, an asymmetry that is chosen, not accidental.
 3. Model B (Llama 3.1 8B Instruct, MLX, quantized per the D6 revision:
    legion has 16 GB RAM, bf16 does not fit): embedding-level injection path
    that prepends M soft vectors to the token embeddings.

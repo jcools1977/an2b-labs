@@ -135,7 +135,14 @@ def main():
     write_jsonl(out / "eval.jsonl", eval_rows)
     write_jsonl(out / "train.jsonl", train_rows)
 
-    manifest = {
+    # Preserve keys owned by other tools (e.g. "models" from
+    # record_model_revisions.py, D13) across split rebuilds.
+    manifest_path = out / "MANIFEST.json"
+    manifest = {}
+    if manifest_path.exists():
+        with open(manifest_path) as fh:
+            manifest = json.load(fh)
+    manifest.update({
         "built": "phase 1",
         "seed": args.seed,
         "raw_files": {
@@ -162,8 +169,8 @@ def main():
             "train_unique_passages": len(train_hashes),
             "train_qualifying_passages": train_cand,
         },
-    }
-    with open(out / "MANIFEST.json", "w") as fh:
+    })
+    with open(manifest_path, "w") as fh:
         json.dump(manifest, fh, indent=2)
 
     print(json.dumps(manifest["counts"], indent=2))
