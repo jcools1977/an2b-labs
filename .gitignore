@@ -17,3 +17,5 @@ tr*/checkpoints/
 # Raw downloads, reproducible via data/MANIFEST.json URLs and checksums
 tr*/data/raw/
 tr*/model_download.log
+tr*/extraction.log
+tr*/b4bit_download.log

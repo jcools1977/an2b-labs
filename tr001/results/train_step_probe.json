@@ -1,0 +1,10 @@
+{
+  "config_hash": "f144e3a566086a67",
+  "loss": 13.2969,
+  "grad_norm_with_soft": 300.3382568359375,
+  "grad_norm_without_soft": 0.0,
+  "step_seconds": 1.93,
+  "peak_memory_gb": 12.21,
+  "seq_len": 94,
+  "violations": []
+}

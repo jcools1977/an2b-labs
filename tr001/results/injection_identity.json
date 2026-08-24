@@ -1,0 +1,10 @@
+{
+  "prompt_tokens": 31,
+  "reference_output": "_\n* _The two hemispheres of the brain_\n* _The two sides of the body_\n* _The two eyes_\n* _The",
+  "gen_seconds_tokenized_path": 1.51,
+  "sabotage_offset_detected": true,
+  "sabotage_collapse_detected": true,
+  "clean_identical": true,
+  "peak_memory_gb": 4.35,
+  "violations": []
+}

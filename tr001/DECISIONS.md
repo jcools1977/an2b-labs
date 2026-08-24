@@ -63,6 +63,28 @@ Gradients still traverse the frozen quantized B to reach the adapter. The
 chosen level, and the measured peak memory of the first training config,
 get recorded here.
 
+**Measured evidence, 2026-08-24 (Phase 2 probes on legion, Apple M4 16 GB):**
+- Extraction (Qwen 3 8B 4-bit, full 1,252-passage pass): peak 4.69 GB,
+  ~215 tok/s, swap untouched.
+- B generation (Llama 4-bit, identity test): peak 4.35 GB.
+- One adapter training step at Phase 4 shapes (seq 94, M=32). The linear
+  adapter is itself 537M parameters, which drove the outcome:
+  - 8-bit B + fp32 adapter: **19.95 GB peak, swap engaged, 14.8 s/step.
+    Rejected by the headroom rule.**
+  - 4-bit B + fp32 adapter: 16.32 GB peak. Still over the 13.6 GB (85%)
+    line. Rejected.
+  - 4-bit B + bf16 adapter: **12.21 GB peak, 1.93 s/step, swap flat.
+    Accepted.**
+- Resolution: B runs `mlx-community/Meta-Llama-3.1-8B-Instruct-4bit`
+  @ 241a666d (MANIFEST pin) for every condition and control; the adapter
+  trains in bf16 (full fp32 exponent range; the two-seed replication
+  criterion doubles as the stability check). Gradient-flow negative
+  control held in every configuration: nonzero finite adapter gradients
+  with the soft prefix in the loss, exactly 0.0 without it.
+- Note for Phase 4 planning: 1.93 s/step at batch 1 means ~65 min per
+  epoch over 2,000 pairs; batching or truncated epochs will matter, and
+  sweep checkpoints (per CLAUDE.md resumability) are mandatory.
+
 This is QLoRA's training configuration (Dettmers et al., 2023): gradients
 through a frozen quantized base into full-precision adapter weights, one of
 the most replicated recipes in the fine-tuning literature. The revision is
