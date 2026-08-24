@@ -35,5 +35,12 @@
     "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit": {
       "hf_commit": "241a666dad6cb93c8ff213d39a7f34a36bf26db4"
     }
+  },
+  "dev_split": {
+    "seed": 11,
+    "dev_pairs": 250,
+    "dev_unique_passages": 125,
+    "train_core_pairs": 1750,
+    "train_core_unique_passages": 877
   }
 }

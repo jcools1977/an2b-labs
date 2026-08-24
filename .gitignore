@@ -19,3 +19,6 @@ tr*/data/raw/
 tr*/model_download.log
 tr*/extraction.log
 tr*/b4bit_download.log
+tr*/adapters/
+tr*/phase3.log
+tr*/sweep*.log

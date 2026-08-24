@@ -21,6 +21,10 @@ def normalize(text):
     return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9]", " ", text.lower())).strip()
 
 
+def passage_hash(text):
+    return hashlib.sha256(normalize(text).encode("utf-8")).hexdigest()
+
+
 def passage_hashes(path):
     hashes = set()
     with open(path) as fh:

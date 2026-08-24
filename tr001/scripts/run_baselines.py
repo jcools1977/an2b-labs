@@ -77,16 +77,19 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--conditions", default="c1,c2,c4")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--split", choices=["eval", "dev"], default="eval")
     args = ap.parse_args()
     wanted = args.conditions.split(",")
 
-    rows = [json.loads(l) for l in open(TR_ROOT / "data" / "eval.jsonl")]
+    rows = [json.loads(l) for l in open(TR_ROOT / "data" / f"{args.split}.jsonl")]
     if args.limit:
         rows = rows[: args.limit]
 
+    summaries_file = "summaries.jsonl" if args.split == "eval" else "summaries_dev.jsonl"
+    suffix = "" if args.split == "eval" else "_dev"
     summaries = {}
     if "c2" in wanted:
-        with open(TR_ROOT / "data" / "summaries.jsonl") as fh:
+        with open(TR_ROOT / "data" / summaries_file) as fh:
             for line in fh:
                 s = json.loads(line)
                 summaries[s["passage_hash"]] = s["summary_k32"]
@@ -103,7 +106,7 @@ def main():
     mx.reset_peak_memory()
     model, tokenizer = load_b()
 
-    results_path = TR_ROOT / "results" / "baselines.json"
+    results_path = TR_ROOT / "results" / f"baselines{suffix}.json"
     results = json.load(open(results_path)) if results_path.exists() else {}
 
     for name in wanted:
@@ -113,7 +116,7 @@ def main():
         agg["f1_ci95"] = bootstrap_ci([r["f1"] for r in per_item], rng)
         agg["em_ci95"] = bootstrap_ci([r["em"] for r in per_item], rng)
         results[name] = agg
-        with open(TR_ROOT / "results" / f"preds_{name}.jsonl", "w") as out:
+        with open(TR_ROOT / "results" / f"preds_{name}{suffix}.jsonl", "w") as out:
             by_id = {r["id"]: r for r in per_item}
             for row in rows:
                 item = dict(by_id[row["id"]])
@@ -122,7 +125,14 @@ def main():
         print(f"[{name}] EM {agg['exact_match']:.2f}  F1 {agg['f1']:.2f}  CI95 {agg['f1_ci95']}")
 
     # D18 expectation bands: sanity alarms on the harness, never criteria.
+    # They are defined for the held-out eval field only.
     alarms = []
+    if args.split == "dev":
+        results.pop("d18_alarms", None)
+        with open(results_path, "w") as fh:
+            json.dump(results, fh, indent=2)
+        print(f"wrote {results_path}; peak {mx.get_peak_memory()/2**30:.2f} GB")
+        return 0
     if "c1" in results and results["c1"]["f1"] < 60:
         alarms.append(f"C1 F1 {results['c1']['f1']:.1f} < 60: plumbing alarm (D18)")
     if "c4" in results and results["c4"]["f1"] > 35:

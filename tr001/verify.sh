@@ -22,13 +22,16 @@ for seed in 1 2; do
 done
 
 echo
-echo "== 4. Label leakage: eval passages absent from adapter training set =="
-if [ ! -f data/train.jsonl ] || [ ! -f data/eval.jsonl ]; then
-  echo "MISSING: data/train.jsonl and/or data/eval.jsonl"
-  fail=1
-else
-  python3 checks/check_leakage.py data/train.jsonl data/eval.jsonl || fail=1
-fi
+echo "== 4. Label leakage: train/eval, train-core/dev, dev/eval all disjoint =="
+for pair in "data/train.jsonl data/eval.jsonl" "data/train_core.jsonl data/dev.jsonl" "data/dev.jsonl data/eval.jsonl"; do
+  set -- $pair
+  if [ ! -f "$1" ] || [ ! -f "$2" ]; then
+    echo "MISSING: $1 and/or $2"
+    fail=1
+  else
+    python3 checks/check_leakage.py "$1" "$2" || fail=1
+  fi
+done
 
 echo
 echo "== 5. Injection identity (Phase 2 gate: sabotage red, clean green) =="

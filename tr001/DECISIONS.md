@@ -233,3 +233,45 @@ no-context floor (C4) should be low but nonzero, roughly 3-30 F1, since
 some questions leak their answers. C1 below 60 or C4 above 35 is a
 plumbing alarm: halt, diagnose the harness, and record what was found.
 Written now so a broken harness cannot be rationalized as a finding.
+
+## D19. Config selection happens on a dev split, never on the held-out 500
+The protocol caps the sweep at 20 configs but does not say what data
+selects among them. Scoring each config on the held-out 500 would use the
+eval set 20 times as a selection signal and inflate the winner's margin by
+selection bias, in exactly the direction that fakes a PASS. Therefore: a
+**dev split of ~250 pairs is carved from the 2,000 training pairs at the
+passage level** (same normalize()-hash discipline, split seed 11, logged
+in MANIFEST), leaving ~1,750 train-core pairs. Configs are selected on
+dev F1; the held-out 500 is touched **exactly once per experiment seed**,
+by the selected config, for the final answer. The eval script refuses to
+run on the held-out split unless a committed selection record names the
+config it is running (structural guard, not a convention). This protects
+the frozen criteria rather than altering them: the protocol's thresholds
+apply to the held-out result, which stays unconsumed until the end.
+
+## D20. Uniform training budget, fixed before config 1
+Every config trains **exactly 2 epochs over train-core, batch 1, Adam,
+bf16 adapter, final checkpoint only**. No early stopping, no within-config
+checkpoint selection (picking the best epoch per config would be a second
+sweep hiding inside the first), no per-config budget adjustments. Dev F1
+is computed once per config, on the final checkpoint. The full 20-config
+grid (architecture, pooling, learning rate per D7 tiers) is enumerated in
+`configs/sweep.json`, committed before the first config trains. Measured
+basis: 1.93 s/step means one config is ~1.9 h of training plus ~10 min of
+dev eval; tier 1 (6 configs) is one overnight. Loss is cross-entropy over
+the answer tokens plus EOS (the adapter must teach B to stop, not only to
+answer), and the C3 prompt frame is identical to C4's, so the soft prefix
+is the only channel that differs from the floor condition.
+
+## D21. Stop semantics: no mid-sweep PASS exists to stop on
+With selection moved to dev (D19), the held-out set is untouched during
+the sweep, so a protocol PASS is not observable mid-sweep and nothing
+stops on "success". What ends a tier early is nothing; what prevents
+later tiers is the protocol's own escalation rule: tiers 2-4 run only if
+every earlier tier FAILS the **dev bar** (best dev C3 F1 at least 5 over
+dev C2 F1 and at least 15 over dev C4 F1, the frozen margins applied to
+dev as an operational trigger only, never as the verdict). If tier 1
+clears the dev bar, tiers 2-4 do not run, which is the protocol's
+"escalate only if linear fails" as written, evaluated without peeking at
+the held-out set. This supersedes the D7 phrasing "or the run stops on a
+PASS": under D19 there is no PASS to see until selection is over.

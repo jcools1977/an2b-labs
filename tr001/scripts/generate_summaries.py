@@ -54,6 +54,7 @@ def greedy_text(model, tokenizer, ids, max_tokens):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--split", choices=["eval", "dev"], default="eval")
     args = ap.parse_args()
 
     # B's tokenizer for the hard cap, loaded standalone from the pinned B
@@ -67,7 +68,7 @@ def main():
         raise SystemExit("TOKENIZER GATE: B tokenizer hash mismatch in summarizer")
 
     passages = {}
-    with open(TR_ROOT / "data" / "eval.jsonl") as fh:
+    with open(TR_ROOT / "data" / f"{args.split}.jsonl") as fh:
         for line in fh:
             row = json.loads(line)
             passages.setdefault(passage_hash(row["passage"]), row["passage"])
@@ -80,7 +81,9 @@ def main():
     mx.reset_peak_memory()
     model, tokenizer = mlx_load(str(snap))
 
-    out_path = TR_ROOT / "data" / "summaries.jsonl"
+    out_path = TR_ROOT / "data" / (
+        "summaries.jsonl" if args.split == "eval" else "summaries_dev.jsonl"
+    )
     t0 = time.time()
     with open(out_path, "w") as out:
         for i, (h, passage) in enumerate(items, 1):

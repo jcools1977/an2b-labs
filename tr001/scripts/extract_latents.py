@@ -25,14 +25,10 @@ import mlx.core as mx  # noqa: E402
 from mlx_lm import load as mlx_load  # noqa: E402
 from mlx_lm.models.base import create_attention_mask  # noqa: E402
 
-from checks.check_leakage import normalize  # noqa: E402
+from checks.check_leakage import passage_hash  # noqa: E402  (canonical, re-exported)
 from lib.gates import A_REPO, TR_ROOT, pinned_snapshot  # noqa: E402
 
 POOLING_RECIPE = "mean over sequence; final=post-norm last block; last4=pre-norm block outputs"
-
-
-def passage_hash(text):
-    return hashlib.sha256(normalize(text).encode("utf-8")).hexdigest()
 
 
 def unique_passages():

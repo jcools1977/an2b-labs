@@ -1,0 +1,35 @@
+{
+  "_comment": "D7/D20: the entire 20-config cap, enumerated before config 1 trains. Tiers run in order; a tier runs only if all earlier tiers failed the dev bar (D21). No config 21.",
+  "budget": {
+    "epochs": 2,
+    "batch_size": 1,
+    "optimizer": "adam",
+    "adapter_dtype": "bfloat16",
+    "m_soft": 32,
+    "train_split": "train_core.jsonl",
+    "selection_split": "dev.jsonl",
+    "checkpoint_selection": "final only (D20)"
+  },
+  "configs": [
+    {"id": "L01", "tier": 1, "arch": "linear", "pooling": "final", "lr": 3e-05},
+    {"id": "L02", "tier": 1, "arch": "linear", "pooling": "final", "lr": 1e-04},
+    {"id": "L03", "tier": 1, "arch": "linear", "pooling": "final", "lr": 3e-04},
+    {"id": "L04", "tier": 1, "arch": "linear", "pooling": "final", "lr": 1e-03},
+    {"id": "L05", "tier": 1, "arch": "linear", "pooling": "final", "lr": 3e-03},
+    {"id": "L06", "tier": 1, "arch": "linear", "pooling": "final", "lr": 1e-02},
+    {"id": "LC07", "tier": 2, "arch": "linear", "pooling": "last4", "lr": 1e-04},
+    {"id": "LC08", "tier": 2, "arch": "linear", "pooling": "last4", "lr": 3e-04},
+    {"id": "LC09", "tier": 2, "arch": "linear", "pooling": "last4", "lr": 1e-03},
+    {"id": "LC10", "tier": 2, "arch": "linear", "pooling": "last4", "lr": 3e-03},
+    {"id": "M11", "tier": 3, "arch": "mlp", "pooling": "final", "lr": 3e-05},
+    {"id": "M12", "tier": 3, "arch": "mlp", "pooling": "final", "lr": 1e-04},
+    {"id": "M13", "tier": 3, "arch": "mlp", "pooling": "final", "lr": 3e-04},
+    {"id": "M14", "tier": 3, "arch": "mlp", "pooling": "final", "lr": 1e-03},
+    {"id": "M15", "tier": 3, "arch": "mlp", "pooling": "final", "lr": 3e-03},
+    {"id": "M16", "tier": 3, "arch": "mlp", "pooling": "final", "lr": 1e-02},
+    {"id": "MC17", "tier": 4, "arch": "mlp", "pooling": "last4", "lr": 1e-04},
+    {"id": "MC18", "tier": 4, "arch": "mlp", "pooling": "last4", "lr": 3e-04},
+    {"id": "MC19", "tier": 4, "arch": "mlp", "pooling": "last4", "lr": 1e-03},
+    {"id": "MC20", "tier": 4, "arch": "mlp", "pooling": "last4", "lr": 3e-03}
+  ]
+}
