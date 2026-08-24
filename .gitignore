@@ -1,0 +1,15 @@
+# Import artifacts: original unzipped download, superseded by the
+# protocol files at repo root (copied verbatim, diff-verified identical)
+AN2BLabs/
+*.zip
+
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Large local artifacts never committed: model weights, cached latents
+tr*/cache/
+tr*/checkpoints/
