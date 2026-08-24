@@ -63,6 +63,16 @@ Gradients still traverse the frozen quantized B to reach the adapter. The
 chosen level, and the measured peak memory of the first training config,
 get recorded here.
 
+This is QLoRA's training configuration (Dettmers et al., 2023): gradients
+through a frozen quantized base into full-precision adapter weights, one of
+the most replicated recipes in the fine-tuning literature. The revision is
+method, not concession. Two explicit corollaries: the **adapter itself
+stays full precision** (fp32 or bf16; it is tiny, and it is the one
+component whose gradients matter), and the same-ruler clause above is what
+protects the science: a quantized B is a slightly different animal than
+bf16, but every TR-001 comparison is internal, so the animal only has to be
+the same one everywhere.
+
 ## D7. Pooling is a sweep dimension inside the 20-config cap
 The protocol allows last-4-layer concat as an alternative to final-layer
 mean pooling. Allocation, fixed now: **linear/final-layer 6 configs,

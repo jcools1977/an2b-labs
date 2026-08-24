@@ -46,6 +46,23 @@ deliberately mis-wired injection, offset by one position or wrong dtype) to
 prove the test can fail, then green. Wire it into `verify.sh` alongside the
 existing checks.
 
+## Residency and headroom rules (load-bearing on 16 GB)
+
+- **The adapter trains in full precision.** Only B is quantized (D6). The
+  linear/MLP translator is tiny; quantizing the one component whose
+  gradients matter would be self-sabotage.
+- **Sequential residency, never co-residency.** Qwen extracts at 4-bit,
+  caches all 2,500 pooled states to disk, and fully unloads before Llama
+  ever loads. The two models never share the machine's memory at the same
+  moment. The original plan implied this; on 16 GB it is a rule.
+- **Measure against real headroom, not nominal RAM.** macOS keeps several
+  GB for itself, and swap here is silent and slow rather than fatal, so
+  "it ran" is a misleading signal. Log peak wired memory and swap activity
+  during the three probe steps below. Preemptive rule: if peak exceeds
+  ~85% of physical RAM or any swap engages, drop to 4-bit immediately. A
+  sweep that secretly swapped is not wrong, but its timing data is garbage
+  and "minutes per config" becomes fiction.
+
 ## Memory evidence
 
 Legion has 16 GB RAM (measured 2026-08-24), which rules out bf16 B; the D6
