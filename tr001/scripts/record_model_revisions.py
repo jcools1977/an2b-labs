@@ -13,7 +13,7 @@ from pathlib import Path
 
 REPOS = [
     "mlx-community/Qwen3-8B-4bit",
-    "mlx-community/Meta-Llama-3.1-8B-Instruct-8bit",
+    "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit",
 ]
 
 HUB = Path.home() / ".cache" / "huggingface" / "hub"
@@ -49,6 +49,10 @@ def main():
             return 1
         recorded[repo] = {"hf_commit": commit}
         print(f"pinned {repo} @ {commit}")
+
+    # MANIFEST lists exactly the models in use; superseded builds live in
+    # DECISIONS.md history, not here.
+    manifest["models"] = {r: recorded[r] for r in REPOS}
 
     with open(MANIFEST, "w") as fh:
         json.dump(manifest, fh, indent=2)

@@ -12,7 +12,10 @@ MANIFEST_PATH = TR_ROOT / "data" / "MANIFEST.json"
 HUB = Path.home() / ".cache" / "huggingface" / "hub"
 
 A_REPO = "mlx-community/Qwen3-8B-4bit"
-B_REPO = "mlx-community/Meta-Llama-3.1-8B-Instruct-8bit"
+# B at 4-bit per the D6 headroom rule: the 8-bit build measured 19.95 GB
+# peak on a one-step training probe (adapter state is ~8.6 GB fp32 on its
+# own) and engaged swap on the 16 GB machine.
+B_REPO = "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit"
 
 
 def manifest():
