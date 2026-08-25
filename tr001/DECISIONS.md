@@ -318,3 +318,34 @@ excuse-making: it names which hypothesis is actually on trial, with the
 same precision the FSA postmortem had about which hypothesis died. The
 protocol was honest about what a 16 GB machine could afford to test;
 the report must be equally honest about what that bought.
+
+## D25. The linear/last-4-concat arm is infeasible on the declared hardware
+Recorded 2026-08-25, approved by DeVere. A single linear layer from the
+16,384-dim concat input to 32x4096 output slots is a 2.15B-parameter
+matrix: ~4.3 GB bf16 params, ~4.3 GB gradients, ~8.6 GB Adam moments,
+~17 GB of adapter training state before the 4.5 GB model loads. LC07
+OOM'd (Metal kIOGPUCommandBufferCallbackErrorOutOfMemory) at step 1 of
+config 1, before a single loss value existed: arithmetic, not judgment,
+and no result touched the grid. The four tier-2 configs (LC07-LC10) are
+closed as **untrainable on the declared hardware, not tried-and-failed**.
+
+Rejected alternatives, for the record: per-tier SGD breaks D20's uniform
+budget (a second sweep hiding inside the first, again); mean-of-4 pooling
+silently redefines the protocol's stated concat. Closing the cell is the
+only resolution that changes nothing scientific.
+
+Two riders:
+- **The freed budget stays unspent.** Sixteen trainable configs; the four
+  vacated slots are a permanent vacancy with a reason attached, never
+  reallocated to new learning rates or variants, because designing grid
+  cells after seeing tier-1 results is precisely the contamination the
+  pre-declared grid exists to prevent. This sentence is here for night
+  four, when the temptation would exist if the MLPs are near-missing.
+- **Scope the substitute cell honestly.** MLP-times-concat tests the
+  concat through a 1024-dim bottleneck; a linear readout of the full
+  16,384-dim concat remains permanently untested on this hardware. The
+  limitations section carries that clause: the one scenario the closed
+  cell uniquely covered is "the concat contains linearly-readable signal
+  that a narrow bottleneck destroys," and the honest answer to a reviewer
+  asking about that cell is "infeasible at desk scale, untested," not
+  "covered elsewhere."
