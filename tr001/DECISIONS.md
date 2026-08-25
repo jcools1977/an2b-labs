@@ -294,3 +294,27 @@ pre-refused), 2 epochs over 1,750 pairs at ~1.93 s/step is ~1.9 h of
 training plus ~10 min of dev eval per config. Tier 1 (6 configs) is one
 night; the full 20-config worst case is roughly four nights. "The sweep
 is still running" on day three is planned, not stuck.
+
+## D24. The shared bottleneck is pooling, written down before tier 2 reports
+Recorded 2026-08-25, after tier 1's dev numbers (best +3.6 over floor,
+all six configs within 3.1 points of each other, L06's below-floor
+collapse proving the prefix causally live) and before tier 2 has
+produced anything. All twenty sweep configs share a stage no tier
+escapes: mean-pooling compresses a ~300-token passage into one vector
+(tier 2: four vectors, still means) before any adapter sees it, and the
+adapter decompresses that into 32 slots. The ladder therefore tests
+"can a richer map recover more from the pooled summary," not "can
+latents carry the passage." If all twenty configs land within a few
+points of each other, that clustering is itself the diagnostic: it
+points at the pooling stage, upstream of everything the sweep varies.
+
+Consequence for the writeup, fixed now whichever way tier 2 lands: the
+claim is scoped as **mean-pooled latent handoff versus text**, because
+that is what the protocol froze. An H0 verdict leaves sequence-level
+transfer (per-token latents, attention-based readout, a hypothetical
+TR-001b) explicitly untested, stated in the report's limitations rather
+than discovered by a reviewer. This is expectation-setting, not
+excuse-making: it names which hypothesis is actually on trial, with the
+same precision the FSA postmortem had about which hypothesis died. The
+protocol was honest about what a 16 GB machine could afford to test;
+the report must be equally honest about what that bought.
