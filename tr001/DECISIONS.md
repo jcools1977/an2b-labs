@@ -397,3 +397,19 @@ figure quoted in discussion is the dev-side number. The report's version
 comes from the held-out 500, stated with its CI. The entire architecture
 of this experiment exists so that the published number is the one the
 locked set produced.
+
+## D28. Definition of done under the H0 verdict
+Ruled by DeVere 2026-08-26, after the final numbers. `check_controls.py`
+stays frozen, byte for byte. verify.sh certifies the claimed mechanism;
+under an H0 verdict the mechanism claim is withdrawn, so the definition
+of done for TR-001 is: **verify.sh green on every instrument leg (0,
+checker self-test; 4, leakage; 5, injection identity; 6, scorer parity),
+green on controls 1 and 3, and red on control 2 for the pre-registered
+reason** (shuffled-pairing F1 within half a point of C3 on both seeds:
+the prefix carries no passage-specific signal). The red leg is the
+evidence, not a defect, and the report's claim is falsifiable in the
+same motion: a future reader re-running the pipeline can check that
+control 2 is red in exactly the way the paper says. A green control 2
+was never reachable for a prefix carrying no passage signal, and this
+entry says so rather than assumes it. The check that would have been
+moved is not moved; the interpretation layer is documented.
