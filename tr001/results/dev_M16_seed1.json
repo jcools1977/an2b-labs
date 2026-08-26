@@ -1,0 +1,11 @@
+{
+  "exact_match": 0.0,
+  "f1": 0.0,
+  "n": 250,
+  "config_id": "M16",
+  "seed": 1,
+  "split": "dev",
+  "M": 32,
+  "K": 32,
+  "cache_hash": "f144e3a566086a67"
+}
