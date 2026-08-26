@@ -33,7 +33,7 @@
 {"family": "number", "a": "cannot compute", "b": "42", "label": "change"}
 {"family": "number", "a": "no result found", "b": "none whatsoever", "label": "no-change"}
 {"family": "number", "a": "7", "b": "7.5", "label": "change"}
-{"family": "number", "a": "12 + 1", "b": "12", "label": "no-change"}
+{"family": "number", "a": "12 + 1", "b": "12", "label": "change"}
 {"family": "number", "a": "0", "b": "1", "label": "change"}
 {"family": "number", "a": "99", "b": "-99", "label": "change"}
 {"family": "number", "a": "6.25", "b": "6.25000", "label": "no-change"}
@@ -45,7 +45,7 @@
 {"family": "list", "a": "pillar, quartz", "b": "pillar", "label": "change"}
 {"family": "list", "a": "russet, saffron", "b": "russet, saffron, thistle", "label": "change"}
 {"family": "list", "a": "umber, velvet, willow", "b": " umber ,velvet,  willow ", "label": "no-change"}
-{"family": "list", "a": "marble, quince", "b": "marble; quince", "label": "change"}
+{"family": "list", "a": "marble, quince", "b": "marble; quince", "label": "no-change"}
 {"family": "list", "a": "harbor, iris", "b": "Harbor, Iris", "label": "no-change"}
 {"family": "list", "a": "delta", "b": "delta,", "label": "no-change"}
 {"family": "list", "a": "anchor, delta", "b": "anchor, delt", "label": "change"}
@@ -56,7 +56,7 @@
 {"family": "list", "a": "saffron, thistle, umber", "b": "saffron, thistle, umber", "label": "no-change"}
 {"family": "list", "a": "velvet, willow", "b": "willow, velvet", "label": "change"}
 {"family": "list", "a": "marble, anchor, delta", "b": "marble, anchor, delta ", "label": "no-change"}
-{"family": "list", "a": "quince, harbor", "b": "quince and harbor", "label": "change"}
+{"family": "list", "a": "quince, harbor", "b": "quince and harbor", "label": "no-change"}
 {"family": "list", "a": "iris", "b": "IRIS", "label": "no-change"}
 {"family": "text", "a": "The council should adopt it.", "b": "the council should adopt it.", "label": "no-change"}
 {"family": "text", "a": "Approve  the request.", "b": "Approve the request.", "label": "no-change"}

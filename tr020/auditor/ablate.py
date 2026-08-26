@@ -43,10 +43,15 @@ class Auditor:
         self.task_of = task_of  # item -> task description for the judge
         self.canon = CANON[FAMILY_OF_SYSTEM[system.system_id]]
         self._answers = {}  # mask_key -> {item_id: answer}
+        self._scores = {}  # mask_key -> {item_id: judge score}
+
+    @staticmethod
+    def _key(mask, key=None):
+        return key or (tuple(sorted(mask)) if isinstance(mask, (list, tuple, set))
+                       else mask)
 
     def _answers_for(self, mask=None, mask_fn=None, key=None):
-        key = key or (tuple(sorted(mask)) if isinstance(mask, (list, tuple, set))
-                      else mask)
+        key = self._key(mask, key)
         if key not in self._answers:
             out = {}
             for it in self.items:
@@ -54,18 +59,21 @@ class Auditor:
             self._answers[key] = out
         return self._answers[key]
 
-    def _judge_scores(self, answers):
-        scores = {}
-        for it in self.items:
-            s = self.judge.score(
-                self.task_of(it), answers[it["id"]],
-                seed=item_seed(self.system.system_id, it["id"], "judge"),
-            )
-            if s is not None:
-                scores[it["id"]] = s
-        return scores
+    def _judge_scores(self, answers, key):
+        if key not in self._scores:
+            scores = {}
+            for it in self.items:
+                s = self.judge.score(
+                    self.task_of(it), answers[it["id"]],
+                    seed=item_seed(self.system.system_id, it["id"], "judge"),
+                )
+                if s is not None:
+                    scores[it["id"]] = s
+            self._scores[key] = scores
+        return self._scores[key]
 
     def _effect(self, base_answers, base_scores, mask, mask_fn=None, items=None, key=None):
+        key = self._key(mask, key)
         items = items or self.items
         answers = self._answers_for(mask=mask, mask_fn=mask_fn, key=key)
         changes = [
@@ -73,8 +81,8 @@ class Auditor:
             for it in items
         ]
         rate = sum(changes) / len(items)
-        scores = self._judge_scores(answers)
-        deltas = [scores[i] - base_scores[i] for i in scores if i in base_scores]
+        scores = self._judge_scores(answers, key)
+        deltas = [scores[i] - base_scores[i] for i in scores if i in base_scores and i in {it["id"] for it in items}]
         rng = random.Random(item_seed(self.system.system_id, str(mask), "boot"))
         ci = _ci(deltas, rng)
         return {"change_rate": round(rate, 4), "quality_ci": [round(x, 3) for x in ci],
@@ -82,7 +90,7 @@ class Auditor:
 
     def audit(self):
         base_answers = self._answers_for(key="__baseline__")
-        base_scores = self._judge_scores(base_answers)
+        base_scores = self._judge_scores(base_answers, "__baseline__")
 
         names = self.system.component_names()
         solo = {}
@@ -156,7 +164,7 @@ class Auditor:
         """Placebo control on the given components: paraphrase-mask each,
         aggregate change rate and quality CI (D14 bounds enforced)."""
         base_answers = self._answers_for(key="__baseline__")
-        base_scores = self._judge_scores(base_answers)
+        base_scores = self._judge_scores(base_answers, "__baseline__")
         rates, deltas, invalid = [], [], 0
 
         for name in components:
@@ -173,7 +181,7 @@ class Auditor:
             invalid += sum(1 for l in logs.values() if not l.get("valid", True))
             rates.append(eff["change_rate"])
             answers = self._answers_for(mask=name, mask_fn=mask_fn, key=f"placebo:{name}")
-            scores = self._judge_scores(answers)
+            scores = self._judge_scores(answers, f"placebo:{name}")
             deltas += [scores[i] - base_scores[i] for i in scores if i in base_scores]
 
         rng = random.Random(rng_seed)

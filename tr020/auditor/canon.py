@@ -21,15 +21,21 @@ FAMILY_OF_SYSTEM = {
 
 
 def canon_number(ans):
-    m = re.search(r"-?\d+(\.\d+)?", str(ans))
-    if not m:
-        return "<no-number>"
-    v = float(m.group(0))
-    return str(int(v)) if v == int(v) else str(v)
+    # Full sequence of normalized numbers, not first-only (ratification
+    # correction #36, D17): "12 + 1" and "12" are different answers.
+    nums = []
+    for m in re.finditer(r"-?\d+(\.\d+)?", str(ans)):
+        v = float(m.group(0))
+        nums.append(str(int(v)) if v == int(v) else str(v))
+    return ",".join(nums) if nums else "<no-number>"
 
 
 def canon_list(ans):
-    parts = [p.strip().lower() for p in str(ans).split(",") if p.strip()]
+    # Commas, semicolons, and " and " all read as separators to a human
+    # (ratification corrections #48, #59, D17). Order is preserved:
+    # list-family tasks are alphabetize-style, so order IS the answer.
+    parts = [p.strip().lower()
+             for p in re.split(r",|;|\band\b", str(ans)) if p.strip()]
     return "|".join(parts)
 
 

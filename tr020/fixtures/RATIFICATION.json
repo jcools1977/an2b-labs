@@ -1,0 +1,9 @@
+{
+  "ratified_by": "J. DeVere Cooley (PI)",
+  "date": "2026-08-26",
+  "note": "Cross-instance adversarial review (author and reviewer in separate contexts), adjudication witnessed by the PI; corrections 36, 48, 59 applied with matching code repairs; both family rules approved (D15, D17, D18).",
+  "sha256": {
+    "canon_pairs.jsonl": "b38e068df40daf223740e2c23738aa83522397576d1442b1b8ded3b8b037db31",
+    "judge_damage.jsonl": "b7135847701a2c6ef420265d39c2b658c57187f9aee7b46ce93f408effe60fed"
+  }
+}

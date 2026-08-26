@@ -94,7 +94,10 @@ Recommendation on the record, 2026-08-26: **package `deadwood-audit`,
 CLI command `deadwood`** (`pip install deadwood-audit`, then
 `deadwood audit ./my-agent`). Command names do not collide with package
 names, so the blunt one-word tool survives without fighting the
-outlier-detection package for the slug. Awaiting ratification.
+outlier-detection package for the slug.
+
+**Ratified by DeVere, 2026-08-26.** The tool is `deadwood-audit` /
+`deadwood`.
 
 ## D9. Scheduling on shared hardware
 Adopted from TR-001's D6 lesson, applied as scheduling: phases 0-2 are
@@ -153,13 +156,21 @@ bounds are logged with the run.
 
 ## D15. Canonical answer families, judge specification, model choices
 - **Canonical families** (answer-change is measured on canonicalized
-  final answers): `number` (first parseable numeric, s3), `list`
-  (comma-split, per-element case/whitespace normalized, s5), `span`
-  (SQuAD-style normalization: lowercase, strip articles and
-  punctuation, collapse whitespace; s2, s7), `text` (lowercase,
-  collapse whitespace; s1, s4, s6). Under per-item seeding and greedy
-  decoding, a truly unread component's mask leaves the final answer
-  byte-identical, so `text` can afford to be strict.
+  final answers): `number` (full sequence of parseable numerics, s3),
+  `list` (separator-normalized split on commas, semicolons, and "and";
+  per-element case/whitespace normalized, s5), `span` (SQuAD-style
+  normalization: lowercase, strip articles and punctuation, collapse
+  whitespace; s2, s7), `text` (lowercase, collapse whitespace; s1, s4,
+  s6). Under per-item seeding and greedy decoding, a truly unread
+  component's mask leaves the final answer byte-identical, so `text`
+  can afford to be strict.
+- **Family rules, ratified 2026-08-26:** text is strict and span is
+  normalized BY DESIGN: maximum text sensitivity costs nothing on true
+  deads (bytes identical under greedy determinism) while making every
+  dead verdict harder to earn, which is the direction the headline
+  number should be conservative in. Lists are ordered: the list-family
+  tasks are alphabetize-style, so order is the task and reordering is a
+  wrong answer.
 - **Judge**: Llama 3.1 8B Instruct 4-bit (the TR-001 pinned build),
   greedy, scoring 1-10 with a fixed rubric prompt, disjoint from the
   actor model. Score parsed as the first integer 1-10 in the output;
@@ -177,3 +188,34 @@ frozen: **2 components per system**, chosen by seeded draw from the
 full component list (seed derived per system), across all 7 systems.
 The aggregate reported to the checker uses the mean change rate and the
 widest quality CI across sampled components, the harder reading.
+
+## D17. Ratification corrections 36, 48, 59
+The first exercise of the D13 gate caught three labels that were code
+artifacts enshrined as ground truth, flagged by a second reader and
+conceded by the author: #36 ("12 + 1" vs "12" is a CHANGE to a human;
+first-number extraction said otherwise), #48 and #59 (semicolon and
+"and" as list separators read identically to a human; the comma-only
+parser said otherwise). Labels and code were corrected together
+(canon_number compares the full number sequence; canon_list splits on
+commas, semicolons, and "and"), machine consistency re-verified 80/80
+on the corrected pair, and ratification bound to the corrected hashes.
+Three verdicts changed, seventy-seven held.
+
+## D18. Standing ratification mechanism: cross-instance review, PI witness
+Recorded on DeVere's ruling, 2026-08-26. This lab's ratification
+mechanism is **cross-instance adversarial review with PI witness**: the
+author instance and the reviewer instance are separate model contexts;
+disagreements are adjudicated on the record, in front of the human PI,
+who carries artifacts between contexts, witnesses the adjudication, and
+holds override on every ruling. Ratification means the PI, having
+witnessed the argument, affirms the outcome matches his judgment; it
+never means re-deriving the work. Two instances of the same model
+family have real but partial independence (different contexts and
+roles, demonstrated by this gate's first exercise catching three real
+defects; shared training lineage, so correlated blind spots remain
+possible on judgment calls, which is why the PI witness and the
+public record stay in the loop). The PI's name goes on the seal
+because it is free and stronger in the report. The pre-registration
+commits, sealed ground truths, and public FAIL discipline are not
+thinned by this mechanism and never will be: they are what make
+autonomy legible to outsiders.
