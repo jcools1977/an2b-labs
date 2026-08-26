@@ -39,9 +39,13 @@ def main():
     tiers = {}
     for c in sweep["configs"]:
         tiers.setdefault(c["tier"], []).append(c)
+    closed = {int(k): v for k, v in sweep.get("closed_tiers", {}).items()}
 
     all_results = {}
     for tier in sorted(tiers):
+        if tier in closed:
+            print(f"tier {tier}: CLOSED, not judged. {closed[tier]}")
+            continue
         configs = tiers[tier]
         results = {}
         for c in configs:

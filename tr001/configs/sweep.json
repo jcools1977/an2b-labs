@@ -1,6 +1,9 @@
 {
   "_comment": "D7/D20: the entire 20-config cap, enumerated before config 1 trains. Tiers run in order; a tier runs only if all earlier tiers failed the dev bar (D21). No config 21.",
   "_wallclock": "D23: ~1.9 h train + ~10 min dev eval per config at batch 1. Tier 1 is one night; the 20-config worst case is ~four nights. Still running on day three is planned, not stuck.",
+  "closed_tiers": {
+    "2": "D25: linear/last4-concat is a 2.15B-parameter adapter needing ~17 GB of training state on a 16 GB machine; OOM at step 1, closed as untrainable, slots permanently vacant"
+  },
   "budget": {
     "epochs": 2,
     "batch_size": 1,
