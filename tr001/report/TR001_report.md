@@ -13,8 +13,8 @@ TR-001 asked whether a small learned adapter mapping a reader model's
 pooled hidden states into an answerer model's embedding space transfers
 more task-relevant information than a text summary of equal token budget.
 The answer is no: the hypothesis **FAILS** its pre-registered criteria on
-both seeds. On 500 held-out SQuAD questions, the best of 16 swept adapter
-configurations scored 25.8 and 26.8 F1 against a 43.5 F1 text baseline
+both seeds. On 500 held-out SQuAD questions, the selected configuration
+scored 25.8 and 26.8 F1 across two seeds against a 43.5 F1 text baseline
 (paired difference −17.6 and −16.7, 95% CIs excluding zero) and cleared
 the no-context floor of 21.5 by only 4.3 and 5.3 points against a
 required 15. The sharper finding came from a pre-registered negative
@@ -30,7 +30,8 @@ depths, and two orders of magnitude of learning rate all landed within a
 4.4-point band, implicating the one stage the sweep held constant (mean
 pooling over positions), and the shuffled control shows the residue that
 survives pooling is not passage signal at all. Everything ran on one
-Apple M4 Mac with 16 GB of RAM at $0 incremental cost.
+Apple M4 Mac with 16 GB of RAM at $0 incremental cost. Text won because
+selection beats compression at equal budget.
 
 ## 1. Hypothesis and stakes
 
@@ -59,9 +60,11 @@ tokenizers and lineage, which would inflate transfer. One quantization
 level for every condition and control, so all comparisons share a ruler.
 
 **Task and data.** Extractive QA on SQuAD v1.1. 2,000 training pairs
-(1,750 train-core plus a 250-pair config-selection dev split, carved at
-the passage level), 500 held-out eval pairs drawn from the disjoint dev
-articles. Passages 200–400 tokens of B's tokenizer. Leakage is checked
+(1,750 train-core plus a 250-pair **selection split** for choosing among
+sweep configurations, carved from the training pairs at the passage
+level), and 500 held-out eval pairs from SQuAD dev-v1.1, which is
+article-disjoint from train by construction. Passages 200–400 tokens of
+B's tokenizer. Leakage is checked
 by code: punctuation-aggressive normalized passage hashing, zero overlap
 across all three split relations.
 
@@ -89,7 +92,7 @@ pooling; learning-rate grids) was committed before config 1 trained.
 Four grid cells (linear on the 16,384-dim concat, a 2.15B-parameter
 matrix needing ~17 GB of training state) are closed as untrainable on
 16 GB hardware, their slots left permanently vacant rather than
-reallocated. Configs were selected on the dev split only; the held-out
+reallocated. Configs were selected on the selection split only; the held-out
 500 was touched exactly once per seed, by the selected config, enforced
 by code that refuses to run without a committed selection record.
 
@@ -112,10 +115,20 @@ with the CI excluding zero, and +15 over floor. **Verdict: FAIL,
 replicated.** The kill criterion "linear and MLP both fail after an
 honest sweep" is met.
 
-**The sweep band.** Twelve convergent configurations, spanning linear
-versus MLP, one versus four pooled layers, and learning rates from 3e-5
-to 3e-3, landed between 20.1 and 24.4 dev F1 against a dev bar of 48.6.
-Four more diverged below floor at high learning rates. Nothing the sweep
+**The sweep band** (Figure 1). Twelve convergent configurations,
+spanning linear versus MLP, one versus four pooled layers, and learning
+rates from 3e-5 to 3e-3, landed between 20.1 and 24.4 selection-split
+F1, a 4.4-point band (width computed from unrounded values; endpoints
+rounded here), against a selection bar of 48.6. Four more diverged below
+floor at high learning rates.
+
+![Figure 1: sweep band](fig1_sweep_band.png)
+
+*Figure 1. The sweep band. Twenty configurations declared, four
+untrainable at desk scale (D25), sixteen trained, twelve convergent
+within a 4.4-point band, four divergent below floor. The bar is the
+selection threshold (selection-split C2 + 5); nothing approaches it.
+Built by `scripts/plot_sweep_band.py` from committed result files.* Nothing the sweep
 varied mattered. The diagnosis was registered before the MLP tiers ran
 (D24): the invariant across all twenty cells is mean pooling, which
 compresses a ~300-token passage into one vector (or four) before any
@@ -149,8 +162,8 @@ workload, hardening every number in the table. The injection identity
 test (real token embeddings through the soft-prefix path must reproduce
 tokenized generation exactly, with sabotaged variants caught) and scorer
 parity with the official SQuAD script were both proven red-then-green
-before any experiment number existed. Dev-side and eval-side baselines
-agree to 0.1 (C2) and 1.4 (C4) F1.
+before any experiment number existed. Selection-split and eval-side
+baselines agree to 0.1 (C2) and 1.4 (C4) F1.
 
 ## 4. A small third finding: what the prefix actually learned
 
@@ -210,7 +223,7 @@ the root commit (`7b7262d`, 2026-08-24), containing only the frozen
 protocols; every threshold in this report predates every number. The
 repo contains the full pipeline, the 28-entry decision log, per-item
 predictions for every condition and control, the append-only sweep log
-(16 trained configs, 4 recorded untrainable), seeds (data 7, dev split
+(16 trained configs, 4 recorded untrainable), seeds (data 7, selection split
 11, experiment 1 and 2), pinned model snapshots and dependency versions,
 and `verify.sh`, which re-certifies the instrument legs and reports
 control 2 red for the pre-registered reason. Hardware: one Apple M4 Mac

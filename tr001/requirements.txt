@@ -2,3 +2,4 @@ mlx==0.32.1
 mlx-lm==0.31.3
 numpy==2.5.2
 datasets==5.0.1
+matplotlib==3.11.1  # report figures only, not the experiment path
