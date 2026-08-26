@@ -1,0 +1,30 @@
+{
+  "canonicalizer": {
+    "families": {
+      "span": {
+        "match_rate": 1.0,
+        "n": 20
+      },
+      "number": {
+        "match_rate": 1.0,
+        "n": 20
+      },
+      "list": {
+        "match_rate": 1.0,
+        "n": 20
+      },
+      "text": {
+        "match_rate": 1.0,
+        "n": 20
+      }
+    }
+  },
+  "judge": {
+    "intact_mean": 6.333,
+    "degraded_means": {
+      "truncated": 3.6,
+      "wrong_entity": 2.8,
+      "off_topic": 1.0
+    }
+  }
+}
