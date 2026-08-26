@@ -10,6 +10,10 @@ echo "== 0. Checker self-test: violating fixtures must be rejected =="
 bash tests/test_checks.sh || fail=1
 
 echo
+echo "== 0b. Substrate determinism: sabotage caught red, traces byte-stable (D11) =="
+python3 tests/test_substrate.py || fail=1
+
+echo
 echo "== 1. Seal: intact, and never referenced by the auditor (D6) =="
 if [ ! -f seed_systems/GROUND_TRUTH.sealed.json ] || [ ! -f seed_systems/SEAL.sha256 ]; then
   echo "MISSING: sealed ground truth and/or SEAL.sha256"

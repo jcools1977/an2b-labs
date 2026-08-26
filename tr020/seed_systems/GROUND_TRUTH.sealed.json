@@ -1,0 +1,65 @@
+{
+  "census": {
+    "dead": 5,
+    "live": 20,
+    "redundant": 4
+  },
+  "expected": {
+    "s1_research_brief": {
+      "critic": "dead",
+      "drafter": "live",
+      "finalizer": "live",
+      "searcher": "live"
+    },
+    "s2_rag_qa": {
+      "answerer": "live",
+      "retriever_encyclopedia": "live",
+      "retriever_recipes": "dead",
+      "synthesizer": "live"
+    },
+    "s3_math_tools": {
+      "calc_a": "redundant",
+      "calc_b": "redundant",
+      "parser": "live",
+      "reconciler": "live"
+    },
+    "s4_committee": {
+      "aggregator": "live",
+      "debater_con": "live",
+      "debater_pro": "live",
+      "debater_tangent": "dead",
+      "verdictor": "live"
+    },
+    "s5_plan_exec": {
+      "executor": "live",
+      "planner": "dead",
+      "verifier": "live"
+    },
+    "s6_support_triage": {
+      "assembler": "live",
+      "classifier": "live",
+      "disclaimer_a": "redundant",
+      "disclaimer_b": "redundant",
+      "responder": "live",
+      "sentiment": "dead"
+    },
+    "s7_all_live_qa": {
+      "answerer": "live",
+      "reranker": "live",
+      "retriever": "live"
+    }
+  },
+  "redundant_pairs": [
+    [
+      "s3_math_tools",
+      "calc_a",
+      "calc_b"
+    ],
+    [
+      "s6_support_triage",
+      "disclaimer_a",
+      "disclaimer_b"
+    ]
+  ],
+  "taxonomy": "D1: dead | redundant | live"
+}
