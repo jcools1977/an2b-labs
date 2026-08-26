@@ -35,7 +35,8 @@ else
 fi
 
 echo
-echo "== 2. Measurement gates: judge and canonicalizer proven sighted (D3) =="
+echo "== 2. Measurement gates: fixtures human-ratified, judge and canonicalizer sighted (D3, D13) =="
+python3 checks/check_ratification.py fixtures || fail=1
 if [ -f results/measurement_gates.json ]; then
   python3 checks/check_measurement_gates.py results/measurement_gates.json || fail=1
 else

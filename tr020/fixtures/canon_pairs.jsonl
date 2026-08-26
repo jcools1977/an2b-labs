@@ -1,0 +1,80 @@
+{"family": "span", "a": "The Eiffel Tower", "b": "eiffel tower.", "label": "no-change"}
+{"family": "span", "a": "Varn", "b": "  varn ", "label": "no-change"}
+{"family": "span", "a": "a shipping cooperative", "b": "shipping cooperative", "label": "no-change"}
+{"family": "span", "a": "U.S. Army", "b": "US Army", "label": "no-change"}
+{"family": "span", "a": "Mount Everest!", "b": "mount everest", "label": "no-change"}
+{"family": "span", "a": "the Meridian Valley", "b": "Meridian Valley", "label": "no-change"}
+{"family": "span", "a": "Solace", "b": "Ombra", "label": "change"}
+{"family": "span", "a": "Varn", "b": "Varnish", "label": "change"}
+{"family": "span", "a": "42 kilometers", "b": "42", "label": "change"}
+{"family": "span", "a": "Kirith", "b": "the capital is Kirith", "label": "change"}
+{"family": "span", "a": "Port Halvern", "b": "Port Halvern Bay", "label": "change"}
+{"family": "span", "a": "Telling", "b": "Teling", "label": "change"}
+{"family": "span", "a": "clock towers", "b": "clock tower", "label": "change"}
+{"family": "span", "a": "an observatory", "b": "observatory", "label": "no-change"}
+{"family": "span", "a": "Farrow,", "b": "farrow", "label": "no-change"}
+{"family": "span", "a": "Ysel", "b": "ysel!", "label": "no-change"}
+{"family": "span", "a": "the granaries of Uld", "b": "granaries of uld", "label": "no-change"}
+{"family": "span", "a": "Candel", "b": "Candle", "label": "change"}
+{"family": "span", "a": "Mirebrook", "b": "Mirebrook and Astern", "label": "change"}
+{"family": "span", "a": "tramways", "b": "trams", "label": "change"}
+{"family": "number", "a": "The answer is 42.", "b": "42", "label": "no-change"}
+{"family": "number", "a": "42.0", "b": "42", "label": "no-change"}
+{"family": "number", "a": "Result: -17", "b": "-17 (negative)", "label": "no-change"}
+{"family": "number", "a": "3.5", "b": "3.50", "label": "no-change"}
+{"family": "number", "a": "= 108", "b": "108.", "label": "no-change"}
+{"family": "number", "a": "about 99", "b": "99 exactly", "label": "no-change"}
+{"family": "number", "a": "0", "b": "0.0", "label": "no-change"}
+{"family": "number", "a": "answer 7", "b": "answer 7.000", "label": "no-change"}
+{"family": "number", "a": "42", "b": "24", "label": "change"}
+{"family": "number", "a": "-17", "b": "17", "label": "change"}
+{"family": "number", "a": "3.5", "b": "3.6", "label": "change"}
+{"family": "number", "a": "108", "b": "1080", "label": "change"}
+{"family": "number", "a": "cannot compute", "b": "42", "label": "change"}
+{"family": "number", "a": "no result found", "b": "none whatsoever", "label": "no-change"}
+{"family": "number", "a": "7", "b": "7.5", "label": "change"}
+{"family": "number", "a": "12 + 1", "b": "12", "label": "no-change"}
+{"family": "number", "a": "0", "b": "1", "label": "change"}
+{"family": "number", "a": "99", "b": "-99", "label": "change"}
+{"family": "number", "a": "6.25", "b": "6.25000", "label": "no-change"}
+{"family": "number", "a": "the total is 55", "b": "55 is the total", "label": "no-change"}
+{"family": "list", "a": "anchor, delta, marble", "b": "Anchor,  Delta, MARBLE", "label": "no-change"}
+{"family": "list", "a": "iris, juniper", "b": "iris,juniper", "label": "no-change"}
+{"family": "list", "a": "kettle, lantern, meadow", "b": "kettle, lantern, meadow,", "label": "no-change"}
+{"family": "list", "a": "nectar, orchid", "b": "orchid, nectar", "label": "change"}
+{"family": "list", "a": "pillar, quartz", "b": "pillar", "label": "change"}
+{"family": "list", "a": "russet, saffron", "b": "russet, saffron, thistle", "label": "change"}
+{"family": "list", "a": "umber, velvet, willow", "b": " umber ,velvet,  willow ", "label": "no-change"}
+{"family": "list", "a": "marble, quince", "b": "marble; quince", "label": "change"}
+{"family": "list", "a": "harbor, iris", "b": "Harbor, Iris", "label": "no-change"}
+{"family": "list", "a": "delta", "b": "delta,", "label": "no-change"}
+{"family": "list", "a": "anchor, delta", "b": "anchor, delt", "label": "change"}
+{"family": "list", "a": "juniper, kettle", "b": "juniper, kettle", "label": "no-change"}
+{"family": "list", "a": "lantern, meadow, nectar", "b": "lantern, nectar, meadow", "label": "change"}
+{"family": "list", "a": "orchid", "b": "orchids", "label": "change"}
+{"family": "list", "a": "quartz, russet", "b": "quartz , russet", "label": "no-change"}
+{"family": "list", "a": "saffron, thistle, umber", "b": "saffron, thistle, umber", "label": "no-change"}
+{"family": "list", "a": "velvet, willow", "b": "willow, velvet", "label": "change"}
+{"family": "list", "a": "marble, anchor, delta", "b": "marble, anchor, delta ", "label": "no-change"}
+{"family": "list", "a": "quince, harbor", "b": "quince and harbor", "label": "change"}
+{"family": "list", "a": "iris", "b": "IRIS", "label": "no-change"}
+{"family": "text", "a": "The council should adopt it.", "b": "the council should adopt it.", "label": "no-change"}
+{"family": "text", "a": "Approve  the request.", "b": "Approve the request.", "label": "no-change"}
+{"family": "text", "a": "We recommend approval.", "b": "We recommend approving.", "label": "change"}
+{"family": "text", "a": "Ship a replacement today.", "b": "Ship a replacement today", "label": "change"}
+{"family": "text", "a": "REFUND THE ORDER.", "b": "refund the order.", "label": "no-change"}
+{"family": "text", "a": "The plan is sound.", "b": "The plan is sound .", "label": "change"}
+{"family": "text", "a": "Yes.", "b": "Yes!", "label": "change"}
+{"family": "text", "a": "Escalate to billing.", "b": "escalate  to  billing.", "label": "no-change"}
+{"family": "text", "a": "No action needed.", "b": "No further action needed.", "label": "change"}
+{"family": "text", "a": "Adopt the policy.", "b": "Adopt the policy.", "label": "no-change"}
+{"family": "text", "a": "The verdict favors adoption.", "b": "the VERDICT favors adoption.", "label": "no-change"}
+{"family": "text", "a": "Decline politely.", "b": "Politely decline.", "label": "change"}
+{"family": "text", "a": "Send the manual.", "b": "Send the manual.", "label": "no-change"}
+{"family": "text", "a": "Two-day turnaround.", "b": "Two day turnaround.", "label": "change"}
+{"family": "text", "a": "It depends on cost.", "b": "It depends on the cost.", "label": "change"}
+{"family": "text", "a": "Renew annually.", "b": "renew annually.", "label": "no-change"}
+{"family": "text", "a": "Close the ticket.", "b": "Close   the ticket.", "label": "no-change"}
+{"family": "text", "a": "The brief is complete.", "b": "The brief is completed.", "label": "change"}
+{"family": "text", "a": "Offer a credit.", "b": "Offer a credit,", "label": "change"}
+{"family": "text", "a": "Proceed as planned.", "b": "proceed as planned.", "label": "no-change"}

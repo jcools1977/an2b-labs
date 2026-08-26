@@ -128,3 +128,52 @@ run-level RNG must be caught by the reproducibility check.
 keeps $0, keeps every probe inspectable, and makes the leakage question
 moot; the generator is deterministic so the committed files are
 reproducible from the script alone.
+
+## D13. The hand in "hand-labeled" is human
+The judge-damage and canonicalizer fixtures are the ground truth every
+downstream CI stands on; if the session both writes and labels them,
+the D3 gate is the measurement layer grading its own homework. So: the
+fixture files are committed with proposed labels, DeVere spot-ratifies
+them by reading, and the ratification is recorded as
+`fixtures/RATIFICATION.json` carrying the SHA-256 of each ratified
+fixture file. The D3 gate is **not armed** until that record exists and
+its hashes match the committed files; any post-ratification edit breaks
+the hashes and disarms the gate. Same principle as a human audit floor,
+applied to the instrument instead of the corpus.
+
+## D14. Placebo paraphrase sanity bounds
+A "placebo" that quietly mangled meaning could masquerade as a
+wording-brittleness finding, so every paraphrase is bounds-checked at
+generation time and the bounds are frozen now: **length ratio within
+[0.5, 2.0]** of the original and **content-word Jaccard overlap >=
+0.3**. A paraphrase outside bounds is regenerated once with a stricter
+prompt; if it still fails, the placebo run for that item is marked
+invalid and reported, never silently used. Every paraphrase's measured
+bounds are logged with the run.
+
+## D15. Canonical answer families, judge specification, model choices
+- **Canonical families** (answer-change is measured on canonicalized
+  final answers): `number` (first parseable numeric, s3), `list`
+  (comma-split, per-element case/whitespace normalized, s5), `span`
+  (SQuAD-style normalization: lowercase, strip articles and
+  punctuation, collapse whitespace; s2, s7), `text` (lowercase,
+  collapse whitespace; s1, s4, s6). Under per-item seeding and greedy
+  decoding, a truly unread component's mask leaves the final answer
+  byte-identical, so `text` can afford to be strict.
+- **Judge**: Llama 3.1 8B Instruct 4-bit (the TR-001 pinned build),
+  greedy, scoring 1-10 with a fixed rubric prompt, disjoint from the
+  actor model. Score parsed as the first integer 1-10 in the output;
+  unparseable output is a judge error counted against the run, never
+  imputed.
+- **Actor**: Qwen3-1.7B-4bit (verified ungated 2026-08-26), thinking
+  disabled, greedy. Both models' snapshot commits get pinned into
+  `MANIFEST.json` by `scripts/record_model_revisions.py` at the legion
+  environment build, TR-001 discipline unchanged (D10).
+
+## D16. Placebo sampling plan
+The placebo control paraphrases every output of a component across all
+probe items, which is too expensive to run for every component. Sample,
+frozen: **2 components per system**, chosen by seeded draw from the
+full component list (seed derived per system), across all 7 systems.
+The aggregate reported to the checker uses the mean change rate and the
+widest quality CI across sampled components, the harder reading.

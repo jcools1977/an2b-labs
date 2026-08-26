@@ -65,16 +65,25 @@ class System:
     def component_names(self):
         return [c.name for c in self.components]
 
-    def run(self, item, lm, mask=None):
-        """Execute one probe item; returns (answer, trace_dict)."""
+    def run(self, item, lm, mask=None, mask_fn=None):
+        """Execute one probe item; returns (answer, trace_dict).
+
+        mask: a component name or a collection of names (pairwise
+        ablation masks two at once) whose outputs are replaced after
+        they run. mask_fn(output, ctx) -> replacement; defaults to the
+        neutral structure-preserving mask. The placebo control passes a
+        paraphrasing mask_fn instead (D14)."""
+        mask_set = {mask} if isinstance(mask, str) else set(mask or [])
+        unknown = mask_set - set(self.component_names())
+        assert not unknown, f"mask names unknown to system: {unknown}"
         outputs, events = {}, []
         for c in self.components:
             ctx = Ctx(lm, self.system_id, item["id"], c.name)
             inputs = {r: outputs[r] for r in c.reads}
             out = c.fn(ctx, item, inputs)
-            masked = mask is not None and c.name == mask
+            masked = c.name in mask_set
             if masked:
-                out = neutral_mask(out)
+                out = (mask_fn or (lambda o, _ctx: neutral_mask(o)))(out, ctx)
             outputs[c.name] = out
             events.append(
                 {"component": c.name, "reads": c.reads, "masked": masked, "output": out}
@@ -82,7 +91,7 @@ class System:
         trace = {
             "system": self.system_id,
             "item": item["id"],
-            "mask": mask,
+            "mask": sorted(mask_set) or None,
             "lm": lm.name,
             "events": events,
             "answer": outputs[self.final],

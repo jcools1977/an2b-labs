@@ -1,0 +1,15 @@
+{"task": "Summarize the history of ferries in Kestrel Bay.", "intact": "Ferries in Kestrel Bay began as rope-drawn barges in the 1800s and grew into a steam fleet that carried both freight and passengers by century's end.", "damaged": "Ferries in Kestrel Bay began as rope-drawn", "damage_class": "truncated"}
+{"task": "What is the capital of Novara?", "intact": "The capital of Novara is Varn.", "damaged": "The capital of", "damage_class": "truncated"}
+{"task": "Alphabetize: willow, anchor, delta", "intact": "anchor, delta, willow", "damaged": "anchor,", "damage_class": "truncated"}
+{"task": "Reply to a billing complaint about a double charge.", "intact": "We're sorry for the double charge; we've refunded the duplicate and it will post within three days.", "damaged": "We're sorry for the", "damage_class": "truncated"}
+{"task": "Compute 12 * 9 - 4", "intact": "104", "damaged": "1", "damage_class": "truncated"}
+{"task": "What is the capital of Novara?", "intact": "The capital of Novara is Varn.", "damaged": "The capital of Novara is Solace.", "damage_class": "wrong_entity"}
+{"task": "Summarize the aqueducts of Uld.", "intact": "Uld's aqueducts carried mountain water to the town's cisterns.", "damaged": "Skenn's aqueducts carried mountain water to the town's cisterns.", "damage_class": "wrong_entity"}
+{"task": "Reply about a cracked router casing.", "intact": "We'll replace your router under warranty this week.", "damaged": "We'll replace your standing desk under warranty this week.", "damage_class": "wrong_entity"}
+{"task": "Compute 46 + 33", "intact": "79", "damaged": "97", "damage_class": "wrong_entity"}
+{"task": "Alphabetize: quartz, iris, meadow", "intact": "iris, meadow, quartz", "damaged": "iris, meadow, quince", "damage_class": "wrong_entity"}
+{"task": "What is the capital of Novara?", "intact": "The capital of Novara is Varn.", "damaged": "Sourdough needs a long, cold proof to develop flavor.", "damage_class": "off_topic"}
+{"task": "Summarize windmill history in Tarvis.", "intact": "Tarvis adopted tower windmills for grain milling in the coastal era.", "damaged": "My favorite constellation is visible in early autumn.", "damage_class": "off_topic"}
+{"task": "Reply to a shipping delay complaint.", "intact": "Your order shipped today with expedited carriage at no charge.", "damaged": "Committees have a long and storied institutional history.", "damage_class": "off_topic"}
+{"task": "Compute 88 - 29", "intact": "59", "damaged": "The tide tables suggest a morning departure.", "damage_class": "off_topic"}
+{"task": "Alphabetize: velvet, anchor", "intact": "anchor, velvet", "damaged": "Paint dries faster in low humidity.", "damage_class": "off_topic"}
