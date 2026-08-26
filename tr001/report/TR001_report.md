@@ -2,7 +2,7 @@
 ## Latent Corpus Callosum: A Learned Adapter Between Two Models' Latent Spaces Does Not Beat Text, and Its Margin Over Nothing Is Not Transfer
 
 **J. DeVere Cooley, AN2B Labs**
-**Status: draft v0.1, 2026-08-26**
+**Status: v1.0, published 2026-08-26 at an2b.com/labs**
 **Pre-registration: commit `7b7262d`, 2026-08-24, github.com/jcools1977/an2b-labs**
 
 ---
