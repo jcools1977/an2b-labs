@@ -350,6 +350,12 @@ Two riders:
   asking about that cell is "infeasible at desk scale, untested," not
   "covered elsewhere."
 
+Addendum, 2026-08-26: `configs/sweep.json` now carries this closure as
+`closed_tiers` and the selector skips closed tiers by name. That change
+is bookkeeping catching up to a decision already made on this record,
+not a judgment call: the overnight selector stalled because it treated
+the closed tier as pending, and the fix encodes D25, nothing more.
+
 ## D26. Seed-2 replication retrains the selected config, not the sweep
 The protocol's kill criterion is "results do not replicate across two
 seeds." Read against D19, replication means: the config selected on
@@ -363,3 +369,31 @@ independent trainings, two held-out touches: what replicates or fails to
 replicate is the selected mechanism's result, which is what the
 criterion is about. Decided 2026-08-26, after seed 1's selection but
 before any seed-2 work, and before either held-out touch.
+
+## D27. The ablation control will operate near the instrument's noise floor
+Recorded 2026-08-26, before the held-out batch has run. The selected
+config sits roughly 3 F1 over the dev floor, and D2 froze the ablation
+tolerance at two-sided within max(20% of margin, 2.0 F1), so at this
+margin the 2.0 F1 term dominates. Bootstrap CIs on 500 items are
+themselves in the plus-or-minus 2-3 point range, which means the
+ablation leg will be resolving an effect comparable to the measurement
+noise. Expectations, fixed now:
+
+- The collapse legs (random init and shuffled pairing within 3.0 of
+  floor) should be comfortable; with C3 this close to floor there is
+  nowhere to fall from.
+- In this design the ablated run is C4's prompt through C3's code path
+  with deterministic greedy decoding, so mechanical agreement with C4
+  is expected; a trip would most likely be resolution or a code-path
+  divergence, and either is diagnosed on the record.
+- If the ablation leg trips, the first question is signal versus
+  resolution, and the answer is reported honestly either way. A control
+  that cannot resolve a small effect at n=500 is a
+  measurement-resolution finding for the report, never a threshold to
+  revisit. D2 stands as frozen.
+
+Also fixed now: the "recovers roughly 13% of the floor-to-baseline gap"
+figure quoted in discussion is the dev-side number. The report's version
+comes from the held-out 500, stated with its CI. The entire architecture
+of this experiment exists so that the published number is the one the
+locked set produced.
