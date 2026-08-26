@@ -1,0 +1,545 @@
+{
+ "seal_sha256": "fixture",
+ "per_component": [
+  {
+   "system": "s",
+   "component": "dead-dead-0",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-1",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-2",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-3",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-4",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-5",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-6",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-7",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-8",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-9",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-10",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-11",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-12",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-13",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-14",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-15",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-16",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-17",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-18",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-19",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-20",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-21",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-22",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-23",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-24",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-25",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-26",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-27",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-28",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-29",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-30",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-31",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-32",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-33",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-34",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-35",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-36",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-37",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-38",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-39",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "redundant-redundant-0",
+   "verdict": "redundant",
+   "expected": "redundant"
+  },
+  {
+   "system": "s",
+   "component": "redundant-redundant-1",
+   "verdict": "redundant",
+   "expected": "redundant"
+  },
+  {
+   "system": "s",
+   "component": "redundant-redundant-2",
+   "verdict": "redundant",
+   "expected": "redundant"
+  },
+  {
+   "system": "s",
+   "component": "redundant-redundant-3",
+   "verdict": "redundant",
+   "expected": "redundant"
+  },
+  {
+   "system": "s",
+   "component": "redundant-redundant-4",
+   "verdict": "redundant",
+   "expected": "redundant"
+  },
+  {
+   "system": "s",
+   "component": "redundant-redundant-5",
+   "verdict": "redundant",
+   "expected": "redundant"
+  },
+  {
+   "system": "s",
+   "component": "redundant-redundant-6",
+   "verdict": "redundant",
+   "expected": "redundant"
+  },
+  {
+   "system": "s",
+   "component": "redundant-redundant-7",
+   "verdict": "redundant",
+   "expected": "redundant"
+  },
+  {
+   "system": "s",
+   "component": "redundant-redundant-8",
+   "verdict": "redundant",
+   "expected": "redundant"
+  },
+  {
+   "system": "s",
+   "component": "redundant-redundant-9",
+   "verdict": "redundant",
+   "expected": "redundant"
+  },
+  {
+   "system": "s",
+   "component": "live-dead-0",
+   "verdict": "dead",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-dead-1",
+   "verdict": "dead",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-dead-2",
+   "verdict": "dead",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-dead-3",
+   "verdict": "dead",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-dead-4",
+   "verdict": "dead",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-0",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-1",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-2",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-3",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-4",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-5",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-6",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-7",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-8",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-9",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-10",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-11",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-12",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-13",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-14",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-15",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-16",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-17",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-18",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-19",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-20",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-21",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-22",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-23",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-24",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-25",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-26",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-27",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-28",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-29",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-30",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-31",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-32",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-33",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-34",
+   "verdict": "live",
+   "expected": "live"
+  }
+ ]
+}

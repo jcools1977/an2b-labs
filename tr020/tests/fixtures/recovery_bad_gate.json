@@ -1,0 +1,125 @@
+{
+ "seal_sha256": "fixture",
+ "per_component": [
+  {
+   "system": "s",
+   "component": "dead-dead-0",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-1",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-2",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-dead-3",
+   "verdict": "dead",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "dead-live-0",
+   "verdict": "live",
+   "expected": "dead"
+  },
+  {
+   "system": "s",
+   "component": "redundant-live-0",
+   "verdict": "live",
+   "expected": "redundant"
+  },
+  {
+   "system": "s",
+   "component": "live-dead-0",
+   "verdict": "dead",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-dead-1",
+   "verdict": "dead",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-0",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-1",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-2",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-3",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-4",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-5",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-6",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-7",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-8",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-9",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-10",
+   "verdict": "live",
+   "expected": "live"
+  },
+  {
+   "system": "s",
+   "component": "live-live-11",
+   "verdict": "live",
+   "expected": "live"
+  }
+ ]
+}

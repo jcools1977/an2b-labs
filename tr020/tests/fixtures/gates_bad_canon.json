@@ -1,0 +1,18 @@
+{
+ "judge": {
+  "intact_mean": 8.2,
+  "degraded_means": {
+   "truncated": 4.1,
+   "wrong_entity": 5.6,
+   "off_topic": 2.3
+  }
+ },
+ "canonicalizer": {
+  "families": {
+   "qa": {
+    "match_rate": 0.95,
+    "n": 24
+   }
+  }
+ }
+}

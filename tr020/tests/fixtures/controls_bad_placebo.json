@@ -1,0 +1,11 @@
+{
+ "all_live_flags": 0,
+ "placebo": {
+  "answer_change_rate": 0.12,
+  "quality_ci": [
+   -0.61,
+   -0.2
+  ]
+ },
+ "replication_agreement": 1.0
+}
