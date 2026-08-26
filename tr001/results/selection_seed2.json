@@ -1,0 +1,7 @@
+{
+  "seed": 2,
+  "config_id": "M15",
+  "dev_f1": 21.845368248309423,
+  "inherited_from_seed": 1,
+  "note": "config inherited from seed-1 selection per D26; retrained from scratch at seed 2"
+}

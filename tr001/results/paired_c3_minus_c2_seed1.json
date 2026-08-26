@@ -1,0 +1,10 @@
+{
+  "seed": 1,
+  "n": 500,
+  "mean_paired_diff": -17.64,
+  "ci95": [
+    -21.54,
+    -13.78
+  ],
+  "excludes_zero": true
+}

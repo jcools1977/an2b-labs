@@ -1,0 +1,14 @@
+{
+  "seed": 1,
+  "config": {
+    "M": 32,
+    "K": 32
+  },
+  "f1": {
+    "c3_latent_handoff": 25.82475210651062,
+    "c4_no_context": 21.497236326567595,
+    "control_random_adapter": 7.13797495775974,
+    "control_shuffled_pairing": 26.229079591890734,
+    "control_ablated_soft_prompt": 21.497236326567595
+  }
+}
