@@ -349,3 +349,17 @@ Two riders:
   that a narrow bottleneck destroys," and the honest answer to a reviewer
   asking about that cell is "infeasible at desk scale, untested," not
   "covered elsewhere."
+
+## D26. Seed-2 replication retrains the selected config, not the sweep
+The protocol's kill criterion is "results do not replicate across two
+seeds." Read against D19, replication means: the config selected on
+seed 1's dev results (M15) is retrained from scratch at seed 2 (fresh
+adapter init and shuffle order, same data splits per D8), dev-evaluated
+for the record, and given seed 2's single held-out touch. Re-running the
+whole 20-config sweep at seed 2 would double the budget the protocol
+capped and would let seed 2 select a different config, making the two
+held-out numbers answers to different questions. One selection, two
+independent trainings, two held-out touches: what replicates or fails to
+replicate is the selected mechanism's result, which is what the
+criterion is about. Decided 2026-08-26, after seed 1's selection but
+before any seed-2 work, and before either held-out touch.
