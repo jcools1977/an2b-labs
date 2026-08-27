@@ -64,8 +64,33 @@ committed seeded-phase result shows the 0.9 recovery gate passed (the
 protocol's own FAIL rule, enforced in code), and the list of four wild
 configurations is committed to this file BEFORE any of them is audited,
 so the wild sample cannot be cherry-picked after seeing dead fractions.
-The list slot is reserved here, empty until Phase 5 planning:
-- (wild-four list: to be committed before first wild audit)
+
+**Selection criteria, committed 2026-08-27, before any candidate is
+named** (criteria-then-names, the committed-sweep-grid move applied to
+sampling, because "measured dead fraction in real agent systems"
+invites exactly one attack: that the systems were picked to be
+bloated):
+1. Popularity: a widely used open-source agent framework or template,
+   evidenced by stars/downloads, so the sample reflects what builders
+   actually deploy.
+2. Runnable against a local OpenAI-compatible endpoint with the
+   default configuration untouched.
+3. The four span distinct architecture families (e.g. RAG pipeline,
+   tool-calling agent, multi-agent crew, planner-executor), no two
+   from the same family.
+4. Default configurations as shipped: the audit measures what the
+   repo hands a new user, not a tuned variant.
+
+**Observational freeze:** the wild audit runs the seeded phase's
+configuration unchanged: probe counts, neutral mask placeholders, the
+pinned judge, canonical families, thresholds, and per-item seeding all
+inherit as committed. Zero knobs. Anything a wild system needs adapted
+merely to run (endpoint wiring, prompt plumbing) is logged in this
+file as plumbing, never as tuning.
+
+The list slot remains reserved, empty until the D19/D20 ruling lands:
+- (wild-four names: to be committed against the criteria above before
+  the first wild audit)
 
 ## D6. Sealed ground truth
 Plant lists live in `seed_systems/GROUND_TRUTH.sealed.json`, with its
