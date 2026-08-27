@@ -160,9 +160,13 @@ class Auditor:
             ),
         }
 
-    def placebo(self, components, rng_seed):
+    def placebo(self, components, rng_seed, paraphrase_lm=None, key_prefix="placebo"):
         """Placebo control on the given components: paraphrase-mask each,
-        aggregate change rate and quality CI (D14 bounds enforced)."""
+        aggregate change rate and quality CI (D14 bounds enforced).
+        paraphrase_lm defaults to the actor; a stronger paraphraser can be
+        supplied to separate paraphrase-quality failure from cascade
+        sensitivity (supplementary measurement, never a replacement)."""
+        para_lm = paraphrase_lm or self.lm
         base_answers = self._answers_for(key="__baseline__")
         base_scores = self._judge_scores(base_answers, "__baseline__")
         rates, deltas, invalid = [], [], 0
@@ -171,17 +175,17 @@ class Auditor:
             logs = {}
 
             def mask_fn(output, ctx, _logs=logs):
-                out, log = paraphrase_output(self.lm, output, ctx.seed)
+                out, log = paraphrase_output(para_lm, output, ctx.seed)
                 _logs[ctx.seed] = log
                 return out if out is not None else output
 
             eff = self._effect(
-                base_answers, base_scores, name, mask_fn=mask_fn, key=f"placebo:{name}"
+                base_answers, base_scores, name, mask_fn=mask_fn, key=f"{key_prefix}:{name}"
             )
             invalid += sum(1 for l in logs.values() if not l.get("valid", True))
             rates.append(eff["change_rate"])
-            answers = self._answers_for(mask=name, mask_fn=mask_fn, key=f"placebo:{name}")
-            scores = self._judge_scores(answers, f"placebo:{name}")
+            answers = self._answers_for(mask=name, mask_fn=mask_fn, key=f"{key_prefix}:{name}")
+            scores = self._judge_scores(answers, f"{key_prefix}:{name}")
             deltas += [scores[i] - base_scores[i] for i in scores if i in base_scores]
 
         rng = random.Random(rng_seed)
