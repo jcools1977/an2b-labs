@@ -1,0 +1,38 @@
+{
+  "w4_autogen_planner": {
+    "component": "planner",
+    "item": "w4-000",
+    "reproducible": true,
+    "bite": true,
+    "baseline_answer": "This community garden in Auberon offers a peaceful space for growing, learning, and connecting with nature, and fosters collaboration and sustainability, encouraging all residents to contribute to a shared green space.",
+    "masked_answer": "Auberon's community garden offers a vibrant space for growing, learning, and connecting with nature. It fosters collaboration and environmental stewardship for all ages.",
+    "sabotage_caught": true
+  },
+  "w2_langchain_agent": {
+    "component": "tool_calculator",
+    "item": "w2-000",
+    "reproducible": true,
+    "bite": true,
+    "baseline_answer": "6971",
+    "masked_answer": "6907",
+    "sabotage_caught": true
+  },
+  "w3_crewai_crew": {
+    "component": "researcher",
+    "item": "w3-000",
+    "reproducible": true,
+    "bite": true,
+    "baseline_answer": "The Meridian Valley Harbor Festival is an annual event held in late summer, featuring boat parades, live music, and local crafts, and it serves as a significant cultural and economic highlight for the community.",
+    "masked_answer": "The harbor festival in Meridian Valley is a vibrant celebration of local culture and maritime heritage, featuring boat parades, live music, and traditional crafts.",
+    "sabotage_caught": true
+  },
+  "w1_llamaindex_rag": {
+    "component": "retriever",
+    "item": "w1-000",
+    "reproducible": true,
+    "bite": true,
+    "baseline_answer": "Uld is known for its historic windmills.",
+    "masked_answer": "Uld is known for being a former player in the game \"World of Warcraft.\"",
+    "sabotage_caught": true
+  }
+}
