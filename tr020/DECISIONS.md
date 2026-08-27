@@ -219,3 +219,47 @@ because it is free and stronger in the report. The pre-registration
 commits, sealed ground truths, and public FAIL discipline are not
 thinned by this mechanism and never will be: they are what make
 autonomy legible to outsiders.
+
+## D19. Placebo scoping: the failure mode is directionally asymmetric
+DRAFTED 2026-08-27 on the reviewer's adjudication, AWAITING DeVere's
+ruling; numbers cited will be finalized from the 8B-paraphraser
+supplementary run.
+
+The seeded placebo measured 34% aggregate answer-change: near-zero on
+span/number/list systems, 36-98% on text-family generative systems,
+with quality CIs including zero throughout. The scoping rests on this
+load-bearing argument, stated verbatim because it is what separates
+scoping from rationalizing: **the placebo failure mode is directionally
+asymmetric. Under greedy cascades, paraphrasing a live component's
+output can only add answer-change; nothing about wording perturbation
+can make a live component look byte-invariant. So the failure can
+inflate change-rates on live components but cannot manufacture false
+deads, and every verdict the tool actually claims (dead and redundant,
+both defined by exact invariance under masking) sits on the side of the
+asymmetry the failure cannot reach.** That is why recovery was perfect
+through six wording-brittle systems: deadness showed up as invariance,
+and cascades only ever push away from invariance.
+
+Ruling, once ratified: the placebo's two arms are reported separately
+and per-family; the change-arm is diagnostic for extractive, numeric,
+and list answers and is recorded as structurally unsatisfiable for
+live components of text-family systems under greedy determinism (s6:
+98% change, quality CI including zero, is the demonstration); the
+placebo leg's red is the pre-registered-reason red, per the TR-001 D28
+pattern. check_controls.py stays frozen byte-for-byte.
+
+Methodological finding, claimed rather than buried: placebo controls
+for agent-system audits must split wording-inertness from
+quality-inertness, because generative cascades make the former
+structurally unsatisfiable for live components.
+
+## D20. D4 refined, not repealed
+DRAFTED 2026-08-27, AWAITING DeVere's ruling. D4's protective purpose
+survives with the arm that is actually diagnostic: a wild system is
+**"unauditable, reported as such" if the placebo's QUALITY arm fails**
+(the mask operation itself moving judged quality means measurement is
+confounded, full stop). The change-arm is reported per-family and
+scoped per D19. The pre-registered tripwire stays armed where it
+protects and is removed only where the seeded evidence proved it
+measures cascade sensitivity rather than mask validity.
+
