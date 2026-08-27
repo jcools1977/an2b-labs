@@ -347,3 +347,19 @@ boundaries. Every adapter line is plumbing under D5's observational
 freeze: it exists to make the system run and be maskable, never to
 change what the system does. Framework versions are pinned in
 wild/requirements.txt at install time and recorded here.
+
+Plumbing log (D21, recorded as installed):
+- The wild venv runs Homebrew python@3.11 (already present on legion):
+  tiktoken ships no Python 3.14 wheel and the machine has no Rust
+  toolchain to build one. No new system dependency was installed.
+- Framework pins at install time (full freeze in `wild-freeze.txt`):
+  langchain 1.3.18, langchain-openai, llama-index 0.14.24, crewai
+  1.15.17, autogen-agentchat 0.2.40, openai 2.54.0, tiktoken 0.14.0.
+- The endpoint is `mlx_lm server --port 8399 --chat-template-args
+  '{"enable_thinking": false}'`; requests name the pinned actor repo
+  explicitly. Without the template flag, Qwen3's thinking template
+  produces degenerate output through the server path (the D15/D16
+  lesson at the server layer); with it, temperature-0 completions are
+  clean and deterministic. Verified: "What is the capital of France?"
+  -> "Paris".
+
