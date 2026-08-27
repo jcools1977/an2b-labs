@@ -1,0 +1,179 @@
+{
+  "seal_sha256": "62ada185d0b26c4dd8d556eae1bebb7c71674ac3e860ce79bf4e116699b0f046",
+  "per_component": [
+    {
+      "system": "s1_research_brief",
+      "component": "searcher",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s1_research_brief",
+      "component": "drafter",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s1_research_brief",
+      "component": "critic",
+      "verdict": "dead",
+      "expected": "dead"
+    },
+    {
+      "system": "s1_research_brief",
+      "component": "finalizer",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s2_rag_qa",
+      "component": "retriever_encyclopedia",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s2_rag_qa",
+      "component": "retriever_recipes",
+      "verdict": "dead",
+      "expected": "dead"
+    },
+    {
+      "system": "s2_rag_qa",
+      "component": "synthesizer",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s2_rag_qa",
+      "component": "answerer",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s3_math_tools",
+      "component": "parser",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s3_math_tools",
+      "component": "calc_a",
+      "verdict": "redundant",
+      "expected": "redundant"
+    },
+    {
+      "system": "s3_math_tools",
+      "component": "calc_b",
+      "verdict": "redundant",
+      "expected": "redundant"
+    },
+    {
+      "system": "s3_math_tools",
+      "component": "reconciler",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s4_committee",
+      "component": "debater_pro",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s4_committee",
+      "component": "debater_con",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s4_committee",
+      "component": "debater_tangent",
+      "verdict": "dead",
+      "expected": "dead"
+    },
+    {
+      "system": "s4_committee",
+      "component": "aggregator",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s4_committee",
+      "component": "verdictor",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s5_plan_exec",
+      "component": "planner",
+      "verdict": "dead",
+      "expected": "dead"
+    },
+    {
+      "system": "s5_plan_exec",
+      "component": "executor",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s5_plan_exec",
+      "component": "verifier",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "classifier",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "sentiment",
+      "verdict": "dead",
+      "expected": "dead"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "responder",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "disclaimer_a",
+      "verdict": "redundant",
+      "expected": "redundant"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "disclaimer_b",
+      "verdict": "redundant",
+      "expected": "redundant"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "assembler",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s7_all_live_qa",
+      "component": "retriever",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s7_all_live_qa",
+      "component": "reranker",
+      "verdict": "live",
+      "expected": "live"
+    },
+    {
+      "system": "s7_all_live_qa",
+      "component": "answerer",
+      "verdict": "live",
+      "expected": "live"
+    }
+  ]
+}
