@@ -1,0 +1,86 @@
+{
+  "s1_research_brief": {
+    "answer_change_rate": 0.49,
+    "quality_ci": [
+      -0.33,
+      0.003
+    ],
+    "invalid_paraphrases": 8,
+    "components": [
+      "critic",
+      "searcher"
+    ]
+  },
+  "s2_rag_qa": {
+    "answer_change_rate": 0.0233,
+    "quality_ci": [
+      0.0,
+      0.0
+    ],
+    "invalid_paraphrases": 87,
+    "components": [
+      "answerer",
+      "synthesizer"
+    ]
+  },
+  "s3_math_tools": {
+    "answer_change_rate": 0.0,
+    "quality_ci": [
+      0.0,
+      0.0
+    ],
+    "invalid_paraphrases": 136,
+    "components": [
+      "calc_b",
+      "calc_a"
+    ]
+  },
+  "s4_committee": {
+    "answer_change_rate": 0.3834,
+    "quality_ci": [
+      -0.443,
+      -0.157
+    ],
+    "invalid_paraphrases": 49,
+    "components": [
+      "debater_tangent",
+      "aggregator"
+    ]
+  },
+  "s5_plan_exec": {
+    "answer_change_rate": 0.5,
+    "quality_ci": [
+      0.437,
+      0.997
+    ],
+    "invalid_paraphrases": 0,
+    "components": [
+      "planner",
+      "verifier"
+    ]
+  },
+  "s6_support_triage": {
+    "answer_change_rate": 0.9633,
+    "quality_ci": [
+      0.08,
+      0.7
+    ],
+    "invalid_paraphrases": 11,
+    "components": [
+      "responder",
+      "classifier"
+    ]
+  },
+  "s7_all_live_qa": {
+    "answer_change_rate": 0.0134,
+    "quality_ci": [
+      0.0,
+      0.067
+    ],
+    "invalid_paraphrases": 83,
+    "components": [
+      "retriever",
+      "answerer"
+    ]
+  }
+}
