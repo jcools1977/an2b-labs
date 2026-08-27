@@ -88,9 +88,20 @@ inherit as committed. Zero knobs. Anything a wild system needs adapted
 merely to run (endpoint wiring, prompt plumbing) is logged in this
 file as plumbing, never as tuning.
 
-The list slot remains reserved, empty until the D19/D20 ruling lands:
-- (wild-four names: to be committed against the criteria above before
-  the first wild audit)
+**The wild four, committed 2026-08-27 on DeVere's ratification, before
+any wild audit, stars pulled from the GitHub API at commit time:**
+1. **LangChain ReAct tool agent** (langchain-ai/langchain, 145,138
+   stars) - tool-calling agent family
+2. **LlamaIndex starter RAG** (run-llama/llama_index, 51,894 stars) -
+   RAG pipeline family
+3. **CrewAI default crew** (crewAIInc/crewAI, 57,680 stars) -
+   multi-agent crew family
+4. **AutoGen planner-executor group chat** (microsoft/autogen, 60,654
+   stars) - planner-executor family
+
+Alternates if a candidate fails the runnable-with-defaults test at
+wiring time (swap logged here with the failure reason, never silently):
+smolagents (tool-calling), MetaGPT (planner-executor).
 
 ## D6. Sealed ground truth
 Plant lists live in `seed_systems/GROUND_TRUTH.sealed.json`, with its
@@ -246,9 +257,9 @@ thinned by this mechanism and never will be: they are what make
 autonomy legible to outsiders.
 
 ## D19. Placebo scoping: the failure mode is directionally asymmetric
-DRAFTED 2026-08-27 on the reviewer's adjudication, AWAITING DeVere's
-ruling; numbers cited will be finalized from the 8B-paraphraser
-supplementary run.
+DRAFTED 2026-08-27 on the reviewer's adjudication; **RATIFIED by
+DeVere, 2026-08-27**, as amended after the 8B-paraphraser supplementary
+run.
 
 The seeded placebo measured 34% aggregate answer-change: near-zero on
 span/number/list systems, 36-98% on text-family generative systems,
@@ -301,7 +312,7 @@ Methodological findings, claimed rather than buried:
 
 ## D20. D4 refined, not repealed
 DRAFTED 2026-08-27, AMENDED same day after the supplementary run,
-AWAITING DeVere's ruling. D4's protective purpose survives with the
+**RATIFIED by DeVere, 2026-08-27**. D4's protective purpose survives with the
 arm that is actually diagnostic: a wild system is **"unauditable,
 reported as such" if the placebo's QUALITY arm fails**, with the
 tripwire carrying BOTH clauses:
@@ -323,3 +334,16 @@ on none of the known-good systems and is armed against both confound
 and noise is a tripwire the wild phase can trust. The change-arm is
 reported per-family and scoped per D19.
 
+## D21. Wild-phase endpoint and adapter plumbing
+The wild systems are served by the pinned actor model
+(Qwen3-1.7B-4bit @ 3b1b1768) through a local OpenAI-compatible
+endpoint (mlx_lm.server), which keeps $0, keeps everything on-machine,
+and makes the D20 capability-matched-paraphraser clause trivially
+satisfied: the placebo paraphraser is the same model class the wild
+system runs on. Each framework gets a bespoke adapter that exposes its
+own named units (retrievers, tools, agents, planner steps) as maskable
+components through the trace interface, intercepting at framework
+boundaries. Every adapter line is plumbing under D5's observational
+freeze: it exists to make the system run and be maskable, never to
+change what the system does. Framework versions are pinned in
+wild/requirements.txt at install time and recorded here.
