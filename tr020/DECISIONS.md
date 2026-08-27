@@ -363,3 +363,45 @@ Plumbing log (D21, recorded as installed):
   clean and deterministic. Verified: "What is the capital of France?"
   -> "Paris".
 
+## D22. Wild adapters: bite-proofs and the plumbing judgment calls
+The wild frameworks are foreign plumbing, so interception is not
+trusted by construction the way the seeded substrate was. **No
+adapter's audit counts until its bite-proof is green**: masking a
+component the answer demonstrably depends on must visibly change the
+canonicalized output (bite), the same check must fail under a sabotage
+mode that computes and discards the mask (red proof that the proof can
+fail), and the item's trace must be byte-identical across repeated
+runs (D11 on foreign plumbing). The wild runner refuses to audit a
+system without its green bite record; the failure this closes is an
+adapter that believes it masked while the framework's internals
+deliver the original content anyway, which would manufacture false
+deads through plumbing, the direction the D19 asymmetry argument
+certifies cannot happen through physics.
+
+Plumbing judgment calls, logged:
+- Compositions are each framework's canonical tutorial shape (what the
+  docs hand a new user): LlamaIndex retriever + response synthesizer
+  (low-level composition API), LangChain 1.x create_agent with tools,
+  CrewAI researcher->writer sequential tasks, AutoGen AssistantAgent
+  planner->executor. Where masking requires an interception point
+  between a framework's internal stages (CrewAI between tasks, AutoGen
+  between agents), the adapter executes the same sequential flow in
+  two framework-native steps with the interception between; same
+  information flow, one added seam.
+- LangChain's shipped tutorial tools are cloud SaaS (search APIs),
+  which the $0 local envelope cannot run; the adapter substitutes two
+  local tools (calculator, fact lookup) preserving the tool-calling
+  architecture. Substitution, not tuning.
+- All framework clients run temperature 0 (the seeded phase's greedy
+  rule, inherited per the observational freeze) and caching is
+  disabled where a framework caches (AutoGen cache_seed=None), because
+  a response cache fakes determinism and can hide broken masking.
+- Wild probe sets: 150 items per system at seed 21, committed with the
+  RAG corpus and lookup fact table they reference.
+- Dead-token cost share is operationalized as word count of component
+  outputs over the first 50 baseline traces, a stated proxy.
+- The D20 tripwire operationalization: unauditable iff the placebo
+  quality CI excludes zero AND |quality mean| >= the certified
+  1.0-point floor, with the paraphraser being the endpoint model
+  itself (capability-matched by construction).
+

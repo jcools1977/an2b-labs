@@ -191,6 +191,7 @@ class Auditor:
         rng = random.Random(rng_seed)
         return {
             "answer_change_rate": round(sum(rates) / max(len(rates), 1), 4),
+            "quality_mean": round(sum(deltas) / len(deltas), 4) if deltas else 0.0,
             "quality_ci": [round(x, 3) for x in _ci(deltas, rng)],
             "invalid_paraphrases": invalid,
             "components": list(components),
