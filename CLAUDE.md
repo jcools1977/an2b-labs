@@ -55,3 +55,11 @@ Do not start a gated experiment early, even as scaffolding.
 [ ] results/ contains machine-readable outputs and figures
 [ ] report/ contains a draft with the pass/fail verdict stated plainly
 [ ] DECISIONS.md lists every judgment call made during implementation
+
+## Utilization and harvest
+CREDO.md binds every session alongside this file: solutions first, value as
+byproduct. Product pressure never enters an experiment in flight; every TR
+closes with a utilization verdict (product-now / feeds-product-X /
+credibility-asset) drafted for PI ratification; harvest reviews happen at
+wave boundaries and are the PI's call. Never cite commercial value in
+DECISIONS, protocol readings, or threshold interpretations.
