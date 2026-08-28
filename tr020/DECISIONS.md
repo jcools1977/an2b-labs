@@ -463,3 +463,14 @@ calls it live-but-unmeasurable on quality. The seeded set should agree
 marks the surrogate's wild-phase failure boundary and is the reason
 the surrogate is a screening tool, never a verdict-giver.
 
+## D24. Closeout: ratified and shipped
+DeVere's words, 2026-08-28: "Ratified and ship." The utilization
+verdict (product-now) is ratified per the CREDO; the report is
+published; the ledger row flip is executed by the reviewer instance,
+which holds the site pen. PyPI publication of deadwood-audit v0.1.0
+remains a separate PI-triggered act requiring credentials, per D8 and
+the CREDO's harvest mechanism. TR-020 is closed: verify at its
+signature shape (all instrument legs green, two reds each for a
+pre-registered reason), verdict SPLIT as pre-registered, benchmark
+sealed and public.
+

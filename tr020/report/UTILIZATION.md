@@ -1,6 +1,6 @@
 # TR-020 utilization verdict (CREDO)
 
-**Ruling: product-now.** DRAFTED 2026-08-28, awaiting PI ratification.
+**Ruling: product-now. RATIFIED by the PI (J. DeVere Cooley), 2026-08-28.**
 
 The audit harness ships as `deadwood-audit` (CLI `deadwood`), and the
 experiment's own results built its pitch, every clause with a receipt:

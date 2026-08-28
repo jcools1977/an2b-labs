@@ -2,7 +2,7 @@
 ## Zero-Callers for Cognition: an Ablation Auditor for Agent Systems Is Certified, the Popular Defaults Come Up Clean, and the Cheap Shortcut Is Refuted
 
 **J. DeVere Cooley, AN2B Labs**
-**Status: v1.0, 2026-08-28**
+**Status: v1.0, published 2026-08-28; ledger at an2b.com/labs**
 **Pre-registration: commit `7b7262d`, 2026-08-24, github.com/jcools1977/an2b-labs**
 
 ---
