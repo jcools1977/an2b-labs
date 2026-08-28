@@ -1,0 +1,87 @@
+{
+  "system": "w1_llamaindex_rag",
+  "verdicts": {
+    "retriever": "live",
+    "synthesizer": "live"
+  },
+  "solo": {
+    "retriever": {
+      "change_rate": 1.0,
+      "quality_ci": [
+        -0.467,
+        0.48
+      ],
+      "n_judged": 150,
+      "no_effect_alone": false
+    },
+    "synthesizer": {
+      "change_rate": 1.0,
+      "quality_ci": [
+        0.68,
+        1.46
+      ],
+      "n_judged": 150,
+      "no_effect_alone": false
+    }
+  },
+  "pairs": [
+    {
+      "pair": [
+        "retriever",
+        "synthesizer"
+      ],
+      "change_rate": 1.0,
+      "quality_ci": [
+        0.68,
+        1.453
+      ],
+      "n_judged": 150,
+      "joint_effect": true
+    }
+  ],
+  "replication": {
+    "agreement": 1.0,
+    "halves": [
+      {
+        "retriever": "live",
+        "synthesizer": "live"
+      },
+      {
+        "retriever": "live",
+        "synthesizer": "live"
+      }
+    ]
+  },
+  "baseline_judge_mean": 3.88,
+  "placebo": {
+    "answer_change_rate": 0.6866,
+    "quality_mean": 0.2667,
+    "quality_ci": [
+      0.107,
+      0.437
+    ],
+    "invalid_paraphrases": 1,
+    "components": [
+      "retriever",
+      "synthesizer"
+    ]
+  },
+  "unauditable": false,
+  "tripwire": {
+    "quality_mean": 0.2667,
+    "quality_ci": [
+      0.107,
+      0.437
+    ],
+    "certified_floor": 1.0,
+    "capability_matched_paraphraser": "endpoint:mlx-community/Qwen3-1.7B-4bit"
+  },
+  "cost_share": {
+    "proxy": "word count of component outputs, first 50 baseline traces",
+    "per_component": {
+      "retriever": 2310,
+      "synthesizer": 272
+    },
+    "dead_or_redundant_share": 0.0
+  }
+}

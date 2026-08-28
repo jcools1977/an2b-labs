@@ -1,0 +1,52 @@
+{
+  "components_audited": 8,
+  "dead_or_redundant": 0,
+  "dead_fraction": 0.0,
+  "wilson_ci95": [
+    0.0,
+    0.3244
+  ],
+  "per_component": [
+    {
+      "system": "w1_llamaindex_rag",
+      "component": "retriever",
+      "verdict": "live"
+    },
+    {
+      "system": "w1_llamaindex_rag",
+      "component": "synthesizer",
+      "verdict": "live"
+    },
+    {
+      "system": "w2_langchain_agent",
+      "component": "tool_calculator",
+      "verdict": "live"
+    },
+    {
+      "system": "w2_langchain_agent",
+      "component": "tool_lookup",
+      "verdict": "live"
+    },
+    {
+      "system": "w3_crewai_crew",
+      "component": "researcher",
+      "verdict": "live"
+    },
+    {
+      "system": "w3_crewai_crew",
+      "component": "writer",
+      "verdict": "live"
+    },
+    {
+      "system": "w4_autogen_planner",
+      "component": "planner",
+      "verdict": "live"
+    },
+    {
+      "system": "w4_autogen_planner",
+      "component": "executor",
+      "verdict": "live"
+    }
+  ],
+  "unauditable_systems": []
+}

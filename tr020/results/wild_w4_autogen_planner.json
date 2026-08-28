@@ -1,0 +1,87 @@
+{
+  "system": "w4_autogen_planner",
+  "verdicts": {
+    "planner": "live",
+    "executor": "live"
+  },
+  "solo": {
+    "planner": {
+      "change_rate": 1.0,
+      "quality_ci": [
+        -0.18,
+        0.22
+      ],
+      "n_judged": 150,
+      "no_effect_alone": false
+    },
+    "executor": {
+      "change_rate": 1.0,
+      "quality_ci": [
+        -0.253,
+        0.107
+      ],
+      "n_judged": 150,
+      "no_effect_alone": false
+    }
+  },
+  "pairs": [
+    {
+      "pair": [
+        "executor",
+        "planner"
+      ],
+      "change_rate": 1.0,
+      "quality_ci": [
+        -0.247,
+        0.1
+      ],
+      "n_judged": 150,
+      "joint_effect": true
+    }
+  ],
+  "replication": {
+    "agreement": 1.0,
+    "halves": [
+      {
+        "planner": "live",
+        "executor": "live"
+      },
+      {
+        "planner": "live",
+        "executor": "live"
+      }
+    ]
+  },
+  "baseline_judge_mean": 8.087,
+  "placebo": {
+    "answer_change_rate": 0.92,
+    "quality_mean": -0.0333,
+    "quality_ci": [
+      -0.157,
+      0.087
+    ],
+    "invalid_paraphrases": 23,
+    "components": [
+      "planner",
+      "executor"
+    ]
+  },
+  "unauditable": false,
+  "tripwire": {
+    "quality_mean": -0.0333,
+    "quality_ci": [
+      -0.157,
+      0.087
+    ],
+    "certified_floor": 1.0,
+    "capability_matched_paraphraser": "endpoint:mlx-community/Qwen3-1.7B-4bit"
+  },
+  "cost_share": {
+    "proxy": "word count of component outputs, first 50 baseline traces",
+    "per_component": {
+      "planner": 1296,
+      "executor": 1789
+    },
+    "dead_or_redundant_share": 0.0
+  }
+}

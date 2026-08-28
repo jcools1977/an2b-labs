@@ -1,0 +1,87 @@
+{
+  "system": "w3_crewai_crew",
+  "verdicts": {
+    "researcher": "live",
+    "writer": "live"
+  },
+  "solo": {
+    "researcher": {
+      "change_rate": 1.0,
+      "quality_ci": [
+        -0.32,
+        0.333
+      ],
+      "n_judged": 150,
+      "no_effect_alone": false
+    },
+    "writer": {
+      "change_rate": 1.0,
+      "quality_ci": [
+        0.373,
+        0.947
+      ],
+      "n_judged": 150,
+      "no_effect_alone": false
+    }
+  },
+  "pairs": [
+    {
+      "pair": [
+        "researcher",
+        "writer"
+      ],
+      "change_rate": 1.0,
+      "quality_ci": [
+        0.387,
+        0.96
+      ],
+      "n_judged": 150,
+      "joint_effect": true
+    }
+  ],
+  "replication": {
+    "agreement": 1.0,
+    "halves": [
+      {
+        "researcher": "live",
+        "writer": "live"
+      },
+      {
+        "researcher": "live",
+        "writer": "live"
+      }
+    ]
+  },
+  "baseline_judge_mean": 7.307,
+  "placebo": {
+    "answer_change_rate": 0.98,
+    "quality_mean": -0.2867,
+    "quality_ci": [
+      -0.467,
+      -0.113
+    ],
+    "invalid_paraphrases": 3,
+    "components": [
+      "researcher",
+      "writer"
+    ]
+  },
+  "unauditable": false,
+  "tripwire": {
+    "quality_mean": -0.2867,
+    "quality_ci": [
+      -0.467,
+      -0.113
+    ],
+    "certified_floor": 1.0,
+    "capability_matched_paraphraser": "endpoint:mlx-community/Qwen3-1.7B-4bit"
+  },
+  "cost_share": {
+    "proxy": "word count of component outputs, first 50 baseline traces",
+    "per_component": {
+      "researcher": 3347,
+      "writer": 2112
+    },
+    "dead_or_redundant_share": 0.0
+  }
+}
