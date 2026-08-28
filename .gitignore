@@ -22,3 +22,6 @@ tr*/b4bit_download.log
 tr*/adapters/
 tr*/phase*.log
 tr*/sweep*.log
+tr*/build/
+tr*/*.egg-info/
+tr*/dist/
