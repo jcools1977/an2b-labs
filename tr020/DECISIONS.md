@@ -405,3 +405,61 @@ Plumbing judgment calls, logged:
   1.0-point floor, with the paraphraser being the endpoint model
   itself (capability-matched by construction).
 
+## D23. Surrogate phase: thresholds, certificates, and the miss, all frozen first
+Committed 2026-08-28 BEFORE the baseline re-run finishes and before any
+kappa exists. The tracer's knobs freeze now because tuning them while
+watching kappa would fit the surrogate to its own exam; a surrogate
+that clears 0.7 with pre-frozen thresholds is a monitoring tool, one
+that clears it after threshold search is a curve fit wearing one.
+
+**Tracer specification, frozen:**
+- Influence per item: component c's flattened output is INFLUENTIAL if
+  any downstream output (transitive readers of c, plus the final
+  answer) contains it by span or resembles it by embedding.
+- Span: word 3-gram containment >= 0.2 (fraction of c's 3-grams
+  appearing in the downstream text); outputs of 5 or fewer words use
+  exact-substring containment instead (3-grams degenerate on short
+  outputs like numbers and names).
+- Embedding: BAAI/bge-small-en-v1.5 (already the wild embedder),
+  cosine >= 0.60, computed only for pairs that fail span (embedding
+  rescues detection, never vetoes it).
+- Component influence rate = mean over the 150 probes. Surrogate
+  verdict: DEAD iff influence rate < 0.05, mirroring the ablation
+  criterion's 5% arm.
+- **Primary kappa (the PASS gate): dead-vs-not-dead** against the
+  ablation taxonomy, with redundant counting as not-dead on both
+  sides. Rationale: a content tracer cannot express counterfactual
+  redundancy (both duplicates' content propagates; which one mattered
+  is invisible to content flow), so gating it on the redundant class
+  tests the tool against a question it cannot ask. That blindness is
+  named as a limitation, and the **secondary kappa (reported, not
+  gated): flagged-vs-live** (dead union redundant), which is expected
+  to be worse for exactly this reason.
+
+**Re-run certificate:** the seeded runner persisted aggregates, not
+per-item answers, an omission this line admits rather than hides. The
+certificate is therefore: (1) the trace-persisting baseline runs twice
+in independent processes and every trace must be byte-identical; (2)
+one masked condition per system is recomputed in full and its
+answer-change rate must EXACTLY equal the value persisted in
+seeded_detail.json, tying the re-run to the measurements the ablation
+verdicts describe. Any drift on either check stops the phase before
+the tracer sees a single trace.
+
+**The miss, pre-registered:** the protocol's PASS bundles seeded
+recovery (achieved), the wild census (delivered), and surrogate kappa
+>= 0.7. If kappa lands below 0.7, the verdict is a SPLIT: the ablation
+auditor is certified and its findings stand; the cheap
+continuous-monitoring surrogate is not validated, reported as its own
+negative sub-finding. Written while kappa is unknown.
+
+**For the report regardless of outcome:** the wild phase stress-tested
+the surrogate's core assumption. w4's planner showed total textual
+influence with quality below certified resolution, so textual
+influence and causal mattering DISSOCIATE in text-family systems: the
+tracer would call that planner maximally influential while ablation
+calls it live-but-unmeasurable on quality. The seeded set should agree
+(plants were invisible both textually and causally); the dissociation
+marks the surrogate's wild-phase failure boundary and is the reason
+the surrogate is a screening tool, never a verdict-giver.
+
