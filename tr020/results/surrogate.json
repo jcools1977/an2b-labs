@@ -1,0 +1,216 @@
+{
+  "thresholds": {
+    "span_containment": 0.2,
+    "short_output_words": 5,
+    "embed_cos": 0.6,
+    "dead_rate": 0.05,
+    "frozen_in": "D23, before any trace existed"
+  },
+  "kappa_primary_dead_vs_not": 0.2927,
+  "kappa_secondary_flagged_vs_live": 0.1471,
+  "per_component": [
+    {
+      "system": "s1_research_brief",
+      "component": "searcher",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s1_research_brief",
+      "component": "drafter",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s1_research_brief",
+      "component": "critic",
+      "influence_rate": 0.9933,
+      "surrogate_dead": false,
+      "ablation_verdict": "dead"
+    },
+    {
+      "system": "s1_research_brief",
+      "component": "finalizer",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s2_rag_qa",
+      "component": "retriever_encyclopedia",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s2_rag_qa",
+      "component": "retriever_recipes",
+      "influence_rate": 0.0,
+      "surrogate_dead": true,
+      "ablation_verdict": "dead"
+    },
+    {
+      "system": "s2_rag_qa",
+      "component": "synthesizer",
+      "influence_rate": 0.88,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s2_rag_qa",
+      "component": "answerer",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s3_math_tools",
+      "component": "parser",
+      "influence_rate": 0.8667,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s3_math_tools",
+      "component": "calc_a",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "redundant"
+    },
+    {
+      "system": "s3_math_tools",
+      "component": "calc_b",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "redundant"
+    },
+    {
+      "system": "s3_math_tools",
+      "component": "reconciler",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s4_committee",
+      "component": "debater_pro",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s4_committee",
+      "component": "debater_con",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s4_committee",
+      "component": "debater_tangent",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "dead"
+    },
+    {
+      "system": "s4_committee",
+      "component": "aggregator",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s4_committee",
+      "component": "verdictor",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s5_plan_exec",
+      "component": "planner",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "dead"
+    },
+    {
+      "system": "s5_plan_exec",
+      "component": "executor",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s5_plan_exec",
+      "component": "verifier",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "classifier",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "sentiment",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "dead"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "responder",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "disclaimer_a",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "redundant"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "disclaimer_b",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "redundant"
+    },
+    {
+      "system": "s6_support_triage",
+      "component": "assembler",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s7_all_live_qa",
+      "component": "retriever",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s7_all_live_qa",
+      "component": "reranker",
+      "influence_rate": 0.8867,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    },
+    {
+      "system": "s7_all_live_qa",
+      "component": "answerer",
+      "influence_rate": 1.0,
+      "surrogate_dead": false,
+      "ablation_verdict": "live"
+    }
+  ]
+}
