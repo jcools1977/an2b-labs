@@ -1,0 +1,32 @@
+name: Publish deadwood-audit to PyPI
+
+# Trusted Publishing: no tokens anywhere. PyPI accepts uploads from this
+# repo's Actions via OIDC, per the pending publisher registered by the PI.
+# Publishing is a deliberate act: nothing runs until a v* tag is pushed.
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write   # OIDC for PyPI Trusted Publishing
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build sdist and wheel
+        run: |
+          python -m pip install --upgrade build
+          python -m build tr020/
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: tr020/dist/
