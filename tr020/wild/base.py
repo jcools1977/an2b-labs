@@ -38,12 +38,26 @@ def apply_mask(name, output, mask, mask_fn, ctx=None):
     """The single interception used by every adapter. Returns the value
     downstream code must consume. Under sabotage, the mask is computed
     and discarded, which is exactly the failure the bite-proof exists
-    to catch."""
+    to catch.
+
+    When no ctx is supplied (wild adapters have no substrate Ctx), a
+    deterministic one is synthesized with a seed derived from the
+    component name and output content: same item -> same output -> same
+    seed, so placebo paraphrases stay reproducible (D11 discipline via
+    content instead of item id)."""
     if mask is None:
         return output
     mask_set = {mask} if isinstance(mask, str) else set(mask)
     if name not in mask_set:
         return output
+    if ctx is None:
+        import hashlib as _h
+        import json as _j
+        from types import SimpleNamespace
+
+        digest = _h.sha256(f"{name}:{_j.dumps(output, sort_keys=True, default=str)}"
+                           .encode("utf-8")).hexdigest()
+        ctx = SimpleNamespace(seed=int(digest[:12], 16))
     replacement = (mask_fn or (lambda o, _c: neutral_mask(o)))(output, ctx)
     if sabotaged():
         _ = replacement  # computed, discarded: interception broken on purpose

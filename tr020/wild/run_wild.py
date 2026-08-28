@@ -58,7 +58,8 @@ def main():
 
     for sid in systems:
         out_path = TR_ROOT / "results" / f"wild_{sid}.json"
-        if out_path.exists():
+        prior = json.load(open(out_path)) if out_path.exists() else None
+        if prior and "placebo" in prior:
             print(f"[{sid}] already audited, skipping")
             continue
         guards(sid)
@@ -66,7 +67,13 @@ def main():
         system = BUILDERS[sid]()
         items = load_probes(sid)
         auditor = Auditor(system, items, para_lm, judge, TASK_OF[sid])
-        result = auditor.audit()
+        if prior:
+            print(f"[{sid}] audit portion checkpointed; completing placebo")
+            result = prior
+        else:
+            result = auditor.audit()
+            with open(out_path, "w") as fh:
+                json.dump(result, fh, indent=2)  # checkpoint before placebo
 
         placebo = auditor.placebo(system.component_names(),
                                   rng_seed=item_seed(sid, "placebo", "boot"),
