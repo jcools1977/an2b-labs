@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deadwood-audit"
+version = "0.1.0"
+description = "Ablation auditor for agent systems: finds components that run but never causally matter (dead / redundant / live), with placebo controls and bite-proofs. From AN2B Labs TR-020."
+readme = "report/TR020_report.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "J. DeVere Cooley, AN2B Labs" }]
+dependencies = ["numpy>=1.26"]
+
+[project.urls]
+Repository = "https://github.com/jcools1977/an2b-labs"
+Report = "https://github.com/jcools1977/an2b-labs/blob/main/tr020/report/TR020_report.md"
+
+[project.scripts]
+deadwood = "deadwood_audit.cli:main"
+
+[tool.setuptools]
+packages = ["deadwood_audit", "auditor"]
+
+# Pre-publication note (D8): v0.1.0 packages the audit engine as-is
+# alongside the deadwood_audit shim. Namespace flattening (auditor ->
+# deadwood_audit.core) is pre-PyPI work; publication is a separate
+# PI-authorized act.
