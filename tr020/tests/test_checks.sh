@@ -60,4 +60,11 @@ expect_fail "canonicalizer missing hand-labeled pairs" \
 expect_pass "healthy measurement gates" \
   python3 checks/check_measurement_gates.py tests/fixtures/gates_good.json
 
+expect_fail "surrogate kappa below the 0.7 gate" \
+  python3 checks/check_surrogate.py tests/fixtures/surrogate_bad_kappa.json tests/fixtures/surrogate_cert_good.json
+expect_fail "re-run certificate not byte-identical" \
+  python3 checks/check_surrogate.py tests/fixtures/surrogate_good.json tests/fixtures/surrogate_cert_bad.json
+expect_pass "surrogate gate with green certificate" \
+  python3 checks/check_surrogate.py tests/fixtures/surrogate_good.json tests/fixtures/surrogate_cert_good.json
+
 exit $bad

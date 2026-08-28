@@ -1,0 +1,11 @@
+{
+ "byte_identical": true,
+ "per_system": {
+  "s1": {
+   "component": "critic",
+   "recomputed": 0.02,
+   "persisted": 0.02,
+   "match": true
+  }
+ }
+}

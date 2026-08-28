@@ -75,6 +75,14 @@ else
 fi
 
 echo
+echo "== 6. Surrogate: re-run certified, kappa gate (D23) =="
+if [ -f results/surrogate.json ] && [ -f results/surrogate_cert.json ]; then
+  python3 checks/check_surrogate.py results/surrogate.json results/surrogate_cert.json || fail=1
+else
+  echo "MISSING: results/surrogate.json and/or surrogate_cert.json"; fail=1
+fi
+
+echo
 if [ "$fail" -ne 0 ]; then
   echo "VERIFY: FAIL"
   exit 1
