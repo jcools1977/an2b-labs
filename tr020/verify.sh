@@ -27,11 +27,11 @@ else
     fail=1
   fi
 fi
-if grep -rIl "GROUND_TRUTH" auditor/ 2>/dev/null | grep -q .; then
-  echo "SEAL VIOLATION: auditor/ references the sealed ground truth"
+if grep -rIl "GROUND_TRUTH" auditor/ deadwood_audit/ 2>/dev/null | grep -q .; then
+  echo "SEAL VIOLATION: the audit engine references the sealed ground truth"
   fail=1
 else
-  echo "auditor never references the seal"
+  echo "audit engine (deadwood_audit and the auditor shim) never references the seal"
 fi
 
 echo

@@ -20,9 +20,9 @@ Report = "https://github.com/jcools1977/an2b-labs/blob/main/tr020/report/TR020_r
 deadwood = "deadwood_audit.cli:main"
 
 [tool.setuptools]
-packages = ["deadwood_audit", "auditor"]
+packages = ["deadwood_audit", "deadwood_audit.core"]
 
-# Pre-publication note (D8): v0.1.0 packages the audit engine as-is
-# alongside the deadwood_audit shim. Namespace flattening (auditor ->
-# deadwood_audit.core) is pre-PyPI work; publication is a separate
-# PI-authorized act.
+# Namespace flattening complete (D25): the engine's single source is
+# deadwood_audit.core; the repo-only `auditor` shim keeps the frozen
+# experiment record importing unchanged and does NOT ship in the wheel.
+# Publication remains a separate PI-authorized act (v* tag push).

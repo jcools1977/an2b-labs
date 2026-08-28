@@ -474,3 +474,18 @@ signature shape (all instrument legs green, two reds each for a
 pre-registered reason), verdict SPLIT as pre-registered, benchmark
 sealed and public.
 
+## D25. Pre-PyPI namespace flattening, post-closeout packaging only
+Authorized by the PI 2026-08-28 alongside trusted publishing (pending
+publisher approved; publish.yml triggers only on a v* tag, so
+publication stays a deliberate PI act). The engine's single source
+moved from `auditor/` to `deadwood_audit/core/`; a repo-only `auditor`
+shim package re-exports every module so the frozen experiment record
+imports unchanged, and the shim does not ship (wheel top-level
+verified: deadwood_audit only). One path fix rode along (the MANIFEST
+lookup in lm.py, one directory deeper). The seal's no-reference grep
+now covers both the shim and the real engine. No experiment logic,
+threshold, or result was touched, and the proof is the re-run: checker
+self-tests 16/16, substrate determinism green, wheel contents clean,
+and verify.sh reproducing its exact signature shape, all instrument
+legs green with the same two pre-registered reds and no other change.
+
