@@ -1,0 +1,36 @@
+{
+ "corpus_b_valid": true,
+ "auc": 0.62,
+ "features": {
+  "mean": {
+   "delta_a": -0.45,
+   "sign_agrees_b": true,
+   "rho": 0.85
+  },
+  "variance": {
+   "delta_a": 0.38,
+   "sign_agrees_b": true,
+   "rho": 0.78
+  },
+  "acl": {
+   "delta_a": 0.22,
+   "sign_agrees_b": true,
+   "rho": 0.9
+  },
+  "lowfreq": {
+   "delta_a": 0.1,
+   "sign_agrees_b": false,
+   "rho": 0.75
+  },
+  "spike_rate": {
+   "delta_a": 0.31,
+   "sign_agrees_b": true,
+   "rho": 0.5
+  },
+  "boundary_delta": {
+   "delta_a": -0.05,
+   "sign_agrees_b": true,
+   "rho": 0.8
+  }
+ }
+}

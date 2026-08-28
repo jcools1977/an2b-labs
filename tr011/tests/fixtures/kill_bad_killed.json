@@ -1,0 +1,9 @@
+{
+ "residualizer_biteproof": {
+  "length_collapse": true,
+  "signal_survives": true
+ },
+ "killed": true,
+ "auc_residualized": 0.58,
+ "qualifying_features_residualized": 0
+}
