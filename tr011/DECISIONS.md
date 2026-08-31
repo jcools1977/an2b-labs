@@ -330,3 +330,14 @@ the control's purpose rather than its letter:
   cross-model rho; it is recorded as rho null and DISQUALIFIED from
   the PASS claim (the conservative reading).
 
+## D22. Closeout: ratified, published, log closed
+DeVere's words, 2026-08-31: utilization ratified credibility-asset,
+voice pass approved as written, report published (ledger row flipped by
+the reviewer instance at 7f217f12). Final verify signature: instrument
+legs green (corpora integrity, audit ordering, duplicates determinism,
+certified residualizer, no KILL), the gate and control legs red for
+measured reasons; the reds ARE the verdict. The exploratory
+generational trend remains fenced per D13, unexercised. TR-011 is
+closed, Wave 1 is complete, and this log ends at twenty-two entries,
+every one committed before the number it governed.
+

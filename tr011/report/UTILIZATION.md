@@ -1,7 +1,6 @@
 # TR-011 utilization verdict (CREDO)
 
-**Ruling: credibility-asset.** DRAFTED 2026-08-31, awaiting PI
-ratification.
+**Ruling: credibility-asset. RATIFIED by the PI (J. DeVere Cooley), 2026-08-31.**
 
 The finding's value is the publication itself, and it is the first
 FAIL to earn this category on merit rather than by default. TR-011
