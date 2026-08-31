@@ -270,3 +270,32 @@ scoring:
   author-identity control are partial guards against that residual,
   and the report says so rather than discovering it in review.
 
+## D19. Aggregation and control operationalizations, frozen before features
+Committed while scoring runs and before any feature value exists:
+- **Consensus thermometer**: for gate deltas, sign agreement, the
+  classifier, and the KILL analysis, a document's feature value is the
+  MEAN of the two scoring models' values. The D6 qualification rho is
+  still computed per-feature BETWEEN models across documents;
+  consensus never substitutes for agreement.
+- **Corpus-B classifier**: logistic regression on the six consensus
+  features, author-grouped 5-fold CV (manifest folds, seed 31), AUC
+  pooled over held-out folds.
+- **Author-identity control (D15)**: same features and classifier,
+  DeVere-published versus Gutenberg-published, with STRATIFIED
+  document-level 5-fold CV (seed 31), because author identity is the
+  measurand there; author-grouped folds would delete the signal being
+  measured.
+- **Topic control operationalization**: topic labels are k-means (k=4,
+  seed 31) clusters over bge document embeddings (semantic, computed
+  blind to entropy); a logistic probe then predicts those labels from
+  the entropy features under 5-fold CV. Chance = the majority-cluster
+  share; the 95% bootstrap CI of probe accuracy must include chance.
+- **Duplicates control**: exact array equality of the cached entropy
+  series between each duplicate and its source, both models (D3).
+- **Shuffle control**: paired Cliff's delta between each document and
+  its shuffled twin on the consensus sequential features (acl,
+  lowfreq), across all documents.
+- **KILL evaluation**: consensus features residualized by the
+  D5-certified residualizer against sentence-length stats (mean, SD,
+  IQR of sentence token counts per document); gate re-read per D4.
+
