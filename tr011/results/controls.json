@@ -1,0 +1,16 @@
+{
+  "shuffle": {
+    "acl_delta": 0.0,
+    "lowfreq_delta": 0.0886
+  },
+  "topic": {
+    "accuracy_ci": [
+      0.6709,
+      0.8481
+    ],
+    "chance": 0.4177
+  },
+  "duplicates": {
+    "byte_identical": true
+  }
+}

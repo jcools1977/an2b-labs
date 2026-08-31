@@ -1,0 +1,17 @@
+{
+  "residualizer_biteproof": {
+    "length_collapse": true,
+    "signal_survives": true
+  },
+  "killed": false,
+  "auc_residualized": 0.9135,
+  "qualifying_features_residualized": 2,
+  "residualized_deltas_a": {
+    "mean": 1.0,
+    "variance": 1.0,
+    "acl": 0.0,
+    "lowfreq": -0.3333,
+    "spike_rate": -1.0,
+    "boundary_delta": 0.3333
+  }
+}

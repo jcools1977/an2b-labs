@@ -1,0 +1,1266 @@
+{
+ "a_draft_00": {
+  "mean": 1.2793307025225196,
+  "variance": 1.396966636530951,
+  "acl": 1.0,
+  "lowfreq": 0.2511975445599477,
+  "spike_rate": 0.047451901947209676,
+  "boundary_delta": 0.027902932814177772
+ },
+ "a_draft_00__sh": {
+  "mean": 1.83847109515664,
+  "variance": 2.5043395918528195,
+  "acl": 1.0,
+  "lowfreq": 0.2822517911157629,
+  "spike_rate": 0.03538910211852882,
+  "boundary_delta": 0.0
+ },
+ "a_draft_01": {
+  "mean": 1.2642530276909474,
+  "variance": 1.4152661124574015,
+  "acl": 1.0,
+  "lowfreq": 0.276865297294032,
+  "spike_rate": 0.04531917539206864,
+  "boundary_delta": 0.1976680074176077
+ },
+ "a_draft_01__sh": {
+  "mean": 1.759016449321038,
+  "variance": 2.4265882787116104,
+  "acl": 1.0,
+  "lowfreq": 0.31185217587105585,
+  "spike_rate": 0.03556667652258367,
+  "boundary_delta": 0.0
+ },
+ "a_draft_02": {
+  "mean": 1.1753112794094747,
+  "variance": 1.2292089401247712,
+  "acl": 1.0,
+  "lowfreq": 0.24247389393969276,
+  "spike_rate": 0.045235442043557526,
+  "boundary_delta": -0.07498581842844637
+ },
+ "a_draft_02__sh": {
+  "mean": 1.6821913616139939,
+  "variance": 2.2669353895141526,
+  "acl": 1.0,
+  "lowfreq": 0.2667459514649039,
+  "spike_rate": 0.043895061851829634,
+  "boundary_delta": 0.0
+ },
+ "a_pub_00": {
+  "mean": 2.4660928137169527,
+  "variance": 3.238973206814448,
+  "acl": 1.0,
+  "lowfreq": 0.19656390664437356,
+  "spike_rate": 0.035751840168243953,
+  "boundary_delta": -0.17873864493030633
+ },
+ "a_pub_00__sh": {
+  "mean": 3.2133573073987223,
+  "variance": 3.6563987916262426,
+  "acl": 1.0,
+  "lowfreq": 0.17497955455800396,
+  "spike_rate": 0.025081788440567066,
+  "boundary_delta": 0.0
+ },
+ "a_pub_01": {
+  "mean": 2.1885875549397515,
+  "variance": 3.0705122596397794,
+  "acl": 1.0,
+  "lowfreq": 0.209476654889997,
+  "spike_rate": 0.02864816472694718,
+  "boundary_delta": 0.08805821930241386
+ },
+ "a_pub_01__sh": {
+  "mean": 3.2361362082999134,
+  "variance": 3.9769705937594573,
+  "acl": 1.0,
+  "lowfreq": 0.15978238361580052,
+  "spike_rate": 0.021448999046711152,
+  "boundary_delta": 0.0
+ },
+ "a_pub_02": {
+  "mean": 2.1666115589423276,
+  "variance": 2.7172066859934034,
+  "acl": 1.0,
+  "lowfreq": 0.1815043930245071,
+  "spike_rate": 0.03285077951002227,
+  "boundary_delta": 0.28711167177592933
+ },
+ "a_pub_02__sh": {
+  "mean": 2.9282805305622572,
+  "variance": 3.120762382219562,
+  "acl": 1.0,
+  "lowfreq": 0.16748331889888923,
+  "spike_rate": 0.026102088167053363,
+  "boundary_delta": 0.0
+ },
+ "a_pub_03": {
+  "mean": 1.9165845946326288,
+  "variance": 2.343276692723001,
+  "acl": 1.0,
+  "lowfreq": 0.16034336508119668,
+  "spike_rate": 0.03881856540084388,
+  "boundary_delta": 0.16418716793616028
+ },
+ "a_pub_03__sh": {
+  "mean": 3.1598903288443885,
+  "variance": 3.841946412699582,
+  "acl": 1.0,
+  "lowfreq": 0.13038206445677591,
+  "spike_rate": 0.016129032258064516,
+  "boundary_delta": 0.0
+ },
+ "a_pub_04": {
+  "mean": 2.1161252633925303,
+  "variance": 2.7062556988154727,
+  "acl": 1.0,
+  "lowfreq": 0.14676326474700258,
+  "spike_rate": 0.03483807654563297,
+  "boundary_delta": 0.287909941456289
+ },
+ "a_pub_04__sh": {
+  "mean": 3.110158007003343,
+  "variance": 3.908526813827118,
+  "acl": 1.0,
+  "lowfreq": 0.16309074822738534,
+  "spike_rate": 0.021739130434782608,
+  "boundary_delta": 0.0
+ },
+ "a_pub_05": {
+  "mean": 1.9117436971390904,
+  "variance": 2.5793521456693553,
+  "acl": 1.0,
+  "lowfreq": 0.17883813245972735,
+  "spike_rate": 0.044715447154471545,
+  "boundary_delta": 0.04231158183287265
+ },
+ "a_pub_05__sh": {
+  "mean": 3.028441519390814,
+  "variance": 3.739165655169577,
+  "acl": 1.0,
+  "lowfreq": 0.1625250118897904,
+  "spike_rate": 0.024951076320939333,
+  "boundary_delta": 0.0
+ },
+ "a_pub_06": {
+  "mean": 2.3074813327398447,
+  "variance": 3.217059981042023,
+  "acl": 1.0,
+  "lowfreq": 0.15736082312609956,
+  "spike_rate": 0.03432407053730583,
+  "boundary_delta": -0.05235428491358529
+ },
+ "a_pub_06__sh": {
+  "mean": 3.3479215117922605,
+  "variance": 4.5138159974524505,
+  "acl": 1.0,
+  "lowfreq": 0.14332425905384766,
+  "spike_rate": 0.016221374045801526,
+  "boundary_delta": 0.0
+ },
+ "a_pub_07": {
+  "mean": 2.1027723879623084,
+  "variance": 3.1694239312512815,
+  "acl": 1.0,
+  "lowfreq": 0.15643352585799972,
+  "spike_rate": 0.043492919757248824,
+  "boundary_delta": 0.04567765337084817
+ },
+ "a_pub_07__sh": {
+  "mean": 3.2624548724280182,
+  "variance": 4.179408067615774,
+  "acl": 1.0,
+  "lowfreq": 0.15394567517810587,
+  "spike_rate": 0.023568435754189942,
+  "boundary_delta": 0.0
+ },
+ "a_pub_08": {
+  "mean": 1.9221173135173193,
+  "variance": 2.8865643812729003,
+  "acl": 1.0,
+  "lowfreq": 0.26589395252618386,
+  "spike_rate": 0.04277066266465816,
+  "boundary_delta": 0.07914441773992553
+ },
+ "a_pub_08__sh": {
+  "mean": 2.7760790246133045,
+  "variance": 4.512245762774938,
+  "acl": 1.0,
+  "lowfreq": 0.25994519293937013,
+  "spike_rate": 0.015648491720789904,
+  "boundary_delta": 0.0
+ },
+ "a_pub_09": {
+  "mean": 1.9646670627695766,
+  "variance": 3.060234126629668,
+  "acl": 1.0,
+  "lowfreq": 0.2703475525751935,
+  "spike_rate": 0.04193867343202925,
+  "boundary_delta": 0.26016601556614183
+ },
+ "a_pub_09__sh": {
+  "mean": 2.808583938572016,
+  "variance": 3.985351584667604,
+  "acl": 1.0,
+  "lowfreq": 0.2575873130393649,
+  "spike_rate": 0.020982268234397132,
+  "boundary_delta": 0.0
+ },
+ "a_pub_10": {
+  "mean": 1.9811881679927315,
+  "variance": 3.292093567429582,
+  "acl": 1.0,
+  "lowfreq": 0.27872576336086025,
+  "spike_rate": 0.04378079477611052,
+  "boundary_delta": 0.45514792472249155
+ },
+ "a_pub_10__sh": {
+  "mean": 2.783699281255628,
+  "variance": 4.628760605058557,
+  "acl": 1.0,
+  "lowfreq": 0.2990090622758592,
+  "spike_rate": 0.018440043778644232,
+  "boundary_delta": 0.0
+ },
+ "a_pub_11": {
+  "mean": 2.2494824099996453,
+  "variance": 3.2524433388638725,
+  "acl": 1.0,
+  "lowfreq": 0.2323825374607609,
+  "spike_rate": 0.04179504703856826,
+  "boundary_delta": 0.3396437544538866
+ },
+ "a_pub_11__sh": {
+  "mean": 2.966879733874153,
+  "variance": 4.0286333460489026,
+  "acl": 1.0,
+  "lowfreq": 0.23197075510875154,
+  "spike_rate": 0.02534127669988299,
+  "boundary_delta": 0.0
+ },
+ "a_pub_12": {
+  "mean": 2.308637665687747,
+  "variance": 3.255887129063102,
+  "acl": 1.0,
+  "lowfreq": 0.20378128851230515,
+  "spike_rate": 0.034033923936460944,
+  "boundary_delta": 0.6014393138884971
+ },
+ "a_pub_12__sh": {
+  "mean": 2.9956871035512043,
+  "variance": 3.97508019197016,
+  "acl": 1.0,
+  "lowfreq": 0.2186336294845347,
+  "spike_rate": 0.020939076494515044,
+  "boundary_delta": 0.0
+ },
+ "a_pub_13": {
+  "mean": 2.17691720524298,
+  "variance": 3.244383342424671,
+  "acl": 1.0,
+  "lowfreq": 0.17823913856966556,
+  "spike_rate": 0.032983234432264336,
+  "boundary_delta": 0.342469281089931
+ },
+ "a_pub_13__sh": {
+  "mean": 2.921530786959025,
+  "variance": 4.367730134010195,
+  "acl": 1.0,
+  "lowfreq": 0.18182558022161244,
+  "spike_rate": 0.009134615384615385,
+  "boundary_delta": 0.0
+ },
+ "a_pub_14": {
+  "mean": 1.8833864066336592,
+  "variance": 2.834402664317479,
+  "acl": 1.0,
+  "lowfreq": 0.2971238913726745,
+  "spike_rate": 0.0409078422912415,
+  "boundary_delta": -0.2505124268044895
+ },
+ "a_pub_14__sh": {
+  "mean": 2.729914865817109,
+  "variance": 3.958008724502083,
+  "acl": 1.0,
+  "lowfreq": 0.23841785768876905,
+  "spike_rate": 0.014878037005828243,
+  "boundary_delta": 0.0
+ },
+ "a_pub_15": {
+  "mean": 2.4094272865356925,
+  "variance": 2.9424346722510055,
+  "acl": 1.0,
+  "lowfreq": 0.2041354006727888,
+  "spike_rate": 0.033878568026089184,
+  "boundary_delta": 0.537848820274493
+ },
+ "a_pub_15__sh": {
+  "mean": 3.185858877316952,
+  "variance": 4.382515232419424,
+  "acl": 1.0,
+  "lowfreq": 0.2298779469094965,
+  "spike_rate": 0.02009091680150321,
+  "boundary_delta": 0.0
+ },
+ "a_pub_16": {
+  "mean": 2.4839406380882587,
+  "variance": 3.4132642775652196,
+  "acl": 1.0,
+  "lowfreq": 0.23821587549888656,
+  "spike_rate": 0.036663142248578744,
+  "boundary_delta": -0.06887229186104438
+ },
+ "a_pub_16__sh": {
+  "mean": 3.165254740472962,
+  "variance": 4.041684662900972,
+  "acl": 1.0,
+  "lowfreq": 0.22163903125377632,
+  "spike_rate": 0.027246133074353935,
+  "boundary_delta": 0.0
+ },
+ "b_gut_113_Burnett": {
+  "mean": 1.7256604133866609,
+  "variance": 1.4475663929364706,
+  "acl": 1.0,
+  "lowfreq": 0.27051038716409287,
+  "spike_rate": 0.03553333572042395,
+  "boundary_delta": -0.15825007250002132
+ },
+ "b_gut_113_Burnett__sh": {
+  "mean": 2.3506917281679858,
+  "variance": 1.7418907239320407,
+  "acl": 1.0,
+  "lowfreq": 0.2840096613564288,
+  "spike_rate": 0.025406384884497597,
+  "boundary_delta": 0.0
+ },
+ "b_gut_113_Burnett_dupcheck": {
+  "mean": 1.7256604133866609,
+  "variance": 1.4475663929364706,
+  "acl": 1.0,
+  "lowfreq": 0.27051038716409287,
+  "spike_rate": 0.03553333572042395,
+  "boundary_delta": -0.15825007250002132
+ },
+ "b_gut_113_Burnett_dupcheck__sh": {
+  "mean": 2.363101460025443,
+  "variance": 1.7646892363975883,
+  "acl": 1.0,
+  "lowfreq": 0.2947606489329031,
+  "spike_rate": 0.02577473609631451,
+  "boundary_delta": 0.0
+ },
+ "b_gut_11_Carroll": {
+  "mean": 1.0095940294702679,
+  "variance": 0.977272298828703,
+  "acl": 1.0,
+  "lowfreq": 0.3125157481308872,
+  "spike_rate": 0.04980703196283996,
+  "boundary_delta": -0.15411235549913527
+ },
+ "b_gut_11_Carroll__sh": {
+  "mean": 1.4294017750235168,
+  "variance": 1.4933798935597682,
+  "acl": 1.0,
+  "lowfreq": 0.36195081797608086,
+  "spike_rate": 0.0463050513054455,
+  "boundary_delta": 0.0
+ },
+ "b_gut_1260_BronteC": {
+  "mean": 1.9676062964353251,
+  "variance": 1.9877397201910627,
+  "acl": 1.0,
+  "lowfreq": 0.25479843812544634,
+  "spike_rate": 0.042281188124669675,
+  "boundary_delta": -0.13355161581214314
+ },
+ "b_gut_1260_BronteC__sh": {
+  "mean": 2.3547031978221007,
+  "variance": 2.387240035814024,
+  "acl": 1.0,
+  "lowfreq": 0.2891030961867352,
+  "spike_rate": 0.035606021179409295,
+  "boundary_delta": 0.0
+ },
+ "b_gut_1342_Austen": {
+  "mean": 1.660162945739601,
+  "variance": 1.6183966758755872,
+  "acl": 1.0,
+  "lowfreq": 0.2697126650764117,
+  "spike_rate": 0.04005130981339915,
+  "boundary_delta": 0.10436422361102438
+ },
+ "b_gut_1342_Austen__sh": {
+  "mean": 2.130318502225345,
+  "variance": 2.1224235372602376,
+  "acl": 1.0,
+  "lowfreq": 0.30053268671728256,
+  "spike_rate": 0.027365743727977496,
+  "boundary_delta": 0.0
+ },
+ "b_gut_1399_Tolstoy": {
+  "mean": 1.9272748137204179,
+  "variance": 1.8583347964869938,
+  "acl": 1.0,
+  "lowfreq": 0.25939708902147696,
+  "spike_rate": 0.0377633966775819,
+  "boundary_delta": -0.0828844912638782
+ },
+ "b_gut_1399_Tolstoy__sh": {
+  "mean": 2.3619230702454486,
+  "variance": 2.2854294561082824,
+  "acl": 1.0,
+  "lowfreq": 0.3022327863330206,
+  "spike_rate": 0.03160831645938732,
+  "boundary_delta": 0.0
+ },
+ "b_gut_145_Eliot": {
+  "mean": 2.368676809126204,
+  "variance": 2.967944399438151,
+  "acl": 1.0,
+  "lowfreq": 0.2570433505286323,
+  "spike_rate": 0.04357798165137615,
+  "boundary_delta": -0.19940129176702492
+ },
+ "b_gut_145_Eliot__sh": {
+  "mean": 2.8594038062634493,
+  "variance": 3.208941179766734,
+  "acl": 1.0,
+  "lowfreq": 0.24757616583886866,
+  "spike_rate": 0.03772280270436386,
+  "boundary_delta": 0.0
+ },
+ "b_gut_1661_Doyle": {
+  "mean": 1.724867311269303,
+  "variance": 1.7195416314621363,
+  "acl": 1.0,
+  "lowfreq": 0.2584311734274856,
+  "spike_rate": 0.04635939676927525,
+  "boundary_delta": 0.04304683146444299
+ },
+ "b_gut_1661_Doyle__sh": {
+  "mean": 2.315402371748231,
+  "variance": 2.3581243177295006,
+  "acl": 1.0,
+  "lowfreq": 0.2773524249437588,
+  "spike_rate": 0.03526533871166147,
+  "boundary_delta": 0.0
+ },
+ "b_gut_16_Barrie": {
+  "mean": 2.1064249480077697,
+  "variance": 2.0641415668978516,
+  "acl": 1.0,
+  "lowfreq": 0.2426409721802904,
+  "spike_rate": 0.0374723160537315,
+  "boundary_delta": 0.0019648165721020128
+ },
+ "b_gut_16_Barrie__sh": {
+  "mean": 2.611736173059227,
+  "variance": 2.431242185998304,
+  "acl": 1.0,
+  "lowfreq": 0.26950810333528036,
+  "spike_rate": 0.0337981969709661,
+  "boundary_delta": 0.0
+ },
+ "b_gut_174_Wilde": {
+  "mean": 1.713836001126932,
+  "variance": 1.6705870338203588,
+  "acl": 1.0,
+  "lowfreq": 0.2574487123767899,
+  "spike_rate": 0.04357798165137615,
+  "boundary_delta": -0.24427848426946297
+ },
+ "b_gut_174_Wilde__sh": {
+  "mean": 2.34098707904851,
+  "variance": 2.2790932572697162,
+  "acl": 1.0,
+  "lowfreq": 0.29738316855882296,
+  "spike_rate": 0.034025346102004576,
+  "boundary_delta": 0.0
+ },
+ "b_gut_219_Conrad": {
+  "mean": 2.0989705267244414,
+  "variance": 2.447205642746631,
+  "acl": 1.0,
+  "lowfreq": 0.24008575937798116,
+  "spike_rate": 0.04221268719764679,
+  "boundary_delta": 0.1769647924911013
+ },
+ "b_gut_219_Conrad__sh": {
+  "mean": 2.7551513718338287,
+  "variance": 3.0749153531399886,
+  "acl": 1.0,
+  "lowfreq": 0.2583136485128617,
+  "spike_rate": 0.036648109009635575,
+  "boundary_delta": 0.0
+ },
+ "b_gut_25344_Hawthorne": {
+  "mean": 2.031378361180023,
+  "variance": 2.5441059785035387,
+  "acl": 1.0,
+  "lowfreq": 0.2333403544889377,
+  "spike_rate": 0.04300089917001208,
+  "boundary_delta": -0.23904609566906865
+ },
+ "b_gut_25344_Hawthorne__sh": {
+  "mean": 2.5475506288881213,
+  "variance": 3.1163646606069797,
+  "acl": 1.0,
+  "lowfreq": 0.23746586622335947,
+  "spike_rate": 0.03277119840116879,
+  "boundary_delta": 0.0
+ },
+ "b_gut_2554_Dostoevsky": {
+  "mean": 2.084503496761363,
+  "variance": 2.156062188425423,
+  "acl": 1.0,
+  "lowfreq": 0.30538826436572813,
+  "spike_rate": 0.03597160049940122,
+  "boundary_delta": -0.18392443835388173
+ },
+ "b_gut_2554_Dostoevsky__sh": {
+  "mean": 2.590431686469751,
+  "variance": 2.6466289656506707,
+  "acl": 1.0,
+  "lowfreq": 0.32229360082101083,
+  "spike_rate": 0.029608371667141368,
+  "boundary_delta": 0.0
+ },
+ "b_gut_2701_Melville": {
+  "mean": 2.4214648610894125,
+  "variance": 3.2768883701895906,
+  "acl": 1.0,
+  "lowfreq": 0.22954530032933285,
+  "spike_rate": 0.041793163203074274,
+  "boundary_delta": 0.1580623391874636
+ },
+ "b_gut_2701_Melville__sh": {
+  "mean": 2.9487956339677734,
+  "variance": 3.7969401916384014,
+  "acl": 1.0,
+  "lowfreq": 0.2390561180852957,
+  "spike_rate": 0.03425885867308657,
+  "boundary_delta": 0.0
+ },
+ "b_gut_2814_Joyce": {
+  "mean": 1.9815251843760857,
+  "variance": 2.1524066369308676,
+  "acl": 1.0,
+  "lowfreq": 0.23872355952670815,
+  "spike_rate": 0.04593598228771421,
+  "boundary_delta": 0.1333744495676259
+ },
+ "b_gut_2814_Joyce__sh": {
+  "mean": 2.5847367817619267,
+  "variance": 2.6919686961372955,
+  "acl": 1.0,
+  "lowfreq": 0.2599132952719004,
+  "spike_rate": 0.033525199845062165,
+  "boundary_delta": 0.0
+ },
+ "b_gut_345_Stoker": {
+  "mean": 1.9528782341257345,
+  "variance": 1.5788910210840055,
+  "acl": 1.0,
+  "lowfreq": 0.26625903612152535,
+  "spike_rate": 0.03384806062179699,
+  "boundary_delta": -0.3369781349608839
+ },
+ "b_gut_345_Stoker__sh": {
+  "mean": 2.460924188349777,
+  "variance": 2.0378388137495236,
+  "acl": 1.0,
+  "lowfreq": 0.2944702164611801,
+  "spike_rate": 0.029445403469504805,
+  "boundary_delta": 0.0
+ },
+ "b_gut_35_Wells": {
+  "mean": 2.277141976951933,
+  "variance": 2.4417992586777064,
+  "acl": 1.0,
+  "lowfreq": 0.23033103440249356,
+  "spike_rate": 0.040264484679253906,
+  "boundary_delta": 0.3260252926829963
+ },
+ "b_gut_35_Wells__sh": {
+  "mean": 2.860560474028002,
+  "variance": 2.996561407193094,
+  "acl": 1.0,
+  "lowfreq": 0.23126214888279395,
+  "spike_rate": 0.03753270307176858,
+  "boundary_delta": 0.0
+ },
+ "b_gut_43_Stevenson": {
+  "mean": 1.9081854886948078,
+  "variance": 1.9455075687211347,
+  "acl": 1.0,
+  "lowfreq": 0.2814096607784843,
+  "spike_rate": 0.041700977235088456,
+  "boundary_delta": -0.3618892846985804
+ },
+ "b_gut_43_Stevenson__sh": {
+  "mean": 2.446093200497099,
+  "variance": 2.4339462498130016,
+  "acl": 1.0,
+  "lowfreq": 0.27223620352488487,
+  "spike_rate": 0.03394882963521757,
+  "boundary_delta": 0.0
+ },
+ "b_gut_541_Wharton": {
+  "mean": 2.0188042638593875,
+  "variance": 2.3926707408102605,
+  "acl": 1.0,
+  "lowfreq": 0.2227209897889199,
+  "spike_rate": 0.04744089632291264,
+  "boundary_delta": -0.0796737303155578
+ },
+ "b_gut_541_Wharton__sh": {
+  "mean": 2.4802458395805744,
+  "variance": 2.7135138660706666,
+  "acl": 1.0,
+  "lowfreq": 0.2547210149698191,
+  "spike_rate": 0.03935043551548905,
+  "boundary_delta": 0.0
+ },
+ "b_gut_55_Baum": {
+  "mean": 1.3528528516116731,
+  "variance": 1.1141880064407341,
+  "acl": 1.0,
+  "lowfreq": 0.2907306009663435,
+  "spike_rate": 0.03956422018348624,
+  "boundary_delta": -0.19017503212162468
+ },
+ "b_gut_55_Baum__sh": {
+  "mean": 1.8781898773889711,
+  "variance": 1.6228066217159922,
+  "acl": 1.0,
+  "lowfreq": 0.2999465005224452,
+  "spike_rate": 0.033507462686567166,
+  "boundary_delta": 0.0
+ },
+ "b_gut_583_Collins": {
+  "mean": 1.7335258457621374,
+  "variance": 1.799199890357933,
+  "acl": 1.0,
+  "lowfreq": 0.26820363035843475,
+  "spike_rate": 0.04235312949479492,
+  "boundary_delta": -0.012461859430325406
+ },
+ "b_gut_583_Collins__sh": {
+  "mean": 2.332218964232336,
+  "variance": 2.351846624793118,
+  "acl": 1.0,
+  "lowfreq": 0.2891065575960792,
+  "spike_rate": 0.03683655911239202,
+  "boundary_delta": 0.0
+ },
+ "b_gut_64317_Fitzgerald": {
+  "mean": 1.9523863126490832,
+  "variance": 2.150948777970572,
+  "acl": 1.0,
+  "lowfreq": 0.25239849201978437,
+  "spike_rate": 0.04433444578158964,
+  "boundary_delta": -0.12141829371649582
+ },
+ "b_gut_64317_Fitzgerald__sh": {
+  "mean": 2.4743505834527664,
+  "variance": 2.5841821731775996,
+  "acl": 1.0,
+  "lowfreq": 0.27967528300378375,
+  "spike_rate": 0.040407232143753816,
+  "boundary_delta": 0.0
+ },
+ "b_gut_74_Twain": {
+  "mean": 2.122545287111313,
+  "variance": 2.1607405188731965,
+  "acl": 1.0,
+  "lowfreq": 0.24365725928066062,
+  "spike_rate": 0.041857798165137614,
+  "boundary_delta": -0.11608561452234833
+ },
+ "b_gut_74_Twain__sh": {
+  "mean": 2.627722867642348,
+  "variance": 2.5928476956679445,
+  "acl": 1.0,
+  "lowfreq": 0.24848179166917755,
+  "spike_rate": 0.03569814731134207,
+  "boundary_delta": 0.0
+ },
+ "b_gut_768_BronteE": {
+  "mean": 2.066372037420921,
+  "variance": 2.1972227264967232,
+  "acl": 1.0,
+  "lowfreq": 0.2181615640408411,
+  "spike_rate": 0.04149942660550459,
+  "boundary_delta": -0.04332808951354705
+ },
+ "b_gut_768_BronteE__sh": {
+  "mean": 2.6901696844603133,
+  "variance": 2.766518012037702,
+  "acl": 1.0,
+  "lowfreq": 0.25874905564564826,
+  "spike_rate": 0.027493508477165116,
+  "boundary_delta": 0.0
+ },
+ "b_gut_84_Shelley": {
+  "mean": 1.9428804205438848,
+  "variance": 2.046423278898548,
+  "acl": 1.0,
+  "lowfreq": 0.21747614106866367,
+  "spike_rate": 0.038408373054944656,
+  "boundary_delta": 0.41668634610627464
+ },
+ "b_gut_84_Shelley__sh": {
+  "mean": 2.2441110051478406,
+  "variance": 2.287524930661358,
+  "acl": 1.0,
+  "lowfreq": 0.24124318923785276,
+  "spike_rate": 0.03959251435594152,
+  "boundary_delta": 0.0
+ },
+ "b_gut_98_Dickens": {
+  "mean": 2.1438096467525174,
+  "variance": 2.214226014870486,
+  "acl": 1.0,
+  "lowfreq": 0.2607125782675051,
+  "spike_rate": 0.03920584862385321,
+  "boundary_delta": -0.20661941629384872
+ },
+ "b_gut_98_Dickens__sh": {
+  "mean": 2.7082619690466805,
+  "variance": 2.6783168002286963,
+  "acl": 1.0,
+  "lowfreq": 0.26067317450698957,
+  "spike_rate": 0.03529586237579713,
+  "boundary_delta": 0.0
+ },
+ "b_slush_00_prologue_the_blink": {
+  "mean": 2.1446541861882285,
+  "variance": 1.6234875456699367,
+  "acl": 1.0,
+  "lowfreq": 0.31076780425441214,
+  "spike_rate": 0.04170445956160242,
+  "boundary_delta": 0.1316826496232517
+ },
+ "b_slush_00_prologue_the_blink__sh": {
+  "mean": 2.2475880266442214,
+  "variance": 2.0309556026093714,
+  "acl": 1.0,
+  "lowfreq": 0.337451859093578,
+  "spike_rate": 0.04716916546861094,
+  "boundary_delta": 0.0
+ },
+ "b_slush_01_the_silence": {
+  "mean": 2.2544107578574906,
+  "variance": 2.108689587327806,
+  "acl": 1.0,
+  "lowfreq": 0.28048346350884235,
+  "spike_rate": 0.04993032722277273,
+  "boundary_delta": 0.27768205735610574
+ },
+ "b_slush_01_the_silence__sh": {
+  "mean": 2.5347911899462607,
+  "variance": 2.5832346253715794,
+  "acl": 1.0,
+  "lowfreq": 0.2610341350275336,
+  "spike_rate": 0.05093965305175693,
+  "boundary_delta": 0.0
+ },
+ "b_slush_02_the_turn": {
+  "mean": 2.03087165340561,
+  "variance": 1.774139669321019,
+  "acl": 1.0,
+  "lowfreq": 0.2651091693703033,
+  "spike_rate": 0.04408446068840424,
+  "boundary_delta": 0.1575140496965619
+ },
+ "b_slush_02_the_turn__sh": {
+  "mean": 2.304682163584109,
+  "variance": 1.975759830500374,
+  "acl": 1.0,
+  "lowfreq": 0.2575962266306234,
+  "spike_rate": 0.04251287611818921,
+  "boundary_delta": 0.0
+ },
+ "b_slush_03_the_lights_off": {
+  "mean": 2.1467928218908945,
+  "variance": 1.965188172036672,
+  "acl": 1.0,
+  "lowfreq": 0.2866786395645481,
+  "spike_rate": 0.04999163251892967,
+  "boundary_delta": 0.15255736053597113
+ },
+ "b_slush_03_the_lights_off__sh": {
+  "mean": 2.3174801019031137,
+  "variance": 2.173070437930391,
+  "acl": 1.0,
+  "lowfreq": 0.27710117503118503,
+  "spike_rate": 0.05425582786867478,
+  "boundary_delta": 0.0
+ },
+ "b_slush_04_the_first_day_closes": {
+  "mean": 2.017604375884049,
+  "variance": 1.9549263133099477,
+  "acl": 1.0,
+  "lowfreq": 0.30688222569098234,
+  "spike_rate": 0.04612604939324373,
+  "boundary_delta": 0.19060007088117104
+ },
+ "b_slush_04_the_first_day_closes__sh": {
+  "mean": 2.1774248766895132,
+  "variance": 1.9690025698754816,
+  "acl": 1.0,
+  "lowfreq": 0.26747491516742794,
+  "spike_rate": 0.04479307576130921,
+  "boundary_delta": 0.0
+ },
+ "b_slush_05_the_second_morning": {
+  "mean": 2.224921984614281,
+  "variance": 2.001129831013879,
+  "acl": 1.0,
+  "lowfreq": 0.2736815375349907,
+  "spike_rate": 0.04479179615555527,
+  "boundary_delta": -0.060457378277190776
+ },
+ "b_slush_05_the_second_morning__sh": {
+  "mean": 2.5202178034953784,
+  "variance": 2.195189626163238,
+  "acl": 1.0,
+  "lowfreq": 0.26171928883742,
+  "spike_rate": 0.0443794605304757,
+  "boundary_delta": 0.0
+ },
+ "b_slush_06_the_compounds": {
+  "mean": 2.1777834896205395,
+  "variance": 1.8986100482292854,
+  "acl": 1.0,
+  "lowfreq": 0.3164155668627304,
+  "spike_rate": 0.04321118417688871,
+  "boundary_delta": 0.1048836517515046
+ },
+ "b_slush_06_the_compounds__sh": {
+  "mean": 2.5363111210413685,
+  "variance": 2.2387035746544455,
+  "acl": 1.0,
+  "lowfreq": 0.290330513238444,
+  "spike_rate": 0.04249446380008133,
+  "boundary_delta": 0.0
+ },
+ "b_slush_07_the_still_rooms": {
+  "mean": 2.3978303378518757,
+  "variance": 2.0697187131770405,
+  "acl": 1.0,
+  "lowfreq": 0.275631789276802,
+  "spike_rate": 0.04526366990100703,
+  "boundary_delta": 0.11627154367562942
+ },
+ "b_slush_07_the_still_rooms__sh": {
+  "mean": 2.658217889236502,
+  "variance": 2.317179373065686,
+  "acl": 1.0,
+  "lowfreq": 0.27138079019611294,
+  "spike_rate": 0.044385841074036314,
+  "boundary_delta": 0.0
+ },
+ "b_slush_08_the_blank_cut_to_the_shape": {
+  "mean": 2.3959194081593145,
+  "variance": 1.9553785763473583,
+  "acl": 1.0,
+  "lowfreq": 0.2494476168644949,
+  "spike_rate": 0.041558985694381975,
+  "boundary_delta": 0.0708155315463439
+ },
+ "b_slush_08_the_blank_cut_to_the_shape__sh": {
+  "mean": 2.676490565674645,
+  "variance": 2.3667332471066307,
+  "acl": 1.0,
+  "lowfreq": 0.24384843141538526,
+  "spike_rate": 0.04068896371905948,
+  "boundary_delta": 0.0
+ },
+ "b_slush_09_the_hands": {
+  "mean": 2.3232763528925178,
+  "variance": 2.1021091274495003,
+  "acl": 1.0,
+  "lowfreq": 0.2837551517800694,
+  "spike_rate": 0.04671080800719883,
+  "boundary_delta": 0.1446146023442314
+ },
+ "b_slush_09_the_hands__sh": {
+  "mean": 2.5380677822072246,
+  "variance": 2.280591160885001,
+  "acl": 1.0,
+  "lowfreq": 0.26355156065383245,
+  "spike_rate": 0.0420244660752228,
+  "boundary_delta": 0.0
+ },
+ "b_slush_10_the_bond_and_the_blank": {
+  "mean": 2.1508945250177014,
+  "variance": 1.852139225323472,
+  "acl": 1.0,
+  "lowfreq": 0.2770001505053608,
+  "spike_rate": 0.04363150554677552,
+  "boundary_delta": 0.14167808429634365
+ },
+ "b_slush_10_the_bond_and_the_blank__sh": {
+  "mean": 2.346694312529822,
+  "variance": 1.9627878951306352,
+  "acl": 1.0,
+  "lowfreq": 0.26286350556397176,
+  "spike_rate": 0.04501127696704261,
+  "boundary_delta": 0.0
+ },
+ "b_slush_11_the_first_warmth": {
+  "mean": 2.3995679914521295,
+  "variance": 2.0435049511074896,
+  "acl": 1.0,
+  "lowfreq": 0.2771044275584865,
+  "spike_rate": 0.042252762183042955,
+  "boundary_delta": 0.3133212204464284
+ },
+ "b_slush_11_the_first_warmth__sh": {
+  "mean": 2.4652946160245293,
+  "variance": 2.084104999369319,
+  "acl": 1.0,
+  "lowfreq": 0.2625093293071068,
+  "spike_rate": 0.04159115600717024,
+  "boundary_delta": 0.0
+ },
+ "b_slush_12_the_column_and_the_cost": {
+  "mean": 2.184442318391637,
+  "variance": 1.7920130806888896,
+  "acl": 1.0,
+  "lowfreq": 0.3131842721538941,
+  "spike_rate": 0.04465120059462289,
+  "boundary_delta": 0.27645042833150346
+ },
+ "b_slush_12_the_column_and_the_cost__sh": {
+  "mean": 2.3960705256614556,
+  "variance": 1.922585147460299,
+  "acl": 1.0,
+  "lowfreq": 0.3096769776978774,
+  "spike_rate": 0.04320359962863478,
+  "boundary_delta": 0.0
+ },
+ "b_slush_13_for_reapproach": {
+  "mean": 2.29008030674963,
+  "variance": 2.117351266033311,
+  "acl": 1.0,
+  "lowfreq": 0.2622749455100469,
+  "spike_rate": 0.04592490705807521,
+  "boundary_delta": 0.1738753820351755
+ },
+ "b_slush_13_for_reapproach__sh": {
+  "mean": 2.54386400690901,
+  "variance": 2.3965368706083536,
+  "acl": 1.0,
+  "lowfreq": 0.24067848562808591,
+  "spike_rate": 0.046313606959270504,
+  "boundary_delta": 0.0
+ },
+ "b_slush_14_the_new_column": {
+  "mean": 2.3651812520592337,
+  "variance": 1.9771206435832513,
+  "acl": 1.0,
+  "lowfreq": 0.2621491856485226,
+  "spike_rate": 0.041977236218891364,
+  "boundary_delta": 0.07381141374247835
+ },
+ "b_slush_14_the_new_column__sh": {
+  "mean": 2.61090956931047,
+  "variance": 2.2687009729864824,
+  "acl": 1.0,
+  "lowfreq": 0.2693568347901202,
+  "spike_rate": 0.0437309208981748,
+  "boundary_delta": 0.0
+ },
+ "b_slush_15_the_bending": {
+  "mean": 2.327193169479883,
+  "variance": 1.8562008500187333,
+  "acl": 1.0,
+  "lowfreq": 0.25644163831056144,
+  "spike_rate": 0.04462117342636451,
+  "boundary_delta": 0.47356527599329645
+ },
+ "b_slush_15_the_bending__sh": {
+  "mean": 2.2834414490552986,
+  "variance": 1.973050589273421,
+  "acl": 1.0,
+  "lowfreq": 0.31395573207102345,
+  "spike_rate": 0.044201081302133134,
+  "boundary_delta": 0.0
+ },
+ "b_slush_16_the_one_who_was_not_waiting": {
+  "mean": 1.995454249078309,
+  "variance": 1.7323451918629766,
+  "acl": 1.0,
+  "lowfreq": 0.27515971118567983,
+  "spike_rate": 0.04718823014209103,
+  "boundary_delta": -0.06955244407082284
+ },
+ "b_slush_16_the_one_who_was_not_waiting__sh": {
+  "mean": 2.2142488286520816,
+  "variance": 1.9735904461039682,
+  "acl": 1.0,
+  "lowfreq": 0.2908857625616874,
+  "spike_rate": 0.04448216451242276,
+  "boundary_delta": 0.0
+ },
+ "b_slush_16_the_one_who_was_not_waiting_dupcheck": {
+  "mean": 1.995454249078309,
+  "variance": 1.7323451918629766,
+  "acl": 1.0,
+  "lowfreq": 0.27515971118567983,
+  "spike_rate": 0.04718823014209103,
+  "boundary_delta": -0.06955244407082284
+ },
+ "b_slush_16_the_one_who_was_not_waiting_dupcheck__sh": {
+  "mean": 2.326717342641639,
+  "variance": 2.0772719456318756,
+  "acl": 1.0,
+  "lowfreq": 0.28280169022898916,
+  "spike_rate": 0.045115376495997145,
+  "boundary_delta": 0.0
+ },
+ "b_slush_17_what_was_not_yet": {
+  "mean": 2.1642792956274963,
+  "variance": 1.842388152275432,
+  "acl": 1.0,
+  "lowfreq": 0.287097454574467,
+  "spike_rate": 0.04662768460332284,
+  "boundary_delta": 0.022024774623927268
+ },
+ "b_slush_17_what_was_not_yet__sh": {
+  "mean": 2.527243018586489,
+  "variance": 2.1906356240602065,
+  "acl": 1.0,
+  "lowfreq": 0.2742696685632794,
+  "spike_rate": 0.04488570003609017,
+  "boundary_delta": 0.0
+ },
+ "b_slush_18_the_measure_from_above": {
+  "mean": 2.1551654278697523,
+  "variance": 1.8499192158457018,
+  "acl": 1.0,
+  "lowfreq": 0.28309440402746716,
+  "spike_rate": 0.0488389460937079,
+  "boundary_delta": 0.08087203102627138
+ },
+ "b_slush_18_the_measure_from_above__sh": {
+  "mean": 2.3639115657320278,
+  "variance": 1.8350069623423755,
+  "acl": 1.0,
+  "lowfreq": 0.2854182364380454,
+  "spike_rate": 0.04132120222640537,
+  "boundary_delta": 0.0
+ },
+ "b_slush_19_the_ones_who_cried_out": {
+  "mean": 2.2480347486922443,
+  "variance": 2.069545103755888,
+  "acl": 1.0,
+  "lowfreq": 0.25340653117169604,
+  "spike_rate": 0.049971818955525285,
+  "boundary_delta": 0.2311495976103075
+ },
+ "b_slush_19_the_ones_who_cried_out__sh": {
+  "mean": 2.5716956402284303,
+  "variance": 2.4090632930877423,
+  "acl": 1.0,
+  "lowfreq": 0.23552462482020572,
+  "spike_rate": 0.04869989392228012,
+  "boundary_delta": 0.0
+ },
+ "b_slush_20_the_widening": {
+  "mean": 2.3134286856639372,
+  "variance": 2.2155333729932694,
+  "acl": 1.0,
+  "lowfreq": 0.23837341109125001,
+  "spike_rate": 0.04685003929149865,
+  "boundary_delta": 0.14053674919118042
+ },
+ "b_slush_20_the_widening__sh": {
+  "mean": 2.3263412307941262,
+  "variance": 2.098422045132129,
+  "acl": 1.0,
+  "lowfreq": 0.23110144779807323,
+  "spike_rate": 0.04654860543820749,
+  "boundary_delta": 0.0
+ },
+ "b_slush_21_the_field_entire": {
+  "mean": 2.497911568184523,
+  "variance": 2.0075142190807496,
+  "acl": 1.0,
+  "lowfreq": 0.2612830121077595,
+  "spike_rate": 0.041472929886301545,
+  "boundary_delta": -0.07051196903175394
+ },
+ "b_slush_21_the_field_entire__sh": {
+  "mean": 2.546196608457635,
+  "variance": 2.113423922754135,
+  "acl": 1.0,
+  "lowfreq": 0.26978049607503807,
+  "spike_rate": 0.042649974033278415,
+  "boundary_delta": 0.0
+ },
+ "b_slush_22_the_waking_the_drones": {
+  "mean": 2.2299390049673806,
+  "variance": 1.826964166709978,
+  "acl": 1.0,
+  "lowfreq": 0.2845608592811538,
+  "spike_rate": 0.042157633175122,
+  "boundary_delta": 0.005951470303410256
+ },
+ "b_slush_22_the_waking_the_drones__sh": {
+  "mean": 2.3216037902339277,
+  "variance": 1.9199319864276805,
+  "acl": 1.0,
+  "lowfreq": 0.29153449650245433,
+  "spike_rate": 0.04164591694455139,
+  "boundary_delta": 0.0
+ },
+ "b_slush_23_the_cluster_and_the_kitchen": {
+  "mean": 2.2833359424982786,
+  "variance": 1.9720420531913307,
+  "acl": 1.0,
+  "lowfreq": 0.26916627494206014,
+  "spike_rate": 0.04428978422204177,
+  "boundary_delta": -0.2535131478473407
+ },
+ "b_slush_23_the_cluster_and_the_kitchen__sh": {
+  "mean": 2.313757644059601,
+  "variance": 1.967555685890031,
+  "acl": 1.0,
+  "lowfreq": 0.264963600025203,
+  "spike_rate": 0.045159461330013764,
+  "boundary_delta": 0.0
+ },
+ "b_slush_24_the_field_of_eyes": {
+  "mean": 2.3703244704649835,
+  "variance": 1.8339886029947805,
+  "acl": 1.0,
+  "lowfreq": 0.28339473310466157,
+  "spike_rate": 0.03610694652673663,
+  "boundary_delta": 0.21249055822746765
+ },
+ "b_slush_24_the_field_of_eyes__sh": {
+  "mean": 2.2478866158677633,
+  "variance": 1.9384711957482612,
+  "acl": 1.0,
+  "lowfreq": 0.29768036675700105,
+  "spike_rate": 0.03935468470528113,
+  "boundary_delta": 0.0
+ },
+ "b_slush_25_the_war": {
+  "mean": 2.4586401857313067,
+  "variance": 2.1122172365456864,
+  "acl": 1.0,
+  "lowfreq": 0.23614604906197034,
+  "spike_rate": 0.037879407355489364,
+  "boundary_delta": 0.1703008113013449
+ },
+ "b_slush_25_the_war__sh": {
+  "mean": 2.377251657956756,
+  "variance": 2.1249594496955266,
+  "acl": 1.0,
+  "lowfreq": 0.25609300922962763,
+  "spike_rate": 0.03700330471151515,
+  "boundary_delta": 0.0
+ },
+ "b_slush_26_the_two_the_war_revealed": {
+  "mean": 2.2358611898011915,
+  "variance": 1.801053397086355,
+  "acl": 1.0,
+  "lowfreq": 0.23994774239177225,
+  "spike_rate": 0.048771458790985274,
+  "boundary_delta": 0.07817337677090819
+ },
+ "b_slush_26_the_two_the_war_revealed__sh": {
+  "mean": 2.411304441082964,
+  "variance": 1.97037213002009,
+  "acl": 1.0,
+  "lowfreq": 0.23597590789223072,
+  "spike_rate": 0.04769848620840944,
+  "boundary_delta": 0.0
+ },
+ "b_slush_27_the_many_doors": {
+  "mean": 2.2400310178982528,
+  "variance": 2.090263954509003,
+  "acl": 1.0,
+  "lowfreq": 0.24184990730772973,
+  "spike_rate": 0.049069767441860465,
+  "boundary_delta": -0.01666865223430447
+ },
+ "b_slush_27_the_many_doors__sh": {
+  "mean": 2.451141802760005,
+  "variance": 2.2892020481278283,
+  "acl": 1.0,
+  "lowfreq": 0.23311525413010714,
+  "spike_rate": 0.04976086580196247,
+  "boundary_delta": 0.0
+ },
+ "b_slush_28_the_easing": {
+  "mean": 2.1967538632847057,
+  "variance": 1.884418767550622,
+  "acl": 1.0,
+  "lowfreq": 0.2647429634253082,
+  "spike_rate": 0.0467632698062687,
+  "boundary_delta": 0.16905705668143345
+ },
+ "b_slush_28_the_easing__sh": {
+  "mean": 2.3099145921872357,
+  "variance": 1.9079983755060028,
+  "acl": 1.0,
+  "lowfreq": 0.3115393520037092,
+  "spike_rate": 0.048696793212539544,
+  "boundary_delta": 0.0
+ },
+ "b_slush_29_the_hybridization": {
+  "mean": 2.4348027765481373,
+  "variance": 1.950054516520153,
+  "acl": 1.0,
+  "lowfreq": 0.24708423839194854,
+  "spike_rate": 0.04399366329438243,
+  "boundary_delta": 0.04230135505817256
+ },
+ "b_slush_29_the_hybridization__sh": {
+  "mean": 2.6837288853777963,
+  "variance": 2.205096806864753,
+  "acl": 1.0,
+  "lowfreq": 0.24989349685184226,
+  "spike_rate": 0.043979995386543715,
+  "boundary_delta": 0.0
+ },
+ "b_slush_30_the_ones_who_said_i": {
+  "mean": 2.363470888844299,
+  "variance": 2.000197478037683,
+  "acl": 1.0,
+  "lowfreq": 0.280068787431372,
+  "spike_rate": 0.048268256935897556,
+  "boundary_delta": 0.1911195336362319
+ },
+ "b_slush_30_the_ones_who_said_i__sh": {
+  "mean": 2.3810634033808737,
+  "variance": 2.086241865677067,
+  "acl": 1.0,
+  "lowfreq": 0.23018365512221192,
+  "spike_rate": 0.047427539795158555,
+  "boundary_delta": 0.0
+ },
+ "b_slush_31_the_mirror": {
+  "mean": 2.351165256498917,
+  "variance": 1.8492009074793203,
+  "acl": 1.0,
+  "lowfreq": 0.2754599032358356,
+  "spike_rate": 0.04452847076856205,
+  "boundary_delta": -0.44293591265575294
+ },
+ "b_slush_31_the_mirror__sh": {
+  "mean": 2.3889922033826814,
+  "variance": 1.8628989907663178,
+  "acl": 1.0,
+  "lowfreq": 0.27235220404508703,
+  "spike_rate": 0.04612056407785485,
+  "boundary_delta": 0.0
+ }
+}

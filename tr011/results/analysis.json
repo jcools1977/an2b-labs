@@ -1,0 +1,49 @@
+{
+  "unscorable_excluded": [
+    "a_draft_03",
+    "b_slush_32_the_one_still_coming"
+  ],
+  "corpus_b_valid": false,
+  "author_control_auc": 0.9618,
+  "auc": 1.0,
+  "features": {
+    "mean": {
+      "delta_a": 1.0,
+      "sign_agrees_b": false,
+      "rho": 0.4712,
+      "sign_b_direction": -0.24688
+    },
+    "variance": {
+      "delta_a": 1.0,
+      "sign_agrees_b": true,
+      "rho": 0.8661,
+      "sign_b_direction": 0.59139
+    },
+    "acl": {
+      "delta_a": 0.0,
+      "sign_agrees_b": false,
+      "rho": -1.0,
+      "sign_b_direction": 0.0
+    },
+    "lowfreq": {
+      "delta_a": 0.3333,
+      "sign_agrees_b": false,
+      "rho": 0.8272,
+      "sign_b_direction": -0.02484
+    },
+    "spike_rate": {
+      "delta_a": -1.0,
+      "sign_agrees_b": true,
+      "rho": 0.0522,
+      "sign_b_direction": -0.00355
+    },
+    "boundary_delta": {
+      "delta_a": 0.3333,
+      "sign_agrees_b": false,
+      "rho": 0.8305,
+      "sign_b_direction": -0.0804
+    }
+  },
+  "n_pairs_corpus_a": 3,
+  "reading": "D18: corpus-A deltas are a demonstration on n=4, not an inference"
+}

@@ -73,7 +73,7 @@ def pooled_auc(X, y, folds_iter):
 
 def sentence_length_stats(text):
     sents = [s for s in re.split(r"(?<=[.!?])\s+", text.replace("\n", " ")) if s.strip()]
-    lens = np.array([len(s.split()) for s in sents]) or np.array([1])
+    lens = np.array([len(s.split()) for s in sents] or [1])
     return [float(lens.mean()), float(lens.std()),
             float(np.percentile(lens, 75) - np.percentile(lens, 25))]
 
