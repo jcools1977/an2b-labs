@@ -1,0 +1,13 @@
+{
+ "residualizer_biteproof": {
+  "topic_collapse": true,
+  "voice_survives": true
+ },
+ "paraphrase": {
+  "true_author_accuracy": 0.62,
+  "chance": 0.077,
+  "invalid_paraphrases": 4,
+  "n": 100
+ },
+ "killed": false
+}

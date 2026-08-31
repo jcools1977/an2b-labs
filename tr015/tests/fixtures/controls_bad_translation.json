@@ -1,0 +1,17 @@
+{
+ "label_shuffle": {
+  "accuracy_ci": [
+   0.05,
+   0.11
+  ],
+  "chance": 0.077
+ },
+ "topic_only": {
+  "accuracy": 0.41,
+  "reported": true
+ },
+ "translation": {
+  "reported": false,
+  "note": "two translators, one novel"
+ }
+}

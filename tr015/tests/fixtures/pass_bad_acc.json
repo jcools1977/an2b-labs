@@ -1,0 +1,14 @@
+{
+ "accuracy_resid": 0.84,
+ "rank_used": 8,
+ "accuracy_burrows": 0.86,
+ "accuracy_fulldim": 0.97,
+ "drift": {
+  "fraction_satisfying": 0.85,
+  "n_authors": 13
+ },
+ "chunk_sizes_gated": [
+  500,
+  1500
+ ]
+}
