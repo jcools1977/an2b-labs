@@ -145,3 +145,19 @@ instrument can shop for a friendlier split. The chunk registry stamps
 `gate_population` per chunk; devere and translation-control works are
 structurally excluded from train and test at the registry level, not
 by convention.
+
+## D18. KILL-path operationalization, before any paraphrase exists
+Three calls, each read hardest:
+- Chunk size 500 for the paraphrase sample: the size where attribution
+  is weakest, so the KILL is most likely to fire.
+- The 100 chunks are drawn (seed 41) from held-out TEST works only;
+  paraphrases of training text would flatter the subspace.
+- Paraphrase residualization: paraphrase rows are concatenated with
+  the corpus matrix and passed through the one certified residualize()
+  so no uncertified code touches the KILL path; the 100 rows' effect
+  on the fitted coefficients is negligible against 1,920 and applies
+  identically to every author.
+Also fixed here: the gate files (analysis.json, controls.json) are
+written by the bge arm only; e5 writes its own detail file and can
+never overwrite a gate input (D2's non-promotable clause, enforced in
+code).
