@@ -182,3 +182,33 @@ gate reads only the D12 pairing.
   structural), covered by the D11 covenant identically: hashes and
   statistics only, no text, no qualitative characterization.
 
+## D15. The author-identity shortcut, closed as a control, not a limitation
+Single-author slush lets the corpus-B classifier learn "is this the
+author" and score beautifully while detecting nothing about polish.
+Two structural fixes, frozen before the classifier exists:
+1. **Epoch I's published sections join corpus B's published side**, so
+   the author's voice appears in both classes and author identity
+   stops being a class separator. (These documents already carry the
+   D7 cutoff protection; they are excluded from author-disjoint fold
+   leakage by grouping all DeVere documents into one fold group.)
+2. **Author-identity control classifier**: the identical feature
+   pipeline trained on DeVere-published versus Gutenberg-published
+   (two classes of PUBLISHED text, differing only in author). Its AUC
+   measures how much any slush-versus-published score could be style
+   rather than polish. **Scoping rule, written today: if the
+   author-control AUC >= 0.7, corpus B is scoped out of PASS support**
+   (mirroring the D7 response ladder), its numbers reported with the
+   control's, and corpus A stands alone as the experiment's evidence.
+check_pass enforces the consistency: a corpus_b_valid claim beside an
+author-control AUC >= 0.7 is a contradiction, not a judgment call.
+
+## D16. Alignment yield is reportable; relay stays on estate paths
+- The pairing manifest's **yield table is a finding**: how many
+  published sections found draft ancestors and how much lineage went
+  unpaired are counts, publishable under the D11 covenant (numbers,
+  never characterization), and they measure how far the book traveled
+  between December and May.
+- The corpus store relays to legion by **LAN copy over the tailnet
+  only** (scp, estate machine to estate machine). No cloud hop, ever,
+  for manuscript text. Same rule for any future movement of the store.
+

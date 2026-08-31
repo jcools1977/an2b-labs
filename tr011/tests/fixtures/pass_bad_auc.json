@@ -32,5 +32,6 @@
    "sign_agrees_b": true,
    "rho": 0.8
   }
- }
+ },
+ "author_control_auc": 0.55
 }

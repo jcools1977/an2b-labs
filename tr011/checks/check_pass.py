@@ -11,6 +11,7 @@ Reads results/analysis.json and exits nonzero unless:
 Schema:
 {
   "corpus_b_valid": bool,
+  "author_control_auc": float,
   "auc": float,
   "features": {name: {"delta_a": f, "sign_agrees_b": bool, "rho": f}}
 }
@@ -32,8 +33,17 @@ def check(path):
 
     if not d.get("corpus_b_valid", False):
         violations.append(
-            "corpus B invalid per the D7 memorization rule; no PASS is "
+            "corpus B invalid per the D7/D15 rules; no PASS is "
             "reachable and corpus A stands alone as evidence"
+        )
+    auth = d.get("author_control_auc")
+    if not isinstance(auth, (int, float)):
+        violations.append("author_control_auc missing (D15)")
+    elif auth >= 0.7 and d.get("corpus_b_valid", False):
+        violations.append(
+            f"CONTRADICTION (D15): author-identity control AUC {auth} >= 0.7 "
+            f"while corpus_b_valid is claimed; author style, not polish, can "
+            f"carry that score"
         )
 
     passing = [

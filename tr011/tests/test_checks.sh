@@ -22,6 +22,8 @@ expect_fail "AUC below the 0.7 gate" \
   python3 checks/check_pass.py tests/fixtures/pass_bad_auc.json
 expect_fail "PASS claimed over a D7-invalidated corpus B" \
   python3 checks/check_pass.py tests/fixtures/pass_bad_binvalid.json
+expect_fail "author-identity control contradiction (D15)" \
+  python3 checks/check_pass.py tests/fixtures/pass_bad_authcontrol.json
 expect_pass "healthy pass gates" \
   python3 checks/check_pass.py tests/fixtures/pass_good.json
 
