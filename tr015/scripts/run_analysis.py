@@ -196,10 +196,17 @@ def main():
                   "n_authors": n_authors},
         "chunk_sizes_gated": [500, 1500],
     }
+    # Control 1 reads strictest: the size whose shuffle CI sits farthest
+    # from chance feeds the gate, so a leak at either size is a violation.
+    def ci_dist(s):
+        lo, hi = per[s]["label_shuffle_ci"]
+        ch = per[s]["chance"]
+        return 0.0 if lo <= ch <= hi else min(abs(lo - ch), abs(hi - ch))
+    strict = max(per, key=ci_dist)
     controls = {
         "label_shuffle": {
-            "accuracy_ci": per[worst]["label_shuffle_ci"],
-            "chance": per[worst]["chance"],
+            "accuracy_ci": per[strict]["label_shuffle_ci"],
+            "chance": per[strict]["chance"],
             "per_size_ci": {s: per[s]["label_shuffle_ci"] for s in per}},
         "topic_only": {"accuracy": max(p["topic_only_acc"]
                                        for p in per.values()),

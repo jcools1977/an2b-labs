@@ -1,0 +1,16 @@
+{
+  "embedder": "bge",
+  "accuracy_resid": 0.053703703703703705,
+  "rank_used": 10,
+  "accuracy_burrows": 0.6481481481481481,
+  "accuracy_resid_at_worst_margin_size": 0.053703703703703705,
+  "accuracy_fulldim": 0.06481481481481481,
+  "drift": {
+    "fraction_satisfying": 0.0,
+    "n_authors": 14
+  },
+  "chunk_sizes_gated": [
+    500,
+    1500
+  ]
+}

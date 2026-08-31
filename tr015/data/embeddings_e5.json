@@ -1,0 +1,9 @@
+{
+  "model": "intfloat/e5-small-v2",
+  "window_tokens": 400,
+  "pooling": "mean over windows, L2-normalized",
+  "prefix": "passage: ",
+  "n_chunks": 3700,
+  "dim": 384,
+  "sha256": "44ab5b037370c89d170944078e7bb2b68d878aaa13f7bfdeaffbea8942ede79b"
+}

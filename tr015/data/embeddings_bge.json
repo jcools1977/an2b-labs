@@ -1,0 +1,9 @@
+{
+  "model": "BAAI/bge-small-en-v1.5",
+  "window_tokens": 400,
+  "pooling": "mean over windows, L2-normalized",
+  "prefix": "",
+  "n_chunks": 3700,
+  "dim": 384,
+  "sha256": "3c6a1cfc3210e4644901876af4d24f2a7703139b36287b7dda2d0568944a8819"
+}

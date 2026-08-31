@@ -1,0 +1,45 @@
+{
+  "label_shuffle": {
+    "accuracy_ci": [
+      0.07678571428571429,
+      0.125
+    ],
+    "chance": 0.07142857142857142,
+    "per_size_ci": {
+      "500": [
+        0.07678571428571429,
+        0.125
+      ],
+      "1500": [
+        0.05555555555555555,
+        0.10185185185185185
+      ]
+    }
+  },
+  "topic_only": {
+    "accuracy": 0.6407407407407407,
+    "reported": true,
+    "per_size": {
+      "500": 0.3821428571428571,
+      "1500": 0.6407407407407407
+    }
+  },
+  "translation": {
+    "reported": true,
+    "note": "Two translators of the same Verne novel and two Tolstoy novels under different translators, work-centroid cosines in the voice subspace vs same/between-author baselines; numbers in analysis_detail.",
+    "per_size": {
+      "500": {
+        "verne_same_novel_two_translators": 0.48072042831154266,
+        "tolstoy_two_novels_two_translators": 0.7781672312036709,
+        "same_author_mean": 0.29901654349938783,
+        "between_author_mean": -0.03346833016753445
+      },
+      "1500": {
+        "verne_same_novel_two_translators": 0.48107799707139354,
+        "tolstoy_two_novels_two_translators": -0.11646728982000894,
+        "same_author_mean": 0.05447445467475013,
+        "between_author_mean": 0.11476234418794151
+      }
+    }
+  }
+}

@@ -161,3 +161,18 @@ Also fixed here: the gate files (analysis.json, controls.json) are
 written by the bge arm only; e5 writes its own detail file and can
 never overwrite a gate input (D2's non-promotable clause, enforced in
 code).
+
+## D19. Control 1 feeds the checker its strictest size
+Logged AFTER the first cold read, stated plainly: the analysis runner
+initially handed the label-shuffle gate the CI from the worst-PASS-
+margin size (1500), which on the real data was the friendlier control;
+the 500-word CI [0.077, 0.125] excludes chance 0.071. The read-hardest
+rule cuts against the instrument here, so the gate now consumes
+whichever size's CI sits farthest from chance, and both CIs are
+reported beside it. No threshold, formula, or seed changed; only which
+pre-computed number reaches the frozen checker. The permutation itself
+is a single seed-41 shuffle of training labels with a 10,000-resample
+bootstrap over test chunks (the D9 letter); chunks cluster by work, so
+this CI understates permutation variance, which is reported as a
+limitation rather than repaired post hoc. The mid-run choice is
+surfaced to the PI and reviewer per BB4C rule 1.
