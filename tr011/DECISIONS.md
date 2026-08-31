@@ -312,3 +312,21 @@ scored positions. The config is frozen and does not soften. Handling:
   paired Cliff's delta values are 0, +/-1/3, +/-2/3(unreachable), +/-1;
   the 0.3 gate remains evaluable.
 
+## D21. Fold construction with a bilateral author, completed
+Strictly author-grouped folds are mechanically impossible with
+single-author slush: the author's fold is the only one containing
+negatives, so every split has a single-class train or test set, and
+the first analysis run failed on exactly that. The completion, per
+the control's purpose rather than its letter:
+- **Unilateral authors** (each Gutenberg author, appearing in one
+  class only) remain author-grouped: their documents never straddle
+  train and test, so the classifier cannot exploit their identities.
+- **The bilateral author** (DeVere, present in BOTH classes by D15
+  construction) is folded at document level, stratified by class,
+  seed 31: with an author on both sides of the label, author identity
+  carries no label information, so grouping serves no purpose and
+  destroys the split instead.
+- A feature constant across documents for either model has undefined
+  cross-model rho; it is recorded as rho null and DISQUALIFIED from
+  the PASS claim (the conservative reading).
+

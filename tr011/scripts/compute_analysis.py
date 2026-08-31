@@ -112,7 +112,8 @@ def main():
     for k in FEATS:
         a = [F[(d, "qwen", False)][k] for d in doc_ids]
         b = [F[(d, "llama", False)][k] for d in doc_ids]
-        rho[k] = float(spearmanr(a, b).statistic)
+        r = float(spearmanr(a, b).statistic)
+        rho[k] = -1.0 if np.isnan(r) else r  # D21: undefined -> disqualified
 
     # --- corpus A paired deltas (D18/D20 reading)
     pairs = [p for p in manifest["corpus_a"]["pairing"]
@@ -137,10 +138,25 @@ def main():
 
     Xb = np.array([[cons[(d, False)][k] for k in FEATS] for d in b_pub + slush])
     yb = np.array([1] * len(b_pub) + [0] * len(slush))
-    folds = manifest["author_folds"]
-    fold_of = np.array([folds[reg[d]["author"]] for d in b_pub + slush])
+    # D21 folds: Gutenberg authors grouped; the bilateral author (devere)
+    # folded document-level, stratified by class, seed 31.
+    all_b = b_pub + slush
+    rng = np.random.default_rng(31)
+    gut_authors = sorted({reg[d]["author"] for d in gut})
+    rng.shuffle(gut_authors)
+    ga_fold = {a: i % 5 for i, a in enumerate(gut_authors)}
+    fold_of = np.empty(len(all_b), dtype=int)
+    dev_idx = [i for i, d in enumerate(all_b) if reg[d]["author"] == "devere"]
+    for cls in (0, 1):
+        idx = [i for i in dev_idx if yb[i] == cls]
+        rng.shuffle(idx)
+        for j, i in enumerate(idx):
+            fold_of[i] = j % 5
+    for i, d in enumerate(all_b):
+        if reg[d]["author"] != "devere":
+            fold_of[i] = ga_fold[reg[d]["author"]]
     fold_iter = [(np.where(fold_of != i)[0], np.where(fold_of == i)[0])
-                 for i in sorted(set(fold_of))]
+                 for i in range(5)]
     auc, truth_b, score_b = pooled_auc(Xb, yb, fold_iter)
 
     # --- author-identity control (D15/D19: stratified doc-level)
@@ -214,9 +230,7 @@ def main():
     r_sign_b = {k: float(np.median([rcons[d][k] for d in b_pub]) -
                          np.median([rcons[d][k] for d in slush])) for k in FEATS}
     Xrb = np.array([[rcons[d][k] for k in FEATS] for d in b_pub + slush])
-    r_auc, _, _ = pooled_auc(Xrb, yb, [(np.where(fold_of != i)[0],
-                                        np.where(fold_of == i)[0])
-                                       for i in sorted(set(fold_of))])
+    r_auc, _, _ = pooled_auc(Xrb, yb, fold_iter)
     qual_resid = [k for k in FEATS
                   if abs(r_deltas[k]) >= DELTA_GATE and rho[k] >= RHO_GATE
                   and np.sign(r_sign_b[k]) == np.sign(r_deltas[k]) and r_deltas[k] != 0]
