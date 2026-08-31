@@ -299,3 +299,16 @@ Committed while scoring runs and before any feature value exists:
   D5-certified residualizer against sentence-length stats (mean, SD,
   IQR of sentence token counts per document); gate re-read per D4.
 
+## D20. Unscorable documents under the frozen context floor
+Two documents fall at or under D8's 1,024-token minimum context
+(a_draft_03 at 955 tokens; b_slush_32 at 963) and therefore yield no
+scored positions. The config is frozen and does not soften. Handling:
+- Unscorable documents are EXCLUDED from analysis, with the exclusion
+  recorded in the results.
+- A corpus-B exclusion promotes the next document from the committed,
+  audit-scored backup list in seed-31 order (the same ladder D7 uses).
+- A corpus-A exclusion drops its pair: n falls from 4 to 3, reported
+  in the same sentence as any delta per D18. At n=3 the attainable
+  paired Cliff's delta values are 0, +/-1/3, +/-2/3(unreachable), +/-1;
+  the 0.3 gate remains evaluable.
+

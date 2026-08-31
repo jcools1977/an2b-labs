@@ -89,6 +89,11 @@ def main():
     cache_root = next((TR_ROOT / "corpus_store" / "entropy").iterdir())
     doc_ids = sorted(reg)
 
+    # --- unscorable exclusion (D20): no positions under the frozen floor
+    unscorable = [d for d in doc_ids
+                  if len(np.load(cache_root / "qwen" / f"{d}.npz")["positions"]) == 0]
+    doc_ids = [d for d in doc_ids if d not in unscorable]
+
     # --- features per doc per model, plus shuffled twins
     F = {}  # (doc, model, shuffled) -> dict
     for mkey in ("qwen", "llama"):
@@ -109,15 +114,21 @@ def main():
         b = [F[(d, "llama", False)][k] for d in doc_ids]
         rho[k] = float(spearmanr(a, b).statistic)
 
-    # --- corpus A paired deltas (n=4, D18 reading)
-    pairs = manifest["corpus_a"]["pairing"]
+    # --- corpus A paired deltas (D18/D20 reading)
+    pairs = [p for p in manifest["corpus_a"]["pairing"]
+             if p["draft"] not in unscorable and p["published"] not in unscorable]
     deltas_a = {k: paired_cliffs(
         [cons[(p["published"], False)][k] for p in pairs],
         [cons[(p["draft"], False)][k] for p in pairs]) for k in FEATS}
 
     # --- corpus B sets (D15; final sets from the audit)
-    gut = audit["final_sets"]["gutenberg"]
-    slush = audit["final_sets"]["slush"]
+    gut = [d for d in audit["final_sets"]["gutenberg"] if d not in unscorable]
+    slush = [d for d in audit["final_sets"]["slush"] if d not in unscorable]
+    for backup in manifest["backups"]["slush"]:  # D20 promotion ladder
+        if len(slush) >= 20:
+            break
+        if backup not in unscorable and backup not in slush:
+            slush.append(backup)
     dev_pub = [d for d in doc_ids if reg[d]["side"] == "a_published"]
     b_pub = gut + dev_pub
     sign_b = {k: float(np.median([cons[(d, False)][k] for d in b_pub]) -
@@ -140,6 +151,7 @@ def main():
 
     corpus_b_valid = bool(audit["corpus_b_group_ok"]) and auth_auc < 0.7
     analysis = {
+        "unscorable_excluded": unscorable,
         "corpus_b_valid": corpus_b_valid,
         "author_control_auc": round(auth_auc, 4),
         "auc": round(auc, 4),
