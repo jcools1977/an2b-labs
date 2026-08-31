@@ -242,3 +242,31 @@ author-control AUC >= 0.7 is a contradiction, not a judgment call.
   tr020/wild-freeze.txt); scoring models and their pins are recorded
   in tr011/MANIFEST.json at first model run.
 
+## D18. The n=4 reading, pre-registered before any delta exists
+The alignment yield reshaped corpus A: thirteen of seventeen published
+units have no December ancestor, so the December manuscript is a
+predecessor the published book grew out of, and the paired test rests
+on the four surviving lineage pairs. Frozen readings, written before
+scoring:
+- A paired sign-level test on n=4 has sixteen configurations; its
+  smallest attainable p is 1/16. The gate stays effect-size-only as
+  frozen (|Cliff's delta| >= 0.3; nobody adds a significance criterion
+  now), and **the corpus-A paired result is reported as a
+  demonstration on the surviving lineage, not an inference**, with n=4
+  stated in the same sentence as any delta. The inferential weight of
+  a PASS rests on corpus B (real n: 20 Gutenberg + 17 DeVere-published
+  + 20 slush) through the sign-match clause and the AUC gate.
+- The spring 2025 draft folders likely pair at higher yield against
+  the published form; any later-generation pairing lives inside D13's
+  exploratory fence: reportable as the lineage's second half, never
+  promotable into the gate.
+- Shuffle-control operationalization: sentences split on terminal
+  punctuation followed by whitespace, seeded Fisher-Yates per document
+  id, rejoined with single spaces (bag of words preserved exactly;
+  sequence destroyed).
+- Limitation, written in advance: the D7 probe measures verbatim
+  recall and can underestimate SOFT memorization (lowered NLL without
+  reproduced continuations). The cross-model agreement gate and the
+  author-identity control are partial guards against that residual,
+  and the report says so rather than discovering it in review.
+
