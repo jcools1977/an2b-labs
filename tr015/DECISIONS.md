@@ -113,3 +113,35 @@ requires at least two works per author, so:
   appears in the manifold and the case study, not in the PASS
   arithmetic. Written today, while no embedding exists.
 
+
+## D15. The frozen word list is high-frequency, not purely functional
+The D7 list (150 words, committed in `data/function_words.txt` and in
+the builder before any accuracy existed) draws from a standard
+high-frequency English list and therefore contains common content
+nouns (house, world, mother, school) alongside true function words.
+Noticed AFTER the baseline accuracies ran. The list stays frozen: D7
+forbids editing it once accuracies exist, and the imperfection points
+the conservative way, because content words leak topic into the
+baseline, making Burrows stronger, and Burrows-wins is a FAIL clause
+for the latent instrument. The label "function-word list" in prose is
+hereby corrected to "frozen high-frequency word list" wherever the
+report describes it.
+
+## D16. e5 replication prefix
+intfloat/e5-small-v2 requires an instruction prefix per its model
+card; chunks are embedded with "passage: " uniformly. bge-small runs
+bare, per the TR-011 precedent. Decided before any embedding exists.
+Both models embed 400-token windows mean-pooled and L2-normalized per
+D2; the pooling asymmetry with each model's native protocol (bge
+prefers CLS) is accepted because D2 froze mean pooling and both arms
+use the identical procedure.
+
+## D17. One split to rule every instrument
+`analysis/split.py` computes the held-out-by-works assignment once
+(seed 41, gate population only, per-author choice of held-out work)
+and every instrument (Burrows baseline, raw embeddings, residualized
+embeddings, subspace projections) consumes the same assignment, so no
+instrument can shop for a friendlier split. The chunk registry stamps
+`gate_population` per chunk; devere and translation-control works are
+structurally excluded from train and test at the registry level, not
+by convention.

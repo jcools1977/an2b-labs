@@ -1,0 +1,69 @@
+{
+  "function_words": 236,
+  "held_out_works": {
+    "austen": "austen_158",
+    "bronte": "bronte_30486",
+    "conrad": "conrad_2021",
+    "dickens": "dickens_1400",
+    "doyle": "doyle_244",
+    "eliot": "eliot_6688",
+    "hardy": "hardy_27",
+    "hawthorne": "hawthorne_25344",
+    "james": "james_432",
+    "stevenson": "stevenson_421",
+    "trollope": "trollope_3409",
+    "twain": "twain_86",
+    "wells": "wells_5230",
+    "wharton": "wharton_284"
+  },
+  "runs": [
+    {
+      "size": 500,
+      "accuracy": 0.4357142857142857,
+      "n_train": 1120,
+      "n_test": 560,
+      "n_authors": 14,
+      "chance": 0.07142857142857142,
+      "per_author": {
+        "austen": 0.875,
+        "bronte": 0.525,
+        "conrad": 0.175,
+        "dickens": 0.225,
+        "doyle": 0.3,
+        "eliot": 0.3,
+        "hardy": 0.275,
+        "hawthorne": 0.9,
+        "james": 0.575,
+        "stevenson": 0.575,
+        "trollope": 0.6,
+        "twain": 0.125,
+        "wells": 0.425,
+        "wharton": 0.225
+      }
+    },
+    {
+      "size": 1500,
+      "accuracy": 0.6481481481481481,
+      "n_train": 1021,
+      "n_test": 540,
+      "n_authors": 14,
+      "chance": 0.07142857142857142,
+      "per_author": {
+        "austen": 1.0,
+        "bronte": 0.725,
+        "conrad": 0.55,
+        "dickens": 0.3,
+        "doyle": 0.35714285714285715,
+        "eliot": 0.775,
+        "hardy": 0.6,
+        "hawthorne": 0.95,
+        "james": 0.85,
+        "stevenson": 0.825,
+        "trollope": 0.925,
+        "twain": 0.1,
+        "wells": 0.5625,
+        "wharton": 0.45
+      }
+    }
+  ]
+}

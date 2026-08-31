@@ -1,0 +1,436 @@
+{
+  "authors": 14,
+  "min_works_per_author": 3,
+  "per_author_works": {
+    "austen": 3,
+    "bronte": 3,
+    "conrad": 3,
+    "dickens": 3,
+    "doyle": 3,
+    "eliot": 3,
+    "hardy": 3,
+    "hawthorne": 3,
+    "james": 3,
+    "stevenson": 3,
+    "trollope": 3,
+    "twain": 3,
+    "wells": 3,
+    "wharton": 3
+  },
+  "translated_excluded": true,
+  "translation_control": [
+    {
+      "tag": "tolstoy_garnett",
+      "gutenberg_id": 1399,
+      "title": "Anna Karenina (Garnett tr.)"
+    },
+    {
+      "tag": "tolstoy_maude",
+      "gutenberg_id": 2600,
+      "title": "War and Peace (Maude tr.)"
+    },
+    {
+      "tag": "verne_a",
+      "gutenberg_id": 164,
+      "title": "20,000 Leagues (tr. A)"
+    },
+    {
+      "tag": "verne_b",
+      "gutenberg_id": 2488,
+      "title": "20,000 Leagues (tr. B)"
+    }
+  ],
+  "dedup_overlaps": 0,
+  "split_seed": 41,
+  "epoch_consent": "D1",
+  "function_word_list_committed": true,
+  "chunk_cap_per_work_per_size": 40,
+  "works": [
+    {
+      "work": "austen_161",
+      "author": "austen",
+      "year": 1811,
+      "title": "Sense and Sensibility",
+      "gate_population": true,
+      "words": 118860
+    },
+    {
+      "work": "austen_1342",
+      "author": "austen",
+      "year": 1813,
+      "title": "Pride and Prejudice",
+      "gate_population": true,
+      "words": 127360
+    },
+    {
+      "work": "austen_158",
+      "author": "austen",
+      "year": 1815,
+      "title": "Emma",
+      "gate_population": true,
+      "words": 157558
+    },
+    {
+      "work": "dickens_730",
+      "author": "dickens",
+      "year": 1838,
+      "title": "Oliver Twist",
+      "gate_population": true,
+      "words": 157969
+    },
+    {
+      "work": "dickens_98",
+      "author": "dickens",
+      "year": 1859,
+      "title": "A Tale of Two Cities",
+      "gate_population": true,
+      "words": 135886
+    },
+    {
+      "work": "dickens_1400",
+      "author": "dickens",
+      "year": 1861,
+      "title": "Great Expectations",
+      "gate_population": true,
+      "words": 184478
+    },
+    {
+      "work": "eliot_507",
+      "author": "eliot",
+      "year": 1859,
+      "title": "Adam Bede",
+      "gate_population": true,
+      "words": 214078
+    },
+    {
+      "work": "eliot_6688",
+      "author": "eliot",
+      "year": 1860,
+      "title": "The Mill on the Floss",
+      "gate_population": true,
+      "words": 206494
+    },
+    {
+      "work": "eliot_145",
+      "author": "eliot",
+      "year": 1872,
+      "title": "Middlemarch",
+      "gate_population": true,
+      "words": 316381
+    },
+    {
+      "work": "hardy_27",
+      "author": "hardy",
+      "year": 1874,
+      "title": "Far from the Madding Crowd",
+      "gate_population": true,
+      "words": 137190
+    },
+    {
+      "work": "hardy_143",
+      "author": "hardy",
+      "year": 1886,
+      "title": "The Mayor of Casterbridge",
+      "gate_population": true,
+      "words": 115251
+    },
+    {
+      "work": "hardy_110",
+      "author": "hardy",
+      "year": 1891,
+      "title": "Tess of the d'Urbervilles",
+      "gate_population": true,
+      "words": 150042
+    },
+    {
+      "work": "twain_74",
+      "author": "twain",
+      "year": 1876,
+      "title": "Tom Sawyer",
+      "gate_population": true,
+      "words": 70800
+    },
+    {
+      "work": "twain_76",
+      "author": "twain",
+      "year": 1884,
+      "title": "Huckleberry Finn",
+      "gate_population": true,
+      "words": 111085
+    },
+    {
+      "work": "twain_86",
+      "author": "twain",
+      "year": 1889,
+      "title": "A Connecticut Yankee",
+      "gate_population": true,
+      "words": 117810
+    },
+    {
+      "work": "james_2833",
+      "author": "james",
+      "year": 1881,
+      "title": "The Portrait of a Lady",
+      "gate_population": true,
+      "words": 116833
+    },
+    {
+      "work": "james_209",
+      "author": "james",
+      "year": 1898,
+      "title": "The Turn of the Screw",
+      "gate_population": true,
+      "words": 42277
+    },
+    {
+      "work": "james_432",
+      "author": "james",
+      "year": 1903,
+      "title": "The Ambassadors",
+      "gate_population": true,
+      "words": 162054
+    },
+    {
+      "work": "wharton_284",
+      "author": "wharton",
+      "year": 1905,
+      "title": "The House of Mirth",
+      "gate_population": true,
+      "words": 129318
+    },
+    {
+      "work": "wharton_4517",
+      "author": "wharton",
+      "year": 1911,
+      "title": "Ethan Frome",
+      "gate_population": true,
+      "words": 34717
+    },
+    {
+      "work": "wharton_541",
+      "author": "wharton",
+      "year": 1920,
+      "title": "The Age of Innocence",
+      "gate_population": true,
+      "words": 101383
+    },
+    {
+      "work": "conrad_219",
+      "author": "conrad",
+      "year": 1899,
+      "title": "Heart of Darkness",
+      "gate_population": true,
+      "words": 37917
+    },
+    {
+      "work": "conrad_5658",
+      "author": "conrad",
+      "year": 1900,
+      "title": "Lord Jim",
+      "gate_population": true,
+      "words": 130012
+    },
+    {
+      "work": "conrad_2021",
+      "author": "conrad",
+      "year": 1904,
+      "title": "Nostromo",
+      "gate_population": true,
+      "words": 170423
+    },
+    {
+      "work": "wells_35",
+      "author": "wells",
+      "year": 1895,
+      "title": "The Time Machine",
+      "gate_population": true,
+      "words": 32454
+    },
+    {
+      "work": "wells_5230",
+      "author": "wells",
+      "year": 1897,
+      "title": "The Invisible Man",
+      "gate_population": true,
+      "words": 48500
+    },
+    {
+      "work": "wells_36",
+      "author": "wells",
+      "year": 1898,
+      "title": "The War of the Worlds",
+      "gate_population": true,
+      "words": 60075
+    },
+    {
+      "work": "stevenson_120",
+      "author": "stevenson",
+      "year": 1883,
+      "title": "Treasure Island",
+      "gate_population": true,
+      "words": 68637
+    },
+    {
+      "work": "stevenson_43",
+      "author": "stevenson",
+      "year": 1886,
+      "title": "Jekyll and Hyde",
+      "gate_population": true,
+      "words": 25631
+    },
+    {
+      "work": "stevenson_421",
+      "author": "stevenson",
+      "year": 1886,
+      "title": "Kidnapped",
+      "gate_population": true,
+      "words": 81903
+    },
+    {
+      "work": "bronte_1260",
+      "author": "bronte",
+      "year": 1847,
+      "title": "Jane Eyre",
+      "gate_population": true,
+      "words": 185390
+    },
+    {
+      "work": "bronte_30486",
+      "author": "bronte",
+      "year": 1849,
+      "title": "Shirley",
+      "gate_population": true,
+      "words": 216243
+    },
+    {
+      "work": "bronte_9182",
+      "author": "bronte",
+      "year": 1853,
+      "title": "Villette",
+      "gate_population": true,
+      "words": 192551
+    },
+    {
+      "work": "trollope_619",
+      "author": "trollope",
+      "year": 1855,
+      "title": "The Warden",
+      "gate_population": true,
+      "words": 71804
+    },
+    {
+      "work": "trollope_3409",
+      "author": "trollope",
+      "year": 1857,
+      "title": "Barchester Towers",
+      "gate_population": true,
+      "words": 198256
+    },
+    {
+      "work": "trollope_3166",
+      "author": "trollope",
+      "year": 1858,
+      "title": "Doctor Thorne",
+      "gate_population": true,
+      "words": 217024
+    },
+    {
+      "work": "doyle_244",
+      "author": "doyle",
+      "year": 1887,
+      "title": "A Study in Scarlet",
+      "gate_population": true,
+      "words": 43427
+    },
+    {
+      "work": "doyle_2097",
+      "author": "doyle",
+      "year": 1890,
+      "title": "The Sign of the Four",
+      "gate_population": true,
+      "words": 43095
+    },
+    {
+      "work": "doyle_2852",
+      "author": "doyle",
+      "year": 1902,
+      "title": "The Hound of the Baskervilles",
+      "gate_population": true,
+      "words": 59258
+    },
+    {
+      "work": "hawthorne_25344",
+      "author": "hawthorne",
+      "year": 1850,
+      "title": "The Scarlet Letter",
+      "gate_population": true,
+      "words": 83826
+    },
+    {
+      "work": "hawthorne_77",
+      "author": "hawthorne",
+      "year": 1851,
+      "title": "The House of the Seven Gables",
+      "gate_population": true,
+      "words": 104875
+    },
+    {
+      "work": "hawthorne_2081",
+      "author": "hawthorne",
+      "year": 1852,
+      "title": "The Blithedale Romance",
+      "gate_population": true,
+      "words": 75857
+    },
+    {
+      "work": "tr3_tolstoy_garnett",
+      "author": "tolstoy_tr",
+      "year": 0,
+      "title": "Anna Karenina (Garnett tr.)",
+      "gate_population": false,
+      "words": 349763
+    },
+    {
+      "work": "tr3_tolstoy_maude",
+      "author": "tolstoy_tr",
+      "year": 0,
+      "title": "War and Peace (Maude tr.)",
+      "gate_population": false,
+      "words": 563286
+    },
+    {
+      "work": "tr3_verne_a",
+      "author": "verne_tr",
+      "year": 0,
+      "title": "20,000 Leagues (tr. A)",
+      "gate_population": false,
+      "words": 104672
+    },
+    {
+      "work": "tr3_verne_b",
+      "author": "verne_tr",
+      "year": 0,
+      "title": "20,000 Leagues (tr. B)",
+      "gate_population": false,
+      "words": 143868
+    },
+    {
+      "work": "devere_epoch1",
+      "author": "devere",
+      "year": 2025,
+      "title": "Epoch I (published)",
+      "gate_population": false,
+      "words": 29790
+    },
+    {
+      "work": "devere_epoch2",
+      "author": "devere",
+      "year": 2026,
+      "title": "Epoch II (draft)",
+      "gate_population": false,
+      "words": 108063
+    }
+  ],
+  "chunks": 3700,
+  "chunk_registry_sha256": "733e90e4f8c4ade1c8c44418693d53e87c8b1f9e788bcc61b2325632f396defa"
+}
