@@ -63,3 +63,13 @@ closes with a utilization verdict (product-now / feeds-product-X /
 credibility-asset) drafted for PI ratification; harvest reviews happen at
 wave boundaries and are the PI's call. Never cite commercial value in
 DECISIONS, protocol readings, or threshold interpretations.
+
+## Estate hygiene (standing closeout rule)
+Every TR closeout records a disk line: what the experiment leaves on
+each machine (model snapshots, entropy/latent caches, corpus stores,
+venvs, adapters, checkpoints), sized with du, and what may be swept.
+Wave boundaries include an estate audit; deletions of experiment
+artifacts happen only on the PI's word, recorded in the closing TR's
+decision log. Transient tarballs and scratch venvs are swept without
+ceremony.
+

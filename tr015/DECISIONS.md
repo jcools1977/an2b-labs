@@ -97,3 +97,19 @@ paraphrase sampling seed 41. Dependencies pinned as committed
 (numpy 2.5.2, scipy 1.18.1, scikit-learn 1.9.0, python-docx 1.2.0,
 pypdf 6.16.2); the embedding and paraphrase stacks run in the recorded
 legion environments, versions already committed in this repository.
+
+## D14. Which legs support inference, pre-registered before any embedding
+TR-011's n=3 lesson applied in advance. Cross-book generalization (D3)
+requires at least two works per author, so:
+- **The Gutenberg attribution set carries the inferential weight**: 12+
+  authors with 2-3 works each give the accuracy and drift gates real n.
+- **The author's own leg is thin by construction**: one published book
+  plus one book in draft. Wherever cross-book folds for that voice are
+  under-powered, its numbers are reported as a DEMONSTRATION, stated in
+  the same sentence as the number, never pooled into the gates. The
+  longitudinal trajectory (D12) was already coordinates-only; this
+  entry extends the same honesty to any attribution number touching it.
+- The gate population is the Gutenberg set exactly; the Epoch material
+  appears in the manifold and the case study, not in the PASS
+  arithmetic. Written today, while no embedding exists.
+
