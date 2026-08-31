@@ -13,9 +13,13 @@ decides. Nothing below is green-lit by its appearance here.**
 
 ## Build candidates on the table (PI's call, in no order)
 
-1. **Ship deadwood-audit to PyPI.** Everything is staged; trusted
-   publishing armed; the act is one v0.1.0 tag push. The only
-   deliberately un-triggered act in the program.
+1. **deadwood-audit is shipped.** DONE 2026-08-28: on the PI's word
+   ("run it!"), the reviewer created tag v0.1.0, the trusted-publishing
+   workflow ran green, and deadwood-audit 0.1.0 was verified live on
+   PyPI from the outside. The program's one deliberately un-triggered
+   act was triggered by the PI, as designed. Remaining build questions
+   here are post-ship: versioning cadence, adapter additions, and
+   whether the sealed benchmark gets its own visibility push.
 2. **The methods kit as a standing asset.** Three controls now exist
    that generalize beyond their experiments: the bite-proof (masking
    must be shown to reach the model), the author-identity control
