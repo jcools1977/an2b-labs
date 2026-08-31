@@ -1,0 +1,584 @@
+{
+  "per_doc": {
+    "a_pub_00": {
+      "per_model": {
+        "qwen": 0.055,
+        "llama": 0.0425
+      },
+      "score": 0.055
+    },
+    "a_pub_01": {
+      "per_model": {
+        "qwen": 0.055,
+        "llama": 0.045
+      },
+      "score": 0.055
+    },
+    "a_pub_02": {
+      "per_model": {
+        "qwen": 0.05,
+        "llama": 0.0625
+      },
+      "score": 0.0625
+    },
+    "a_pub_03": {
+      "per_model": {
+        "qwen": 0.045,
+        "llama": 0.0375
+      },
+      "score": 0.045
+    },
+    "a_pub_04": {
+      "per_model": {
+        "qwen": 0.06,
+        "llama": 0.08
+      },
+      "score": 0.08
+    },
+    "a_pub_05": {
+      "per_model": {
+        "qwen": 0.08,
+        "llama": 0.065
+      },
+      "score": 0.08
+    },
+    "a_pub_06": {
+      "per_model": {
+        "qwen": 0.0325,
+        "llama": 0.05
+      },
+      "score": 0.05
+    },
+    "a_pub_07": {
+      "per_model": {
+        "qwen": 0.0625,
+        "llama": 0.08
+      },
+      "score": 0.08
+    },
+    "a_pub_08": {
+      "per_model": {
+        "qwen": 0.05,
+        "llama": 0.0475
+      },
+      "score": 0.05
+    },
+    "a_pub_09": {
+      "per_model": {
+        "qwen": 0.0475,
+        "llama": 0.045
+      },
+      "score": 0.0475
+    },
+    "a_pub_10": {
+      "per_model": {
+        "qwen": 0.065,
+        "llama": 0.05
+      },
+      "score": 0.065
+    },
+    "a_pub_11": {
+      "per_model": {
+        "qwen": 0.035,
+        "llama": 0.0475
+      },
+      "score": 0.0475
+    },
+    "a_pub_12": {
+      "per_model": {
+        "qwen": 0.0375,
+        "llama": 0.035
+      },
+      "score": 0.0375
+    },
+    "a_pub_13": {
+      "per_model": {
+        "qwen": 0.0375,
+        "llama": 0.0375
+      },
+      "score": 0.0375
+    },
+    "a_pub_14": {
+      "per_model": {
+        "qwen": 0.0325,
+        "llama": 0.0575
+      },
+      "score": 0.0575
+    },
+    "a_pub_15": {
+      "per_model": {
+        "qwen": 0.05,
+        "llama": 0.0625
+      },
+      "score": 0.0625
+    },
+    "a_pub_16": {
+      "per_model": {
+        "qwen": 0.025,
+        "llama": 0.01
+      },
+      "score": 0.025
+    },
+    "b_gut_113_Burnett": {
+      "per_model": {
+        "qwen": 0.0775,
+        "llama": 0.04
+      },
+      "score": 0.0775
+    },
+    "b_gut_11_Carroll": {
+      "per_model": {
+        "qwen": 0.085,
+        "llama": 0.175
+      },
+      "score": 0.175
+    },
+    "b_gut_1260_BronteC": {
+      "per_model": {
+        "qwen": 0.0425,
+        "llama": 0.035
+      },
+      "score": 0.0425
+    },
+    "b_gut_1342_Austen": {
+      "per_model": {
+        "qwen": 0.045,
+        "llama": 0.0625
+      },
+      "score": 0.0625
+    },
+    "b_gut_1399_Tolstoy": {
+      "per_model": {
+        "qwen": 0.08,
+        "llama": 0.1
+      },
+      "score": 0.1
+    },
+    "b_gut_145_Eliot": {
+      "per_model": {
+        "qwen": 0.045,
+        "llama": 0.0375
+      },
+      "score": 0.045
+    },
+    "b_gut_1661_Doyle": {
+      "per_model": {
+        "qwen": 0.0325,
+        "llama": 0.0625
+      },
+      "score": 0.0625
+    },
+    "b_gut_16_Barrie": {
+      "per_model": {
+        "qwen": 0.0225,
+        "llama": 0.0525
+      },
+      "score": 0.0525
+    },
+    "b_gut_174_Wilde": {
+      "per_model": {
+        "qwen": 0.0625,
+        "llama": 0.0475
+      },
+      "score": 0.0625
+    },
+    "b_gut_219_Conrad": {
+      "per_model": {
+        "qwen": 0.0575,
+        "llama": 0.035
+      },
+      "score": 0.0575
+    },
+    "b_gut_25344_Hawthorne": {
+      "per_model": {
+        "qwen": 0.045,
+        "llama": 0.075
+      },
+      "score": 0.075
+    },
+    "b_gut_2554_Dostoevsky": {
+      "per_model": {
+        "qwen": 0.0375,
+        "llama": 0.0275
+      },
+      "score": 0.0375
+    },
+    "b_gut_2701_Melville": {
+      "per_model": {
+        "qwen": 0.0575,
+        "llama": 0.065
+      },
+      "score": 0.065
+    },
+    "b_gut_2814_Joyce": {
+      "per_model": {
+        "qwen": 0.0575,
+        "llama": 0.0625
+      },
+      "score": 0.0625
+    },
+    "b_gut_345_Stoker": {
+      "per_model": {
+        "qwen": 0.0525,
+        "llama": 0.0675
+      },
+      "score": 0.0675
+    },
+    "b_gut_35_Wells": {
+      "per_model": {
+        "qwen": 0.06,
+        "llama": 0.065
+      },
+      "score": 0.065
+    },
+    "b_gut_43_Stevenson": {
+      "per_model": {
+        "qwen": 0.0525,
+        "llama": 0.055
+      },
+      "score": 0.055
+    },
+    "b_gut_541_Wharton": {
+      "per_model": {
+        "qwen": 0.0425,
+        "llama": 0.04
+      },
+      "score": 0.0425
+    },
+    "b_gut_55_Baum": {
+      "per_model": {
+        "qwen": 0.0425,
+        "llama": 0.08
+      },
+      "score": 0.08
+    },
+    "b_gut_583_Collins": {
+      "per_model": {
+        "qwen": 0.0625,
+        "llama": 0.0675
+      },
+      "score": 0.0675
+    },
+    "b_gut_64317_Fitzgerald": {
+      "per_model": {
+        "qwen": 0.0525,
+        "llama": 0.0425
+      },
+      "score": 0.0525
+    },
+    "b_gut_74_Twain": {
+      "per_model": {
+        "qwen": 0.0525,
+        "llama": 0.0625
+      },
+      "score": 0.0625
+    },
+    "b_gut_768_BronteE": {
+      "per_model": {
+        "qwen": 0.0575,
+        "llama": 0.05
+      },
+      "score": 0.0575
+    },
+    "b_gut_84_Shelley": {
+      "per_model": {
+        "qwen": 0.045,
+        "llama": 0.0725
+      },
+      "score": 0.0725
+    },
+    "b_gut_98_Dickens": {
+      "per_model": {
+        "qwen": 0.04,
+        "llama": 0.0575
+      },
+      "score": 0.0575
+    },
+    "b_slush_16_the_one_who_was_not_waiting": {
+      "per_model": {
+        "qwen": 0.05,
+        "llama": 0.06
+      },
+      "score": 0.06
+    },
+    "b_slush_05_the_second_morning": {
+      "per_model": {
+        "qwen": 0.0525,
+        "llama": 0.0675
+      },
+      "score": 0.0675
+    },
+    "b_slush_10_the_bond_and_the_blank": {
+      "per_model": {
+        "qwen": 0.08,
+        "llama": 0.0575
+      },
+      "score": 0.08
+    },
+    "b_slush_28_the_easing": {
+      "per_model": {
+        "qwen": 0.03,
+        "llama": 0.035
+      },
+      "score": 0.035
+    },
+    "b_slush_02_the_turn": {
+      "per_model": {
+        "qwen": 0.0575,
+        "llama": 0.05
+      },
+      "score": 0.0575
+    },
+    "b_slush_09_the_hands": {
+      "per_model": {
+        "qwen": 0.055,
+        "llama": 0.0425
+      },
+      "score": 0.055
+    },
+    "b_slush_32_the_one_still_coming": {
+      "per_model": {
+        "qwen": 0.0525,
+        "llama": 0.0375
+      },
+      "score": 0.0525
+    },
+    "b_slush_13_for_reapproach": {
+      "per_model": {
+        "qwen": 0.0425,
+        "llama": 0.065
+      },
+      "score": 0.065
+    },
+    "b_slush_22_the_waking_the_drones": {
+      "per_model": {
+        "qwen": 0.0625,
+        "llama": 0.075
+      },
+      "score": 0.075
+    },
+    "b_slush_23_the_cluster_and_the_kitchen": {
+      "per_model": {
+        "qwen": 0.0475,
+        "llama": 0.0575
+      },
+      "score": 0.0575
+    },
+    "b_slush_06_the_compounds": {
+      "per_model": {
+        "qwen": 0.0525,
+        "llama": 0.065
+      },
+      "score": 0.065
+    },
+    "b_slush_14_the_new_column": {
+      "per_model": {
+        "qwen": 0.05,
+        "llama": 0.0575
+      },
+      "score": 0.0575
+    },
+    "b_slush_15_the_bending": {
+      "per_model": {
+        "qwen": 0.045,
+        "llama": 0.0675
+      },
+      "score": 0.0675
+    },
+    "b_slush_11_the_first_warmth": {
+      "per_model": {
+        "qwen": 0.0625,
+        "llama": 0.0425
+      },
+      "score": 0.0625
+    },
+    "b_slush_08_the_blank_cut_to_the_shape": {
+      "per_model": {
+        "qwen": 0.035,
+        "llama": 0.0225
+      },
+      "score": 0.035
+    },
+    "b_slush_26_the_two_the_war_revealed": {
+      "per_model": {
+        "qwen": 0.06,
+        "llama": 0.0275
+      },
+      "score": 0.06
+    },
+    "b_slush_19_the_ones_who_cried_out": {
+      "per_model": {
+        "qwen": 0.06,
+        "llama": 0.0375
+      },
+      "score": 0.06
+    },
+    "b_slush_18_the_measure_from_above": {
+      "per_model": {
+        "qwen": 0.055,
+        "llama": 0.06
+      },
+      "score": 0.06
+    },
+    "b_slush_25_the_war": {
+      "per_model": {
+        "qwen": 0.0425,
+        "llama": 0.03
+      },
+      "score": 0.0425
+    },
+    "b_slush_20_the_widening": {
+      "per_model": {
+        "qwen": 0.0675,
+        "llama": 0.0475
+      },
+      "score": 0.0675
+    },
+    "b_slush_29_the_hybridization": {
+      "per_model": {
+        "qwen": 0.0325,
+        "llama": 0.0325
+      },
+      "score": 0.0325
+    },
+    "b_slush_07_the_still_rooms": {
+      "per_model": {
+        "qwen": 0.0425,
+        "llama": 0.0525
+      },
+      "score": 0.0525
+    },
+    "b_slush_17_what_was_not_yet": {
+      "per_model": {
+        "qwen": 0.06,
+        "llama": 0.0575
+      },
+      "score": 0.06
+    },
+    "b_slush_31_the_mirror": {
+      "per_model": {
+        "qwen": 0.065,
+        "llama": 0.0325
+      },
+      "score": 0.065
+    },
+    "b_slush_27_the_many_doors": {
+      "per_model": {
+        "qwen": 0.065,
+        "llama": 0.035
+      },
+      "score": 0.065
+    },
+    "b_slush_01_the_silence": {
+      "per_model": {
+        "qwen": 0.0675,
+        "llama": 0.055
+      },
+      "score": 0.0675
+    },
+    "b_slush_21_the_field_entire": {
+      "per_model": {
+        "qwen": 0.0575,
+        "llama": 0.0425
+      },
+      "score": 0.0575
+    },
+    "b_slush_04_the_first_day_closes": {
+      "per_model": {
+        "qwen": 0.0375,
+        "llama": 0.055
+      },
+      "score": 0.055
+    },
+    "b_slush_12_the_column_and_the_cost": {
+      "per_model": {
+        "qwen": 0.05,
+        "llama": 0.0475
+      },
+      "score": 0.05
+    },
+    "b_slush_24_the_field_of_eyes": {
+      "per_model": {
+        "qwen": 0.0375,
+        "llama": 0.0425
+      },
+      "score": 0.0425
+    },
+    "b_slush_03_the_lights_off": {
+      "per_model": {
+        "qwen": 0.045,
+        "llama": 0.0575
+      },
+      "score": 0.0575
+    },
+    "b_slush_30_the_ones_who_said_i": {
+      "per_model": {
+        "qwen": 0.0575,
+        "llama": 0.0275
+      },
+      "score": 0.0575
+    },
+    "b_slush_00_prologue_the_blink": {
+      "per_model": {
+        "qwen": 0.05,
+        "llama": 0.045
+      },
+      "score": 0.05
+    }
+  },
+  "excluded_above_0.5": [],
+  "final_sets": {
+    "gutenberg": [
+      "b_gut_113_Burnett",
+      "b_gut_11_Carroll",
+      "b_gut_1260_BronteC",
+      "b_gut_1342_Austen",
+      "b_gut_1399_Tolstoy",
+      "b_gut_145_Eliot",
+      "b_gut_1661_Doyle",
+      "b_gut_16_Barrie",
+      "b_gut_174_Wilde",
+      "b_gut_219_Conrad",
+      "b_gut_25344_Hawthorne",
+      "b_gut_2554_Dostoevsky",
+      "b_gut_2701_Melville",
+      "b_gut_2814_Joyce",
+      "b_gut_345_Stoker",
+      "b_gut_35_Wells",
+      "b_gut_43_Stevenson",
+      "b_gut_541_Wharton",
+      "b_gut_55_Baum",
+      "b_gut_583_Collins"
+    ],
+    "slush": [
+      "b_slush_16_the_one_who_was_not_waiting",
+      "b_slush_05_the_second_morning",
+      "b_slush_10_the_bond_and_the_blank",
+      "b_slush_28_the_easing",
+      "b_slush_02_the_turn",
+      "b_slush_09_the_hands",
+      "b_slush_32_the_one_still_coming",
+      "b_slush_13_for_reapproach",
+      "b_slush_22_the_waking_the_drones",
+      "b_slush_23_the_cluster_and_the_kitchen",
+      "b_slush_06_the_compounds",
+      "b_slush_14_the_new_column",
+      "b_slush_15_the_bending",
+      "b_slush_11_the_first_warmth",
+      "b_slush_08_the_blank_cut_to_the_shape",
+      "b_slush_26_the_two_the_war_revealed",
+      "b_slush_19_the_ones_who_cried_out",
+      "b_slush_18_the_measure_from_above",
+      "b_slush_25_the_war",
+      "b_slush_20_the_widening"
+    ]
+  },
+  "medians": {
+    "gutenberg": 0.0625,
+    "slush": 0.06,
+    "devere_published": 0.055
+  },
+  "group_gap_gutenberg_minus_slush": 0.0025,
+  "corpus_b_group_ok": true,
+  "rule": "D7/D17: gap > 0.05 scopes corpus B out of PASS support"
+}
