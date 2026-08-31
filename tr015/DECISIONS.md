@@ -176,3 +176,14 @@ bootstrap over test chunks (the D9 letter); chunks cluster by work, so
 this CI understates permutation variance, which is reported as a
 limitation rather than repaired post hoc. The mid-run choice is
 surfaced to the PI and reviewer per BB4C rule 1.
+
+## D20. Closeout disk line (standing estate-hygiene rule)
+TR-015 leaves: cockpit tr015/corpus_store 79M (raw Gutenberg cache,
+chunks, embeddings 12M, paraphrases); legion tr015/corpus_store 40M
+(chunks, embeddings, paraphrases); embedder snapshots in legion's HF
+cache measured at ~1M each as cached (bge-small, e5-small-v2); the
+8B paraphraser reused TR-011's pinned snapshot already on legion.
+Sweepable on the PI's word: both corpus_store trees are rebuildable
+from the committed builder plus TR-011's covenant store; nothing here
+is unique. Transient logs (embed.log, paraphrase.log, topics.log)
+are sweepable without ceremony.

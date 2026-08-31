@@ -134,14 +134,23 @@ n = (40, 19) chunks per endpoint at 1,500 words.*
   of 0.054-0.299. No graceful degradation claim is possible in a
   collapsed space; reported for completeness.
 
-## 5. The KILL
+## 5. The KILL fired, at zero
 
-[PENDING: D8 paraphrase run on legion — 100 seed-41 chunks from
-held-out test works, pinned Llama-3.1-8B rewrites under TR-011 D14
-bounds, attribution in the voice subspace vs 2x chance. Note for the
-reading: original unparaphrased subspace attribution (0.093) is
-already below 2x chance (0.143), so the KILL can only fire trivially —
-the same death by another door, not an independent wound.]
+100 seed-41 chunks from held-out test works, rewritten
+content-preserving by the pinned Llama-3.1-8B under TR-011's D14
+bounds. The bounds bit hard: 59 of 100 rewrites were rejected (131 of
+132 failed attempts on the content-word Jaccard floor, 1 on length),
+leaving 41 valid paraphrases spanning all 14 authors. In the voice
+subspace, their true-author attribution is **0.000** against a KILL
+line of 2x chance (0.143). Not one rewrite lands with its author.
+
+The honest reading, anticipated in the draft before the number
+existed: with unparaphrased subspace attribution already at 0.093,
+below the KILL line itself, the KILL fires trivially — the same death
+by another door, not an independent wound. But the zero is still
+informative: whatever residue the subspace holds is destroyed
+entirely by rewording, which is the operational definition of content,
+not voice.
 
 ## 6. Findings
 
@@ -165,14 +174,14 @@ the same death by another door, not an independent wound.]
 
 ## 7. Verdict
 
-**FAIL**, per the frozen criteria, in the pre-registered H0 shape:
-residualization destroys separability (voice was topic) AND Burrows
-Delta wins. The drift gate misses at 0 of 14 authors. [KILL status
-pending the paraphrase run; the FAIL stands regardless.] The verify
-suite runs instrument legs green (checker self-tests, residualizer
-bite-proof, corpus integrity) and gate legs red for measured reasons.
-Nothing moved after the cold read except D19's strictness correction,
-logged and surfaced.
+**FAIL, and the KILL fired**, per the frozen criteria, in the
+pre-registered H0 shape: residualization destroys separability (voice
+was topic), Burrows Delta wins, the drift gate misses at 0 of 14
+authors, and paraphrase attribution hits zero. The verify suite runs
+instrument legs green (checker self-tests, residualizer bite-proof,
+corpus integrity) and every gate leg red for measured reasons, exit
+nonzero as built. Nothing moved after the cold read except D19's
+strictness correction, logged and surfaced.
 
 ## 8. Limitations
 
