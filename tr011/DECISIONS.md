@@ -212,3 +212,33 @@ author-control AUC >= 0.7 is a contradiction, not a judgment call.
   only** (scp, estate machine to estate machine). No cloud hop, ever,
   for manuscript text. Same rule for any future movement of the store.
 
+## D17. Assembly operationalizations, frozen before alignment runs
+- **Document units**: published Epoch I units are contiguous runs of
+  sections (book order) concatenated to >= 1,500 words; the Light
+  Papers text is chunked the same way at paragraph boundaries. Draft
+  units are individual chapter files. Corpus-B units: Gutenberg
+  mid-book spans and Epoch II chapters, all capped at 8,000 tokens of
+  the Llama tokenizer of record (D9).
+- **Earliest-substantial generation (D12)**: generations are the draft
+  archive's version folders in lineage order (V1..V6, then the dated
+  2025 folders); the gate generation is the EARLIEST whose extracted
+  text totals >= 10,000 words.
+- **Alignment (D12, blind)**: bge-small embeddings (the estate's
+  utility embedder, never a scoring model), 400-token chunks
+  mean-pooled per unit; candidate pair score = cosine; **threshold
+  0.60, frozen**; greedy one-to-one matching by descending similarity
+  (each published unit matched at most once). Units below threshold on
+  either side are excluded per D12. Yield table reported per D16.
+- **Corpus-B composition (D15)**: 20 primary Gutenberg + 5 backups;
+  DeVere-published units (the corpus-A published units) join the
+  published class; 20 primary slush chapters drawn by seed-31 shuffle
+  of the 33, remainder as backups.
+- **D7 refinement, stricter where the risk lives**: the group
+  memorization gap is computed on the GUTENBERG subset versus slush
+  (the confounded population); DeVere-published scores are reported
+  separately and expected near zero (May 2025 post-dates both
+  cutoffs). Environment note: alignment and tokenization run in the
+  recorded tr020 wild environment on legion (freeze committed as
+  tr020/wild-freeze.txt); scoring models and their pins are recorded
+  in tr011/MANIFEST.json at first model run.
+
