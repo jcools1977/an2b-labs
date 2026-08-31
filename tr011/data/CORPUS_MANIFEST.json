@@ -1,0 +1,609 @@
+{
+  "span_cap_tokens": 8000,
+  "split_seed": 31,
+  "gate_generation": {
+    "name": "V1",
+    "words": 12904,
+    "all_generations_words": {
+      "V1": 12904,
+      "V2": 1530,
+      "V3": 10793,
+      "V4": 16791,
+      "V5": 0,
+      "V6": 18740,
+      "4_15_25": 0,
+      "4_27_25": 0,
+      "5_13_25": 0,
+      "New Draft": 0
+    }
+  },
+  "corpus_a": {
+    "pairs": 4,
+    "pairing": [
+      {
+        "draft": "a_draft_00",
+        "published": "a_pub_08",
+        "cosine": 0.881
+      },
+      {
+        "draft": "a_draft_02",
+        "published": "a_pub_14",
+        "cosine": 0.8748
+      },
+      {
+        "draft": "a_draft_01",
+        "published": "a_pub_12",
+        "cosine": 0.8358
+      },
+      {
+        "draft": "a_draft_03",
+        "published": "a_pub_11",
+        "cosine": 0.7944
+      }
+    ],
+    "postdates_scoring_cutoffs": true,
+    "publication": "2025-05",
+    "scoring_cutoffs": {
+      "llama-3.1": "2023-12",
+      "qwen3": "2024 (pre-2025)"
+    },
+    "yield": {
+      "draft_units": 4,
+      "published_units": 17,
+      "paired": 4,
+      "draft_unpaired": 0,
+      "published_unpaired": 13,
+      "threshold": 0.6
+    }
+  },
+  "dedup": {
+    "cross_corpus_overlaps": 0
+  },
+  "splits_committed": true,
+  "author_folds": {
+    "carroll": 0,
+    "devere": 1,
+    "burnett": 2,
+    "eliot": 3,
+    "stoker": 4,
+    "conrad": 0,
+    "wharton": 1,
+    "joyce": 2,
+    "shelley": 3,
+    "fitzgerald": 4,
+    "twain": 0,
+    "dickens": 1,
+    "wilde": 2,
+    "dostoevsky": 3,
+    "baum": 4,
+    "stevenson": 0,
+    "collins": 1,
+    "melville": 2,
+    "wells": 3,
+    "tolstoy": 4,
+    "barrie": 0,
+    "brontee": 1,
+    "doyle": 2,
+    "brontec": 3,
+    "hawthorne": 4,
+    "austen": 0
+  },
+  "backup_list_committed": true,
+  "backups": {
+    "gutenberg": [
+      "b_gut_64317_Fitzgerald",
+      "b_gut_74_Twain",
+      "b_gut_768_BronteE",
+      "b_gut_84_Shelley",
+      "b_gut_98_Dickens"
+    ],
+    "slush": [
+      "b_slush_29_the_hybridization",
+      "b_slush_07_the_still_rooms",
+      "b_slush_17_what_was_not_yet",
+      "b_slush_31_the_mirror",
+      "b_slush_27_the_many_doors",
+      "b_slush_01_the_silence",
+      "b_slush_21_the_field_entire",
+      "b_slush_04_the_first_day_closes",
+      "b_slush_12_the_column_and_the_cost",
+      "b_slush_24_the_field_of_eyes",
+      "b_slush_03_the_lights_off",
+      "b_slush_30_the_ones_who_said_i",
+      "b_slush_00_prologue_the_blink"
+    ]
+  },
+  "corpus_b": {
+    "published": 20,
+    "devere_published_in_b": 17,
+    "slush": 20
+  },
+  "documents": {
+    "a_pub_00": {
+      "sha256": "c4145558710f09d0b5c9d2ed2dd6805618b92007d9e80ba55eecf79ce6efaaac",
+      "words": 1508,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_01": {
+      "sha256": "0432992f02e98f63191e5a2d40963f4c9fac8375c95da0065b3000b219ad0a74",
+      "words": 1546,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_02": {
+      "sha256": "c1f4db215ca5f6178f6a8f6174d015154cde6954fe9fd7ce44dcd7b86ecdf2a4",
+      "words": 1502,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_03": {
+      "sha256": "9354297fbf50d7179e28c5567a83d5a8e261cc06a50cd1bcd33b96d77775c73f",
+      "words": 1597,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_04": {
+      "sha256": "ac2a96301db16b8685faa4c8f70f232786e7db5003ad53e2b5f604fac1a0fde3",
+      "words": 1505,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_05": {
+      "sha256": "eef469f149aa8bafd83751a32ce437313684d3f796dec169e719272f736c15e8",
+      "words": 1581,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_06": {
+      "sha256": "07c0e0a5ffd9f617e8af036b8902e3e9f73d59d01cedb89f943876ca98fa7de1",
+      "words": 1550,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_07": {
+      "sha256": "9079bbda7a283a238ed2e52564cf9ae537ee072c3ceca5f37a495e1529462744",
+      "words": 2959,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_08": {
+      "sha256": "0105ed917628d801b1a084fed191ee3820cd28c92766383623ab8e1499902d99",
+      "words": 1728,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_09": {
+      "sha256": "edcc7f9aac1734ccf3fb1c6a6e0c7907e5ae1afaf9dd4c5879e76b17411245e8",
+      "words": 1732,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_10": {
+      "sha256": "e54b1123e38c0f5d44fb0b3c0e727571eb4f182487813866d1c132f8e8353cb9",
+      "words": 1613,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_11": {
+      "sha256": "43cd1eda693fc10964db5867564e20b548f29ba11ce75b3c121e9dc86a920531",
+      "words": 1565,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_12": {
+      "sha256": "2d51d9205a6358d1edbc88b6ad47a2a10921be1c3fe9ee07fde3ddfa57cd1523",
+      "words": 1604,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_13": {
+      "sha256": "6dbdf242cc80e5b67a81d2e4680d995296e41d62c2059b17434c7d71d86d7140",
+      "words": 1525,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_14": {
+      "sha256": "8bd645bbb67dbf4653a481d457023f538b21acc85c2d1ecf360fb470e97021b4",
+      "words": 1828,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_15": {
+      "sha256": "595d65420ee7e7d11ce76c0b7fd2aca59a14bc5c69774c6b97891e1fe47b3553",
+      "words": 1930,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_pub_16": {
+      "sha256": "9a52ba0e66c29a5141c5e69b8b583a21534f55588a144a59246751a916aaf3f6",
+      "words": 2517,
+      "author": "devere",
+      "side": "a_published"
+    },
+    "a_draft_00": {
+      "sha256": "258ad80930e0fb382b727e284a1db41acf3fd282eb18e884043dc839a61583eb",
+      "words": 3994,
+      "author": "devere",
+      "side": "a_draft"
+    },
+    "a_draft_01": {
+      "sha256": "9ef8061d42f1c7f56e8c66b24d1e73525c2c9a17afed41158d03291101bb6886",
+      "words": 5566,
+      "author": "devere",
+      "side": "a_draft"
+    },
+    "a_draft_02": {
+      "sha256": "3c4ff6227eb46b62a702c5471fc82f1285440c17dce8a0e91cbd0f39f4e9a3df",
+      "words": 2577,
+      "author": "devere",
+      "side": "a_draft"
+    },
+    "a_draft_03": {
+      "sha256": "d6e13219d999e8ea12768af9b02b5df3f4fa6f196e048afcceb7de9d9b2112c0",
+      "words": 767,
+      "author": "devere",
+      "side": "a_draft"
+    },
+    "b_gut_113_Burnett": {
+      "sha256": "911138460fbfac84b09ba11a1be0e054531751aea73759b14a3cfdcc2cf3f587",
+      "words": 6079,
+      "author": "burnett",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_11_Carroll": {
+      "sha256": "c334cb9ee1582c21894ee4a3a0eddffe1f80417d09588751408e0637d824b058",
+      "words": 5844,
+      "author": "carroll",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_1260_BronteC": {
+      "sha256": "6c8ac4341bff914e3611457ed72d3af013efde3fc0e4b1fb352fde845cb7adb4",
+      "words": 5778,
+      "author": "brontec",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_1342_Austen": {
+      "sha256": "93ce56c4f72b260085c388523ffd9d78ab8018f7faf83509297436c7bfb86ae5",
+      "words": 5998,
+      "author": "austen",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_1399_Tolstoy": {
+      "sha256": "514902b14353820c91a43bb96777efbbcf2032b9a66deaa4485fef8ab9f6b9b4",
+      "words": 5788,
+      "author": "tolstoy",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_145_Eliot": {
+      "sha256": "fcd9ce9f55fa9438c916fbafcaec2a7f1daa24315223eb86700a8d206d30dadd",
+      "words": 5973,
+      "author": "eliot",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_1661_Doyle": {
+      "sha256": "9bf45deab23e6691fbb9e12465c74859b66f9fdc7584db04cfd0e5c3a8e55e6b",
+      "words": 6087,
+      "author": "doyle",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_16_Barrie": {
+      "sha256": "1a8163c75193bb35ab9a7cf4a1744b6dc053422f1669eda3fca4b01ad11bc6ae",
+      "words": 6035,
+      "author": "barrie",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_174_Wilde": {
+      "sha256": "4e8d86059ce00e68123c6fe85408d23d8c4ec9ce820fe6e8354e87762e495a75",
+      "words": 6028,
+      "author": "wilde",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_219_Conrad": {
+      "sha256": "ec2a75692c1a4dd176a1fdea40e621514250d789a577b916eda1f58f457f9f24",
+      "words": 5818,
+      "author": "conrad",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_25344_Hawthorne": {
+      "sha256": "525fb987b2e8c4b8aeb6040b3ac0aaeaaf365e02f1a8471569415a882d1074c8",
+      "words": 5687,
+      "author": "hawthorne",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_2554_Dostoevsky": {
+      "sha256": "1633529ed310554e257ed6fa138ddc386103ba820d833f16ef1b35aea6ee4dd1",
+      "words": 5691,
+      "author": "dostoevsky",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_2701_Melville": {
+      "sha256": "3ebc7627ffc0cd917b1b3c52631eeed6b26cb227d06734d4b1d0b2025901c429",
+      "words": 5736,
+      "author": "melville",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_2814_Joyce": {
+      "sha256": "d67ec4c27d3e6ab9f73ce7b2f5a5f038493273c497b3457dd923b241b78aa7b9",
+      "words": 6236,
+      "author": "joyce",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_345_Stoker": {
+      "sha256": "08ca5fb41f88d47a625212998900b67a3ad57ef1d7e240c87d4bccddd3782826",
+      "words": 6013,
+      "author": "stoker",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_35_Wells": {
+      "sha256": "202b469f25788da0187c87c35515adf5da154b347496b69acdec36ff46a7d13b",
+      "words": 6157,
+      "author": "wells",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_43_Stevenson": {
+      "sha256": "acc60c73a97ba88165e8d83025a7ad3ccef86990affc4906a30d70c0d88bb977",
+      "words": 5839,
+      "author": "stevenson",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_541_Wharton": {
+      "sha256": "15f85c8b0ed8e740d4a82cb91a64467b2591b7683abf0880cef7f117138b9b55",
+      "words": 5804,
+      "author": "wharton",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_55_Baum": {
+      "sha256": "eede8eb7c9c01cdf32792cf0d088888f440d0207b0359dc8e2717dfd8fbfb720",
+      "words": 6304,
+      "author": "baum",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_583_Collins": {
+      "sha256": "7f012783d7a6d4411ef1e9b5a9df63b6d2b9a8ebae5d3c851d8fa0c4b6c2d791",
+      "words": 6131,
+      "author": "collins",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_64317_Fitzgerald": {
+      "sha256": "5e00bc845d1313d3251defdf194719057efabf19c04cefa2f2e7550c4116f333",
+      "words": 5895,
+      "author": "fitzgerald",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_74_Twain": {
+      "sha256": "c5cf8b1989da51c7b16533aab2931cb233b27fa47b32dea7f475915dd6c60c53",
+      "words": 5815,
+      "author": "twain",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_768_BronteE": {
+      "sha256": "b8b9361cb41fd0df598d3a4edec73905630f39d5505dce159d408fa7ab3ffd09",
+      "words": 5749,
+      "author": "brontee",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_84_Shelley": {
+      "sha256": "9deac1d9b82aa042ed4ba5332d853fb92f69648f9952936ab2b09f32776c97cb",
+      "words": 6136,
+      "author": "shelley",
+      "side": "b_published_gutenberg"
+    },
+    "b_gut_98_Dickens": {
+      "sha256": "b1ad472ac0d7b8e1dad19963caadfbac68d11cdbcf8c28d9c67d69b8558622b0",
+      "words": 5794,
+      "author": "dickens",
+      "side": "b_published_gutenberg"
+    },
+    "b_slush_16_the_one_who_was_not_waiting": {
+      "sha256": "14ca4fcc2ead3f5ee9f61b933282af3ac813e99547dcce48bc9d2d9b3ac95297",
+      "words": 3712,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_05_the_second_morning": {
+      "sha256": "5c29b93c06fe3720545517ca4a212f04225df0eccf6fb7458b050a9a483e3b7a",
+      "words": 3222,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_10_the_bond_and_the_blank": {
+      "sha256": "8285f62c37de64c3d143a8c5e26447059f955f648c11a107fba5af0484afd5d8",
+      "words": 4393,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_28_the_easing": {
+      "sha256": "f9905a0c93c29b1ad2bc5b316800890fe73ce6dcd24cd29d2aa29bf5611c5574",
+      "words": 1673,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_02_the_turn": {
+      "sha256": "f9958ec407b36a3346b44191d6fa67455d356f4526724d2bcd6f868c67b4757f",
+      "words": 3506,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_09_the_hands": {
+      "sha256": "6e19910b0554a85d21a0ee5d931c4ff0aba75dfb6161e8cb4d9c23a0c8284005",
+      "words": 3814,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_32_the_one_still_coming": {
+      "sha256": "f656605fbbd6c533a5b6b4a1a2511ed0b9f3027677e4e4863ccdd2058151df84",
+      "words": 863,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_13_for_reapproach": {
+      "sha256": "e30ca266c4473f886df0000a97ed4f9f07d83508188a42b822d6a86ee9963bf7",
+      "words": 4048,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_22_the_waking_the_drones": {
+      "sha256": "f74acd2ba27ecca8bec4cd542844fa4ad8b37f49b53e3b7228a689453f318cf1",
+      "words": 3669,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_23_the_cluster_and_the_kitchen": {
+      "sha256": "de268c68630d041896474f40736a91ded13490c07885e11ed3249f80ab2f6e9f",
+      "words": 2902,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_06_the_compounds": {
+      "sha256": "306c4717edb7a22411978a42afd1001eab0e07c50abce9c463e36b0eee4c6807",
+      "words": 4719,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_14_the_new_column": {
+      "sha256": "5eac536ab078104888fc9db660c586003f6f713993cfe34981db1293960a62e8",
+      "words": 4180,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_15_the_bending": {
+      "sha256": "73e031375761b1873a1de8f819932899d1305da6f9b0310332834695b34d1feb",
+      "words": 2066,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_11_the_first_warmth": {
+      "sha256": "c5309fb0138c19adbc64ea3a77534054686b6aed9f56bd41c5eb33db7b7358e3",
+      "words": 3573,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_08_the_blank_cut_to_the_shape": {
+      "sha256": "67745a18ad28a654267a04bce3d1be333e6656d52e3cea223f7f71013a77fe32",
+      "words": 3506,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_26_the_two_the_war_revealed": {
+      "sha256": "c25d1a7b4ee9a59ca34a729360011b41eeab3672b638717041996d04fbf9c625",
+      "words": 2180,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_19_the_ones_who_cried_out": {
+      "sha256": "4a3462e590e49cd35c0244c7a55b366576e776f8fbcf55f77bfbbddc020eb377",
+      "words": 3386,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_18_the_measure_from_above": {
+      "sha256": "733af885bf8c93fee817a0f6b80b5a060a10f7a3275767ef6a5c096d759493fc",
+      "words": 2141,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_25_the_war": {
+      "sha256": "b7b5038315799da8dee51d6608e8a266bb914672e95fb70493af31515c7838f6",
+      "words": 2436,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_20_the_widening": {
+      "sha256": "9dae6b22ec06230b1c1335bfb67e7f9cdb161af017368a31044233a4fb28b376",
+      "words": 2525,
+      "author": "devere",
+      "side": "b_slush"
+    },
+    "b_slush_29_the_hybridization": {
+      "sha256": "a2fd511fdf5afa6909e9849498b9bf18d569b9e3c3f2e7dd9f6f16835e7e50df",
+      "words": 3861,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_07_the_still_rooms": {
+      "sha256": "9e43e65c2ec3215e29c400cfa870c9ea1643800f0728a60e8a9e4736efc649c6",
+      "words": 6489,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_17_what_was_not_yet": {
+      "sha256": "5a9a08c2ad2713500f34b4fd26ac5dc88f28a1d02104c1854362006403ce2a12",
+      "words": 5782,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_31_the_mirror": {
+      "sha256": "347bae6727d6eb19bfb8c3fb4ea7a584691c0ef1a86563bf42e3434688ed2282",
+      "words": 2204,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_27_the_many_doors": {
+      "sha256": "263e5923f5b4f348eac34223b144177eabaf9334cb2ec65aeee46696839492c9",
+      "words": 2140,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_01_the_silence": {
+      "sha256": "a629210e309c9cfcbc2fd6c627205caa670634774f9d9eb4b474e916d645db87",
+      "words": 3765,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_21_the_field_entire": {
+      "sha256": "d5cc92ee1356be2b84b478835bfa07c39751b67be937d894e287e5d92948e935",
+      "words": 4261,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_04_the_first_day_closes": {
+      "sha256": "34eb4cf74a403de5b1559398ed5c3b26faa4af24e3e6895289c23decf25e4ef0",
+      "words": 4607,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_12_the_column_and_the_cost": {
+      "sha256": "717bfece0cdae1922f248b64c150de994ba97bfd66b33256a0a2cde54041452f",
+      "words": 3771,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_24_the_field_of_eyes": {
+      "sha256": "928e24c79a86f3dfcaa9091ea9047e8450026ca260b59a38ac23a24293cb9f1f",
+      "words": 2010,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_03_the_lights_off": {
+      "sha256": "bfc611d0212ecd5074cb4884252e8e20736225187c9bacd39a1c6f5bb94a6d38",
+      "words": 3811,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_30_the_ones_who_said_i": {
+      "sha256": "04c906a663d18222b5bfabe0b9a8d89c09e6ca99c986be59577cece0fd35e0d1",
+      "words": 1477,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_slush_00_prologue_the_blink": {
+      "sha256": "1c9c556a3c8ca8da91824d596b7c1b343921a80ccecc164774349b4c1139b594",
+      "words": 1371,
+      "author": "devere",
+      "side": "b_slush_backup"
+    },
+    "b_gut_113_Burnett_dupcheck": {
+      "sha256": "911138460fbfac84b09ba11a1be0e054531751aea73759b14a3cfdcc2cf3f587",
+      "words": 6079,
+      "author": "burnett",
+      "side": "dup_control"
+    },
+    "b_slush_16_the_one_who_was_not_waiting_dupcheck": {
+      "sha256": "14ca4fcc2ead3f5ee9f61b933282af3ac813e99547dcce48bc9d2d9b3ac95297",
+      "words": 3712,
+      "author": "devere",
+      "side": "dup_control"
+    }
+  }
+}
