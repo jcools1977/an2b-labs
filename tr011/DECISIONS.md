@@ -116,3 +116,49 @@ maps to which published span) committed with provenance.
 numpy==2.5.2, scipy==1.18.1, scikit-learn==1.9.0 now; the model stack
 at the legion phase with versions recorded here. No unpinned installs
 on the experiment path.
+
+## D11. The data covenant
+Committed 2026-08-31, BEFORE any draft file is read. The Epoch I draft
+archive (private repo, archive/epoch1-draftwork/, provenance-sealed) is
+one iteration of a living authorial process, not a dataset. Binding
+terms:
+- The archive is **read-only input, never a lab artifact**. Nothing in
+  it is copied into the lab repo; the lab holds derived numbers only.
+- The lab publishes **hashes and statistics only**: never text, never
+  excerpts, never paraphrase.
+- The report never characterizes draft content qualitatively. No "the
+  early version was weaker," no describing what changed between
+  versions, nothing a reader could turn into commentary on unfinished
+  work. Numbers about entropy series, full stop.
+- Scope is **TR-011 exactly**. Any future experiment that wants these
+  files obtains a fresh word from the author, per experiment.
+- The drafts are **seeds, not failures**. The December material is a
+  book that may still become a book, and the lab's language never
+  implies otherwise.
+This covenant has the same standing as a frozen threshold: written
+first, on the record, before anything can be tempted.
+
+## D12. Draft-to-published pairing, constructed blind to the signal
+The six-generation transformation makes "same text at two stages" only
+loosely true, so the pairing rule is frozen before any alignment runs:
+- **The frozen gate pairing**: earliest-substantial draft generation
+  versus published text, at matched spans, per D9.
+- **Blindness, structural**: whatever aligns draft spans to published
+  sections (embedding similarity with a fixed threshold, or a
+  documented manual mapping) must never touch the scoring models or
+  any entropy feature. The alignment code lives outside the feature
+  pipeline, in its own module, and runs before any scoring exists to
+  leak. Pairs selected by the signal would make the gate measure its
+  own selection.
+- **No-ancestor exclusion**: published sections with no identifiable
+  draft ancestor stay out of the paired test entirely, whatever that
+  costs in n. The pairing manifest records every inclusion, exclusion,
+  and the alignment scores behind them.
+
+## D13. The generational trend is exploratory, fenced off from the gate
+V1 through V6 permit a within-author monotonicity check (do features
+trend across successive versions of the same work?). Pre-registered as
+**exploratory only**: reported in its own section, never promotable
+into evidence for a PASS, never borrowed to rescue a miss. The frozen
+gate reads only the D12 pairing.
+
