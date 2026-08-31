@@ -25,3 +25,4 @@ tr*/sweep*.log
 tr*/build/
 tr*/*.egg-info/
 tr*/dist/
+tr*/corpus_store/

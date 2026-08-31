@@ -162,3 +162,23 @@ trend across successive versions of the same work?). Pre-registered as
 into evidence for a PASS, never borrowed to rescue a miss. The frozen
 gate reads only the D12 pairing.
 
+## D14. Corpus B composition realities, logged before assembly
+- **Slush is single-author** (the author's Epoch II drafts): the only
+  $0, license-clean, topic-controllable unpublished prose available.
+  Consequence, named now: the corpus-B classifier's author-disjoint
+  splits are one-sided (published side spans ~20 authors; slush side
+  one), so corpus-B AUC could partly reflect author identity rather
+  than published-ness. The paired corpus A (same author on both sides)
+  carries the design's main protection; corpus B serves the
+  sign-agreement check and its AUC ships with this limitation stated.
+- **Published side is canonical public-domain fiction** (25 distinct
+  authors, 20 primary + 5 backup, Gutenberg IDs committed in the
+  manifest). Canonical works maximize the memorization risk the D7
+  audit exists to arbitrate; the audit's pre-registered response
+  ladder, not selection cleverness, decides whether corpus B survives.
+  Mid-book spans, headers stripped, 8,000-token cap per D9.
+- **Slush documents** are drawn from Epoch II manuscript chapters
+  (distinct book from corpus A, so cross-corpus disjointness is
+  structural), covered by the D11 covenant identically: hashes and
+  statistics only, no text, no qualitative characterization.
+
