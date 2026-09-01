@@ -47,6 +47,15 @@ def check(path):
                 v.append(f"control 3: effect strengthens under rank-{rank} "
                          f"random projection ({pd} > {rs['orig_delta']} + "
                          f"{PROJ_TOL}); ambient-dimension artifact")
+    rg = d.get("rogue_dims")
+    if not rg or not rg.get("removed"):
+        v.append("control 4 (rogue dimensions, D12) missing")
+    else:
+        for k, e in sorted(rg["removed"].items()):
+            if e["delta"] < 0.2 or e["ci"][0] <= 0 <= e["ci"][1]:
+                v.append(f"control 4 (D12): effect dies with top-{k} "
+                         f"highest-variance dims removed (delta {e['delta']} "
+                         f"CI {e['ci']}); a rogue-dimension artifact")
     return v
 
 

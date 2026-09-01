@@ -19,6 +19,8 @@ expect_fail "shuffled labels retaining effect" python3 checks/check_controls.py 
 expect_fail "synonym control manufacturing effect" python3 checks/check_controls.py tests/fixtures/controls_bad_synonym.json
 expect_fail "effect strengthening under random projection" python3 checks/check_controls.py tests/fixtures/controls_bad_projection.json
 expect_fail "missing control block (D21 lesson)" python3 checks/check_controls.py tests/fixtures/controls_bad_missing_block.json
+expect_fail "effect dying without its rogue dimensions (D12)" python3 checks/check_controls.py tests/fixtures/controls_bad_rogue.json
+expect_fail "rogue-dimension block absent (D12)" python3 checks/check_controls.py tests/fixtures/controls_bad_no_rogue.json
 expect_pass "healthy controls" python3 checks/check_controls.py tests/fixtures/controls_good.json
 
 expect_fail "too few lemmas" python3 checks/check_corpus.py tests/fixtures/corpus_bad_lemmas.json

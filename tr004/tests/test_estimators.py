@@ -8,6 +8,10 @@ analysis/curvature exist and pass.
 - Both estimators must agree in direction on a d=5 vs d=9 pair.
 - Geodesic-chordal proxy must separate a 2-sphere from a flat 2-disk
   of matched n, and read within 5% of 1.0 on the disk.
+- D11 noise condition: with isotropic ambient Gaussian noise at 20%
+  of signal variance (SNR 5:1), order preservation at n=40 must hold
+  and the noisy disk must stay within the 5% flatness tolerance while
+  the noisy sphere still separates from it.
 """
 import sys
 from pathlib import Path
@@ -35,6 +39,13 @@ def sphere2(rng, n):
 
 def disk2(rng, n):
     return ball(rng, 2, n)
+
+
+def add_noise(rng, X):
+    # D11: isotropic ambient noise, total variance 20% of signal variance
+    sig_var = X.var(axis=0).sum()
+    sigma = np.sqrt(0.2 * sig_var / X.shape[1])
+    return X + rng.normal(0, sigma, X.shape)
 
 
 def main():
@@ -80,6 +91,18 @@ def main():
         print(f"BROKEN: direction disagreement (d5={d5}, d9={d9})")
         bad = 1
 
+    # D11 noise condition: order preservation at n=40 under SNR 5:1
+    for name, est in (("twonn", twonn), ("mle", mle)):
+        n2 = est(add_noise(rng, ball(rng, 2, 40)))
+        n10 = est(add_noise(rng, ball(rng, 10, 40)))
+        if n2 < n10:
+            print(f"ok: {name} preserves order under noise at n=40 "
+                  f"({n2:.2f} < {n10:.2f})")
+        else:
+            print(f"BROKEN: {name} order violated under noise "
+                  f"({n2:.2f} !< {n10:.2f})")
+            bad = 1
+
     r_sphere = geodesic_chordal_ratio(sphere2(rng, 300))
     r_disk = geodesic_chordal_ratio(disk2(rng, 300))
     if r_sphere > r_disk:
@@ -93,6 +116,17 @@ def main():
         print(f"ok: proxy reads near-flat on the disk ({r_disk:.3f})")
     else:
         print(f"BROKEN: proxy reads {r_disk:.3f} on a flat disk")
+        bad = 1
+
+    # D11: the proxy under noise
+    rn_sphere = geodesic_chordal_ratio(add_noise(rng, sphere2(rng, 300)))
+    rn_disk = geodesic_chordal_ratio(add_noise(rng, disk2(rng, 300)))
+    if rn_sphere > rn_disk and abs(rn_disk - 1.0) <= 0.05:
+        print(f"ok: proxy holds under noise (sphere {rn_sphere:.3f} > "
+              f"disk {rn_disk:.3f}, disk within 5%)")
+    else:
+        print(f"BROKEN: proxy fails under noise (sphere {rn_sphere:.3f}, "
+              f"disk {rn_disk:.3f})")
         bad = 1
     return bad
 

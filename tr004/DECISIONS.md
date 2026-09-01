@@ -96,3 +96,58 @@ Bootstrap seeds 41 and 43; shuffle seed 41; projection seed 47.
 Dependencies pinned in requirements.txt (numpy 2.5.2, scipy 1.18.1,
 scikit-learn 1.9.0). Extraction runs on legion in the recorded
 environments; estimation runs on cockpit in the pinned venv.
+
+## D11. Noise condition in the estimator exam (reviewer rider 1)
+Added before the exam turns green. Clean synthetic manifolds certify
+estimators for a world hidden states do not live in, so the exam
+gains: isotropic ambient Gaussian noise at total noise variance equal
+to 20% of signal variance (SNR 5:1, frozen now), under which both
+estimators must remain ORDER-PRESERVING at n=40 (noisy d=2 reads
+below noisy d=10), and the curvature proxy must still separate the
+noisy sphere from the noisy disk with the disk within its 5%
+flatness tolerance. If the estimators cannot pass the noisy exam,
+the experiment learns it before its data does.
+
+## D12. Rogue-dimension control (reviewer rider 2), pre-registered
+Transformer hidden states are anisotropic: a few dimensions carry
+outsized norm and can dominate unnormalized geometry. Control 4: the
+key readings are recomputed with the top-k highest-variance
+dimensions removed, k frozen at 3 and 10. A real effect must survive
+both removals at gate level (delta >= 0.2, CI excluding zero per
+D6); an effect that dies with its rogue dimensions was a
+counterfeiting artifact, the geometric cousin of TR-015's topic
+residualization. The checker consumes every k; absence of the block
+is a violation. Registered before any hidden state is extracted.
+
+## D13. Layer robustness, fenced (reviewer addition)
+Layers 8 and 24 are pre-registered as SECONDARY reads in the
+exploratory shape: extracted and reported beside the gated layer-16
+numbers, never promotable into any gate, never borrowable if layer
+16 misses. Purpose: pre-empt "it's a layer-16 artifact" with the
+frame built in advance. Cross-depth replication or its absence is
+reported either way.
+
+## D14. The noisy exam caught two instruments; STOP surfaced
+2026-09-01, logged at the moment of the red, before any real data
+exists. With the proper Facco cumulative fit, both estimators pass
+every clean condition (within 20% at n=500, order at n=40, direction
+agreement). Under the D11 noise condition three legs fail for
+measured, mechanistic reasons:
+- TwoNN inverts order at n=40 under noise (d=2 reads 12.21 vs d=10
+  at 10.42): it reads at the first-neighbor scale, and at SNR 5:1 in
+  384 ambient dims the noise displacement (~0.32) matches the d=2
+  cloud's neighbor spacing, so the tighter cloud is MORE
+  noise-dominated. Levina-Bickel, integrating over k=10 neighbors,
+  preserves order under the same noise (4.81 < 11.17).
+- The geodesic-chordal proxy reads 1.096 on a CLEAN flat disk
+  against the 5% tolerance I froze in D5: k-NN-graph geodesics carry
+  a known zigzag inflation at k=8; the tolerance was set wrong for
+  the instrument, not the instrument wrong for the tolerance.
+- Under noise the proxy saturates (both readings ~2.5) and its
+  sphere/disk order inverts, the same noise-halo mechanism.
+Per BB4C rule 1 and D11's own language, this stops estimator
+certification pending adjudication. No amendment is proposed from
+this seat beyond stating the options; TwoNN and the proxy touch no
+real data while red. MLE alone passed every leg including noise.
+Corpus acquisition (which passes through no estimator) proceeds
+under the standing stamp.
