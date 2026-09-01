@@ -207,3 +207,27 @@ Two conditions attached and executed in this session:
    the WORK level (labels permuted per work, chunks riding with
    their work). If the excess vanishes, the clustering mechanism is
    confirmed with evidence instead of "likely."
+
+## D22. Publication and utilization, ratified
+2026-09-01, on the PI's word (J. DeVere Cooley): "Published:
+utilization ratified credibility-asset, flip the TR-015 report header
+and record the ratification." Report header flipped to v1.0 published;
+utilization verdict credibility-asset stands as drafted. The ledger's
+fourth row was flipped by the reviewer through its own channel
+(678f0240).
+
+## D23. Estate sweep executed on the PI's word
+2026-09-01: "Sweep: execute the estate rule as recommended, delete
+the 8.9G of TR-001 checkpoints, keep the adapters as reproducibility
+artifacts, log both." Executed on legion: tr001/checkpoints (8.9G of
+per-configuration resumption scratch) deleted after verifying
+contents; tr001/adapters (8.9G, the trained artifacts behind TR-001's
+published verdict) verified intact and retained. Legion free space
+335Gi after the sweep.
+
+---
+**Decision log closed 2026-09-01.** Verdict FAIL with KILL fired,
+published; utilization credibility-asset, ratified; estate line
+executed. Twenty-three decisions, each logged before or honestly
+after the number it governed, with the after cases (D15, D19) stated
+as such and adjudicated.
