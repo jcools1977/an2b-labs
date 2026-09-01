@@ -1,0 +1,25 @@
+{
+  "source": "VUAMC",
+  "n_lemmas": 166,
+  "min_instances_per_side": 10,
+  "excluded_lemmas_counted": true,
+  "excluded_hedged_tokens": 2901,
+  "lemmas_below_floor": 10474,
+  "frequency_length_recorded": true,
+  "dedup_overlaps": 0,
+  "n_instances_total": 7274,
+  "per_pos": {
+    "noun": 74,
+    "verb": 65,
+    "adj": 27
+  },
+  "seeds": {
+    "bootstrap": [
+      41,
+      43
+    ],
+    "shuffle": 41,
+    "projection": 47
+  },
+  "instances_sha256": "ba161376bbb17806f22eef06d809a55a18434682ce3ed9e68cf7c1f106f0a531"
+}

@@ -151,3 +151,21 @@ this seat beyond stating the options; TwoNN and the proxy touch no
 real data while red. MLE alone passed every leg including noise.
 Corpus acquisition (which passes through no estimator) proceeds
 under the standing stamp.
+
+## D15. VUAMC acquired; instance rules frozen at acquisition
+Downloaded from the Oxford Text Archive (TEI XML, 16M, 16,202
+sentences), before any instance is extracted:
+- METAPHORICAL instance: a word inside seg function="mrw" type="met"
+  with NO subtype. The hedged categories (WIDLII, personification
+  "PP", "double") are excluded from BOTH sides and counted; the
+  cleanest metaphor set is the harder test.
+- LITERAL instance: a word inside no mrw segment at all.
+- POS restriction: lexical verbs (VV*), nouns (NN*), adjectives
+  (AJ*) only, matching the protocol's per-POS breakdown; be/have/
+  modals are function words and never instances.
+- Lemma survival: >= 10 instances per side (D2). Cloud balancing:
+  each side subsampled (seed 41) to n = min(n_lit, n_met, 60), so
+  the paired clouds always have EQUAL n; LID estimators are
+  n-sensitive and unequal clouds would bias the paired difference.
+- Per instance: sentence text, target token index, sentence length;
+  per lemma: corpus frequency. Dedup on (sentence, position).
