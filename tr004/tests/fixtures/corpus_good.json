@@ -1,0 +1,16 @@
+{
+ "source": "VUAMC",
+ "n_lemmas": 43,
+ "min_instances_per_side": 10,
+ "excluded_lemmas_counted": true,
+ "frequency_length_recorded": true,
+ "dedup_overlaps": 0,
+ "seeds": {
+  "bootstrap": [
+   41,
+   43
+  ],
+  "shuffle": 41,
+  "projection": 47
+ }
+}

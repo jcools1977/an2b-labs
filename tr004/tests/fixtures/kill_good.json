@@ -1,0 +1,18 @@
+{
+ "model1_present": true,
+ "model2": {
+  "delta_twonn": 0.31,
+  "ci_twonn": [
+   0.2,
+   0.42
+  ],
+  "delta_mle": 0.26,
+  "ci_mle": [
+   0.15,
+   0.37
+  ],
+  "direction_reversed": false,
+  "absent": false
+ },
+ "killed": false
+}
