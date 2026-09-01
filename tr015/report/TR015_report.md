@@ -115,15 +115,20 @@ n = (40, 19) chunks per endpoint at 1,500 words.*
 
 ## 4. Controls
 
-- **Label shuffle (control 1): red at one size, and reported as such.**
-  The shuffled-label CI at 1,500 words includes chance ([0.056,
-  0.102] vs 0.071); at 500 words it narrowly excludes it ([0.077,
-  0.125]). Per D19 the gate consumed the stricter size and the
-  checker records the violation. The likely mechanism is benign
-  (chunks cluster by work, so a single-permutation bootstrap over
-  chunks understates variance), but the pre-registered reading stands:
-  a pipeline caveat, disclosed, adjudication surfaced to the PI and
-  reviewer rather than repaired after the fact.
+- **Label shuffle (control 1): red at one size, ratified as a
+  disclosed caveat (D19, D21).** The shuffled-label CI at 1,500 words
+  includes chance ([0.056, 0.102] vs 0.071); at 500 words it narrowly
+  excludes it ([0.077, 0.125]). The checker now consumes every chunk
+  size and records the violation. The adjudicated asymmetry makes the
+  red incapable of threatening the verdict: leakage of this kind can
+  only inflate true-label accuracy, so the measured numbers are, if
+  anything, slight overestimates and the FAIL is more secure than
+  they say. The mechanism is confirmed by a supplementary diagnostic
+  (replacing nothing): rerunning the shuffle at the WORK level, with
+  every chunk riding with its work, the excess vanishes at both sizes
+  (point 0.048, CI [0.032, 0.066] at 500 words; point 0.054, CI
+  [0.035, 0.074] at 1,500), so the chunk-level excess was work
+  identity surviving a chunk-level shuffle, not a pipeline leak.
 - **Topic-only classifier (control 2):** 0.382 / 0.641 — the leak the
   residualization was built to close, and the headline of the FAIL.
 - **Translation stress (control 3, reported never gated):** with the
@@ -192,8 +197,10 @@ strictness correction, logged and surfaced.
   with author identity by construction; the protocol chose that
   confrontation deliberately, and control 2 measures it rather than
   hiding it.
-- The label-shuffle CI's clustering caveat (D19) applies to the
-  control's variance estimate, not to any gate number.
+- The label-shuffle red (D19, D21) is a property of chunk-level
+  shuffling in a work-clustered corpus, demonstrated by the work-level
+  diagnostic; it applies to the control's granularity, not to any gate
+  number, and its direction could only have flattered H1.
 - The Epoch trajectory is a two-point demonstration at n = (40, 19)
   chunks, coordinates only, no craft claims (D12, D14, covenant D1).
 

@@ -17,6 +17,8 @@ expect_fail "residualizer over-corrects" python3 checks/check_kill.py tests/fixt
 expect_pass "certified residualizer, no kill" python3 checks/check_kill.py tests/fixtures/kill_good.json
 
 expect_fail "label-shuffle above chance" python3 checks/check_controls.py tests/fixtures/controls_bad_shuffle.json
+expect_fail "label-shuffle leak hidden in one size (D21)" python3 checks/check_controls.py tests/fixtures/controls_bad_hidden_size.json
+expect_fail "per-size CIs absent (D21)" python3 checks/check_controls.py tests/fixtures/controls_bad_no_sizes.json
 expect_fail "topic leak unreported" python3 checks/check_controls.py tests/fixtures/controls_bad_topic.json
 expect_fail "translation stress unreported" python3 checks/check_controls.py tests/fixtures/controls_bad_translation.json
 expect_pass "healthy controls" python3 checks/check_controls.py tests/fixtures/controls_good.json

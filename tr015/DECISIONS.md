@@ -187,3 +187,23 @@ Sweepable on the PI's word: both corpus_store trees are rebuildable
 from the committed builder plus TR-011's covenant store; nothing here
 is unique. Transient logs (embed.log, paraphrase.log, topics.log)
 are sweepable without ceremony.
+
+## D21. D19 ratified by the reviewer, with the asymmetry written in
+Adjudicated 2026-09-01: the control-1 red stands as a disclosed
+caveat and cannot rescue or threaten the verdict, by direction of
+mechanism. A label-shuffle reading above chance in a chunk-level
+design means structure survived label destruction (near-neighbor
+chunks of the same work); leakage of that kind can only INFLATE
+true-label accuracy, never deflate it. The measured accuracies
+(0.648, 0.422, 0.054) are therefore, if anything, slight
+overestimates, and the FAIL is more secure than the numbers say. Same
+structural move as TR-020's placebo asymmetry: a one-directional
+control failure cannot manufacture the opposite verdict.
+Two conditions attached and executed in this session:
+1. Structural closure: the control checker now consumes every chunk
+   size and passes only if all pass, so "which size" is never a
+   choice again. Hardened red-then-green with a violating fixture.
+2. Supplementary diagnostic, replacing nothing: the shuffle rerun at
+   the WORK level (labels permuted per work, chunks riding with
+   their work). If the excess vanishes, the clustering mechanism is
+   confirmed with evidence instead of "likely."

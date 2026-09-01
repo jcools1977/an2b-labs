@@ -22,6 +22,18 @@ def check(path):
     elif not (ci[0] <= ch <= ci[1]):
         v.append(f"control 1 (label shuffle): CI {ci} excludes chance {ch}; "
                  f"the attribution pipeline is leaking")
+    # D21 closure: every chunk size's CI is consumed; which-size is
+    # never a choice. Absence of the per-size CIs is itself a violation.
+    per = ls.get("per_size_ci")
+    if not per:
+        v.append("control 1 (label shuffle): per-size CIs absent; the "
+                 "checker must see every chunk size (D21)")
+    else:
+        for size, sci in sorted(per.items()):
+            if not (sci[0] <= ch <= sci[1]):
+                v.append(f"control 1 (label shuffle): size {size} CI {sci} "
+                         f"excludes chance {ch}; the attribution pipeline "
+                         f"is leaking (D21: all sizes must pass)")
     if d.get("topic_only", {}).get("accuracy") is None:
         v.append("control 2 (topic-only leak) not reported")
     if not d.get("translation", {}).get("reported"):
