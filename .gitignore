@@ -26,3 +26,5 @@ tr*/build/
 tr*/*.egg-info/
 tr*/dist/
 tr*/corpus_store/
+# sealed predictions stay out of the repo until closeout
+oracle/sealed/*.json

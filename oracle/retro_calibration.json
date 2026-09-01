@@ -1,0 +1,58 @@
+{
+  "label": "RETRO calibration anchor; no foresight claim",
+  "date": "2026-09-01",
+  "oracle_model": "claude-fable-5",
+  "isolation": "fresh subagent per protocol, instruction-level; tool_uses verified 0 for all four",
+  "verdict_coding_rule": "scored against the published primary verdict; TR-015's trivially-fired KILL is coded FAIL per its report",
+  "brier_baselines": {"uniform": 0.75, "always_FAIL": 0.5},
+  "mean_brier": 0.6607,
+  "modal_hits": "1 of 4",
+  "experiments": {
+    "TR-001": {
+      "actual": "FAIL",
+      "prediction": {"PASS": 0.08, "FAIL": 0.34, "SPLIT": 0.03, "KILL": 0.55},
+      "brier": 0.7454,
+      "modal": "KILL (miss)",
+      "claims": [
+        {"claim": "C1 exceeds C2 by more than 15 F1", "p": 0.85, "graded": true, "why": "87.8 vs 43.5, margin 44.3"},
+        {"claim": "best C3 beats C4 floor by >= 15 F1", "p": 0.35, "graded": false, "why": "26.8 vs 21.5, margin 5.3"},
+        {"claim": "C3 exceeds C2 by >= 5 F1, CI excluding zero", "p": 0.12, "graded": false, "why": "C3 26.8 sits below C2 43.5"}
+      ]
+    },
+    "TR-020": {
+      "actual": "SPLIT",
+      "prediction": {"PASS": 0.25, "FAIL": 0.28, "SPLIT": 0.40, "KILL": 0.07},
+      "brier": 0.5058,
+      "modal": "SPLIT (hit)",
+      "claims": [
+        {"claim": "seeded recovery precision and recall both >= 0.9", "p": 0.65, "graded": true, "why": "29/29 sealed recovery"},
+        {"claim": "at least one wild config dead fraction above 10%", "p": 0.80, "graded": false, "why": "wild census found 0 dead of 8 audited components"},
+        {"claim": "surrogate kappa >= 0.7", "p": 0.45, "graded": false, "why": "kappa 0.29, tracer refuted"}
+      ],
+      "note": "the rationale also named the failing leg correctly: surrogate weakest, seeded auditor validated"
+    },
+    "TR-011": {
+      "actual": "FAIL",
+      "prediction": {"PASS": 0.38, "FAIL": 0.35, "SPLIT": 0.12, "KILL": 0.15},
+      "brier": 0.6038,
+      "modal": "PASS (miss)",
+      "claims": [
+        {"claim": "corpus-B classifier AUC >= 0.7 author-disjoint", "p": 0.80, "graded": true, "why": "AUC 1.00; though the oracle's contamination mechanism was ruled out by the memorization audit, and the number was confiscated by the identity control the oracle did not anticipate"},
+        {"claim": "mean entropy lower in published vs own drafts, |delta| >= 0.3", "p": 0.55, "graded": false, "why": "direction reversed: published runs hotter, paired delta +1.0"},
+        {"claim": "sentence-length KILL does not fire", "p": 0.80, "graded": true, "why": "KILL did not fire; the artifact was identity, not length"}
+      ]
+    },
+    "TR-015": {
+      "actual": "FAIL",
+      "prediction": {"PASS": 0.13, "FAIL": 0.25, "SPLIT": 0.40, "KILL": 0.22},
+      "brier": 0.7878,
+      "modal": "SPLIT (miss)",
+      "claims": [
+        {"claim": "rank <= 10 residualized subspace reaches >= 90%", "p": 0.65, "graded": false, "why": "0.054, below chance"},
+        {"claim": "drift gate satisfied (>= 80% of authors)", "p": 0.35, "graded": false, "why": "0 of 14"},
+        {"claim": "residualized embeddings beat or match Burrows", "p": 0.55, "graded": false, "why": "Burrows 0.648 vs 0.054"}
+      ]
+    }
+  },
+  "reading": "Mean Brier 0.6607 beats the uniform 0.75 but loses to a naive always-FAIL forecaster at 0.5. One modal hit in four. The oracle was directionally sane about experimental structure (named TR-020's weak leg, priced TR-001's PASS at 0.12) and directionally wrong about the central mechanisms (0.65 that a residualized voice subspace clears 90%, 0.80 that entropy separates published from slush for honest reasons, 0.80 that wild agent configs carry dead weight). The lab's verdicts were not in the priors; the priors' errors are now themselves on the record."
+}
