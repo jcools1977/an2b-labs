@@ -34,6 +34,18 @@ def twonn(X):
     return float(x @ y / denom) if denom > 0 else float("nan")
 
 
+def pr(X):
+    # Participation ratio (D18 substitute): spectral linear dimension,
+    # (sum lambda)^2 / sum lambda^2 of the cloud covariance. Scale-
+    # integrating and mechanistically independent of the kNN
+    # likelihood; admitted only through the frozen D5+D11 exam.
+    X = np.asarray(X, dtype=float)
+    Xc = X - X.mean(axis=0)
+    lam = np.linalg.svd(Xc, compute_uv=False) ** 2
+    s = lam.sum()
+    return float(s * s / (lam @ lam)) if s > 0 else float("nan")
+
+
 def mle(X):
     D = _dists(X)
     n = len(D)

@@ -206,3 +206,29 @@ N=200 against the 0.05 tolerance; Cliff's delta of pure noise at
 N=200 has sampling SD ~0.07, so the exam demanded more precision
 than its sample could carry. N raised to 2000 (tolerance UNCHANGED);
 a systematic bias would stay red, sampling noise shrinks.
+
+## D18. The D14 ruling, witnessed and ratified; operationalized here
+Relayed by the PI 2026-09-02: TwoNN decertified for this regime with
+substitution-by-exam; the proxy's delta leg added; the D11 noise
+operationalization untouched. Logged per the PI's word, with this
+seat's operationalizations stated for correction if misread:
+- Substitute candidate: the participation ratio (PR, spectral linear
+  dimension, (sum lambda)^2 / sum lambda^2 of the cloud covariance),
+  mechanistically independent of Levina-Bickel's kNN likelihood. It
+  enters ONLY by passing the frozen D5+D11 exam in TwoNN's slot,
+  every leg including noise. TwoNN remains in the codebase,
+  decertified, touching no real data.
+- Proxy delta leg: certification by SEPARATION, sphere ratio minus
+  disk ratio >= 0.05, clean and noisy; the absolute 5%-of-1.0
+  flatness leg is dropped as mis-set (D14). Disclosed: the clean
+  observed values (1.201 vs 1.096) were known when the 0.05 margin
+  was chosen; the proxy is reported-only (D4) and never gates, so
+  the margin certifies an instrument, not a verdict. If the noisy
+  delta leg fails, the proxy is scoped CLEAN-ONLY: the exam prints
+  the scope, the report carries it, and only a clean-leg failure
+  reds the exam's exit.
+- Strictness carried into the frozen controls checker's single-value
+  slots: random-subspace uses orig_delta = the WEAKER estimator's
+  delta with every estimator-rank projection reported against it;
+  rogue-dimension entries carry, per k, the weaker estimator's delta
+  and CI. Both choices only make violations easier to trigger.

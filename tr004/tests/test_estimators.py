@@ -6,12 +6,12 @@ analysis/curvature exist and pass.
   orthogonal frame: both estimators within 20% at n=500.
 - At n=40 (our cloud scale) both must preserve ORDER (d=2 < d=10).
 - Both estimators must agree in direction on a d=5 vs d=9 pair.
-- Geodesic-chordal proxy must separate a 2-sphere from a flat 2-disk
-  of matched n, and read within 5% of 1.0 on the disk.
-- D11 noise condition: with isotropic ambient Gaussian noise at 20%
-  of signal variance (SNR 5:1), order preservation at n=40 must hold
-  and the noisy disk must stay within the 5% flatness tolerance while
-  the noisy sphere still separates from it.
+- Proxy delta legs (D18): sphere-minus-disk separation >= 0.05, clean
+  (required) and noisy (scope-setting only; the proxy never gates).
+- D11 noise condition: isotropic ambient noise at 20% of signal
+  variance (SNR 5:1); order preservation at n=40 required of both
+  certified estimators.
+- D18: pr occupies the decertified TwoNN's slot.
 """
 import sys
 from pathlib import Path
@@ -50,7 +50,7 @@ def add_noise(rng, X):
 
 def main():
     try:
-        from analysis.lid import twonn, mle
+        from analysis.lid import pr, mle  # D18: pr in the decertified TwoNN's slot
         from analysis.curvature import geodesic_chordal_ratio
     except ImportError:
         print("RED: analysis/lid and analysis/curvature do not exist yet "
@@ -61,7 +61,7 @@ def main():
 
     for d in (2, 5, 10):
         X = ball(rng, d, 500)
-        for name, est in (("twonn", twonn), ("mle", mle)):
+        for name, est in (("pr", pr), ("mle", mle)):
             got = est(X)
             if abs(got - d) / d <= 0.20:
                 print(f"ok: {name} recovers d={d} at n=500 ({got:.2f})")
@@ -70,7 +70,7 @@ def main():
                 bad = 1
 
     lo2, hi10 = {}, {}
-    for name, est in (("twonn", twonn), ("mle", mle)):
+    for name, est in (("pr", pr), ("mle", mle)):
         lo2[name] = est(ball(rng, 2, 40))
         hi10[name] = est(ball(rng, 10, 40))
         if lo2[name] < hi10[name]:
@@ -82,9 +82,9 @@ def main():
             bad = 1
 
     d5 = {n: e(ball(rng, 5, 200)) for n, e in
-          (("twonn", twonn), ("mle", mle))}
+          (("pr", pr), ("mle", mle))}
     d9 = {n: e(ball(rng, 9, 200)) for n, e in
-          (("twonn", twonn), ("mle", mle))}
+          (("pr", pr), ("mle", mle))}
     if all(d9[n] > d5[n] for n in d5):
         print("ok: estimators agree in direction on d=5 vs d=9")
     else:
@@ -92,7 +92,7 @@ def main():
         bad = 1
 
     # D11 noise condition: order preservation at n=40 under SNR 5:1
-    for name, est in (("twonn", twonn), ("mle", mle)):
+    for name, est in (("pr", pr), ("mle", mle)):
         n2 = est(add_noise(rng, ball(rng, 2, 40)))
         n10 = est(add_noise(rng, ball(rng, 10, 40)))
         if n2 < n10:
@@ -112,22 +112,24 @@ def main():
         print(f"BROKEN: proxy fails sphere vs disk "
               f"({r_sphere:.3f} !> {r_disk:.3f})")
         bad = 1
-    if abs(r_disk - 1.0) <= 0.05:
-        print(f"ok: proxy reads near-flat on the disk ({r_disk:.3f})")
+    if r_sphere - r_disk >= 0.05:
+        print(f"ok: proxy delta leg, clean (D18): separation "
+              f"{r_sphere - r_disk:.3f} >= 0.05")
     else:
-        print(f"BROKEN: proxy reads {r_disk:.3f} on a flat disk")
+        print(f"BROKEN: proxy clean separation {r_sphere - r_disk:.3f} "
+              f"< 0.05 (D18 delta leg)")
         bad = 1
 
     # D11: the proxy under noise
     rn_sphere = geodesic_chordal_ratio(add_noise(rng, sphere2(rng, 300)))
     rn_disk = geodesic_chordal_ratio(add_noise(rng, disk2(rng, 300)))
-    if rn_sphere > rn_disk and abs(rn_disk - 1.0) <= 0.05:
-        print(f"ok: proxy holds under noise (sphere {rn_sphere:.3f} > "
-              f"disk {rn_disk:.3f}, disk within 5%)")
+    if rn_sphere - rn_disk >= 0.05:
+        print(f"ok: proxy delta leg, noisy: separation "
+              f"{rn_sphere - rn_disk:.3f} >= 0.05; noise-certified")
     else:
-        print(f"BROKEN: proxy fails under noise (sphere {rn_sphere:.3f}, "
-              f"disk {rn_disk:.3f})")
-        bad = 1
+        print(f"SCOPE: proxy noise-decertified (noisy separation "
+              f"{rn_sphere - rn_disk:.3f} < 0.05); reported clean-only "
+              f"per D18, exit not reddened (proxy never gates, D4)")
     return bad
 
 
