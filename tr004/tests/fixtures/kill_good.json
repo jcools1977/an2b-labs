@@ -1,8 +1,8 @@
 {
  "model1_present": true,
  "model2": {
-  "delta_twonn": 0.31,
-  "ci_twonn": [
+  "delta_pr": 0.31,
+  "ci_pr": [
    0.2,
    0.42
   ],

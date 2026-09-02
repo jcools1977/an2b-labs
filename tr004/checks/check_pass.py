@@ -4,9 +4,9 @@
 Schema (results/analysis.json):
 {
   "estimators_direction_agree": bool,
-  "twonn": {"delta": f, "ci": [lo, hi]},
+  "pr": {"delta": f, "ci": [lo, hi]},
   "mle": {"delta": f, "ci": [lo, hi]},
-  "after_controls": {"twonn": {"delta": f, "ci": [lo, hi]},
+  "after_controls": {"pr": {"delta": f, "ci": [lo, hi]},
                       "mle": {"delta": f, "ci": [lo, hi]}},
   "seeds_replicate": bool
 }
@@ -36,10 +36,10 @@ def check(path):
     v = []
     if not d.get("estimators_direction_agree"):
         v.append("LID estimators disagree on direction (FAIL clause)")
-    _gate("twonn", d.get("twonn"), v)
+    _gate("pr", d.get("pr"), v)
     _gate("mle", d.get("mle"), v)
     ac = d.get("after_controls") or {}
-    _gate("after-controls twonn (D7)", ac.get("twonn"), v)
+    _gate("after-controls pr (D7)", ac.get("pr"), v)
     _gate("after-controls mle (D7)", ac.get("mle"), v)
     if not d.get("seeds_replicate"):
         v.append("gates do not hold at both bootstrap seeds (D6)")

@@ -1,0 +1,18 @@
+{
+  "model1_present": false,
+  "model2": {
+    "delta_pr": 0.25301204819277107,
+    "ci_pr": [
+      0.10843373493975904,
+      0.39759036144578314
+    ],
+    "delta_mle": 0.3373493975903614,
+    "ci_mle": [
+      0.1927710843373494,
+      0.4819277108433735
+    ],
+    "direction_reversed": false,
+    "absent": false
+  },
+  "killed": false
+}

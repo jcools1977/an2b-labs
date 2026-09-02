@@ -1,6 +1,6 @@
 {
  "estimators_direction_agree": false,
- "twonn": {
+ "pr": {
   "delta": 0.34,
   "ci": [
    0.22,
@@ -15,7 +15,7 @@
   ]
  },
  "after_controls": {
-  "twonn": {
+  "pr": {
    "delta": 0.27,
    "ci": [
     0.15,

@@ -249,3 +249,19 @@ seal file was pulled. Disclosed here before any gate number exists:
   operationalization is logged here; the D18 strictness choices,
   made after exposure, all point toward MORE violation sensitivity,
   not less.
+
+## D20. Runner operationalizations, before the gates are read
+- Reported CIs are the seed-41 bootstrap; seeds_replicate is true iff
+  every gate clause (delta >= 0.2, CI excluding zero, raw and
+  after-controls, both estimators) holds identically at seed 43.
+- Label shuffle: within each lemma the 2n instance vectors are pooled
+  and re-split by a seed-41 permutation into pseudo-clouds of size n.
+- Synonym pairing: lemmas sorted by corpus frequency, adjacent pairs
+  (no reuse); one difference per pair, partner-literal minus
+  own-literal LID.
+- Rogue dimensions: variance ranked over all 7,274 layer-16 states.
+- The KILL's model-1 presence reads the RAW main effect (D8's letter,
+  not the after-controls number).
+- Curvature is reported under its clean-only certification scope
+  (D18) with the scope stated wherever a number appears; layers 8/24
+  ride in the detail file behind the D13 fence.

@@ -4,7 +4,7 @@
 Schema (results/kill.json):
 {
   "model1_present": bool,
-  "model2": {"delta_twonn": f, "ci_twonn": [lo, hi],
+  "model2": {"delta_pr": f, "ci_pr": [lo, hi],
               "delta_mle": f, "ci_mle": [lo, hi],
               "direction_reversed": bool, "absent": bool},
   "killed": bool
@@ -26,7 +26,7 @@ def check(path):
     # both estimators must be absent for the model to be absent)
     def est_absent(ci, rev):
         return rev or (ci[0] <= 0 <= ci[1])
-    absent = (est_absent(m2["ci_twonn"], m2["direction_reversed"])
+    absent = (est_absent(m2["ci_pr"], m2["direction_reversed"])
               and est_absent(m2["ci_mle"], m2["direction_reversed"]))
     if bool(m2.get("absent")) != absent:
         v.append(f"model2 'absent' flag {m2.get('absent')} inconsistent "
