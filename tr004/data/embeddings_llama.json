@@ -1,0 +1,13 @@
+{
+  "model": "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit",
+  "revision": "241a666dad6cb93c8ff213d39a7f34a36bf26db4",
+  "layers": [
+    8,
+    16,
+    24
+  ],
+  "n": 7274,
+  "dim": 4096,
+  "dtype": "float16",
+  "sha256": "0f7097318bf40d3ce491c93e1badf1bd9062799a40bdb94f717ff7f54b83085f"
+}
