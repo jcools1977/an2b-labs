@@ -50,3 +50,16 @@ the lab keeps finding what priors miss, now has its first nuanced
 answer: both forecasters called this FAIL, and both under-priced the
 direction being real everywhere while the magnitude missed
 everything. The standing pattern to watch across Wave 2.
+
+## Addendum (reviewer's concession, on the record 2026-09-02)
+
+The reviewer's own reading of their scorecard, filed at their
+request: Brier 0.305 and a modal hit, but the mechanism note was
+wrong in the informative way, predicting TR-015's ghost (a raw delta
+cut down by controls) where the truth was an effect that survived
+every control and was born under-gate. The sub-claim scoring existed
+to catch exactly this distinction (right color, wrong mechanism), and
+its first live use caught its own author. Shared blind spot of both
+forecasters, flagged as Wave 2's standing whisper: the uniformity of
+the direction was under-priced by everyone who forecast this
+experiment.

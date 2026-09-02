@@ -283,3 +283,13 @@ forecast is scored PROVISIONALLY against the relay text (Brier 0.305,
 modal hit, six of seven sub-claims correct-side, one mixed);
 authoritative scoring awaits the PI's held plaintext against hash
 2329d28e... per D19. Scores in oracle/TR004_scored.md.
+
+## D23. Report approved with the materiality condition, applied
+2026-09-02, reviewer's read: report approved; one framing condition,
+that the near-miss section state firmly that the gate was a
+MATERIALITY claim, not an existence claim, and that the FAIL is about
+materiality: an existence result at a magnitude below the
+pre-registered bar, handing the field a precisely posed replication
+question rather than a grievance. Applied verbatim in spirit to the
+results section. The D18/D19/D20 chain stamped consistent with the
+D14 ruling; TR-018 stays gated shut per the execution order.

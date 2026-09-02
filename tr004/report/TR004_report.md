@@ -96,7 +96,20 @@ The direction is everywhere; the magnitude is nowhere sufficient. The
 frozen gate demanded BOTH estimators at >= 0.2 with CIs excluding
 zero, raw and after controls. PR misses the threshold by 0.02-0.007;
 MLE misses the CI requirement entirely and loses its point estimate
-under residualization. Seeds replicate. Per-POS (reported, never
+under residualization. Seeds replicate.
+
+**One line this report holds firmly: the gate was a materiality
+claim, not an existence claim, and the FAIL is about materiality.**
+What the data show is an existence result: direction positive
+everywhere measured, under the tightest identity-and-topic control in
+the program, stronger in the unrelated embedder, surviving its
+controls, at a magnitude below the pre-registered bar. Not a moral
+PASS, and not a rounding tragedy: a real +0.18 that a dozen venues
+would headline and this lab will not, which is the entire epistemic
+claim. The correct next move belongs to replication, not grievance:
+the magnitude question is now precisely posed (more lemmas, bigger
+clouds, other model families), and the frozen 0.2 stands as what
+materiality means here. Per-POS (reported, never
 gated): the estimators disagree about where the effect lives, PR
 finding it in verbs (+0.354), MLE in nouns (+0.216), a caution flag
 for any study that picks one estimator and one POS.
