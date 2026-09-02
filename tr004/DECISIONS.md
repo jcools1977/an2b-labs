@@ -293,3 +293,19 @@ pre-registered bar, handing the field a precisely posed replication
 question rather than a grievance. Applied verbatim in spirit to the
 results section. The D18/D19/D20 chain stamped consistent with the
 D14 ruling; TR-018 stays gated shut per the execution order.
+
+## D24. Publication and utilization, ratified; log closed
+2026-09-02, on the PI's word: "Ratified: credibility-asset. Publish."
+Report header flipped to v1.0 published; utilization stands as
+drafted. The PI's held reviewer-forecast plaintext was pasted and
+verified against the sealed hash 2329d28e... byte-for-byte (trailing
+newline), making the reviewer's Brier 0.305 final; the plaintext is
+committed beside its seal. The ledger's fifth row flips through the
+reviewer's channel.
+
+---
+**Decision log closed 2026-09-02.** Verdict FAIL by near-miss,
+published under the materiality framing; utilization
+credibility-asset, ratified; both forecasts sealed before their
+subjects, verified, and scored. Twenty-four decisions, the mid-red
+ones (D14, D17, D19) stated as such and adjudicated.

@@ -2,7 +2,7 @@
 ## Curvature of Meaning: Metaphor Raises Intrinsic Dimension, By Less Than We Demanded
 
 **J. DeVere Cooley, AN2B Labs**
-**Status: DRAFT v0.1, 2026-09-02; awaiting reviewer adjudication and PI ratification**
+**Status: v1.0, published 2026-09-02; ledger at an2b.com/labs**
 **Pre-registration: commit `7b7262d`, 2026-08-24, github.com/jcools1977/an2b-labs**
 
 ---

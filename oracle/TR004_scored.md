@@ -19,12 +19,14 @@ modal hit in five subjects, after 1-of-4 on the retro anchor).
 
 All three sub-claims on the correct side of 0.5.
 
-## Context-rich reviewer forecast (PROVISIONAL: scored against the
-relay text per tr004 D19; authoritative scoring requires the PI's
-held plaintext verified against hash 2329d28e...)
+## Context-rich reviewer forecast (FINAL: the PI's held plaintext
+was pasted 2026-09-02 and hashes to the sealed 2329d28e... exactly;
+plaintext committed at oracle/sealed/tr004_reviewer_forecast.txt.
+The relay text proved byte-identical in content, so the provisional
+grades stand unchanged as final.)
 
 Verdict forecast: FAIL 0.55 / SPLIT 0.25 / PASS 0.20.
-**Brier 0.305 (provisional). Modal call FAIL: HIT.**
+**Brier 0.305 (final). Modal call FAIL: HIT.**
 
 | Sub-claim | p | Graded | Why |
 |---|---|---|---|
