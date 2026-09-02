@@ -182,3 +182,27 @@ sentences), before any instance is extracted:
   to float64 in analysis; hashes in committed sidecars.
 - Runs on legion: Llama via mlx (pinned snapshot 241a666d), bge via
   the recorded tr020 wild environment.
+
+## D17. The residualizer's identifiability commitment, logged mid-red
+The D7 bite-proof caught the intercept trap as designed (a full-OLS
+subtraction eats the effect), then its confound leg exposed a second,
+real question: which part of the MEAN paired difference is removable
+is a modeling commitment, not a discoverable fact. Committed now:
+- Covariates with a meaningful zero (the fig-minus-lit sentence
+  length difference, where zero means no length asymmetry) enter
+  UNCENTERED: their slope times their full value, mean included, is
+  confound and is removed.
+- Covariates with no meaningful zero (log lemma frequency, a
+  lemma-level moderator shared by both sides of the pair) enter
+  CENTERED: only their covariation is removable; extrapolating to
+  frequency zero would eat true effect through the back door.
+The exam is corrected to encode this commitment (confound routed
+through the meaningful-zero covariate must collapse; a residual
+correlation bound applies to the centered covariate; a true constant
+effect must survive). This is an exam change after a red, stated
+plainly, surfaced with D14 for the reviewer.
+D17 addendum: the exam's confound leg first read delta -0.090 at
+N=200 against the 0.05 tolerance; Cliff's delta of pure noise at
+N=200 has sampling SD ~0.07, so the exam demanded more precision
+than its sample could carry. N raised to 2000 (tolerance UNCHANGED);
+a systematic bias would stay red, sampling noise shrinks.

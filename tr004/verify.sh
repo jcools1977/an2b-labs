@@ -12,6 +12,10 @@ echo "== 0b. Estimator certification (D5) =="
 python3 tests/test_estimators.py || fail=1
 
 echo
+echo "== 0c. Residualizer bite-proof (D7, D17) =="
+python3 tests/test_residualizer.py || fail=1
+
+echo
 echo "== 1. Corpus integrity (D2, D10) =="
 if [ -f data/CORPUS_MANIFEST.json ]; then
   python3 checks/check_corpus.py data/CORPUS_MANIFEST.json || fail=1
