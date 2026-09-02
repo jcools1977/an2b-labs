@@ -169,3 +169,16 @@ sentences), before any instance is extracted:
   n-sensitive and unequal clouds would bias the paired difference.
 - Per instance: sentence text, target token index, sentence length;
   per lemma: corpus frequency. Dedup on (sentence, position).
+
+## D16. Extraction operationalization, before any hidden state exists
+- Target-token alignment, Llama: the sentence is the whitespace join
+  of its VUAMC tokens; the target's first subtoken index is the
+  length of the tokenization of the preceding prefix (BPE space
+  boundary alignment). For bge: fast-tokenizer character offsets
+  against the target's character start.
+- Layers captured in ONE pass: 8, 16, 24 (gated: 16; fenced: 8 and
+  24 per D13), post-block residual stream, no norm applied.
+- Storage float16 (geometry unaffected at this precision), cast up
+  to float64 in analysis; hashes in committed sidecars.
+- Runs on legion: Llama via mlx (pinned snapshot 241a666d), bge via
+  the recorded tr020 wild environment.
