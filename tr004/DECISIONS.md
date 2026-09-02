@@ -265,3 +265,21 @@ seal file was pulled. Disclosed here before any gate number exists:
 - Curvature is reported under its clean-only certification scope
   (D18) with the scope stated wherever a number appears; layers 8/24
   ride in the detail file behind the D13 fence.
+
+## D21. Closeout disk line (standing estate-hygiene rule)
+TR-004 leaves: cockpit tr004/corpus_store ~194M (VUAMC.xml 16M,
+llama.npz 171M, bge.npz 5.9M, instances.json); legion
+tr004/corpus_store ~180M (same embeddings, no VUAMC). No new model
+snapshots (both embedders were already pinned on legion). All
+rebuildable: VUAMC from the Oxford Text Archive by URL, embeddings
+from the committed extraction scripts. Transient extract.log
+sweepable without ceremony. Deletions on the PI's word only.
+
+## D22. Oracle ledger closeout
+The protocol-only oracle's plaintext is revealed beside its verified
+hash (4b6776a8...) and scored: Brier 0.497, modal FAIL, a hit; all
+three sub-claims on the correct side. The reviewer's context-rich
+forecast is scored PROVISIONALLY against the relay text (Brier 0.305,
+modal hit, six of seven sub-claims correct-side, one mixed);
+authoritative scoring awaits the PI's held plaintext against hash
+2329d28e... per D19. Scores in oracle/TR004_scored.md.

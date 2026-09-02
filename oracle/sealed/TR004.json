@@ -1,0 +1,13 @@
+{
+  "tr": "TR-004",
+  "sealed": "2026-09-01",
+  "oracle_model": "claude-fable-5",
+  "tool_uses": 0,
+  "verdict_probabilities": {"PASS": 0.22, "FAIL": 0.40, "SPLIT": 0.10, "KILL": 0.28},
+  "key_effect_directions": [
+    {"claim": "Median LID (figurative) > median LID (literal) under both Two-NN and MLE in the contextual token model", "probability": 0.65},
+    {"claim": "Paired Cliff's delta >= 0.2 with CI excluding zero survives frequency and sentence-length controls", "probability": 0.35},
+    {"claim": "The sentence embedder reproduces the direction found in the token model (kill criterion avoided)", "probability": 0.55}
+  ],
+  "rationale": "A raw figurative-vs-literal geometry difference in contextual token embeddings is plausible and directionally likely, since metaphorical contexts are more heterogeneous. But much of that heterogeneity is exactly what frequency and length controls absorb, and LID estimators on small, noisy neighborhoods often shrink effects below Cliff's delta 0.2, making FAIL the modal outcome. The kill criterion is genuinely live: sentence embedders pool over context and frequently wash out token-level geometric signal, so a token-only effect (model artifact verdict) has substantial probability. Estimator agreement on direction is likely; the frozen effect-size gate plus dual-model requirement together make a clean PASS the hardest branch."
+}
