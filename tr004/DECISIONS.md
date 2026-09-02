@@ -232,3 +232,20 @@ seat's operationalizations stated for correction if misread:
   delta with every estimator-rank projection reported against it;
   rogue-dimension entries carry, per k, the weaker estimator's delta
   and CI. Both choices only make violations easier to trigger.
+
+## D19. The reviewer forecast's blind broke; disclosed before gates
+The reviewer sealed their context-rich forecast hash-only
+(2329d28e..., plaintext held by the PI, builder not to see it before
+closeout). The relay of the D14 ruling included the forecast text in
+full, so this session has seen it, and filed it verbatim before the
+seal file was pulled. Disclosed here before any gate number exists:
+- The authoritative sealed text is the PI's held plaintext, scored
+  against the committed hash at closeout; the in-channel copy is
+  provenance-marked as a relay, not the seal.
+- Exposure risk runs one way: the forecast names a modal failure
+  mechanism, and a biased builder could steer implementation toward
+  or away from it. The defenses are the frozen protocol gates, the
+  committed checkers, and the fact that every remaining
+  operationalization is logged here; the D18 strictness choices,
+  made after exposure, all point toward MORE violation sensitivity,
+  not less.

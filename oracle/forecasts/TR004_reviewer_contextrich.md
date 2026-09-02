@@ -1,7 +1,11 @@
 # TR-004 reviewer forecast (context-rich channel)
 
-Sealed 2026-09-01 per its own header; relayed by the PI and filed
-2026-09-02, before any gate number existed. Verbatim:
+PROVENANCE (D19): this is the text AS RELAYED in-channel by the PI
+on 2026-09-02, filed before any gate number existed. It is NOT the
+seal: the authoritative plaintext is held by the PI off-repo and is
+verified against the committed hash in
+oracle/tr004_reviewer_forecast.sha256.md at closeout. The builder
+session has seen this text; exposure disclosed in tr004 D19.
 
 TR-004 REVIEWER FORECAST (context-rich) — sealed 2026-09-01
 Forecaster: reviewer instance, chat channel. Nonce: crystal-coast-7274
