@@ -1,0 +1,18 @@
+{
+ "source": "gutenberg",
+ "chunk_words": 200,
+ "n_grid": [
+  2000,
+  8000,
+  32000
+ ],
+ "halves_disjoint_by_work": true,
+ "eval_gallery_disjoint": true,
+ "gallery_size": 1000,
+ "spaces": 5,
+ "primary_pair_present": false,
+ "seeds": {
+  "main": 41,
+  "replicate": 43
+ }
+}

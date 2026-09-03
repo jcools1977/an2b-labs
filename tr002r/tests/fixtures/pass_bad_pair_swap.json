@@ -1,0 +1,17 @@
+{
+ "primary_pair": "e5-small-v2<->Qwen3-1.7B-4bit",
+ "method": "mini-vec2vec-linear",
+ "n_used": 32000,
+ "directions": {
+  "bge_to_llama": {
+   "cosine": 0.78,
+   "top1": 0.41
+  },
+  "llama_to_bge": {
+   "cosine": 0.74,
+   "top1": 0.36
+  }
+ },
+ "skyline_cosine_primary": 0.86,
+ "seeds_replicate": true
+}

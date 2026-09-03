@@ -1,0 +1,17 @@
+{
+ "primary_pair": "bge-small-en-v1.5<->Llama-3.1-8B-4bit",
+ "method": "mini-vec2vec-linear",
+ "n_used": 32000,
+ "directions": {
+  "bge_to_llama": {
+   "cosine": 0.78,
+   "top1": 0.22
+  },
+  "llama_to_bge": {
+   "cosine": 0.74,
+   "top1": 0.36
+  }
+ },
+ "skyline_cosine_primary": 0.86,
+ "seeds_replicate": true
+}

@@ -1,0 +1,14 @@
+{
+ "shuffled_target": {
+  "top1": 0.002,
+  "chance": 0.001
+ },
+ "disjointness": {
+  "halves_overlap": 0,
+  "train_eval_overlap": 0
+ },
+ "domain_shift": {
+  "reported": true,
+  "note": "ood probe"
+ }
+}
