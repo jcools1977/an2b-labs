@@ -106,6 +106,7 @@ def decoder_fn(space):
     from mlx_lm import load
     name, rev = DECODERS[space]
     model, tok = load(name, revision=rev) if rev else load(name)
+    calls = [0]
 
     def fn(text):
         ids = tok.encode(text)[:512]
@@ -113,7 +114,11 @@ def decoder_fn(space):
         for layer in model.model.layers:
             h = layer(h, mask="causal" if h.shape[1] > 1 else None)
         h = model.model.norm(h)
-        return np.array(h[0], dtype=np.float32).mean(axis=0)
+        out = np.array(h[0], dtype=np.float32).mean(axis=0)
+        calls[0] += 1
+        if calls[0] % 100 == 0:
+            mx.clear_cache()  # metal buffer cache bloats over long loops
+        return out
     return fn
 
 

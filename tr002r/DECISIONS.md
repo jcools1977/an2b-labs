@@ -103,3 +103,14 @@ decoder family); Meta-Llama-3.1-8B-Instruct-8bit @ 142d4280
 the approved 40; legion at 328Gi free. Extraction queue order:
 encoders (bge full, e5/minilm at the 8k economy), then llama4 full
 (the primary's long pole), then qwen4/gemma4/llama8 at 8k.
+
+## D9. Extraction stall and fix; revised long-pole estimate surfaced
+2026-09-03: the llama4 pass stalled mid-OOD (checkpoint frozen 32
+minutes, worker at ~1% CPU) with the signature of MLX metal-buffer
+bloat in a long single-process loop. Fix: mx.clear_cache() every 100
+chunks in the decoder path; chain killed and relaunched, resuming
+from checkpoints (nothing recomputed, no number touched). Separately,
+the measured decoder rate (~0.9s/chunk pre-stall) revises the llama4
+invocation estimate to ~17h, past the 8-hour ask line the launch
+estimate sat under; the PI was pinged and the run continues
+checkpointed pending the word.
