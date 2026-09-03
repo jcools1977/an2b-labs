@@ -4,7 +4,7 @@
 Schema (data/CORPUS_MANIFEST.json):
 {
   "source": "gutenberg", "chunk_words": 200,
-  "n_grid": [2000, 8000, 32000],
+  "n_grid": [2000, 8000, 16000],
   "halves_disjoint_by_work": bool, "eval_gallery_disjoint": bool,
   "gallery_size": 1000,
   "spaces": int, "primary_pair_present": bool,
@@ -22,8 +22,8 @@ def check(path):
         v.append(f"source {d.get('source')} not the pre-registered corpus")
     if d.get("chunk_words") != 200:
         v.append("chunk size is not the frozen 200 words (D4)")
-    if d.get("n_grid") != [2000, 8000, 32000]:
-        v.append("n grid is not the frozen {2k, 8k, 32k}")
+    if d.get("n_grid") != [2000, 8000, 16000]:
+        v.append("n grid is not the frozen {2k, 8k, 16k} (D15)")
     if not d.get("halves_disjoint_by_work"):
         v.append("training halves not disjoint BY WORK (D4)")
     if not d.get("eval_gallery_disjoint"):

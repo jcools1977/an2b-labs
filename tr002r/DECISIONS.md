@@ -226,3 +226,17 @@ Also recorded, quarantined per D13: the smoke test's unsupervised leg
 read zero at n=2k on bge<->e5 (no interpretation attached; the frozen
 grid will speak). Extraction and non-gate machinery continue; no gate
 is read until the frame ruling lands.
+
+## D15. D10 fallback executed: largest grid point is 16k
+2026-09-03, 17:20 EDT: the MLX stall recurred mid-half-A (checkpoint
+frozen 33 minutes, worker ~0%CPU, ~3h process uptime; the D9
+periodic cache clear delays but does not eliminate the wedge). Per
+the PI's pre-authorized D10 contingency, the experiment falls back
+to a 16k largest grid point, executed now, before any gate number
+exists: the PASS gate's "largest pre-registered n" reads 16k; the
+2k and 8k points are unchanged; checkers and fixtures amended
+accordingly under the pre-authorization (the only threshold-adjacent
+edit, made on the PI's prior word, not this seat's judgment). The
+remaining extraction runs under a staleness supervisor (kill and
+resume from checkpoint when the checkpoint ages past 10 minutes),
+which costs at most one checkpoint interval per stall.

@@ -4,7 +4,7 @@
   "n_grid": [
     2000,
     8000,
-    32000
+    16000
   ],
   "halves_disjoint_by_work": true,
   "eval_gallery_disjoint": true,

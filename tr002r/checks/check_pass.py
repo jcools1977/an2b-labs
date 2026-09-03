@@ -15,7 +15,7 @@ Schema (results/analysis.json):
 import json
 import sys
 
-COS_GATE, TOP1_GATE, SKY_GATE, N_MAX = 0.70, 0.30, 0.80, 32000
+COS_GATE, TOP1_GATE, SKY_GATE, N_MAX = 0.70, 0.30, 0.80, 16000
 PAIR = "bge-small-en-v1.5<->Llama-3.1-8B-4bit"
 METHOD = "mini-vec2vec-linear"
 
