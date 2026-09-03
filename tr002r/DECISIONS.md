@@ -186,3 +186,43 @@ argument now standing as the method class's pre-registered
 precondition list (D11 addenda). Exam final state: top-1 1.000 on
 the recoverable world, 0.004 on the no-structure world, both legs
 frozen throughout; no gate or bar moved at any point.
+
+## D13. Gates-runner operationalizations, before any real fidelity number
+- Skyline anchors: the 1,269 eval chunks OUTSIDE the gallery are the
+  paired anchors (every space embeds eval); supervised Procrustes
+  fits on them in the comparison frame and is evaluated on the
+  gallery, so skyline and unsupervised numbers share the same eval
+  geometry and never touch training halves.
+- Shuffled-target control operationalized: for unpaired training,
+  permuting sample order is a no-op, so the destruction is per-row
+  coordinate permutation of the target half (seed 41), which erases
+  the space's shared geometry while preserving marginals; the
+  translator trained against it must retrieve at chance.
+- Boundary-map economies: non-primary pairs run one direction, seed
+  41, n=8k (per D7); the precision arm is llama8<->bge at 8k. The
+  primary pair runs the full grid, both directions, both seeds.
+- Declared now: one SMOKE TEST of the runner mechanics on bge<->e5
+  at n=2k before the primary's embeddings exist; its numbers are
+  quarantined (not boundary-map material; the map re-runs from the
+  frozen grid) and the smoke test is recorded here either way.
+
+## D14. STOP surfaced: the cosine bars' frame is ambiguous, and it decides the KILL
+Found by the declared D13 smoke test before any gate number exists.
+The certified translator (like the published pipeline's own
+preprocessing) works in a CENTERED, sphered comparison frame. The
+frozen bars (PASS cosine >= 0.70, skyline floor 0.80) were calibrated
+against the literature's RAW-cosine reporting scale. Measured on the
+easiest pair (bge<->e5, supervised skyline, gallery top-1 = 1.000 in
+BOTH frames): raw cosine 0.888, centered cosine 0.637. The identical,
+demonstrably perfect alignment passes the skyline floor in one frame
+and fails it in the other; bge<->minilm reads 0.779 raw / 0.618
+centered at top-1 0.943-0.999. As written, the centered reading would
+fire the instrument-failure KILL against instruments retrieving
+perfectly, a hollow death by unit choice; the raw reading matches the
+scale the bars were frozen against. Per BB4C rule 1 this seat
+adjudicates neither: the question goes to the PI and reviewer. Top-1,
+frame-robust in every measurement above, is unaffected either way.
+Also recorded, quarantined per D13: the smoke test's unsupervised leg
+read zero at n=2k on bge<->e5 (no interpretation attached; the frozen
+grid will speak). Extraction and non-gate machinery continue; no gate
+is read until the frame ruling lands.
