@@ -95,3 +95,11 @@ any fidelity number exists:
   being the pinned Llama-4bit at ~64k chunks.
 - Third decoder family: gemma-2-9b-it-4bit downloaded (D5 candidate
   one); snapshot hash logged here at extraction launch.
+
+## D8. Downloaded snapshots, pinned at extraction launch
+gemma-2-9b-it-4bit @ ff12eb39 (D5 candidate one, now the third
+decoder family); Meta-Llama-3.1-8B-Instruct-8bit @ 142d4280
+(precision arm); all-MiniLM-L6-v2 @ 1110a243. Budget spent ~14 GB of
+the approved 40; legion at 328Gi free. Extraction queue order:
+encoders (bge full, e5/minilm at the 8k economy), then llama4 full
+(the primary's long pole), then qwen4/gemma4/llama8 at 8k.
