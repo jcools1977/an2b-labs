@@ -1,9 +1,11 @@
 # TR-002r: Platonic Convergence at Desk Scale
 **Track A: Latent Geometry and Model Coupling** | Status: Protocol
-revision r1 DRAFT, 2026-09-03 — door (a) of the TR-002 kickoff gate
-(TR002_KICKOFF_GATE.md), failure-boundary reporting included.
-**Frozen upon reviewer stamp; the original TR002 file stands
-untouched as the pre-registration of record for what was planned.**
+revision r1, STAMPED 2026-09-03 with three reviewer amendments
+(primary pair named, wrong-model control added, method class frozen)
+— door (a) of the TR-002 kickoff gate (TR002_KICKOFF_GATE.md),
+failure-boundary reporting included. **FROZEN as of this commit; the
+original TR002 file stands untouched as the pre-registration of
+record for what was planned.**
 
 ## Question
 vec2vec-class results (arXiv:2505.12540, 2510.02348) demonstrate
@@ -35,10 +37,23 @@ macro scale and no published test of this regime.
   UNPAIRED training halves (hash-disjoint document splits per D-line;
   model A's training half never contains model B's documents), held
   out eval set disjoint from both.
-- **Translator:** vec2vec-class small adapter (shared-latent MLP with
-  unsupervised alignment objectives; architecture and losses pinned
-  at Phase 0 in the decision log, sized to train in minutes-to-hours
-  on M-series).
+- **Translator, method class FROZEN (amendment three):** the PRIMARY
+  method is mini-vec2vec-style linear alignment (unsupervised linear
+  mapping to a shared structure; what the frontier reports as
+  sufficient, and what this hardware runs well). An adversarial
+  vec2vec-style MLP variant is pre-registered as SECONDARY, run if
+  compute allows, reported beside the primary, and never substituted
+  post hoc if the primary disappoints. Exact objective and
+  optimization settings for the primary are pinned at Phase 0 in the
+  decision log before any fidelity number exists.
+- **Primary pair, FROZEN (amendment one):** bge-small-en-v1.5
+  against the pinned Llama-3.1-8B-Instruct-4bit (mean-pooled), the
+  most architecturally distant pairing in the slate (encoder vs
+  quantized decoder, 110M vs 8B, different tokenizers). The PASS
+  gate reads on this pair alone, in BOTH translation directions, at
+  both seeds. Every other pair is the boundary map: if the primary
+  fails and another pair clears, that is a scoped finding for the
+  failure-boundary section, never a PASS.
 - **Skyline:** supervised orthogonal Procrustes on paired anchors,
   same pairs, same eval set. The skyline is the instrument
   certification: unsupervised claims are only interpretable where
@@ -59,13 +74,17 @@ macro scale and no published test of this regime.
 - Boundary curves per the grid; CKA/Procrustes convergence table.
 
 ## Pass/Fail (frozen upon stamp, before any data)
-- **PASS:** at least one CROSS-FAMILY pair reaches mean cosine >=
-  0.70 AND top-1 >= 0.30 (1,000-document gallery, chance 0.001)
-  unsupervised, at the largest pre-registered n, at BOTH seeds (41,
-  43), while the skyline on that pair reaches cosine >= 0.80.
-- **FAIL:** no cross-family pair reaches the bar while the skyline
-  passes on at least half the pairs: the vec2vec-class claim does
-  not survive this regime. A near-miss is a FAIL.
+- **PASS:** the FROZEN PRIMARY PAIR (bge-small <-> Llama-3.1-8B-4bit)
+  reaches mean cosine >= 0.70 AND top-1 >= 0.30 (1,000-document
+  gallery, chance 0.001) unsupervised, in BOTH directions, at the
+  largest pre-registered n, at BOTH seeds (41, 43), while the
+  skyline on that pair reaches cosine >= 0.80. One pair, one gate:
+  no multiplicity.
+- **FAIL:** the primary pair misses the bar while the skyline passes
+  on at least half of all pairs: the vec2vec-class claim does not
+  survive this regime on the hardest honest pairing. A near-miss is
+  a FAIL; another pair clearing is a boundary-map finding, never a
+  PASS.
 - **KILL:** the supervised skyline itself fails (cosine < 0.80 on
   more than half of all pairs): the instruments cannot see alignment
   even with paired data, so no unsupervised claim is tested; publish
@@ -75,9 +94,20 @@ macro scale and no published test of this regime.
 1. **Shuffled-target control:** the translator trained against a
    permuted target space must collapse (top-1 within noise of
    chance); if it does not, the pipeline manufactures alignment.
-2. **Disjointness check as code:** hash overlap between the unpaired
+2. **Wrong-model control (amendment two, the house catcher):** feed
+   the trained primary translator embeddings from a THIRD model,
+   frozen now as e5-small-v2 (dimension-compatible with bge's input
+   side). Retrieval through the wrong model must collapse: top-1
+   below one-tenth of the genuine pair's top-1 AND below 0.05
+   absolute. If C-through-A->B retrieves near the real pair's
+   fidelity, the "translation" is exploiting degenerate gallery
+   geometry (hubness, anisotropy), not performing model-specific
+   alignment — the fake-margin class TR-001's shuffled-pairing
+   control caught. Red-then-green in the checker suite like its
+   ancestors.
+3. **Disjointness check as code:** hash overlap between the unpaired
    training halves, and between train and eval, must be zero.
-3. **Domain-shift stress (reported, never gated):** translation
+4. **Domain-shift stress (reported, never gated):** translation
    fidelity on an out-of-domain probe set; graceful degradation vs
    collapse.
 
