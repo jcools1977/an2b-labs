@@ -78,3 +78,20 @@ any fidelity number exists:
   and the reviewer's context-rich forecast (a98fb8fd..., plaintext
   held by the PI), both sealed against protocol commit 11b914d,
   before Phase 0 closed.
+
+## D7. Extraction scope and representation, pinned before extraction
+- Representation: every space L2-normalized. Encoders use their
+  model-card pooling (bge: CLS; e5: mean with "passage: " prefix;
+  MiniLM: mean); decoders use mean-pooled final-layer states per the
+  protocol.
+- Compute scoping, frozen: the PRIMARY pair embeds both training
+  halves to the full 32k grid ceiling. Non-primary pairs enter the
+  boundary map at the n=8k grid point only; the 8-bit precision arm
+  runs at n=8k only. Every space embeds the full eval (2,269),
+  gallery (1,000 within eval), and OOD (6,522) sets. These are
+  reported-leg economies; the gate's inputs are untouched.
+- Runs are resumable (checkpoint per 2,000 chunks) per house rules;
+  each single run stays under the 8-hour ask line, the long pole
+  being the pinned Llama-4bit at ~64k chunks.
+- Third decoder family: gemma-2-9b-it-4bit downloaded (D5 candidate
+  one); snapshot hash logged here at extraction launch.
