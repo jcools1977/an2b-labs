@@ -55,3 +55,26 @@ what the FRONTIER-current mlx-community catalog holds within the
 40 GB budget, logged here with its snapshot hash before extraction.
 Candidate order fixed now, most-distinct-lineage first: a
 Gemma-class, then a Phi-class, then a Mistral-class 4-bit build.
+
+## D6. Oracle seal superseded; ledger complete; exposure disclosed
+2026-09-03, after D2. Commit c82b994 (AutoBot channel, per the
+provenance line in oracle/tr002r_reviewer_forecast.sha256.md)
+replaced the protocol-only oracle of record: hash 3750e42f...,
+plaintext consistent on this machine. This session's earlier seal
+(D2, d89674bd...) is SUPERSEDED: preserved in git history at 78d2e78
+and verified byte-identical on legion today. Rules fixed now, before
+any fidelity number exists:
+- At closeout, the repo's current seal (3750e42f...) is scored as
+  THE protocol-only oracle. The superseded forecast is reported
+  beside it, labeled superseded, and is never selected post hoc for
+  a friendlier Brier. No multiplicity enters the meta-ledger.
+- Disclosed: the of-record plaintext transited THIS builder's
+  context on 2026-09-03 (a file-change notice surfaced it), so both
+  protocol-only seals share the TR-004-class transit limitation
+  toward this seat. Mitigation unchanged: gates frozen, checkers
+  committed, every remaining operationalization logged here before
+  its number.
+- Ledger complete for TR-002r: protocol-only oracle (3750e42f...)
+  and the reviewer's context-rich forecast (a98fb8fd..., plaintext
+  held by the PI), both sealed against protocol commit 11b914d,
+  before Phase 0 closed.
