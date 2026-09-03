@@ -114,3 +114,13 @@ the measured decoder rate (~0.9s/chunk pre-stall) revises the llama4
 invocation estimate to ~17h, past the 8-hour ask line the launch
 estimate sat under; the PI was pinged and the run continues
 checkpointed pending the word.
+
+## D10. Ride, with the fallback pre-authorized
+2026-09-03, the PI's word on the revised estimate, carrying the
+reviewer's condition: the llama4 long pole rides to the full 32k
+grid if the D9 cure holds. If the stall returns, the experiment
+falls back to a 16k largest grid point, logged here as a D-line
+BEFORE any gate is read; in that event the PASS gate's "largest
+pre-registered n" reads 16k, by this pre-authorized contingency and
+not by any post-hoc choice. The 2k and 8k grid points are unchanged
+either way.
