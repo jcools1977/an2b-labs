@@ -1,0 +1,32 @@
+{
+  "source": "gutenberg",
+  "chunk_words": 200,
+  "n_grid": [
+    2000,
+    8000,
+    32000
+  ],
+  "halves_disjoint_by_work": true,
+  "eval_gallery_disjoint": true,
+  "gallery_size": 1000,
+  "spaces": 6,
+  "primary_pair_present": true,
+  "seeds": {
+    "main": 41,
+    "replicate": 43
+  },
+  "counts": {
+    "half_A": 47613,
+    "half_B": 48609,
+    "eval": 2269,
+    "ood": 6522,
+    "works": 162,
+    "dedup_dropped": 582
+  },
+  "overlap_check": {
+    "halves_overlap": 0,
+    "train_eval_overlap": 0,
+    "method": "global chunk-hash dedup before assignment; works whole-assigned, so all cross-split overlaps are structurally zero"
+  },
+  "registry_sha256": "b16447efcf2a656d76ae8ddbfc561c6e0b6d13371a3b6cfa5a70911024e8db72"
+}
