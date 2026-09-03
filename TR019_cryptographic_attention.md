@@ -38,6 +38,12 @@ $0. Est. 4-5 sessions (schema design is the long pole).
 
 ## Deliverables
 - `tr019/` repo: schema spec, reference implementation, standalone verifier, tamper suite; 8-10 page report. **Evaluate provisional patent filing before public disclosure ships.**
+  *Gate note, 2026-09-03 (PI's word; thresholds untouched): the IP
+  review inherits FRONTIER-001's crowding warning — Merkle-chained
+  audit logs and decision-BOM reconstruction are entering enterprise
+  toolkits, so the review must identify what per-inference,
+  attention-level provenance adds over action-level audit trails, or
+  fold.*
 
 ## Dependencies
 TR-006 harness convenient, not required. Extends existing attestation primitives.

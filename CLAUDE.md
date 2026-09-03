@@ -73,3 +73,11 @@ artifacts happen only on the PI's word, recorded in the closing TR's
 decision log. Transient tarballs and scratch venvs are swept without
 ceremony.
 
+
+## The macro-check (standing kickoff clause)
+FRONTIER.md is the lab's radar: one dated entry per scan, sensing
+only. No experiment's Phase 0 closes without a dated FRONTIER
+consultation logged in its DECISIONS, and FRONTIER.md receives a
+fresh entry before each kickoff and each harvest review. Scans
+inform scoping at gates that have not closed; they never touch a
+frozen threshold mid-experiment.
