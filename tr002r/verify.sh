@@ -8,6 +8,10 @@ echo "== 0. Checker self-test =="
 bash tests/test_checks.sh || fail=1
 
 echo
+echo "== 0b. Translator certification (D11) =="
+python3 tests/test_translator.py || fail=1
+
+echo
 echo "== 1. Corpus integrity (D4) =="
 if [ -f data/CORPUS_MANIFEST.json ]; then
   python3 checks/check_corpus.py data/CORPUS_MANIFEST.json || fail=1

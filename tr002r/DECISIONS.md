@@ -124,3 +124,65 @@ BEFORE any gate is read; in that event the PASS gate's "largest
 pre-registered n" reads 16k, by this pre-authorized contingency and
 not by any post-hoc choice. The 2k and 8k grid points are unchanged
 either way.
+
+## D11. Translator certification exam, red before the instrument
+Committed while extraction runs, before any real embedding meets the
+translator: on synthetic spaces with a known orthogonal relation,
+trained unpaired, the D3 procedure must recover top-1 >= 0.9 (the
+easiest world; failure means broken code); against an independent
+cloud with no shared geometry it must not beat 10x chance (alignment
+manufactured from nothing). The exam is the D5-estimator pattern
+applied to the translator; verify will carry it as its own leg.
+D11 addendum: the exam's first recoverable-structure world drew
+GAUSSIAN latents, under which unsupervised alignment is
+information-theoretically unrecoverable up to axis signs (the
+distribution is rotation-symmetric; no moment carries sign
+information). That is not an easiest world but an impossible one, an
+exam-design error corrected before any real data: the synthetic
+latents are now skewed (centered gamma), the fair analogue of real
+embedding clouds, which are strongly non-gaussian. The no-structure
+leg is untouched. Also logged: the exam already earned its keep
+twice, refuting the sorted-profile initialization (no discriminative
+structure) before the PCA-sign initialization replaced it.
+D11 second addendum: the skewed-iid world is STILL ill-posed — iid
+latents carry an m!-fold permutation symmetry that is distributionally
+undetectable, so pointwise recovery is impossible for any unsupervised
+method even in principle. A fair easiest world must be identifiable:
+latent variances made distinct (decaying spectrum, the realistic
+analogue of power-law embedding spectra) alongside the skew. The
+no-structure leg remains untouched throughout. The exam has now
+refuted two implementations and two of its own worlds; each refutation
+is logged, and the gates never moved.
+D11 third addendum: the faithful published implementation (fetched
+pseudo-code, QAP centroid matching, ensembled relative
+representations, smoothed ICP, single cluster correction) ALSO fails
+the unimodal world, and the paper says why: the method's stage 1
+conjectures that "clusters represent recurring themes" consistent
+across datasets. A unimodal cloud has no clusters to anchor on. The
+exam world gains mixture structure (24 latent clusters), the analogue
+of topics in real text. The three world corrections now form a
+pre-registered PRECONDITION LIST for the method class: identifiable
+spectrum, non-gaussian moments, and multi-modal cluster structure.
+Mechanistic prediction, logged before any real number: pairs whose
+embedding clouds lack clean cluster structure should sit on the
+failure side of the boundary map for stage-1 reasons.
+
+## D12. Translator certified; the exam's full kill list
+The D11 exam went green only on the sixth implementation, having
+refuted, in order: (1) sorted-profile centroid matching (no
+discriminative structure), (2) sign-matched PCA alignment (defeated
+by spectrum degeneracy), (3) multi-restart centroid ICP (local
+search cannot find a global rotation), (4) canonical ICA (component
+correspondence scrambles under near-tied mixing norms), and (5) the
+FAITHFUL published pipeline with scipy's FAQ solver, which returned
+QAP objectives of 38-51 against the known-true permutation's 72.45
+on an instance where k-means had recovered both halves' clusters at
+ARI 1.0. The certified version is the published mini-vec2vec
+pipeline (fetched pseudo-code) with one substitution: seeded greedy
+structural growth replaces FAQ for centroid matching, recovering the
+true permutation 24/24 at the true objective. Along the way the exam
+also forced three world corrections, each an identifiability
+argument now standing as the method class's pre-registered
+precondition list (D11 addenda). Exam final state: top-1 1.000 on
+the recoverable world, 0.004 on the no-structure world, both legs
+frozen throughout; no gate or bar moved at any point.
