@@ -114,7 +114,7 @@ def decoder_fn(space):
         for layer in model.model.layers:
             h = layer(h, mask="causal" if h.shape[1] > 1 else None)
         h = model.model.norm(h)
-        out = np.array(h[0], dtype=np.float32).mean(axis=0)
+        out = np.array(h[0].astype(mx.float32)).mean(axis=0)
         calls[0] += 1
         if calls[0] % 100 == 0:
             mx.clear_cache()  # metal buffer cache bloats over long loops
