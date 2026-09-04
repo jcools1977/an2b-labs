@@ -26,7 +26,7 @@ echo ALL_SPACES_DONE" >> extract.log 2>&1 &
   [ -n "$ck" ] && ckm=$(stat -f %m "$ck") || ckm=0
   now=$(date +%s)
   recent=$(( latest > ckm ? latest : ckm ))
-  if [ $((now - recent)) -gt 600 ]; then
+  if [ $((now - recent)) -gt 900 ]; then
     echo "supervisor: stale $((now-recent))s, killing at $(date)" >> supervise.log
     pkill -f extract_spaces
     sleep 5

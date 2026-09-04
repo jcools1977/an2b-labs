@@ -15,7 +15,7 @@ from pathlib import Path
 
 TR_ROOT = Path(__file__).resolve().parents[1]
 STORE = TR_ROOT / "corpus_store"
-CKPT_EVERY = 2000
+CKPT_EVERY = 500
 N_CAP = {"A": 16000, "B": 16000, "eval": None, "ood": None}
 
 ENCODERS = {

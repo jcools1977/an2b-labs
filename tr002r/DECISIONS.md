@@ -240,3 +240,16 @@ edit, made on the PI's prior word, not this seat's judgment). The
 remaining extraction runs under a staleness supervisor (kill and
 resume from checkpoint when the checkpoint ages past 10 minutes),
 which costs at most one checkpoint interval per stall.
+
+## D16. The supervisor failed its own missing negative control
+Overnight 2026-09-03/04: 62 restarts, llama4 half A pinned at chunk
+4,000. Mechanism: the D15 supervisor's 10-minute staleness threshold
+is SHORTER than llama4's ~33-minute natural silence between 2,000-
+chunk checkpoints, so it killed healthy runs all night, each cycle
+losing sub-checkpoint progress. A watchdog whose failure mode is
+killing healthy work, shipped without testing the healthy-slow case:
+the lab's own negative-control rule, violated by its plumbing and
+logged as such. Fix, both sides of the race: decoder checkpoints
+every 500 chunks (~9-minute heartbeat) and the staleness threshold
+raised to 15 minutes. No experiment number was touched; the cost was
+one night of wall-clock.
