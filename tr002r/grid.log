@@ -1,0 +1,8 @@
+running boundary: bge->e5 n=8000 seed=41
+  -> cosine 0.8569 top1 0.0 (sky 0.9378/1.0)
+running boundary: bge->minilm n=8000 seed=41
+  -> cosine 0.3841 top1 0.0 (sky 0.7552/0.998)
+running boundary: e5->minilm n=8000 seed=41
+  -> cosine 0.4174 top1 0.001 (sky 0.7367/0.998)
+
+WAITING on embeddings for 22 runs: [('bge', 'gemma4'), ('bge', 'llama4'), ('bge', 'llama8'), ('bge', 'qwen4'), ('e5', 'gemma4'), ('e5', 'llama4'), ('e5', 'qwen4'), ('llama4', 'bge'), ('llama4', 'gemma4'), ('llama4', 'qwen4'), ('minilm', 'gemma4'), ('minilm', 'llama4'), ('minilm', 'qwen4'), ('qwen4', 'gemma4')]

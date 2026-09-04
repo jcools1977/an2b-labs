@@ -98,6 +98,21 @@ def wrong_model_top1(T, space_c, space_b):
     return t1
 
 
+def domain_shift_top1(T, space_a, space_b, n_probe=500):
+    """Translate OOD probes through the A->B translator; gallery is
+    the OOD probes' own B embeddings (D13 control 4, reported)."""
+    ids_a, OA = load_emb(space_a, "ood")
+    ids_b, OB = load_emb(space_b, "ood")
+    pos_b = {c: i for i, c in enumerate(ids_b)}
+    probe = ids_a[:n_probe]
+    pa = {c: i for i, c in enumerate(ids_a)}
+    GA = OA[[pa[c] for c in probe]]
+    GB = OB[[pos_b[c] for c in probe]]
+    pred = apply_translator(T, GA)
+    cos, t1 = fidelity(to_raw_frame(T, pred), GB)
+    return cos, t1
+
+
 if __name__ == "__main__":
     a, b, n, seed = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
     res, _ = eval_pair(a, b, n, seed)

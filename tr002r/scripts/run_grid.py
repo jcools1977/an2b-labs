@@ -42,6 +42,8 @@ def build_runs():
                  "kind": "shuffled_target", "shuffle": True})
     runs.append({"a": a, "b": b, "n": 16000, "seed": 41,
                  "kind": "wrong_model"})
+    runs.append({"a": a, "b": b, "n": 16000, "seed": 41,
+                 "kind": "domain_shift"})
     return runs
 
 
@@ -75,6 +77,11 @@ def main():
             res, T = eval_pair(r["a"], r["b"], r["n"], r["seed"])
             wm = wrong_model_top1(T, "e5", r["b"])
             rec = {**r, **res, "wrong_model_top1": wm}
+        elif r["kind"] == "domain_shift":
+            res, T = eval_pair(r["a"], r["b"], r["n"], r["seed"])
+            from scripts.run_pair import domain_shift_top1
+            dc, dt = domain_shift_top1(T, r["a"], r["b"])
+            rec = {**r, **res, "ood_cosine": dc, "ood_top1": dt}
         else:
             res, _ = eval_pair(r["a"], r["b"], r["n"], r["seed"],
                                shuffle_target=r.get("shuffle", False))
