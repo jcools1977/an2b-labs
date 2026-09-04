@@ -45,6 +45,7 @@ class _Space:
             self.pca = Vt[:TARGET_DIM]
             X = Xc @ self.pca.T
         self.mu = X.mean(0)
+        self.rbar = float(np.linalg.norm(X - self.mu, axis=1).mean())
         self.Z = self._sphere(X - self.mu)
 
     @staticmethod
@@ -177,3 +178,15 @@ def apply_translator(T, X):
 def target_space(T, X):
     """Project raw target-space vectors into the comparison frame."""
     return T["sb"].transform(X)[:, :T["d"]]
+
+
+def to_raw_frame(T, V):
+    """D17 raw-frame readout: invert the target space's frame chain
+    for comparison-frame vectors V (direction reconstruction with the
+    stored mean centered norm; PCA back-projection for wide spaces).
+    Certified behavior of train/apply/target is untouched."""
+    sb = T["sb"]
+    X = np.asarray(V, float) * sb.rbar + sb.mu
+    if sb.pca is not None:
+        X = X @ sb.pca + sb.pca_mu
+    return X

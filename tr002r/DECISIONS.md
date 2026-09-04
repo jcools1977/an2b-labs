@@ -253,3 +253,33 @@ logged as such. Fix, both sides of the race: decoder checkpoints
 every 500 chunks (~9-minute heartbeat) and the staleness threshold
 raised to 15 minutes. No experiment number was touched; the cost was
 one night of wall-clock.
+
+## D17. The D14 ruling: raw frame for both bars; resolution, not adjustment
+Ruled by the PI 2026-09-04: RAW cosine is the frame for both frozen
+bars (PASS 0.70, skyline floor 0.80), matching the literature scale
+they were calibrated against; the centered reading is reported as
+companion beside every raw number; the wrong-model control reads in
+the same raw frame. Logged as a RESOLUTION of a frame the
+pre-registration left unnamed, not an adjustment of any bar: no
+threshold value changed, and the ambiguity was surfaced (D14) before
+any gate number existed.
+Readout operationalization, pinned now: the translator works in its
+certified comparison frame; raw-frame readout inverts the frame
+chain with the target space's stored statistics (comparison vector
+times the mean centered norm, plus the center; PCA back-projection
+for wide spaces) and compares against the stored raw embeddings.
+One mechanism, applied uniformly to the unsupervised prediction, the
+skyline, and the wrong-model control. Declared: one skyline-only
+readout verification on bge<->e5 (mechanics, no unsupervised
+number) to confirm the inverse chain reproduces the D14 diagnostic's
+raw reading before the grid runs.
+D17 addendum: the pinned inverse-chain readout reads 0.940 where the
+D14 diagnostic's direct-raw Procrustes fit read 0.888, on the same
+alignment (top-1 = 1.000 under both; the restored mean inflates
+cosine). The uniform mechanism is kept: skyline and translator read
+through the SAME chain, so their comparison and the KILL stay fair,
+but the absolute cosine scale is ~0.05 more generous than the
+numbers the ruling was calibrated on. Surfaced to the PI and
+reviewer before any gate number exists; a veto swaps the readout for
+direct-raw-anchor fitting on both sides. Centered companions are
+reported beside every raw number regardless.

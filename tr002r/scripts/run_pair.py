@@ -17,7 +17,7 @@ sys.path.insert(0, str(TR_ROOT))
 import numpy as np  # noqa: E402
 
 from analysis.translator import (apply_translator, target_space,  # noqa: E402
-                                 train_translator, _procrustes)
+                                 to_raw_frame, train_translator, _procrustes)
 
 STORE = TR_ROOT / "corpus_store"
 
@@ -64,18 +64,23 @@ def eval_pair(space_a, space_b, n, seed, shuffle_target=False):
 
     pred = apply_translator(T, GA)
     gal_frame = target_space(T, GB)
-    cosine, top1 = fidelity(pred, gal_frame)
+    cos_centered, top1_centered = fidelity(pred, gal_frame)
+    cosine, top1 = fidelity(to_raw_frame(T, pred), GB)  # D17 raw frame
 
     AA = T["sa"].transform(EA[[pos_a[c] for c in anchors]])[:, :T["d"]]
     AB = T["sb"].transform(EB[[pos_b[c] for c in anchors]])[:, :T["d"]]
     Wsky = _procrustes(AA, AB)
     ga_frame = T["sa"].transform(GA)[:, :T["d"]]
-    sky_cos, sky_top1 = fidelity(ga_frame @ Wsky, gal_frame)
+    sky_cos_c, sky_top1_c = fidelity(ga_frame @ Wsky, gal_frame)
+    sky_cos, sky_top1 = fidelity(to_raw_frame(T, ga_frame @ Wsky), GB)
 
     return {"pair": f"{space_a}->{space_b}", "n": n, "seed": seed,
             "cosine": round(cosine, 4), "top1": round(top1, 4),
+            "cosine_centered": round(cos_centered, 4),
+            "top1_centered": round(top1_centered, 4),
             "skyline_cosine": round(sky_cos, 4),
             "skyline_top1": round(sky_top1, 4),
+            "skyline_cosine_centered": round(sky_cos_c, 4),
             "shuffled_target": shuffle_target}, T
 
 
@@ -89,7 +94,7 @@ def wrong_model_top1(T, space_c, space_b):
     GC = EC[[pos_c[c] for c in gal]]
     GB = EB[[pos_b[c] for c in gal]]
     pred = apply_translator(T, GC)
-    _, t1 = fidelity(pred, target_space(T, GB))
+    _, t1 = fidelity(to_raw_frame(T, pred), GB)  # D17: same raw frame
     return t1
 
 
