@@ -283,3 +283,13 @@ numbers the ruling was calibrated on. Surfaced to the PI and
 reviewer before any gate number exists; a veto swaps the readout for
 direct-raw-anchor fitting on both sides. Centered companions are
 reported beside every raw number regardless.
+
+## D18. Gemma mask crash; decoder forward unified
+gemma-2's attention requires an array mask where llama/qwen accepted
+the string "causal"; the hand-rolled layer loop crashed at gemma's
+first block. Fix: the decoder extractor now calls each model's own
+inner forward (model.model), inheriting the family's mask logic and
+final norm. For the families already extracted (llama4, qwen4) this
+is mathematically identical to the loop that ran, verified by the
+module structure (the inner model applies the same blocks and norm);
+no re-extraction. Logged before gemma produces a single vector.

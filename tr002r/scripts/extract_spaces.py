@@ -110,10 +110,10 @@ def decoder_fn(space):
 
     def fn(text):
         ids = tok.encode(text)[:512]
-        h = model.model.embed_tokens(mx.array([ids]))
-        for layer in model.model.layers:
-            h = layer(h, mask="causal" if h.shape[1] > 1 else None)
-        h = model.model.norm(h)
+        # each family's own forward: correct masks (incl. gemma's
+        # sliding windows) and final norm; identical math to the
+        # previous hand-loop for the llama/qwen families already run
+        h = model.model(mx.array([ids]))
         out = np.array(h[0].astype(mx.float32)).mean(axis=0)
         calls[0] += 1
         if calls[0] % 100 == 0:
