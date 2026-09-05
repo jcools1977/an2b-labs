@@ -1,0 +1,18 @@
+{
+  "shuffled_target": {
+    "top1": 0.004,
+    "chance": 0.001
+  },
+  "wrong_model": {
+    "top1": 0.0,
+    "genuine_top1": 0.0
+  },
+  "disjointness": {
+    "halves_overlap": 0,
+    "train_eval_overlap": 0
+  },
+  "domain_shift": {
+    "reported": true,
+    "note": "OOD probe through the primary translator: raw cosine 0.625, top-1 0.004"
+  }
+}

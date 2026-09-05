@@ -1,0 +1,22 @@
+{
+  "skyline_pairs": {
+    "bge<->e5": 0.9378,
+    "bge<->minilm": 0.7552,
+    "e5<->minilm": 0.7367,
+    "bge<->llama4": 0.8802,
+    "llama4<->bge": 0.8388,
+    "e5<->llama4": 0.8718,
+    "minilm<->llama4": 0.8824,
+    "bge<->qwen4": 0.9758,
+    "e5<->qwen4": 0.9744,
+    "minilm<->qwen4": 0.9764,
+    "llama4<->qwen4": 0.9878,
+    "bge<->gemma4": 0.8893,
+    "e5<->gemma4": 0.883,
+    "minilm<->gemma4": 0.8924,
+    "llama4<->gemma4": 0.9543,
+    "qwen4<->gemma4": 0.9383,
+    "bge<->llama8": 0.8686
+  },
+  "killed": false
+}

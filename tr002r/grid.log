@@ -34,3 +34,25 @@ running domain_shift: bge->llama4 n=16000 seed=41
   -> cosine 0.807 top1 0.0 (sky 0.8802/0.608)
 
 WAITING on embeddings for 10 runs: [('bge', 'gemma4'), ('bge', 'llama8'), ('bge', 'qwen4'), ('e5', 'gemma4'), ('e5', 'qwen4'), ('llama4', 'gemma4'), ('llama4', 'qwen4'), ('minilm', 'gemma4'), ('minilm', 'qwen4'), ('qwen4', 'gemma4')]
+running boundary: bge->qwen4 n=8000 seed=41
+  -> cosine 0.9638 top1 0.002 (sky 0.9758/0.437)
+running boundary: e5->qwen4 n=8000 seed=41
+  -> cosine 0.9653 top1 0.0 (sky 0.9744/0.399)
+running boundary: minilm->qwen4 n=8000 seed=41
+  -> cosine 0.9631 top1 0.002 (sky 0.9764/0.446)
+running boundary: llama4->qwen4 n=8000 seed=41
+  -> cosine 0.9645 top1 0.0 (sky 0.9878/0.798)
+
+WAITING on embeddings for 6 runs: [('bge', 'gemma4'), ('bge', 'llama8'), ('e5', 'gemma4'), ('llama4', 'gemma4'), ('minilm', 'gemma4'), ('qwen4', 'gemma4')]
+running boundary: bge->gemma4 n=8000 seed=41
+  -> cosine 0.8279 top1 0.001 (sky 0.8893/0.599)
+running boundary: e5->gemma4 n=8000 seed=41
+  -> cosine 0.8241 top1 0.0 (sky 0.883/0.591)
+running boundary: minilm->gemma4 n=8000 seed=41
+  -> cosine 0.8092 top1 0.0 (sky 0.8924/0.641)
+running boundary: llama4->gemma4 n=8000 seed=41
+  -> cosine 0.8148 top1 0.001 (sky 0.9543/0.94)
+running boundary: qwen4->gemma4 n=8000 seed=41
+  -> cosine 0.8029 top1 0.002 (sky 0.9383/0.887)
+
+WAITING on embeddings for 1 runs: [('bge', 'llama8')]
