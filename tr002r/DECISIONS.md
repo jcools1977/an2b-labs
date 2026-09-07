@@ -293,3 +293,15 @@ final norm. For the families already extracted (llama4, qwen4) this
 is mathematically identical to the loop that ran, verified by the
 module structure (the inner model applies the same blocks and norm);
 no re-extraction. Logged before gemma produces a single vector.
+
+## D19. Closeout disk line (standing estate-hygiene rule); log closed pending ratification
+TR-002r leaves: cockpit tr002r/corpus_store ~1.6G (chunks 105k files,
+seven spaces' embeddings, the decoder npz files dominating); legion
+tr002r/corpus_store similar; legion HF cache grew ~14 GB with the
+D8 pulls (gemma-2-9b-4bit, Llama-8B-8bit, MiniLM), total budget
+spend within the approved 40 GB. All rebuildable: corpus from the
+committed builder, embeddings from the committed extractors and
+pinned snapshots. Transient logs (extract.log, supervise.log,
+grid.log, model_pulls.log) sweepable without ceremony. Deletions on
+the PI's word only. The decision log closes at ratification with
+the publication entry.

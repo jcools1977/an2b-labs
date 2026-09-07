@@ -1,0 +1,35 @@
+{
+  "verdict_probabilities": {
+    "PASS": 0.15,
+    "FAIL": 0.55,
+    "SPLIT": 0.18,
+    "KILL": 0.12
+  },
+  "key_effect_directions": [
+    {
+      "claim": "The supervised Procrustes skyline clears cosine >= 0.80 on all three encoder-encoder pairs (bge/e5/MiniLM), certifying the instruments and keeping KILL off the table via the majority rule.",
+      "probability": 0.85
+    },
+    {
+      "claim": "Unsupervised top-1 on the frozen primary pair (bge-small <-> Llama-3.1-8B-4bit) lands below the same run's encoder-encoder unsupervised top-1, i.e. the boundary map shows cross-class pairs are the weak edge.",
+      "probability": 0.88
+    },
+    {
+      "claim": "Unsupervised fidelity on the primary pair rises monotonically across the pre-registered n grid (2k -> 8k -> 32k), with the largest jump from 2k to 8k.",
+      "probability": 0.75
+    },
+    {
+      "claim": "Direction asymmetry appears: mean cosine is higher translating INTO the mean-pooled Llama space than into bge space, because the anisotropic decoder space inflates cosine while top-1 stays the discriminating metric.",
+      "probability": 0.65
+    },
+    {
+      "claim": "Both hard negative controls behave: shuffled-target top-1 falls within noise of chance (0.001) and the wrong-model (e5) control lands below 0.05 absolute and below one-tenth of the genuine pair's top-1.",
+      "probability": 0.85
+    },
+    {
+      "claim": "Precision matters less than corpus size: the 4-bit vs native-fp fidelity gap on the grid is smaller than the 2k vs 32k gap.",
+      "probability": 0.6
+    }
+  ],
+  "rationale": "The design deliberately points the single gate at the hardest pairing in the slate: an isotropic 110M encoder against a 4-bit, mean-pooled 8B decoder, unsupervised, both directions, both seeds, compound cosine-plus-retrieval thresholds. vec2vec-class results are real but were demonstrated mostly between comparable encoders at full precision and larger corpora; mean-pooled quantized decoder spaces are anisotropic and noisy, which degrades the distributional matching that unsupervised (especially linear) alignment depends on, while supervised Procrustes with paired anchors should still work on most pairs. That combination makes FAIL the modal outcome (skyline certifies, primary misses). PASS is possible because mini-vec2vec-style linear methods are more stable than the adversarial original and 32k chunks may suffice, but clearing 0.30 top-1 in both directions at both seeds is a lot of conjunctions. SPLIT gets real mass because seed- and direction-instability is the documented failure texture of this method class. KILL is the tail: orthogonal Procrustes at 0.80 cosine across dimension-mismatched, anisotropic targets could underperform on the decoder pairs, but it would need to fail on more than half of ALL pairs, and the encoder-encoder pairs almost certainly pass."
+}

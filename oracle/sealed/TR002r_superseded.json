@@ -1,0 +1,14 @@
+{
+  "tr": "TR-002r",
+  "sealed": "2026-09-03",
+  "protocol_commit": "11b914d",
+  "oracle_model": "claude-fable-5",
+  "tool_uses": 0,
+  "verdict_probabilities": {"PASS": 0.10, "FAIL": 0.48, "SPLIT": 0.15, "KILL": 0.27},
+  "key_effect_directions": [
+    {"claim": "Encoder-encoder pairs (bge/e5/MiniLM) achieve higher unsupervised translation fidelity (top-1 and cosine) than any pair involving a 4-bit mean-pooled decoder LLM", "probability": 0.90},
+    {"claim": "Unsupervised fidelity on the primary pair rises monotonically with corpus size across n in {2k, 8k, 32k} but stays below half the skyline at n=2k", "probability": 0.72},
+    {"claim": "CKA between spaces positively correlates with achieved unsupervised translation fidelity across the pair grid", "probability": 0.80}
+  ],
+  "rationale": "The frozen primary pair is deliberately the hardest: 384-dim encoder vs 4096-dim mean-pooled 4-bit decoder, unpaired halves of at most 32k chunks. vec2vec/mini-vec2vec results were strongest between trained sentence encoders; mean-pooled decoder embeddings are anisotropic and hubby, and published cross-backbone results already degrade sharply. Top-1 >= 0.30 on a 1k gallery in both directions at both seeds unsupervised is a high bar, so PASS is unlikely. The skyline gate (orthogonal Procrustes cosine >= 0.80 held out) is itself demanding for LLM-involving pairs, giving KILL real mass; encoder-encoder skylines should clear, keeping FAIL (unsupervised collapse with working instruments) the modal outcome. SPLIT covers seed/direction divergence and a primary-skyline-only failure."
+}
