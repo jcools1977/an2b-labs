@@ -1,0 +1,108 @@
+{
+ "kind": "deny_negative_control",
+ "at": "2026-09-08T15:54:56+00:00",
+ "policy_path": "/Users/n0d1e/an2b-labs/oracle/panel/policies/oracle_deny_all.yaml",
+ "policy_sha256": "d6c5b4968f66902f453cea57e317a51536bfcb79c8ec32ebd63edb00d6054ac6",
+ "policy_is_panel_policy": true,
+ "warden_mode": "strict",
+ "audit_file": "/Users/n0d1e/.clawtex-audit-oracle-panel/warden_audit.jsonl",
+ "probes": [
+  {
+   "seat": "oracle-anthropic",
+   "action": "web.search",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-anthropic",
+   "action": "file.read",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-anthropic",
+   "action": "http.get",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-anthropic",
+   "action": "exec",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-anthropic",
+   "action": "memory.write",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-openai",
+   "action": "web.search",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-openai",
+   "action": "file.read",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-openai",
+   "action": "http.get",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-openai",
+   "action": "exec",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-openai",
+   "action": "memory.write",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-xai",
+   "action": "web.search",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-xai",
+   "action": "file.read",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-xai",
+   "action": "http.get",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-xai",
+   "action": "exec",
+   "outcome": "DENY"
+  },
+  {
+   "seat": "oracle-xai",
+   "action": "memory.write",
+   "outcome": "DENY"
+  }
+ ],
+ "audit_excerpt": [
+  "{\"timestamp\": \"2026-09-08T15:54:56.324135+00:00\", \"action\": \"web.search\", \"decision\": \"DENY\", \"context\": {\"tool\": \"web.search\", \"agent\": \"oracle-anthropic\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324297+00:00\", \"action\": \"file.read\", \"decision\": \"DENY\", \"context\": {\"tool\": \"file.read\", \"agent\": \"oracle-anthropic\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324369+00:00\", \"action\": \"http.get\", \"decision\": \"DENY\", \"context\": {\"tool\": \"http.get\", \"agent\": \"oracle-anthropic\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324425+00:00\", \"action\": \"exec\", \"decision\": \"DENY\", \"context\": {\"tool\": \"exec\", \"agent\": \"oracle-anthropic\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324473+00:00\", \"action\": \"memory.write\", \"decision\": \"DENY\", \"context\": {\"tool\": \"memory.write\", \"agent\": \"oracle-anthropic\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324519+00:00\", \"action\": \"web.search\", \"decision\": \"DENY\", \"context\": {\"tool\": \"web.search\", \"agent\": \"oracle-openai\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324560+00:00\", \"action\": \"file.read\", \"decision\": \"DENY\", \"context\": {\"tool\": \"file.read\", \"agent\": \"oracle-openai\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324600+00:00\", \"action\": \"http.get\", \"decision\": \"DENY\", \"context\": {\"tool\": \"http.get\", \"agent\": \"oracle-openai\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324638+00:00\", \"action\": \"exec\", \"decision\": \"DENY\", \"context\": {\"tool\": \"exec\", \"agent\": \"oracle-openai\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324675+00:00\", \"action\": \"memory.write\", \"decision\": \"DENY\", \"context\": {\"tool\": \"memory.write\", \"agent\": \"oracle-openai\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324712+00:00\", \"action\": \"web.search\", \"decision\": \"DENY\", \"context\": {\"tool\": \"web.search\", \"agent\": \"oracle-xai\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324749+00:00\", \"action\": \"file.read\", \"decision\": \"DENY\", \"context\": {\"tool\": \"file.read\", \"agent\": \"oracle-xai\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324786+00:00\", \"action\": \"http.get\", \"decision\": \"DENY\", \"context\": {\"tool\": \"http.get\", \"agent\": \"oracle-xai\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324825+00:00\", \"action\": \"exec\", \"decision\": \"DENY\", \"context\": {\"tool\": \"exec\", \"agent\": \"oracle-xai\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}",
+  "{\"timestamp\": \"2026-09-08T15:54:56.324865+00:00\", \"action\": \"memory.write\", \"decision\": \"DENY\", \"context\": {\"tool\": \"memory.write\", \"agent\": \"oracle-xai\", \"input\": {\"query\": \"DENY negative control\", \"path\": \"/etc/hostname\"}}, \"tenant_id\": \"an2b-labs-oracle-panel\"}"
+ ],
+ "audit_excerpt_sha256": "5537e5e6051a40a6323f02a0d3c9639e306a22e00776c678994d346d3f281b50",
+ "all_denied": true,
+ "every_probe_logged": true,
+ "protocol_commit": "295eddeee92df35a935c23c92e605c24b0948915",
+ "pass": true
+}
