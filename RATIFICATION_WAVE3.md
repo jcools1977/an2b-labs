@@ -3,7 +3,33 @@
 paste. Nothing below executes until its word lands verbatim from
 the right chair. The builder seat holds until then.**
 
-## Word 1 — the PI, on the record here (fill and send)
+## Word 1 — GIVEN 2026-09-08, assembled from the PI's completion
+## of the card below
+
+> "The AEGIS Gate 2 hold is lifted for lab use of the EngramPort
+> bus, scope: the oracle panel pilot and arena seat work inside
+> AN2B Labs, nothing else. Wave 3 slate: TR-003 door (a) first,
+> then TR-006. Panel pilot: run, spend cap $10. Ratified."
+
+The PI supplied the slate with reasoning on the record (session
+2026-09-08): scientific rationale primary — the rescope is the one
+question the macro literature has not touched (FRONTIER-002,
+independently), and the sequencing puts the lighter experiment on
+the newest rig first. The PI's reasoning also cited the EngramPort
+product benefit; per the corrected packet and CREDO, that strand is
+recorded as a HARVEST OBSERVATION, with the slate carried by the
+scientific merit, which stands on its own. The hold-lift scope
+matches the pilot exactly and nothing else.
+
+Gate-text note: TR003_KICKOFF_GATE.md holds the door adjudication
+"until FRONTIER-002 is countersigned with its citations
+spot-checked." The PI's slate word is RECORDED; the TR-003 kickoff
+executes when the countersignature lands, or on the PI's explicit
+override of that clause, whichever the PI speaks first. Panel pilot
+preparation (exams, DENY control, seat policies) proceeds now under
+the lifted hold and the $10 cap.
+
+## Word 1 — original card (retained for the record)
 
 > "The AEGIS Gate 2 hold is lifted for lab use of the EngramPort
 > bus, scope: the oracle panel pilot and arena seat work inside
