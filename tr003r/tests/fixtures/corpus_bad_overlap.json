@@ -1,0 +1,47 @@
+{
+ "store_size": 5000,
+ "queries_per_kind": 500,
+ "chunk_words": 200,
+ "query_words": 60,
+ "anchor_counts": [
+  64,
+  256,
+  1024
+ ],
+ "seeds": [
+  41,
+  43
+ ],
+ "spaces": 6,
+ "primary_pair": [
+  "bge",
+  "minilm"
+ ],
+ "gate_anchor_selection": "random",
+ "anchor_pool_min": 2048,
+ "disjointness": {
+  "store_vs_anchor_pool": false,
+  "query_sources_vs_anchor_pool": true,
+  "anchors_vs_queries_all_seed_pairs": true,
+  "works_partition_global": true,
+  "overlap_counts": {
+   "store_anchor": 3,
+   "query_anchor": 0,
+   "cross_seed": 0
+  }
+ },
+ "per_seed": {
+  "41": {
+   "store_chunks": 5000,
+   "q1": 500,
+   "q2": 500,
+   "sequence_edges": 4800
+  },
+  "43": {
+   "store_chunks": 5000,
+   "q1": 500,
+   "q2": 500,
+   "sequence_edges": 4750
+  }
+ }
+}

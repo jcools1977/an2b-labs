@@ -1,0 +1,6 @@
+# Pinned to the legion wild venv actually executing this experiment
+# (tr020/wild/.venv), verified 2026-09-08: numpy 1.26.4, scikit-learn
+# 1.9.0, torch 2.13.0, transformers, mlx, mlx_lm as installed there.
+numpy==1.26.4
+scikit-learn==1.9.0
+torch==2.13.0
