@@ -75,3 +75,34 @@ forecasts as the pilot's first subject.
 - The led experiment's Phase 0 opens with the dated FRONTIER
   consultation and the full red-then-green machinery, as every one
   before it.
+
+## Status of what fired, 2026-09-08 (builder seat, after Word 1)
+
+DONE, committed and pushed (295edde, fe439a0):
+- Warden deny-all policy written, committed, hashed
+  (`oracle/panel/policies/oracle_deny_all.yaml`, d6c5b496...).
+- The DENY watched to fire on legion under ClawTex's Warden in strict
+  mode: 15 of 15 probes denied across the three seats, 15 audit lines
+  exported into the repo beside the policy hash; the same probes ALLOW
+  under ClawTex's bundled default, so the control discriminates.
+- Engine resolution live from the gateway, logged: fable-5.1,
+  gpt-6-astra, grok-4.6 as of today (panel DECISIONS D3).
+- Frozen-protocol manifest and a freeze check that fails on a moved
+  byte or a missing file (ARENA rule 3, review B4).
+- Seal and exam runner with 29 negative-control legs green on legion.
+- oracle/README amended with what a valid panel seal is (review A7),
+  in the panel commit rather than this instrument's commit.
+
+WAITING on the PI, and nothing else:
+- The OpenRouter key: `op signin` on the cockpit, then
+  `oracle/panel/inject_key.sh exam` runs the retro-calibration exams
+  for all three seats under the $10 cap; the account-level hard cap is
+  the PI's to set on the OpenRouter account before that.
+- Word 2 (the reviewer's countersignature of FRONTIER-002 in their own
+  form) or the PI's explicit override, before the TR-003 kickoff.
+
+The Voltron milestone board (products/eidetic/voltron/docs,
+2026-09-08) is noted: EngramPort integration is outside Voltron's
+current milestone by its own statement, and the lab's panel does not
+depend on the bus (panel DECISIONS D9). The integration boundary stays
+where both sides put it until the PI names the timing.
