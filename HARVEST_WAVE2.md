@@ -34,6 +34,38 @@ next-scan-due line.**
    transferable artifact: exams-before-instruments as a product of
    the lab's method, not just a practice inside it.
 
+5. **The multi-vendor oracle panel, ClawTex-run (investigated
+   2026-09-08 on the PI's word).** The infrastructure exists on
+   legion today: ClawTex fleet seats declare their model per seat in
+   the manifest (`model: claude` / `model: gpt-4`), coordinate over
+   a bus whose default is api.engramport.com, and admit any
+   HTTP-plus-key process as a first-class seat with zero Anthropic
+   dependencies (examples/non_claude_seat.py). Cross-vendor panels
+   are already a coded pattern (examples/gsm8k_experiment.py: a
+   different-vendor verifier panel with the uncorrelated-errors
+   thesis and honest cost tally, via a single OpenRouter key —
+   which is what "all keys embedded" resolves to; no vendor keys
+   sit in shell profiles). Decisive for the ledger: ClawTex's
+   Warden evaluates every tool call ALLOW/DENY/REVIEW, so an oracle
+   seat can run under a deny-all-tools policy — upgrading the
+   ledger's isolation from instruction-level (its standing disclosed
+   limitation, breached twice by transit) to POLICY-ENFORCED, with
+   the audit logger as the receipt. Proposed shape: three vendor
+   seats sealed per kickoff, hashed, Brier-scored at closeout, seal
+   records citing the Warden policy in force.
+6. **EngramPort as the next-batch substrate.** The PI's direction:
+   after the twenty, run the next batch with frontier models
+   working together through EngramPort. The investigation shows this
+   is ClawTex's existing architecture, not a new build — the bus IS
+   EngramPort. The lab's own results already constrain the design
+   (TR-002r: cross-model memory rides paired anchors, never
+   unsupervised geometry), and Wave 3 can be sequenced to de-risk
+   the rest: TR-003's rescope measures what survives cross-model
+   memory translation; TR-006 measures the shared-workspace
+   capacity regime. Slate rationale on the table: pick Wave 3 to
+   make the multi-model lab a measured design by the time the
+   twenty close.
+
 ## Wave 2 taught, Wave 3 inherits
 
 - The radar works: TR-002 as written would have been a
