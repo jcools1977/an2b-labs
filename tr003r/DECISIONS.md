@@ -121,3 +121,24 @@ sequence edges intact within each run); capping the anchor pool at
 is what a memory system's anchor set would look like and what makes
 the mismatched-anchor collapse meaningful. Logged before any
 embedding exists; the rebuilt manifest is the one that counts.
+
+## D10. C4 ceiling rank rule, fixed before any real number
+The paired-anchor Procrustes ceiling centers each side on its anchor
+mean and reduces each side by PCA fit on the ANCHORS THEMSELVES to
+rank r = min(d_src, d_tgt, k), then fits the orthogonal map on the
+anchors. Reason: in the scenario the reader side owns nothing but its
+anchors and its queries, so fitting a PCA on a store it does not have
+would be an instrument the memory system could not build. At k = 64
+the ceiling is rank-limited to 64; that is the honest ceiling at 64
+anchors. C2 uses raw vectors and a seeded random map only where
+dimensions differ; control 3 uses independent seeded projections of
+rank k on each side.
+
+## D11. The anchor exam caught its own world before certifying the library
+First run: C3 and C4 at chance on the "recoverable" world while every
+collapse leg passed. The world was wrong, not the library: query rows
+were drawn from points outside the store, so no correct answer
+existed. Fixed (queries are noisy copies of store points) and a
+native-sanity leg added so the world proves itself on both sides.
+Second run: certified, 9 of 9 legs. Logged because a green exam on a
+broken world would have certified nothing.

@@ -1,0 +1,40 @@
+{
+ "primary_pair": [
+  "bge",
+  "minilm"
+ ],
+ "query_kind": "q1",
+ "selection": "random",
+ "anchors": 256,
+ "condition": "C3",
+ "cells": {
+  "41": {
+   "bge->minilm": {
+    "retention": 0.85,
+    "provenance_work": 0.95,
+    "confident_wrong": 0.02,
+    "native_confident_wrong": 0.01
+   },
+   "minilm->bge": {
+    "retention": 0.85,
+    "provenance_work": 0.95,
+    "confident_wrong": 0.02,
+    "native_confident_wrong": 0.01
+   }
+  },
+  "43": {
+   "bge->minilm": {
+    "retention": 0.85,
+    "provenance_work": 0.95,
+    "confident_wrong": 0.02,
+    "native_confident_wrong": 0.01
+   },
+   "minilm->bge": {
+    "retention": 0.85,
+    "provenance_work": 0.95,
+    "confident_wrong": 0.02,
+    "native_confident_wrong": 0.01
+   }
+  }
+ }
+}
