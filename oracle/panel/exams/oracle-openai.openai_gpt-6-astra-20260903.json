@@ -1,0 +1,501 @@
+{
+ "kind": "retro_calibration_exam",
+ "label": "RETRO; zero foresight weight",
+ "seat": "oracle-openai",
+ "engine": {
+  "seat": "oracle-openai",
+  "routing_alias": "openai/gpt-6-astra",
+  "canonical_slug": "openai/gpt-6-astra-20260903",
+  "created_unix": 1788552838,
+  "created_iso": "2026-09-04",
+  "knowledge_cutoff_gateway": null,
+  "pricing_usd_per_token": {
+   "prompt": "0.00001",
+   "completion": "0.00005"
+  },
+  "supported_parameters": [
+   "include_reasoning",
+   "max_completion_tokens",
+   "max_tokens",
+   "reasoning",
+   "reasoning_effort",
+   "response_format",
+   "seed",
+   "structured_outputs",
+   "tool_choice",
+   "tools"
+  ],
+  "reasoning": {
+   "mandatory": true,
+   "default_enabled": true,
+   "supported_efforts": [
+    "max",
+    "xhigh",
+    "high",
+    "medium",
+    "low"
+   ],
+   "default_effort": "medium"
+  },
+  "resolution_rule": "newest_created",
+  "candidates_considered": [
+   "openai/gpt-6-astra",
+   "openai/gpt-5.6-luna",
+   "openai/gpt-5.6-terra",
+   "openai/gpt-5.6-sol",
+   "openai/gpt-5.5",
+   "openai/gpt-5.4",
+   "openai/gpt-5.2-chat",
+   "openai/gpt-5.2"
+  ],
+  "resolved_at": "2026-09-08T16:25:08+00:00"
+ },
+ "engine_self_reported_cutoff": "2024-08",
+ "at": "2026-09-08T16:26:42+00:00",
+ "protocol_commit": "fe439a094f7baf3e653a9982321ed9d0c37e20d4",
+ "policy_sha256": "d6c5b4968f66902f453cea57e317a51536bfcb79c8ec32ebd63edb00d6054ac6",
+ "deny_control_record": "oracle/panel/controls/deny_control_2026-09-08T155456.json",
+ "prompt_template_sha256": "721b8c389f45e5cc0d8dd0bef0359ba6d132268a3c09bd877a4c8c8799ed0f5b",
+ "sampling_requested": {
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "seed": 20260908,
+  "max_tokens": 6000,
+  "reasoning_effort": "medium",
+  "note": "remote frontier forecasts are unseeded in effect: parameters are sent only where the gateway lists them as supported, and the seal records which were sent"
+ },
+ "sampling_sent": [
+  "seed"
+ ],
+ "items": [
+  {
+   "tr": "TR-001",
+   "protocol": "TR001_latent_corpus_callosum.md",
+   "protocol_sha256": "12ce872d239b959e64d439b42c8dd3828663ca6f6e6bc14ac1a30eb91797c164",
+   "prompt_sha256": "95f0ec89a6d1309b6f0ac9016908a7e30d26c0585d178a0189a87d9df9eecf4c",
+   "published_verdict": "FAIL",
+   "published": "2026-08-26",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.05,
+     "FAIL": 0.2,
+     "SPLIT": 0.0,
+     "KILL": 0.75
+    },
+    "key_effect_directions": [
+     {
+      "claim": "At K = M = 32, C3 held-out F1 will be lower than C2 held-out F1.",
+      "probability": 0.82
+     },
+     {
+      "claim": "The trained C3 adapter will improve held-out F1 over C4, even if the improvement misses the required 15-point margin.",
+      "probability": 0.65
+     },
+     {
+      "claim": "C1 full-context held-out F1 will exceed C3 latent-handoff held-out F1.",
+      "probability": 0.96
+     }
+    ],
+    "rationale": "Mean pooling discards token-level detail important for extractive QA, while cross-family alignment into a frozen answerer must be learned from only 2,000 examples. Mapping a pooled state directly into 32 full-width embeddings can also require a surprisingly large adapter, making generalization and the hardware budget challenging. Some improvement over the no-context floor is plausible, but a reproducible five-point advantage over text is unlikely. KILL dominates because failure of both adapter architectures after the bounded sweep, or nonreplication across seeds, explicitly triggers it. SPLIT receives zero because the protocol defines a single conjunctive outcome rather than independently adjudicated legs."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "openai/gpt-6-astra",
+    "served_provider": "OpenAI",
+    "gateway_id": "gen-1788884711-v4a8pCAJk2irn8zKcNhR",
+    "finish_reason": "stop",
+    "latency_s": 13.3
+   },
+   "usage": {
+    "prompt_tokens": 1645,
+    "completion_tokens": 459,
+    "total_tokens": 2104,
+    "cost": 0.043505,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 1642,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.043505,
+     "upstream_inference_prompt_cost": 0.020555,
+     "upstream_inference_completions_cost": 0.02295
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 126,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 1.205,
+   "modal": "KILL",
+   "modal_hit": false,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-020",
+   "protocol": "TR020_zero_callers_for_cognition.md",
+   "protocol_sha256": "9c24180cadd0bec30f75be6f35d639cfa4bc773e9c3569c830fdc39c7ed7aa0d",
+   "prompt_sha256": "1756813f3128aca24f742a3527721a7e1293447c736f1d8f4c9cc0279fa64877",
+   "published_verdict": "SPLIT",
+   "published": "2026-08-28",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.2,
+     "FAIL": 0.51,
+     "SPLIT": 0.13,
+     "KILL": 0.16
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Seeded recovery precision and recall will both reach 0.9.",
+      "probability": 0.56
+     },
+     {
+      "claim": "Textual influence tracing will achieve surrogate-versus-ablation kappa below 0.7.",
+      "probability": 0.68
+     },
+     {
+      "claim": "If the wild phase proceeds, at least one configuration will have a positive measured dead-fraction point estimate.",
+      "probability": 0.8
+     }
+    ],
+    "rationale": "Clearly unread outputs should be recoverable, but irrelevant retrieval can still change answers, while redundant tools can create interaction-driven false dead flags. Textual presence measures availability rather than causal use, making the surrogate gate the likeliest bottleneck. The 150-item probes and split-replication control add instability near the 5% cutoff. Reporting wild fractions and interaction bounds is comparatively easy; the unspecified kill tolerance adds uncertainty about whether interaction problems produce FAIL or KILL."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "openai/gpt-6-astra",
+    "served_provider": "OpenAI",
+    "gateway_id": "gen-1788884724-UKNbM1gaiw4VLCkdFe9N",
+    "finish_reason": "stop",
+    "latency_s": 13.2
+   },
+   "usage": {
+    "prompt_tokens": 1138,
+    "completion_tokens": 473,
+    "total_tokens": 1611,
+    "cost": 0.0378675,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 1135,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.0378675,
+     "upstream_inference_prompt_cost": 0.0142175,
+     "upstream_inference_completions_cost": 0.02365
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 192,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 1.0826,
+   "modal": "FAIL",
+   "modal_hit": false,
+   "always_fail_brier": 2.0
+  },
+  {
+   "tr": "TR-011",
+   "protocol": "TR011_semantic_thermodynamics.md",
+   "protocol_sha256": "a1879bb37978478d30e13a6fb0e183b70611f42bb90b4e8a602f9afaac3bbd8b",
+   "prompt_sha256": "48238eb4e8e01bb79f914a6310cc81f7256f2eb8c27008e21e3892817843742c",
+   "published_verdict": "FAIL",
+   "published": "2026-08-31",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.12,
+     "FAIL": 0.63,
+     "SPLIT": 0.0,
+     "KILL": 0.25
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Published prose has lower mean full-distribution per-token entropy than its earlier drafts in corpus A.",
+      "probability": 0.64
+     },
+     {
+      "claim": "Published prose has higher per-token entropy variance than its earlier drafts in corpus A.",
+      "probability": 0.43
+     },
+     {
+      "claim": "Controlling for sentence length distribution reduces corpus B's author-disjoint classifier AUC relative to the uncontrolled analysis.",
+      "probability": 0.78
+     }
+    ],
+    "rationale": "Editing plausibly increases local predictability, but predictive-distribution entropy need not track narrative surprise or craft quality. The conjunction of two moderate feature effects, consistent signs across corpora, AUC at least 0.7, and cross-model agreement is demanding given limited independent works and heterogeneous slush. Sentence length could explain much of any separation, although complete signal disappearance is less likely than ordinary gate failure. SPLIT receives no mass because the frozen rules treat disagreement or any missed gate as FAIL."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "openai/gpt-6-astra",
+    "served_provider": "OpenAI",
+    "gateway_id": "gen-1788884738-CIzBMRt2QzyHLMacN93O",
+    "finish_reason": "stop",
+    "latency_s": 13.0
+   },
+   "usage": {
+    "prompt_tokens": 1006,
+    "completion_tokens": 463,
+    "total_tokens": 1469,
+    "cost": 0.03321,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.03321,
+     "upstream_inference_prompt_cost": 0.01006,
+     "upstream_inference_completions_cost": 0.02315
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 174,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.2138,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-015",
+   "protocol": "TR015_burrows_delta_latent.md",
+   "protocol_sha256": "9a76a639a926096e15ec9b0bc95ed16b2bd443f5638dbf08f06e6eea4e145a2b",
+   "prompt_sha256": "dd4a9bd423f4332b6ff797e28681ad540499dbac447171cb72ea61143bcbaf26",
+   "published_verdict": "FAIL",
+   "published": "2026-08-31",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.08,
+     "FAIL": 0.35,
+     "SPLIT": 0.07,
+     "KILL": 0.5
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Held-out attribution accuracy in the rank <= 10 topic-residualized subspace will fall below 90%.",
+      "probability": 0.72
+     },
+     {
+      "claim": "Burrows Delta will achieve higher held-out attribution accuracy than the low-rank residualized embedding classifier.",
+      "probability": 0.64
+     },
+     {
+      "claim": "Content-preserving paraphrases will move at least one author's chunks into another author's region, triggering the stated KILL criterion.",
+      "probability": 0.5
+     }
+    ],
+    "rationale": "Embeddings likely retain some author signal after topic residualization, but achieving 90% attribution in ten dimensions while matching a strong function-word baseline is demanding. Within-author drift should generally be smaller than between-author distance, without reliably meeting the stricter ratio and chunk-size consistency gates. Paraphrasing can change style while preserving content, making the kill control particularly hazardous rather than a clean test of topic leakage. Chunk-level holdouts may inflate attribution through shared-work cues; unspecified paraphrase sampling and region boundaries add substantial verdict uncertainty."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "openai/gpt-6-astra",
+    "served_provider": "OpenAI",
+    "gateway_id": "gen-1788884751-6qTGaZvp3lgw3gfCTPbV",
+    "finish_reason": "stop",
+    "latency_s": 16.5
+   },
+   "usage": {
+    "prompt_tokens": 1031,
+    "completion_tokens": 521,
+    "total_tokens": 1552,
+    "cost": 0.03893,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 1028,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.03893,
+     "upstream_inference_prompt_cost": 0.01288,
+     "upstream_inference_completions_cost": 0.02605
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 215,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.6838,
+   "modal": "KILL",
+   "modal_hit": false,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-004",
+   "protocol": "TR004_curvature_of_meaning.md",
+   "protocol_sha256": "43c3f912b7af14155ff6d29397ba34b68318683bc9c186748da1550dcd66e089",
+   "prompt_sha256": "7b0b85ee3362a4e38400d7a849175db0f4e2b6da6c9d01511d8f3ddf9844619b",
+   "published_verdict": "FAIL",
+   "published": "2026-09-02",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.1,
+     "FAIL": 0.52,
+     "SPLIT": 0.0,
+     "KILL": 0.38
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Figurative usages have higher median LID than matched literal usages in both estimators before frequency/length controls.",
+      "probability": 0.59
+     },
+     {
+      "claim": "Figurative neighborhoods have higher geodesic-vs-chordal distance ratios than literal neighborhoods.",
+      "probability": 0.56
+     },
+     {
+      "claim": "Frequency/length controls reduce the positive figurative-minus-literal LID effect measured by Cliff's delta.",
+      "probability": 0.76
+     }
+    ],
+    "rationale": "My prior favors weak geometric differences over a robust effect meeting every gate. Context diversity could increase figurative LID, but neighborhood sampling, estimator sensitivity, and embedding anisotropy threaten agreement and the delta threshold. Token and sentence embeddings measure different contextual structure, making the model-specific KILL outcome substantial. Negative controls further constrain PASS. SPLIT receives no mass because estimator disagreement is explicitly FAIL and cross-model presence/absence is explicitly KILL, rather than an independently scored split."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "openai/gpt-6-astra",
+    "served_provider": "OpenAI",
+    "gateway_id": "gen-1788884767-M2e7j1Cdyzt1VARd9u4H",
+    "finish_reason": "stop",
+    "latency_s": 18.0
+   },
+   "usage": {
+    "prompt_tokens": 948,
+    "completion_tokens": 509,
+    "total_tokens": 1457,
+    "cost": 0.03493,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.03493,
+     "upstream_inference_prompt_cost": 0.00948,
+     "upstream_inference_completions_cost": 0.02545
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 217,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.3848,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-002r",
+   "protocol": "TR002r_platonic_replication.md",
+   "protocol_sha256": "517e4ba7314954a371601e7f25c922b540eb6d0903060da94d41d6c2ff4787d6",
+   "prompt_sha256": "9862950cd5f1bb82a9948540e6bfdf09fce6d361e1fef133dec17597970664c0",
+   "published_verdict": "FAIL",
+   "published": "2026-09-07",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.04,
+     "FAIL": 0.67,
+     "SPLIT": 0.0,
+     "KILL": 0.29
+    },
+    "key_effect_directions": [
+     {
+      "claim": "At n = 32k, unsupervised top-1 retrieval on the frozen primary pair will fall below 0.30 in at least one required direction-seed combination.",
+      "probability": 0.9
+     },
+     {
+      "claim": "On the frozen primary pair, unsupervised mean cosine will be lower than supervised Procrustes mean cosine, averaged across directions and seeds.",
+      "probability": 0.95
+     },
+     {
+      "claim": "At n = 32k, encoder-to-encoder pairs will achieve higher average unsupervised top-1 retrieval than the frozen encoder-to-quantized-decoder pair.",
+      "probability": 0.84
+     }
+    ],
+    "rationale": "Unpaired linear alignment faces substantial identifiability and geometry-mismatch risks between a sentence encoder and a mean-pooled decoder; requiring both fidelity thresholds in both directions at both seeds makes PASS unlikely. Architectural and pooling differences likely matter more than quantization alone. The demanding supervised cosine threshold creates a material KILL risk, although supervised alignment should generally outperform the primary method. SPLIT receives no mass because this protocol explicitly treats successes on other pairs as boundary findings rather than separate verdict legs."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "openai/gpt-6-astra",
+    "served_provider": "OpenAI",
+    "gateway_id": "gen-1788884785-mBAGx29oWTrS2RnZ5TPc",
+    "finish_reason": "stop",
+    "latency_s": 16.5
+   },
+   "usage": {
+    "prompt_tokens": 2006,
+    "completion_tokens": 599,
+    "total_tokens": 2605,
+    "cost": 0.0550175,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 2003,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.0550175,
+     "upstream_inference_prompt_cost": 0.0250675,
+     "upstream_inference_completions_cost": 0.02995
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 271,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.1946,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "always_fail_brier": 0.0
+  }
+ ],
+ "mechanics_pass": true,
+ "mean_brier": 0.6274,
+ "mean_brier_clear_only": 0.6274,
+ "modal_hits": "3 of 6",
+ "baselines": {
+  "uniform": 0.75,
+  "always_FAIL_mean": 0.3333
+ },
+ "spend_usd": 0.2435
+}

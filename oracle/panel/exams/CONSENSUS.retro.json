@@ -1,0 +1,36 @@
+{
+ "label": "reported-only mean-probability consensus; never the headline",
+ "items": [
+  {
+   "tr": "TR-001",
+   "brier": 0.8985,
+   "modal": "KILL"
+  },
+  {
+   "tr": "TR-020",
+   "brier": 0.8385,
+   "modal": "FAIL"
+  },
+  {
+   "tr": "TR-011",
+   "brier": 0.3324,
+   "modal": "FAIL"
+  },
+  {
+   "tr": "TR-015",
+   "brier": 0.4741,
+   "modal": "FAIL"
+  },
+  {
+   "tr": "TR-004",
+   "brier": 0.3905,
+   "modal": "FAIL"
+  },
+  {
+   "tr": "TR-002r",
+   "brier": 0.161,
+   "modal": "FAIL"
+  }
+ ],
+ "mean_brier": 0.5158
+}

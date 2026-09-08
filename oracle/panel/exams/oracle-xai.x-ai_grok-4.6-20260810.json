@@ -1,0 +1,503 @@
+{
+ "kind": "retro_calibration_exam",
+ "label": "RETRO; zero foresight weight",
+ "seat": "oracle-xai",
+ "engine": {
+  "seat": "oracle-xai",
+  "routing_alias": "x-ai/grok-4.6",
+  "canonical_slug": "x-ai/grok-4.6-20260810",
+  "created_unix": 1786548957,
+  "created_iso": "2026-08-12",
+  "knowledge_cutoff_gateway": null,
+  "pricing_usd_per_token": {
+   "prompt": "0.000002",
+   "completion": "0.000006"
+  },
+  "supported_parameters": [
+   "include_reasoning",
+   "logprobs",
+   "max_tokens",
+   "reasoning",
+   "reasoning_effort",
+   "response_format",
+   "seed",
+   "stop",
+   "structured_outputs",
+   "temperature",
+   "tool_choice",
+   "tools",
+   "top_k",
+   "top_logprobs",
+   "top_p"
+  ],
+  "reasoning": {
+   "mandatory": true,
+   "default_enabled": true,
+   "supported_efforts": [
+    "xhigh",
+    "high",
+    "medium",
+    "low"
+   ],
+   "default_effort": "high"
+  },
+  "resolution_rule": "newest_created",
+  "candidates_considered": [
+   "x-ai/grok-4.6",
+   "x-ai/grok-4.5",
+   "x-ai/grok-4.3",
+   "x-ai/grok-4.20"
+  ],
+  "resolved_at": "2026-09-08T16:26:42+00:00"
+ },
+ "engine_self_reported_cutoff": "2023-12",
+ "at": "2026-09-08T16:32:47+00:00",
+ "protocol_commit": "fe439a094f7baf3e653a9982321ed9d0c37e20d4",
+ "policy_sha256": "d6c5b4968f66902f453cea57e317a51536bfcb79c8ec32ebd63edb00d6054ac6",
+ "deny_control_record": "oracle/panel/controls/deny_control_2026-09-08T155456.json",
+ "prompt_template_sha256": "721b8c389f45e5cc0d8dd0bef0359ba6d132268a3c09bd877a4c8c8799ed0f5b",
+ "sampling_requested": {
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "seed": 20260908,
+  "max_tokens": 6000,
+  "reasoning_effort": "medium",
+  "note": "remote frontier forecasts are unseeded in effect: parameters are sent only where the gateway lists them as supported, and the seal records which were sent"
+ },
+ "sampling_sent": [
+  "temperature",
+  "top_p",
+  "seed"
+ ],
+ "items": [
+  {
+   "tr": "TR-001",
+   "protocol": "TR001_latent_corpus_callosum.md",
+   "protocol_sha256": "12ce872d239b959e64d439b42c8dd3828663ca6f6e6bc14ac1a30eb91797c164",
+   "prompt_sha256": "95f0ec89a6d1309b6f0ac9016908a7e30d26c0585d178a0189a87d9df9eecf4c",
+   "published_verdict": "FAIL",
+   "published": "2026-08-26",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.09,
+     "FAIL": 0.21,
+     "SPLIT": 0.08,
+     "KILL": 0.62
+    },
+    "key_effect_directions": [
+     {
+      "claim": "C3 token-level F1 exceeds C2 F1 by at least 5 points with bootstrap CI excluding zero",
+      "probability": 0.11
+     },
+     {
+      "claim": "C3 F1 exceeds the C4 no-context floor by at least 15 points",
+      "probability": 0.4
+     },
+     {
+      "claim": "Both linear and 2-layer MLP adapters fail the pre-registered PASS gates after the max-20-config sweep",
+      "probability": 0.71
+     }
+    ],
+    "rationale": "Mean-pooling Model A into one vector then linearly or shallow-MLP mapping it into 32 Llama embedding slots discards span-level detail that even a non-query-focused 32-token Qwen summary can still lexicalize; the cross-family gap plus only 2k frozen-B training pairs makes a reliable 5-point F1 lift over text improbable, so both adapter classes miss the frozen gates and the KILL criteria fire."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "x-ai/grok-4.6",
+    "served_provider": "xAI",
+    "gateway_id": "gen-1788884809-hBDrKNRIqKD66THpmWi7",
+    "finish_reason": "stop",
+    "latency_s": 103.5
+   },
+   "usage": {
+    "prompt_tokens": 1862,
+    "completion_tokens": 5609,
+    "total_tokens": 7471,
+    "cost": 0.037378,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.037378,
+     "upstream_inference_prompt_cost": 0.003724,
+     "upstream_inference_completions_cost": 0.033654
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 5322,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 1.023,
+   "modal": "KILL",
+   "modal_hit": false,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-020",
+   "protocol": "TR020_zero_callers_for_cognition.md",
+   "protocol_sha256": "9c24180cadd0bec30f75be6f35d639cfa4bc773e9c3569c830fdc39c7ed7aa0d",
+   "prompt_sha256": "1756813f3128aca24f742a3527721a7e1293447c736f1d8f4c9cc0279fa64877",
+   "published_verdict": "SPLIT",
+   "published": "2026-08-28",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.33,
+     "FAIL": 0.25,
+     "SPLIT": 0.27,
+     "KILL": 0.15
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Seeded-system plant recovery achieves precision and recall both >= 0.9",
+      "probability": 0.6
+     },
+     {
+      "claim": "Surrogate textual-influence tracing agrees with full ablation at kappa >= 0.7",
+      "probability": 0.41
+     },
+     {
+      "claim": "Wild-phase popular agent configs show a nontrivial positive dead-component fraction",
+      "probability": 0.68
+     }
+    ],
+    "rationale": "Clearly planted inert modules in small seeded stacks should be recoverable under one-at-a-time masking if the 5% change rule and quality CIs are stable, so recovery-plus-reporting often holds, but judge noise, placebo-mask brittleness, and compensatory redundancy can still push precision under 0.9 or fire the interaction kill. Kappa >= 0.7 is the weakest gate because span and embedding traces miss non-copied influence, creating a natural SPLIT when seeded recovery works and the surrogate does not. Default open-source agent stacks are tool-heavy enough that a positive wild dead fraction is the expected point estimate once any trusted audit runs."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "x-ai/grok-4.6",
+    "served_provider": "xAI",
+    "gateway_id": "gen-1788884913-fG1tTH3mlV7grvhjD4i6",
+    "finish_reason": "stop",
+    "latency_s": 58.6
+   },
+   "usage": {
+    "prompt_tokens": 1359,
+    "completion_tokens": 3592,
+    "total_tokens": 4951,
+    "cost": 0.024078,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 128,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.024078,
+     "upstream_inference_prompt_cost": 0.002526,
+     "upstream_inference_completions_cost": 0.021552
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 3279,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.7268,
+   "modal": "PASS",
+   "modal_hit": false,
+   "always_fail_brier": 2.0
+  },
+  {
+   "tr": "TR-011",
+   "protocol": "TR011_semantic_thermodynamics.md",
+   "protocol_sha256": "a1879bb37978478d30e13a6fb0e183b70611f42bb90b4e8a602f9afaac3bbd8b",
+   "prompt_sha256": "48238eb4e8e01bb79f914a6310cc81f7256f2eb8c27008e21e3892817843742c",
+   "published_verdict": "FAIL",
+   "published": "2026-08-31",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.18,
+     "FAIL": 0.48,
+     "SPLIT": 0.22,
+     "KILL": 0.12
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Published prose shows lower mean per-token entropy than paired drafts in corpus A",
+      "probability": 0.62
+     },
+     {
+      "claim": "Classifier AUC for published vs slush in corpus B reaches at least 0.7 under author-disjoint splits",
+      "probability": 0.38
+     },
+     {
+      "claim": "Cross-model agreement on entropy-series features meets rho >= 0.7",
+      "probability": 0.55
+     }
+    ],
+    "rationale": "Paired same-work edits should modestly lower mean token entropy by removing awkwardness, but sequential features (spikes, autocorrelation) and sign-consistent replication into heterogeneous slush are weaker, and the PASS rule is a strict conjunction including AUC and cross-family rho; residual risk remains that any series signal is largely a sentence-length detector."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "x-ai/grok-4.6",
+    "served_provider": "xAI",
+    "gateway_id": "gen-1788884971-WEuXTl5nahsFLMixN7ot",
+    "finish_reason": "stop",
+    "latency_s": 41.3
+   },
+   "usage": {
+    "prompt_tokens": 1217,
+    "completion_tokens": 2247,
+    "total_tokens": 3464,
+    "cost": 0.015916,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.015916,
+     "upstream_inference_prompt_cost": 0.002434,
+     "upstream_inference_completions_cost": 0.013482
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 1995,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.3656,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-015",
+   "protocol": "TR015_burrows_delta_latent.md",
+   "protocol_sha256": "9a76a639a926096e15ec9b0bc95ed16b2bd443f5638dbf08f06e6eea4e145a2b",
+   "prompt_sha256": "dd4a9bd423f4332b6ff797e28681ad540499dbac447171cb72ea61143bcbaf26",
+   "published_verdict": "FAIL",
+   "published": "2026-08-31",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.08,
+     "FAIL": 0.47,
+     "SPLIT": 0.32,
+     "KILL": 0.13
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Rank-\u226410 topic-residualized subspace reaches \u226590% held-out attribution accuracy",
+      "probability": 0.22
+     },
+     {
+      "claim": "Residualized low-rank accuracy matches or exceeds Burrows Delta",
+      "probability": 0.38
+     },
+     {
+      "claim": "Within-author drift ratio <0.5 for \u226580% of authors with consistent direction across both chunk sizes",
+      "probability": 0.45
+     }
+    ],
+    "rationale": "Sentence embeddings are dominated by semantics, so topic-factor residualization is unlikely to leave a clean rank-\u226410 voice manifold that hits 90% closed-set accuracy on 12+ authors while also matching Burrows function-word Delta; the conjunction of that bar, the 80% drift-ratio gate, and cross-chunk-size consistency is therefore a high hurdle. Drift geometry itself is more plausible than the accuracy claim, producing SPLIT mass when legs diverge, while LLM paraphrases often scramble residual coordinates enough to risk the pre-registered KILL."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "x-ai/grok-4.6",
+    "served_provider": "xAI",
+    "gateway_id": "gen-1788885013-z564LFOs0lu6VNkwRZsc",
+    "finish_reason": "stop",
+    "latency_s": 57.8
+   },
+   "usage": {
+    "prompt_tokens": 1247,
+    "completion_tokens": 3246,
+    "total_tokens": 4493,
+    "cost": 0.02197,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.02197,
+     "upstream_inference_prompt_cost": 0.002494,
+     "upstream_inference_completions_cost": 0.019476
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 2949,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.4066,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-004",
+   "protocol": "TR004_curvature_of_meaning.md",
+   "protocol_sha256": "43c3f912b7af14155ff6d29397ba34b68318683bc9c186748da1550dcd66e089",
+   "prompt_sha256": "7b0b85ee3362a4e38400d7a849175db0f4e2b6da6c9d01511d8f3ddf9844619b",
+   "published_verdict": "FAIL",
+   "published": "2026-09-02",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.12,
+     "FAIL": 0.48,
+     "SPLIT": 0.22,
+     "KILL": 0.18
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Both Two-NN and MLE estimators agree that median LID is higher around figurative than literal usages of the same lemmas",
+      "probability": 0.4
+     },
+     {
+      "claim": "Paired Cliff's delta on LID is at least 0.2 with CI excluding zero after frequency and length controls",
+      "probability": 0.18
+     },
+     {
+      "claim": "Curvature proxies (geodesic-to-chordal ratio and PCA residual decay) are higher in figurative than literal neighborhoods",
+      "probability": 0.35
+     }
+    ],
+    "rationale": "PASS demands a medium paired effect from both LID estimators that survives controls, which is a high bar given noisy local geometry estimates on contextual embeddings; token versus sentence embedders are likely to diverge (triggering KILL) while POS or LID-versus-curvature legs can split, so the modal outcome is FAIL from estimator disagreement or vanishing controls."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "x-ai/grok-4.6",
+    "served_provider": "xAI",
+    "gateway_id": "gen-1788885070-73xDnaARLCG3OA72yOWQ",
+    "finish_reason": "stop",
+    "latency_s": 39.5
+   },
+   "usage": {
+    "prompt_tokens": 1143,
+    "completion_tokens": 2126,
+    "total_tokens": 3269,
+    "cost": 0.01485,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 128,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.01485,
+     "upstream_inference_prompt_cost": 0.002094,
+     "upstream_inference_completions_cost": 0.012756
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 1857,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.3656,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-002r",
+   "protocol": "TR002r_platonic_replication.md",
+   "protocol_sha256": "517e4ba7314954a371601e7f25c922b540eb6d0903060da94d41d6c2ff4787d6",
+   "prompt_sha256": "9862950cd5f1bb82a9948540e6bfdf09fce6d361e1fef133dec17597970664c0",
+   "published_verdict": "FAIL",
+   "published": "2026-09-07",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.08,
+     "FAIL": 0.7,
+     "SPLIT": 0.12,
+     "KILL": 0.1
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Primary pair (bge-small \u2194 Llama-3.1-8B-4bit) unsupervised mean cosine \u2265 0.70 in both directions at n=32k, both seeds",
+      "probability": 0.14
+     },
+     {
+      "claim": "Supervised Procrustes skyline mean cosine \u2265 0.80 on the primary pair",
+      "probability": 0.38
+     },
+     {
+      "claim": "Supervised skyline cosine < 0.80 on more than half of all pairs (KILL criterion)",
+      "probability": 0.1
+     }
+    ],
+    "rationale": "The frozen primary pair is the most distant (small encoder vs 4-bit mean-pooled 8B decoder), so unsupervised linear mini-vec2vec at n\u226432k is unlikely to hit both 0.70 cosine and 0.30 top-1 in both directions and seeds; encoder\u2013encoder skylines should still clear 0.80, making instrument-wide KILL unlikely and FAIL the modal outcome, with SPLIT reserved for direction/seed splits."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "x-ai/grok-4.6",
+    "served_provider": "xAI",
+    "gateway_id": "gen-1788885110-z9Do2RjcPW3kJPBH86VJ",
+    "finish_reason": "stop",
+    "latency_s": 57.1
+   },
+   "usage": {
+    "prompt_tokens": 2236,
+    "completion_tokens": 3243,
+    "total_tokens": 5479,
+    "cost": 0.023738,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 128,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.023738,
+     "upstream_inference_prompt_cost": 0.00428,
+     "upstream_inference_completions_cost": 0.019458
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 2938,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.1208,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "always_fail_brier": 0.0
+  }
+ ],
+ "mechanics_pass": true,
+ "mean_brier": 0.5014,
+ "mean_brier_clear_only": 0.5014,
+ "modal_hits": "4 of 6",
+ "baselines": {
+  "uniform": 0.75,
+  "always_FAIL_mean": 0.3333
+ },
+ "spend_usd": 0.1379
+}

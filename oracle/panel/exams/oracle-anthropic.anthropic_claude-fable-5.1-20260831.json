@@ -1,0 +1,498 @@
+{
+ "kind": "retro_calibration_exam",
+ "label": "RETRO; zero foresight weight",
+ "seat": "oracle-anthropic",
+ "engine": {
+  "seat": "oracle-anthropic",
+  "routing_alias": "anthropic/claude-fable-5.1",
+  "canonical_slug": "anthropic/claude-fable-5.1-20260831",
+  "created_unix": 1788285838,
+  "created_iso": "2026-09-01",
+  "knowledge_cutoff_gateway": null,
+  "pricing_usd_per_token": {
+   "prompt": "0.00001",
+   "completion": "0.00005"
+  },
+  "supported_parameters": [
+   "include_reasoning",
+   "max_completion_tokens",
+   "max_tokens",
+   "reasoning",
+   "reasoning_effort",
+   "response_format",
+   "stop",
+   "structured_outputs",
+   "tools",
+   "verbosity"
+  ],
+  "reasoning": {
+   "mandatory": true,
+   "supported_efforts": [
+    "max",
+    "xhigh",
+    "high",
+    "medium",
+    "low"
+   ],
+   "default_effort": "high"
+  },
+  "resolution_rule": "newest_created",
+  "candidates_considered": [
+   "anthropic/claude-fable-5.1",
+   "anthropic/claude-opus-5",
+   "anthropic/claude-sonnet-5",
+   "anthropic/claude-fable-5",
+   "anthropic/claude-opus-4.8",
+   "anthropic/claude-opus-4.7",
+   "anthropic/claude-sonnet-4.6",
+   "anthropic/claude-opus-4.6"
+  ],
+  "resolved_at": "2026-09-08T16:22:45+00:00"
+ },
+ "engine_self_reported_cutoff": "2025-01",
+ "at": "2026-09-08T16:25:08+00:00",
+ "protocol_commit": "fe439a094f7baf3e653a9982321ed9d0c37e20d4",
+ "policy_sha256": "d6c5b4968f66902f453cea57e317a51536bfcb79c8ec32ebd63edb00d6054ac6",
+ "deny_control_record": "oracle/panel/controls/deny_control_2026-09-08T155456.json",
+ "prompt_template_sha256": "721b8c389f45e5cc0d8dd0bef0359ba6d132268a3c09bd877a4c8c8799ed0f5b",
+ "sampling_requested": {
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "seed": 20260908,
+  "max_tokens": 6000,
+  "reasoning_effort": "medium",
+  "note": "remote frontier forecasts are unseeded in effect: parameters are sent only where the gateway lists them as supported, and the seal records which were sent"
+ },
+ "sampling_sent": [],
+ "items": [
+  {
+   "tr": "TR-001",
+   "protocol": "TR001_latent_corpus_callosum.md",
+   "protocol_sha256": "12ce872d239b959e64d439b42c8dd3828663ca6f6e6bc14ac1a30eb91797c164",
+   "prompt_sha256": "95f0ec89a6d1309b6f0ac9016908a7e30d26c0585d178a0189a87d9df9eecf4c",
+   "published_verdict": "FAIL",
+   "published": "2026-08-26",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.08,
+     "FAIL": 0.42,
+     "SPLIT": 0.05,
+     "KILL": 0.45
+    },
+    "key_effect_directions": [
+     {
+      "claim": "C2 (32-token text summary) held-out F1 exceeds C3 (latent handoff) F1 on the primary metric",
+      "probability": 0.75
+     },
+     {
+      "claim": "C3 F1 beats the C4 no-context floor by at least 15 points",
+      "probability": 0.35
+     },
+     {
+      "claim": "Random-adapter and shuffled-pairing controls collapse C3 to within a few F1 points of the C4 floor",
+      "probability": 0.85
+     }
+    ],
+    "rationale": "Extractive QA rewards preserving exact spans, which a 32-token text summary partially does, whereas a mean-pooled single vector from a cross-family 8B model, linearly (or shallow-MLP) projected into 32 soft vectors and trained on only 2,000 pairs with the answerer frozen, is very unlikely to carry passage-specific span information; prior soft-prompt compression work needs far more data and usually trains the compressor deeply. I expect C3 to land only modestly above floor, well below C2, so the 5-point-with-CI gate is missed. Because the protocol escalates linear to MLP and both are likely to fail within the 20-config sweep, the pre-registered KILL criterion is about as likely to be the recorded outcome as a plain FAIL; a genuine PASS at matched M=K is a low-probability tail, and the design has few natural SPLIT legs."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "anthropic/claude-fable-5.1",
+    "served_provider": "Anthropic",
+    "gateway_id": "gen-1788884569-Og7bD0XoqXAmYZhq4AS4",
+    "finish_reason": "stop",
+    "latency_s": 24.0
+   },
+   "usage": {
+    "prompt_tokens": 2603,
+    "completion_tokens": 1395,
+    "total_tokens": 3998,
+    "cost": 0.09578,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.09578,
+     "upstream_inference_prompt_cost": 0.02603,
+     "upstream_inference_completions_cost": 0.06975
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 837,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.5478,
+   "modal": "KILL",
+   "modal_hit": false,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-020",
+   "protocol": "TR020_zero_callers_for_cognition.md",
+   "protocol_sha256": "9c24180cadd0bec30f75be6f35d639cfa4bc773e9c3569c830fdc39c7ed7aa0d",
+   "prompt_sha256": "1756813f3128aca24f742a3527721a7e1293447c736f1d8f4c9cc0279fa64877",
+   "published_verdict": "SPLIT",
+   "published": "2026-08-28",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.3,
+     "FAIL": 0.3,
+     "SPLIT": 0.25,
+     "KILL": 0.15
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Seeded recovery precision and recall both reach >= 0.9 (at most one plant missed or one live component falsely flagged across the 6 seeded systems)",
+      "probability": 0.55
+     },
+     {
+      "claim": "At least one of the 4 wild open-source agent configurations shows a nonzero dead fraction (>= 1 component meeting the frozen dead criterion)",
+      "probability": 0.72
+     },
+     {
+      "claim": "Surrogate textual-influence tracing achieves kappa >= 0.7 against full ablation verdicts",
+      "probability": 0.5
+     }
+    ],
+    "rationale": "The design is sound and the seeded plants are easy in principle, but the frozen dead criterion (answer-change < 5%) is brittle against LLM nondeterminism and context-sensitivity: masking an irrelevant retrieval source or a noisy component can flip >5% of answers without changing quality, costing recall, while the planted redundant-duplicate tool is precisely the interaction case that makes one-at-a-time ablation flag both copies as dead, threatening precision or even the KILL criterion. With roughly 25-30 total components, a single misclassification breaks the 0.9 gates, and kappa on so few items is noisy, so a seeded-pass/surrogate-miss SPLIT is a real possibility. Wild systems very likely contain some dead components, but that leg cannot rescue a failed seeded gate."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "anthropic/claude-fable-5.1",
+    "served_provider": "Anthropic",
+    "gateway_id": "gen-1788884593-YRGqcmZ9jc1Lck17jHby",
+    "finish_reason": "stop",
+    "latency_s": 24.6
+   },
+   "usage": {
+    "prompt_tokens": 1838,
+    "completion_tokens": 1536,
+    "total_tokens": 3374,
+    "cost": 0.09518,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.09518,
+     "upstream_inference_prompt_cost": 0.01838,
+     "upstream_inference_completions_cost": 0.0768
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 967,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.765,
+   "modal": "PASS",
+   "modal_hit": false,
+   "always_fail_brier": 2.0
+  },
+  {
+   "tr": "TR-011",
+   "protocol": "TR011_semantic_thermodynamics.md",
+   "protocol_sha256": "a1879bb37978478d30e13a6fb0e183b70611f42bb90b4e8a602f9afaac3bbd8b",
+   "prompt_sha256": "48238eb4e8e01bb79f914a6310cc81f7256f2eb8c27008e21e3892817843742c",
+   "published_verdict": "FAIL",
+   "published": "2026-08-31",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.2,
+     "FAIL": 0.4,
+     "SPLIT": 0.15,
+     "KILL": 0.25
+    },
+    "key_effect_directions": [
+     {
+      "claim": "In corpus B, published novels show lower mean per-token entropy than slush samples (negative Cliff's delta on the mean feature), with classifier AUC exceeding 0.7 on author-disjoint splits",
+      "probability": 0.6
+     },
+     {
+      "claim": "Mean entropy and variance features correlate rho >= 0.7 between the two scoring models, but autocorrelation length and spectral features fall below the 0.7 agreement threshold",
+      "probability": 0.65
+     },
+     {
+      "claim": "In corpus A (draft vs published, same author), fewer than two features reach |Cliff's delta| >= 0.3 with sign matching corpus B",
+      "probability": 0.55
+     }
+    ],
+    "rationale": "The published-vs-slush contrast (corpus B) likely yields a detectable mean-entropy signal and a passable AUC, but the pass gate is conjunctive and fragile: draft-to-published edits of the same work are typically modest, so corpus A effect sizes of 0.3 across two features with matching sign are uncertain, and higher-order series features (autocorrelation, spectra) tend to disagree across model families. Mean entropy is also strongly coupled to sentence length and punctuation density, giving a substantial chance the pre-registered kill criterion fires once length distributions are controlled. Small corpora (paired drafts, 40 documents) add noise, making a near-miss FAIL the modal outcome."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "anthropic/claude-fable-5.1",
+    "served_provider": "Anthropic",
+    "gateway_id": "gen-1788884617-iNUJk46YaurN9obOGpN4",
+    "finish_reason": "stop",
+    "latency_s": 23.7
+   },
+   "usage": {
+    "prompt_tokens": 1622,
+    "completion_tokens": 1583,
+    "total_tokens": 3205,
+    "cost": 0.09537,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.09537,
+     "upstream_inference_prompt_cost": 0.01622,
+     "upstream_inference_completions_cost": 0.07915
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 1012,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.485,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-015",
+   "protocol": "TR015_burrows_delta_latent.md",
+   "protocol_sha256": "9a76a639a926096e15ec9b0bc95ed16b2bd443f5638dbf08f06e6eea4e145a2b",
+   "prompt_sha256": "dd4a9bd423f4332b6ff797e28681ad540499dbac447171cb72ea61143bcbaf26",
+   "published_verdict": "FAIL",
+   "published": "2026-08-31",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.15,
+     "FAIL": 0.42,
+     "SPLIT": 0.23,
+     "KILL": 0.2
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Rank <= 10 residualized subspace achieves >= 90% held-out attribution accuracy on 1,500-word chunks (12+ authors)",
+      "probability": 0.55
+     },
+     {
+      "claim": "Low-rank residualized embedding classifier beats or matches classical Burrows Delta on function words at both chunk sizes",
+      "probability": 0.35
+     },
+     {
+      "claim": "Drift ratio (within-author sequential drift / mean between-author distance) < 0.5 for >= 80% of authors",
+      "probability": 0.65
+     }
+    ],
+    "rationale": "PASS is a long conjunction: >=90% accuracy in <=10 dims after topic residualization, parity with Burrows Delta (which is notoriously strong on 1,000+ word chunks of public-domain prose), drift ratio <0.5 for 80% of authors, and drift-direction consistency across chunk sizes. General sentence embeddings are topic-dominated, so residualization likely costs substantial accuracy at 500-word chunks, and Burrows Delta is a hard baseline to match, making FAIL the modal outcome. The attribution and drift legs are independent enough that a SPLIT (drift geometry works, attribution parity fails, or vice versa) is plausible. The paraphrase kill is ambiguously specified and LLM rewrites homogenize style, so misattribution of paraphrased chunks to other authors could reasonably be read as KILL by an honest lab, warranting meaningful KILL mass."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "anthropic/claude-fable-5.1",
+    "served_provider": "Anthropic",
+    "gateway_id": "gen-1788884641-7GBSVXZzC46BzdCBwQTT",
+    "finish_reason": "stop",
+    "latency_s": 22.7
+   },
+   "usage": {
+    "prompt_tokens": 1687,
+    "completion_tokens": 1616,
+    "total_tokens": 3303,
+    "cost": 0.09767,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.09767,
+     "upstream_inference_prompt_cost": 0.01687,
+     "upstream_inference_completions_cost": 0.0808
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 1019,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.4518,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-004",
+   "protocol": "TR004_curvature_of_meaning.md",
+   "protocol_sha256": "43c3f912b7af14155ff6d29397ba34b68318683bc9c186748da1550dcd66e089",
+   "prompt_sha256": "7b0b85ee3362a4e38400d7a849175db0f4e2b6da6c9d01511d8f3ddf9844619b",
+   "published_verdict": "FAIL",
+   "published": "2026-09-02",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.22,
+     "FAIL": 0.4,
+     "SPLIT": 0.15,
+     "KILL": 0.23
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Median LID (figurative) exceeds median LID (literal) for the same lemmas under both Two-NN and MLE estimators in the contextual token model",
+      "probability": 0.62
+     },
+     {
+      "claim": "Paired Cliff's delta on LID reaches >= 0.2 with bootstrap CI excluding zero after frequency/length controls",
+      "probability": 0.32
+     },
+     {
+      "claim": "Geodesic-vs-chordal ratio is higher in figurative neighborhoods than literal ones, but the effect is weaker or absent in the sentence embedder",
+      "probability": 0.55
+     }
+    ],
+    "rationale": "Contextual token embeddings for metaphorical uses tend to sit farther from a lemma's prototypical cluster and in sparser, more heterogeneous neighborhoods, so a directional LID increase is plausible and both estimators will likely agree in sign. However, LID estimates are noisy at realistic per-lemma sample sizes, VUAMC metaphor labels are dominated by high-frequency function-ish words, and frequency/length confounds are large, making a Cliff's delta >= 0.2 with a clean CI a demanding bar; a small consistent effect that misses the threshold is the modal outcome and counts as FAIL. The KILL criterion is a real risk because a sentence embedder pools token information and may not reproduce a token-level geometric difference, which the protocol would read as a model artifact. SPLIT arises if LID passes while curvature proxies or some POS strata fail."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "anthropic/claude-fable-5.1",
+    "served_provider": "Anthropic",
+    "gateway_id": "gen-1788884664-dAz2owDQ1PF7sanxHser",
+    "finish_reason": "stop",
+    "latency_s": 19.9
+   },
+   "usage": {
+    "prompt_tokens": 1566,
+    "completion_tokens": 1299,
+    "total_tokens": 2865,
+    "cost": 0.08061,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.08061,
+     "upstream_inference_prompt_cost": 0.01566,
+     "upstream_inference_completions_cost": 0.06495
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 697,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.4838,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "always_fail_brier": 0.0
+  },
+  {
+   "tr": "TR-002r",
+   "protocol": "TR002r_platonic_replication.md",
+   "protocol_sha256": "517e4ba7314954a371601e7f25c922b540eb6d0903060da94d41d6c2ff4787d6",
+   "prompt_sha256": "9862950cd5f1bb82a9948540e6bfdf09fce6d361e1fef133dec17597970664c0",
+   "published_verdict": "FAIL",
+   "published": "2026-09-07",
+   "forecast": {
+    "verdict_probabilities": {
+     "PASS": 0.1,
+     "FAIL": 0.63,
+     "SPLIT": 0.05,
+     "KILL": 0.22
+    },
+    "key_effect_directions": [
+     {
+      "claim": "Unsupervised primary-pair (bge-small <-> Llama-3.1-8B-4bit) top-1 retrieval in the 1,000-document gallery falls below 0.30 in at least one direction or seed at n=32k, even though it exceeds chance (0.001) by a wide margin.",
+      "probability": 0.85
+     },
+     {
+      "claim": "Supervised Procrustes skyline reaches mean cosine >= 0.80 on more than half of all pairs (so the instruments are certified and the KILL criterion does not fire), with encoder-encoder pairs clearing more easily than encoder-decoder pairs.",
+      "probability": 0.72
+     },
+     {
+      "claim": "Fidelity in the boundary grid rises monotonically with corpus size (2k < 8k < 32k) and is higher for same-family / encoder-encoder pairs than for the cross-family primary pair; the wrong-model (e5) control collapses below 0.05 top-1.",
+      "probability": 0.78
+     }
+    ],
+    "rationale": "The gate is deliberately set on the hardest pairing: a 384-dim retrieval-tuned encoder against a 4096-dim mean-pooled, 4-bit quantized decoder that was never trained as an embedder, with only linear unsupervised alignment, required to clear top-1 >= 0.30 in both directions at both seeds. vec2vec-class results at full scale were strongest among encoder pairs and weakened sharply for distant or non-embedding models; at 32k unpaired chunks with quantization noise and heavy decoder anisotropy, I expect mean cosine to be inflated by anisotropy while top-1 retrieval stalls well under the bar, making FAIL the modal outcome. The skyline is the main risk to interpretability: orthogonal Procrustes across mismatched dimensions and heterogeneous geometries may not hit 0.80 on encoder-decoder pairs, but with three encoder pairs in the slate it should clear on more than half, keeping KILL a minority outcome. SPLIT is small because the protocol collapses one-direction or one-seed passes into FAIL."
+   },
+   "forecast_parse": "whole_message",
+   "schema_errors": [],
+   "served": {
+    "served_model": "anthropic/claude-fable-5.1",
+    "served_provider": "Anthropic",
+    "gateway_id": "gen-1788884684-BRgjvAQA1Q09ClagjS4C",
+    "finish_reason": "stop",
+    "latency_s": 24.9
+   },
+   "usage": {
+    "prompt_tokens": 3141,
+    "completion_tokens": 1743,
+    "total_tokens": 4884,
+    "cost": 0.11856,
+    "is_byok": false,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0,
+     "video_tokens": 0
+    },
+    "cost_details": {
+     "upstream_inference_cost": 0.11856,
+     "upstream_inference_prompt_cost": 0.03141,
+     "upstream_inference_completions_cost": 0.08715
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 940,
+     "image_tokens": 0,
+     "audio_tokens": 0
+    }
+   },
+   "tool_calls_in_response": 0,
+   "contamination": "CLEAR",
+   "mechanics_ok": true,
+   "brier": 0.1978,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "always_fail_brier": 0.0
+  }
+ ],
+ "mechanics_pass": true,
+ "mean_brier": 0.4885,
+ "mean_brier_clear_only": 0.4885,
+ "modal_hits": "4 of 6",
+ "baselines": {
+  "uniform": 0.75,
+  "always_FAIL_mean": 0.3333
+ },
+ "spend_usd": 0.5832
+}
