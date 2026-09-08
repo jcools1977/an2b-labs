@@ -93,3 +93,19 @@ TR-002r's embedding sidecars (bge, e5, minilm, llama4, qwen4, gemma4
 over A, B, eval, ood) cover the 200-word chunks but not this
 experiment's 60-word queries; extraction reruns for every text with
 TR-002r's extractor, whose file hash is logged at first use.
+
+## D8. Phase 0 CLOSED 2026-09-08: seals of record
+Single-seat oracle of record sealed at ca801ab (plaintext sha256
+045718d4f3e8..., oracle/sealed/TR003r.sha256), one tool use, the
+forecast never in the builder's context. Panel sealed at e4bdb00 as
+the pilot's first subject, against protocol commit 05d156e and
+prompt sha c81363cfba68, policy d6c5b4968f66 with the DENY control
+of 15:54:56Z: oracle-anthropic (served anthropic/claude-fable-5.1
+via Anthropic) c0c66f9f5fd53e5a...; oracle-openai (served
+openai/gpt-6-astra via OpenAI) 1bf886000344e9be...; oracle-xai
+(served x-ai/grok-4.6 via xAI) 947a72befe6fe4ec.... Zero schema
+errors, zero tool calls, first attempt each; panel cost $0.27, ledger
+$1.24 of $10. Every hash is pushed; the seals become seals when the
+reviewer's channel fetches them, which is their act, not this
+seat's. The reviewer's context-rich forecast seals through their
+channel. No implementation code exists at this commit.

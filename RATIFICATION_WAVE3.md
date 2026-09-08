@@ -117,3 +117,12 @@ countersignature or override, the PI ruled: "Override the hold, kick
 off now." Recorded as the explicit override the gate text allows.
 The exposure is stated in tr003r/DECISIONS.md D1. Word 2 remains open
 for the reviewer in their own form and is not scheduled.
+
+## Word 3 executed, 2026-09-08
+
+TR-003r stamped with three conditions, frozen at 05d156e, manifest
+reissued. Oracle of record sealed (ca801ab); panel sealed as the
+pilot's first subject (e4bdb00), three vendors, three hashes pushed.
+The pilot's live-seal leg now has something the reviewer's channel
+can fetch; the score-at-closeout leg waits on the verdict. Build
+opens per tr003r/PLAN.md, red controls first.
