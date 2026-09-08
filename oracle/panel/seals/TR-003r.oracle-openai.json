@@ -1,0 +1,115 @@
+{
+ "kind": "panel_seal",
+ "tr": "TR-003r",
+ "seat": "oracle-openai",
+ "engine": {
+  "seat": "oracle-openai",
+  "routing_alias": "openai/gpt-6-astra",
+  "canonical_slug": "openai/gpt-6-astra-20260903",
+  "created_unix": 1788552838,
+  "created_iso": "2026-09-04",
+  "knowledge_cutoff_gateway": null,
+  "pricing_usd_per_token": {
+   "prompt": "0.00001",
+   "completion": "0.00005"
+  },
+  "supported_parameters": [
+   "include_reasoning",
+   "max_completion_tokens",
+   "max_tokens",
+   "reasoning",
+   "reasoning_effort",
+   "response_format",
+   "seed",
+   "structured_outputs",
+   "tool_choice",
+   "tools"
+  ],
+  "reasoning": {
+   "mandatory": true,
+   "default_enabled": true,
+   "supported_efforts": [
+    "max",
+    "xhigh",
+    "high",
+    "medium",
+    "low"
+   ],
+   "default_effort": "medium"
+  },
+  "resolution_rule": "newest_created",
+  "candidates_considered": [
+   "openai/gpt-6-astra",
+   "openai/gpt-5.6-luna",
+   "openai/gpt-5.6-terra",
+   "openai/gpt-5.6-sol",
+   "openai/gpt-5.5",
+   "openai/gpt-5.4",
+   "openai/gpt-5.2-chat",
+   "openai/gpt-5.2"
+  ],
+  "resolved_at": "2026-09-08T17:03:12+00:00"
+ },
+ "engine_self_reported_cutoff": "2024-08",
+ "served": {
+  "served_model": "openai/gpt-6-astra",
+  "served_provider": "OpenAI",
+  "gateway_id": "gen-1788886994-gU3gntQxJPvOeJJYqsR6",
+  "finish_reason": "stop",
+  "latency_s": 13.4,
+  "mock": false
+ },
+ "usage": {
+  "prompt_tokens": 2759,
+  "completion_tokens": 466,
+  "total_tokens": 3225,
+  "cost": 0.05778,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2756,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.05778,
+   "upstream_inference_prompt_cost": 0.03448,
+   "upstream_inference_completions_cost": 0.0233
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 157,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "sampling_requested": {
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "seed": 20260908,
+  "max_tokens": 6000,
+  "reasoning_effort": "medium",
+  "note": "remote frontier forecasts are unseeded in effect: parameters are sent only where the gateway lists them as supported, and the seal records which were sent"
+ },
+ "sampling_sent": [
+  "seed"
+ ],
+ "response_format": "json_object",
+ "request_had_tools": false,
+ "tool_calls_in_response": 0,
+ "forecast_parse": "whole_message",
+ "schema_errors": [],
+ "protocol_file": "TR003r_memory_survival_translation.md",
+ "protocol_sha256": "1d957068d911ee31f7305bd74c4fd1b350476ed84c380fedcef314dcacaa39a4",
+ "protocol_commit": "05d156e433470bbc33d1e7c7541c8ed6607efcf9",
+ "prompt_template_sha256": "721b8c389f45e5cc0d8dd0bef0359ba6d132268a3c09bd877a4c8c8799ed0f5b",
+ "prompt_sha256": "c81363cfba680949978b5203b1eae0c224ebd2fc38d6fc5fee32d79932579698",
+ "policy_path": "oracle/panel/policies/oracle_deny_all.yaml",
+ "policy_sha256": "d6c5b4968f66902f453cea57e317a51536bfcb79c8ec32ebd63edb00d6054ac6",
+ "warden_mode": "strict",
+ "deny_control_record": "oracle/panel/controls/deny_control_2026-09-08T155456.json",
+ "plaintext_sha256": "1bf886000344e9be371cff60b3ecd136d0aff4221e688efdcc333fcea03ad9f1",
+ "plaintext_path_gitignored": "oracle/sealed/TR-003r.oracle-openai.json",
+ "sealed_at": "2026-09-08T17:03:27+00:00",
+ "seal_becomes_seal_when": "hash pushed and fetched by the reviewer's channel before closeout work begins",
+ "scoring": "engine-stratified; always-FAIL baseline standing; consensus reported-only"
+}
