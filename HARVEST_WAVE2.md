@@ -2,9 +2,9 @@
 
 **Prepared 2026-09-08 per CREDO section 3. Sessions prepare; the PI
 decides. Nothing below is green-lit by its appearance here. The
-standing macro-check requires a fresh FRONTIER entry before this
-review convenes; FRONTIER-001 (2026-09-03) is past its own
-next-scan-due line.**
+macro-check is satisfied: FRONTIER-002 (2026-09-08, builder-seat
+scan) precedes this review; the reviewer's countersignature is the
+open formality.**
 
 ## The three verdicts
 
@@ -99,8 +99,8 @@ next-scan-due line.**
 
 - Reviewer context-rich forecast for TR-002r: scoring pending the
   PI's held plaintext (hash a98fb8fd...).
-- FRONTIER-002: due before this review convenes and before any
-  Wave 3 kickoff; the radar has been the reviewer's instrument.
+- FRONTIER-002: scanned and committed (builder seat); awaiting the
+  reviewer's countersignature.
 - Wave 3 slate: unset. Candidates visible from here: TR-006 (named
   in FRONTIER-001's scan cadence), TR-003's flagged rescope, and
   whatever the fresh scan surfaces. The slate is the PI's call at
