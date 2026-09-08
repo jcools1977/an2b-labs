@@ -109,3 +109,11 @@ The Voltron milestone board (products/eidetic/voltron/docs,
 current milestone by its own statement, and the lab's panel does not
 depend on the bus (panel DECISIONS D9). The integration boundary stays
 where both sides put it until the PI names the timing.
+
+## PI override, 2026-09-08
+
+Asked directly whether to hold the TR-003 kickoff for the FRONTIER-002
+countersignature or override, the PI ruled: "Override the hold, kick
+off now." Recorded as the explicit override the gate text allows.
+The exposure is stated in tr003r/DECISIONS.md D1. Word 2 remains open
+for the reviewer in their own form and is not scheduled.
