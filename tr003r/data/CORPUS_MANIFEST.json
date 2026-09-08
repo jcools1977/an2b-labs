@@ -1,0 +1,62 @@
+{
+ "source": "tr002r chunk_registry (Gutenberg, 200-word chunks)",
+ "registry_sha256": "74956edab65226ab344a19ea6c63e27eba381d234de59798464f29563dbbfb2e",
+ "store_size": 5000,
+ "queries_per_kind": 500,
+ "chunk_words": 200,
+ "query_words": 60,
+ "anchor_counts": [
+  64,
+  256,
+  1024
+ ],
+ "anchor_pool_min": 2048,
+ "seeds": [
+  41,
+  43
+ ],
+ "spaces": 6,
+ "space_keys": [
+  "bge",
+  "e5",
+  "minilm",
+  "llama4",
+  "qwen4",
+  "gemma4"
+ ],
+ "primary_pair": [
+  "bge",
+  "minilm"
+ ],
+ "gate_anchor_selection": "random",
+ "disjointness": {
+  "works_partition_global": true,
+  "store_vs_anchor_pool": true,
+  "query_sources_vs_anchor_pool": true,
+  "anchors_vs_queries_all_seed_pairs": true,
+  "overlap_counts": {
+   "store_anchor": 0,
+   "query_anchor": 0,
+   "cross_seed": 0
+  }
+ },
+ "per_seed": {
+  "41": {
+   "store_chunks": 5000,
+   "works_in_store": 23,
+   "sequence_edges": 4977,
+   "q1": 500,
+   "q2": 500,
+   "anchor_pool": 2048
+  },
+  "43": {
+   "store_chunks": 5000,
+   "works_in_store": 25,
+   "sequence_edges": 4975,
+   "q1": 500,
+   "q2": 500,
+   "anchor_pool": 2048
+  }
+ },
+ "texts_total": 16847
+}

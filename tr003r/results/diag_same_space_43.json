@@ -1,0 +1,53 @@
+{
+ "bge": {
+  "anisotropy_mean_cos": 0.6222549119694546,
+  "k": {
+   "64": {
+    "same_space_relative_r5": 0.488,
+    "centered_r5": 0.518
+   },
+   "256": {
+    "same_space_relative_r5": 0.614,
+    "centered_r5": 0.616
+   },
+   "1024": {
+    "same_space_relative_r5": 0.612,
+    "centered_r5": 0.61
+   }
+  }
+ },
+ "minilm": {
+  "anisotropy_mean_cos": 0.30819675986910905,
+  "k": {
+   "64": {
+    "same_space_relative_r5": 0.698,
+    "centered_r5": 0.666
+   },
+   "256": {
+    "same_space_relative_r5": 0.818,
+    "centered_r5": 0.794
+   },
+   "1024": {
+    "same_space_relative_r5": 0.832,
+    "centered_r5": 0.816
+   }
+  }
+ },
+ "e5": {
+  "anisotropy_mean_cos": 0.8154329119477852,
+  "k": {
+   "64": {
+    "same_space_relative_r5": 0.582,
+    "centered_r5": 0.58
+   },
+   "256": {
+    "same_space_relative_r5": 0.75,
+    "centered_r5": 0.746
+   },
+   "1024": {
+    "same_space_relative_r5": 0.764,
+    "centered_r5": 0.744
+   }
+  }
+ }
+}

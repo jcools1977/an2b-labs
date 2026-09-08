@@ -1,0 +1,19 @@
+{
+ "primary_pair": [
+  "bge",
+  "minilm"
+ ],
+ "anchors": 1024,
+ "condition": "C4",
+ "cells": {
+  "41": {
+   "bge->minilm": 0.6940451745379878,
+   "minilm->bge": 0.8596112311015118
+  },
+  "43": {
+   "bge->minilm": 0.789795918367347,
+   "minilm->bge": 0.8848614072494669
+  }
+ },
+ "killed": false
+}
