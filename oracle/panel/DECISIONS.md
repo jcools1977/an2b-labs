@@ -117,3 +117,16 @@ planted fixture.
 the cockpit is not signed in and `op signin` is interactive, so the
 retro exams and any live seal wait on the PI. Everything that does not
 need the key is built and verified.
+
+**D15 (2026-09-08). First live attempt stopped by the workspace's ZDR
+guardrail; nothing spent.** The key authenticated, then the gateway
+refused with "0 endpoints out of 4 requested are available matching
+your guardrail restrictions and data policy: ZDR violation
+(guardrail)." The OpenRouter workspace has a zero-data-retention
+requirement enabled, and the Anthropic engine has no ZDR endpoint
+(xAI does; OpenAI's are unlabeled). The panel's data path was already
+stated in PANEL_SPEC as acceptable without ZDR: protocol texts are
+destined for publication and forecasts are revealed at closeout.
+Relaxing the guardrail is an account-level act and therefore the PI's
+(ARENA rule 6, money and credentials); the runner does not route
+around guardrails. Recorded before the exam rather than after.
