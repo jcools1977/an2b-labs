@@ -73,3 +73,69 @@
 
 ### Next scan due: before TR-006/TR-002-rescope kickoff, or 2026-09-10,
 ### whichever comes first.
+
+---
+
+## FRONTIER-002 — 2026-09-08 — scanned by the builder seat, for the
+## reviewer's countersignature (first scan run from this channel)
+
+### Front 1: Representational geometry — our boundary stands; TR-003's lane has moved
+- No published work found on unsupervised translation under
+  quantization / small-n / small models: mini-vec2vec's own results
+  (seven encoders, full precision, CPU-fast; arXiv:2510.02348, rev.
+  Feb 2026) remain the strongest in-class claim, and TR-002r's
+  desk-scale boundary appears to be first into its niche. The lane
+  we just published in is open behind us, not crowded.
+- TR-003's ORIGINAL question (Moschella-style relative
+  representations within 10 F1 of native retrieval) is now partially
+  answered in the literature: zero-shot stitching via shared anchors
+  is established, and refinement work is active (learned anchors +
+  whitened inner products, arXiv:2605.30596; LDIR's low-dimensional
+  relative embeddings, arXiv:2505.10354). Meanwhile the INDUSTRY
+  frame shifted: "vector drift" is a named production pain
+  (embedding model releases every 60-90 days; large index
+  migrations now routine). IMPACT: TR-003 as written risks a
+  micro-of-a-macro, same class as original TR-002; its
+  FRONTIER-001-flagged rescope (what SURVIVES translation: recall
+  precision, provenance, memory fidelity at desk scale, now with
+  TR-002r's measured skylines as priors) is sharper than ever, and
+  the kickoff gate should present that option space.
+
+### Front: Workspace dynamics (TR-006) — the field builds on the assumption TR-006 would test
+- GWT-flavored architectures are proliferating: "Theater of Mind"
+  (arXiv:2604.08206), Global Workspace Agents as event-driven
+  systems, brain-inspired graph MAS (arXiv:2603.15371), and
+  GWT-marker evaluation frameworks (preprints.org 202601.1683,
+  naming capacity limitation as one of six testable markers).
+- What the scan did NOT find: a capacity SWEEP with a frozen
+  regime-change criterion. The architectures assume the bounded
+  broadcast bottleneck helps; the measurement TR-006 pre-registers
+  (piecewise-vs-smooth AIC, unlimited-log baseline, regime-location
+  stability KILL) appears untested. IMPACT: TR-006's lane is open,
+  and unusually well-timed — the field is building on the exact
+  assumption the protocol would measure.
+
+### Front 2: Agent auditing — deadwood's lane holds; TR-019's crowding worsens
+- AUDITA (arXiv:2608.22160): certified auditing and causal
+  attribution of ADVERSE outcomes with tamper-evident inter-agent
+  records — academic tooling now adjacent to deadwood's territory
+  but aimed at blame-for-harm, not dead-weight census; deadwood
+  remains the only pip-installable dead-fraction auditor we can
+  find. Causal failure-attribution methods are active
+  (arXiv:2509.08682).
+- IMPACT, TR-019: the crowding warning inherited at its gate line
+  intensifies — tamper-evident inter-agent records are now in
+  academic reference implementations as well as enterprise
+  toolkits. The IP review's fold-or-differentiate bar rises again.
+- Context worth citing in future MAS work: Anthropic's Frontier Red
+  Team published systematic multi-instance failure modes (sabotage,
+  tacit collusion) in August 2026.
+
+### Compute-grade line (standing)
+- Unchanged from 001: verification, refutation, and instruments
+  remain where frontier mass production is not pointed, and
+  TR-002r's reception lane (a desk-scale boundary the majors did
+  not publish) is evidence the aim is right.
+
+### Next scan due: before the Wave 3 slate freezes at the harvest
+### review's close, or 2026-09-15, whichever comes first.
