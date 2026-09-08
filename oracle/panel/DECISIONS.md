@@ -130,3 +130,13 @@ destined for publication and forecasts are revealed at closeout.
 Relaxing the guardrail is an account-level act and therefore the PI's
 (ARENA rule 6, money and credentials); the runner does not route
 around guardrails. Recorded before the exam rather than after.
+
+**D16 (2026-09-08). Exams ran; two lessons filed.** (a) Legion-origin
+commits diverged once because the legion clone had not pulled the
+cockpit's later commits before committing; the exam commit was
+cherry-picked onto main (content verified identical) and legion reset
+to origin. `inject_key.sh` now fast-forwards the legion clone before
+every run. (b) The contamination rule (D5) ran entirely on
+self-reported cutoffs because the gateway field is null for every
+resolved engine; the flags are CLEAR and the summary says plainly that
+self-report is the weakest evidence the rule accepts.

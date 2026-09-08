@@ -93,11 +93,14 @@ DONE, committed and pushed (295edde, fe439a0):
 - oracle/README amended with what a valid panel seal is (review A7),
   in the panel commit rather than this instrument's commit.
 
+DONE later the same day (5da6616): the OpenRouter key supplied from
+1Password, the workspace ZDR guardrail relaxed by the PI (panel
+DECISIONS D15), and the retro-calibration exams filed for all three
+seats: mechanics PASS on every item, first attempt, $0.97 of the $10
+cap spent (`oracle/panel/exams/SUMMARY.md`). Every seat is certified
+for panel duty under today's served engine.
+
 WAITING on the PI, and nothing else:
-- The OpenRouter key: `op signin` on the cockpit, then
-  `oracle/panel/inject_key.sh exam` runs the retro-calibration exams
-  for all three seats under the $10 cap; the account-level hard cap is
-  the PI's to set on the OpenRouter account before that.
 - Word 2 (the reviewer's countersignature of FRONTIER-002 in their own
   form) or the PI's explicit override, before the TR-003 kickoff.
 

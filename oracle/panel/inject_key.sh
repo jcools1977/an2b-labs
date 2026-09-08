@@ -17,4 +17,4 @@ PY="${PANEL_PY:-\$HOME/clawtex-env/bin/python}"
 # `op whoami` reports "not signed in" under the desktop-app integration even
 # when reads work, so the gate is a read of the item itself.
 op read "$ITEM" >/dev/null 2>&1 || { echo "cannot read $ITEM from 1Password (not signed in, or the item does not exist)" >&2; exit 3; }
-op read "$ITEM" | ssh "$HOST" "cd $LAB && $PY oracle/panel/panel.py $*"
+op read "$ITEM" | ssh "$HOST" "cd $LAB && git pull -q --ff-only origin main && $PY oracle/panel/panel.py $*"
