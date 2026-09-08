@@ -29,6 +29,7 @@ OUT = TR / "corpus_store"
 DATA = TR / "data"
 SEEDS = [41, 43]
 STORE_N, Q_N, POOL_N = 5000, 500, 2048
+STORE_PER_WORK, POOL_PER_WORK = 250, 128  # D9: many works, contiguous runs
 ANCHOR_COUNTS = [64, 256, 1024]
 QWORDS = 60
 
@@ -76,7 +77,7 @@ def build_seed(seed, reg, by_work, vocab):
     # at a position boundary so edges stay contiguous.
     store = []  # (cid, work, pos, sha)
     for w in store_works:
-        for pos, cid, h in by_work[w]:
+        for pos, cid, h in by_work[w][:STORE_PER_WORK]:
             if len(store) >= STORE_N:
                 break
             store.append((cid, w, pos, h))
@@ -97,7 +98,7 @@ def build_seed(seed, reg, by_work, vocab):
     # in shuffled order.
     pool = []
     for w in anchor_works:
-        for pos, cid, h in by_work[w]:
+        for pos, cid, h in by_work[w][:POOL_PER_WORK]:
             if len(pool) >= POOL_N:
                 break
             pool.append((cid, h))

@@ -109,3 +109,15 @@ $1.24 of $10. Every hash is pushed; the seals become seals when the
 reviewer's channel fetches them, which is their act, not this
 seat's. The reviewer's context-rich forecast seals through their
 channel. No implementation code exists at this commit.
+
+## D9. Store spans many works: 250 contiguous chunks per work, pool 128 per work
+The first build (whole works, seeded order) produced a seed-41 store
+from six long novels. With so few works, work-level provenance
+survival is nearly guaranteed by chance and the clause stops
+discriminating. Capping each work at its first 250 contiguous chunks
+puts at least twenty works in every store (harder for clause (ii),
+sequence edges intact within each run); capping the anchor pool at
+128 per work gives anchors that span at least sixteen works, which
+is what a memory system's anchor set would look like and what makes
+the mismatched-anchor collapse meaningful. Logged before any
+embedding exists; the rebuilt manifest is the one that counts.
