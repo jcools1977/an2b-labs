@@ -1,10 +1,10 @@
 # Wave 2 harvest review: material assembled for the PI
 
 **Prepared 2026-09-08 per CREDO section 3. Sessions prepare; the PI
-decides. Nothing below is green-lit by its appearance here. The
-macro-check is satisfied: FRONTIER-002 (2026-09-08, builder-seat
-scan) precedes this review; the reviewer's countersignature is the
-open formality.**
+decides. Nothing below is green-lit by its appearance here. FRONTIER-002 (2026-09-08, builder-seat scan) precedes this review;
+its countersignature with citation spot-checks is an OPEN
+VERIFICATION STEP, not a formality (review A9), and the TR-003
+adjudication holds until it lands.**
 
 ## The three verdicts
 
@@ -35,8 +35,9 @@ open formality.**
    the lab's method, not just a practice inside it.
 
 5. **The multi-vendor oracle panel, ClawTex-run (investigated
-   2026-09-08 on the PI's word).** The infrastructure exists on
-   legion today: ClawTex fleet seats declare their model per seat in
+   2026-09-08 on the PI's word).** The design exists on legion
+   today as code and worked examples (the pilot exists precisely to
+   prove it as deployment): ClawTex fleet seats declare their model per seat in
    the manifest (`model: claude` / `model: gpt-4`), coordinate over
    a bus whose default is api.engramport.com, and admit any
    HTTP-plus-key process as a first-class seat with zero Anthropic
@@ -53,18 +54,21 @@ open formality.**
    the audit logger as the receipt. Proposed shape: three vendor
    seats sealed per kickoff, hashed, Brier-scored at closeout, seal
    records citing the Warden policy in force.
-6. **EngramPort as the next-batch substrate.** The PI's direction:
-   after the twenty, run the next batch with frontier models
-   working together through EngramPort. The investigation shows this
-   is ClawTex's existing architecture, not a new build — the bus IS
-   EngramPort. The lab's own results already constrain the design
-   (TR-002r: cross-model memory rides paired anchors, never
-   unsupervised geometry), and Wave 3 can be sequenced to de-risk
-   the rest: TR-003's rescope measures what survives cross-model
-   memory translation; TR-006 measures the shared-workspace
-   capacity regime. Slate rationale on the table: pick Wave 3 to
-   make the multi-model lab a measured design by the time the
-   twenty close.
+6. **RE-PRESENTED after independent review (original was NOT
+   READY: it put a product outcome inside hypothesis selection,
+   breaching CREDO section 2, and formed a closed validation loop).
+   The scientific form:** TR-003's rescope and TR-006 merit the
+   Wave 3 slate on FRONTIER-grounds alone — both lanes are open,
+   TR-006's is unusually well-timed, and TR-003's original question
+   is crowded. If the PI slates them for those reasons, a separate
+   HARVEST OBSERVATION applies: their findings would, as a
+   byproduct, constrain the multi-model lab design the PI intends
+   (ARENA.md). The observation is recorded here, in the harvest
+   channel, and never as slate rationale. BLOCKING WORD REQUIRED
+   (review A8): AEGIS Gate 2 closed 2026-08-20 with no further
+   EngramPort integration authorized; any arena work on the
+   EngramPort bus needs the PI's explicit word on that hold, on the
+   record, before greenlight.
 
 ## Wave 2 taught, Wave 3 inherits
 

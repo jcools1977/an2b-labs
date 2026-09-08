@@ -2,6 +2,13 @@
 ## Standing intelligence ledger. One dated entry per scan. Consumed at every
 ## kickoff gate (macro-check) and every harvest review. Sensing only —
 ## nothing here touches a frozen threshold mid-experiment.
+## Charter amendments, 2026-09-08 (independent review A2/A9): entries
+## report LANE STATUS ONLY — crowded, open, moved — and never product
+## relevance, which belongs in harvest packets. Either instance may
+## scan; every entry names its scanner; countersignature by the other
+## instance includes spot-checking the cited identifiers, because a
+## hallucinated citation in the radar would poison every gate
+## downstream.
 
 ---
 

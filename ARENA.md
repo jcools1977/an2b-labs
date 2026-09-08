@@ -38,45 +38,63 @@ verdict already flows through them.
   first-class seat; cross-vendor panels are a coded example
   pattern; a single OpenRouter key resolves "all vendors."
 - Warden gives ALLOW/DENY/REVIEW per tool call with an audit log:
-  seat policies become STRUCTURAL. The oracle's deny-all-tools
-  policy upgrades the ledger's isolation from instruction-level to
-  policy-enforced.
+  seat policies become STRUCTURAL for the seat's OUTBOUND actions.
+  What Warden does not address (review A6): the input path and
+  plaintext custody, which remain governed by ceremony and the
+  transit rules; the panel pilot's pass criteria carry that burden.
 
 ## Design rules the lab imposes on the arena (to pre-register when built)
 
-1. **Seat and engine are both recorded on every act.** The oracle
-   ledger's calibration history attaches to the seat, with the
-   engine noted per seal, so an engine swap is visible in the Brier
-   series rather than silently laundered through it.
+1. **Seat and engine are both recorded on every act, and scoring
+   is ENGINE-STRATIFIED by rule.** Calibration attaches to the seat;
+   Brier series are reported per engine within a seat, never
+   aggregated across engine changes; the recorded engine is the
+   SERVED backend (provider and model metadata returned by the
+   gateway), not the routing alias; each engine's stated training
+   cutoff is recorded per seal (review B2/B5).
 2. **Engine currency by live lookup, never memory.** What "latest"
    resolves to is read at swap time and logged (the MODELS.md rule,
    applied to seat descriptions).
-3. **Frozen thresholds never live in an LLM seat.** Gates read
-   through code-engine seats only; reasoning seats propose, code
-   seats decide. This is already the lab's law; the arena inherits
-   it structurally.
+3. **Frozen thresholds never live in an LLM seat, and neither does
+   unreviewed authorship of the code that reads them.** Gates read
+   through code-engine seats only; gate-reading code is reviewed by
+   a seat other than its author before first duty; frozen protocol
+   files carry a hash manifest checked mechanically (a freeze check
+   that FAILS on any diff to a frozen TRxxx file), so BB4C rule 1
+   has a negative control of its own (review B4).
 4. **Every new seat passes an exam before real duty** (the
    certification-exam pattern: estimators, translators, and
    watchdogs all earned their posts; so do seats).
 5. **Two-channel truth generalizes to n-channel truth**: the bus and
    the repo are the shared record; no seat's context is
    authoritative.
+6. **The PI decides at every gate. This is a rule of the arena, not
+   a flourish**: authoring, forecasting, and executing may be seat
+   work; ADJUDICATION is never seat work (review A4, resolving the
+   earlier draft's contradiction in the covenant's favor).
+7. **Constraints are not self-editable.** Fleet manifests and Warden
+   policy files live under the same freeze-and-approval discipline
+   as protocols: edits are logged, approved through a channel other
+   than the seat they constrain, and every seal hashes the policy
+   in force (review B4).
 
 ## The road there
 
-- **Wave 3 (the de-risking wave, if the review so slates it):**
-  TR-003's rescope measures what survives cross-model memory
-  translation on the bus's own substrate question; TR-006 measures
-  the shared-workspace capacity regime the arena's bus embodies.
-  First engine-agnostic duty: the three-vendor oracle panel,
-  ClawTex-run, Warden-sealed (harvest candidate 5).
+- **Wave 3 (if the review slates TR-003r and TR-006 on their
+  scientific merits, which FRONTIER-002 supports independently):**
+  their findings would, as a byproduct, constrain this design;
+  that benefit is a harvest observation, never slate rationale
+  (review A1). First engine-agnostic duty: the three-vendor oracle
+  panel, ClawTex-run, Warden-sealed (harvest candidate 5), as a
+  PILOT until its proving cycle completes.
 - **Waves 4-5 (through TR-020's close):** reviewer-seat diversity
   piloted as forecast columns before any second reviewer gets a
   pen; extraction and analysis runners enrolled as fleet seats so
   the estate's compute discipline (supervisors, checkpoints,
   budgets) becomes seat policy instead of session craft.
-- **The next batch:** experiments authored, forecast, executed, and
-  adjudicated by the arena on EngramPort, engines chosen per duty
+- **The next batch:** experiments authored, forecast, and executed
+  by the arena on EngramPort — adjudicated by the PI at every gate,
+  per rule 6 — engines chosen per duty
   from whatever the frontier then holds, under the same covenant
   machinery that ran the first twenty. The lab's published results
   already constrain the design: cross-model memory rides paired
