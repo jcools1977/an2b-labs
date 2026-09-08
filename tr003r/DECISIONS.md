@@ -78,3 +78,18 @@ under 0.25 of native, disjoint pool halves) rather than by reference
 to control 1. The file moved from drafts/ to the root and the freeze
 manifest was reissued in this commit, the stamp being the approval
 through a channel other than this seat.
+
+## D6 (executed). Inherited assets, byte-identified 2026-09-08
+Protocol frozen at commit 05d156e, file sha256 1d957068d911ee31...;
+freeze manifest reissued in that commit (22 files).
+Corpus (legion, tr002r/corpus_store): chunk_registry.json sha256
+74956edab65226ab..., splits.json d37c551927a4db5b.... Space snapshots
+(HuggingFace hub commits on legion): bge-small-en-v1.5 5c38ec7c;
+e5-small-v2 ffb93f3b; all-MiniLM-L6-v2 1110a243;
+Meta-Llama-3.1-8B-Instruct-4bit 241a666d; Qwen3-1.7B-4bit 3b1b1768;
+gemma-2-9b-it-4bit ff12eb39. The 8-bit Llama and Qwen3-8B snapshots
+are present but outside this protocol's six spaces and are not used.
+TR-002r's embedding sidecars (bge, e5, minilm, llama4, qwen4, gemma4
+over A, B, eval, ood) cover the 200-word chunks but not this
+experiment's 60-word queries; extraction reruns for every text with
+TR-002r's extractor, whose file hash is logged at first use.
