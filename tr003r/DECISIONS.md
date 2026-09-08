@@ -142,3 +142,22 @@ existed. Fixed (queries are noisy copies of store points) and a
 native-sanity leg added so the world proves itself on both sides.
 Second run: certified, 9 of 9 legs. Logged because a green exam on a
 broken world would have certified nothing.
+
+## D12. Smoke world and the scrambled-anchor arm
+The plumbing smoke runs the whole chain (grid, assembler, three
+checkers) on a synthetic two-space world before any real embedding.
+Its first run failed control 1 on the recoverable world: under an
+exact rotation ANY consistently paired anchors translate perfectly,
+so scrambled anchors cannot collapse there. Real nonsense strings do
+not embed consistently across models, so the smoke world models
+scrambled anchors as unpaired random vectors. Stated plainly: whether
+real scrambled anchors collapse C3 is the empirical question control
+1 pre-registers, and if they do NOT collapse on real spaces that is a
+reported violation with its mechanism named, not an excuse. The
+smoke certifies the path, not the physics.
+
+## D13. Extraction supervision
+Chain nohup'd on legion with a 15-minute staleness supervisor
+(checkpoints every 500 texts; a healthy decoder forward never goes
+silent that long). Extraction order: encoders first, then Qwen3-1.7B,
+Llama-3.1-8B, gemma-2-9b, all 4-bit and already cached.
