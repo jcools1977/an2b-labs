@@ -58,3 +58,49 @@ same procedure (fresh instance, protocol text only). Retro sealing is
 moot, so these are labeled RETRO and serve only as the calibration
 anchor; they carry no evidential weight about foresight. Results in
 `retro_calibration.json`. First live subject: TR-004.
+
+## Panel seals (pilot, amended 2026-09-08 per review A7)
+
+From Word 1 of the Wave 3 ratification, the ledger gains a second
+mechanism beside the single-seat oracle: a three-seat, three-vendor
+panel run on legion under ClawTex's Warden. Its spec is
+`PANEL_SPEC.md`; its runner and decision log are in `panel/`. This
+section states what a valid panel seal is, so the constitution and the
+mechanics agree.
+
+A panel seal for TR-xxx and seat S is valid when all of the following
+hold:
+
+1. `oracle/sealed/TR-xxx.S.sha256` is committed and PUSHED, and the
+   reviewer's channel has fetched it, before closeout work begins.
+   Commit timestamps alone evidence nothing.
+2. `oracle/panel/seals/TR-xxx.S.json` records: the seat; the engine as
+   resolved (routing alias, canonical slug, gateway creation date,
+   gateway cutoff field) and as SERVED (model and provider the gateway
+   returned); the self-reported cutoff; sampling requested and sent;
+   `request_had_tools: false` and zero tool calls in the response; the
+   protocol file, its sha256 and the commit; the prompt template hash
+   and the assembled prompt hash; the Warden policy path and sha256 in
+   force; a reference to a passing DENY control for that policy hash;
+   the plaintext sha256; and the gateway's usage accounting.
+3. The freeze manifest was green and the policy matched its committed
+   blob at seal time (the runner refuses otherwise).
+4. One forecast per seat per seal. A superseded forecast stays beside,
+   labeled, and is never selected.
+
+Scoring is engine-stratified: a seat's Brier series is reported per
+served engine and never aggregated across an engine change. The
+always-FAIL baseline is a standing line in every score. The
+mean-probability consensus is reported only and is never the headline.
+The reviewer's context-rich forecast remains the ledger's separate
+column. The retro-calibration exam each seat sits before duty is a
+mechanics exam; its calibration numbers are RETRO and carry no
+foresight weight.
+
+Isolation, restated for the panel: Warden's deny-all policy makes a
+seat's outbound actions structurally impossible and is watched denying
+before first duty; the input path is evidenced by the prompt hash; and
+forecast plaintext never transits the builder's context because the
+runner prints hashes only. The single-seat procedure above remains the
+fallback when the gateway is down, with the missing panel seal recorded
+as absent, never backfilled.

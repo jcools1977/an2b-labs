@@ -1,0 +1,46 @@
+{
+  "panel": "an2b-labs-oracle-panel",
+  "gateway": "https://openrouter.ai/api/v1",
+  "policy": "policies/oracle_deny_all.yaml",
+  "warden_mode": "strict",
+  "tenant_id": "an2b-labs-oracle-panel",
+  "audit_dir": "~/.clawtex-audit-oracle-panel",
+  "plaintext_redundancy_dir": "~/an2b-labs-oracle-plaintext",
+  "spend_cap_usd": 10.0,
+  "spend_cap_authority": "PI, Word 1, 2026-09-08; the account-level hard cap is set by the PI on the OpenRouter account and this file only mirrors it",
+  "sampling": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 20260908,
+    "max_tokens": 6000,
+    "reasoning_effort": "medium",
+    "note": "remote frontier forecasts are unseeded in effect: parameters are sent only where the gateway lists them as supported, and the seal records which were sent"
+  },
+  "seats": [
+    {
+      "seat": "oracle-anthropic",
+      "vendor": "anthropic",
+      "include": ["anthropic/claude-*"],
+      "exclude": [":batch", ":free", ":thinking", ":beta", "haiku"],
+      "rule": "newest_created",
+      "pin": null
+    },
+    {
+      "seat": "oracle-openai",
+      "vendor": "openai",
+      "include": ["openai/gpt-*"],
+      "exclude": [":batch", ":free", "-mini", "-nano", "-pro", "codex", "oss", "realtime", "audio", "search", "image", "transcribe", "tts", "chat-latest"],
+      "rule": "newest_created",
+      "pin": null
+    },
+    {
+      "seat": "oracle-xai",
+      "vendor": "x-ai",
+      "include": ["x-ai/grok-*"],
+      "exclude": [":batch", ":free", "build", "multi-agent", "mini", "fast", "code", "vision", "image"],
+      "rule": "newest_created",
+      "pin": null
+    }
+  ],
+  "resolution_rule_text": "newest_created: among gateway models matching include and not exclude, the highest created timestamp wins; ties break to the shortest id, then lexicographic. The full candidate list is logged in every seal. A pin overrides the rule and is itself logged."
+}

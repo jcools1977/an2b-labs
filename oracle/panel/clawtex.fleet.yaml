@@ -1,0 +1,24 @@
+# ClawTex fleet manifest for the oracle panel seats (declarative; DECISIONS D9).
+# Bus presence is NOT load-bearing for a seal: seal integrity rests on the
+# repo-committed hashes and reviewer-fetched receipts (PANEL_SPEC, audit
+# F127/F131). `clawtex up` may register presence once EngramPort keys are
+# provided per seat from 1Password; the panel runner does not require it.
+fleet: an2b-labs-oracle-panel
+
+bus:
+  url: https://api.engramport.com
+  namespace: an2b-labs-oracle-panel
+
+seats:
+  - role: oracle-anthropic
+    model: openrouter   # engine resolved live at seal time; see seats.json
+    host: legion
+    key_env: CLAWTEX_ORACLE_ANTHROPIC_KEY
+  - role: oracle-openai
+    model: openrouter
+    host: legion
+    key_env: CLAWTEX_ORACLE_OPENAI_KEY
+  - role: oracle-xai
+    model: openrouter
+    host: legion
+    key_env: CLAWTEX_ORACLE_XAI_KEY

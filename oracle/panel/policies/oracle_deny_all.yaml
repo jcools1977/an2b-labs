@@ -1,0 +1,12 @@
+# AN2B Labs oracle panel: deny-all Warden policy.
+# A protocol-only oracle seat may take NO outbound action: no tool call,
+# no lookup, no repo read, no memory write. Default DENY and an explicit
+# catch-all DENY, so the decision does not depend on the default alone.
+# This file is hashed into every seal record and every DENY control.
+# Edits follow the freeze discipline (ARENA rule 7): logged, approved
+# through a channel other than the seat they constrain.
+version: 2
+default: DENY
+rules:
+  - action: "*"
+    decision: DENY
