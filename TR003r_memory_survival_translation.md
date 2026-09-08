@@ -1,10 +1,12 @@
 # TR-003r: What Survives Translation
 **Track A: Latent Geometry and Model Coupling** | Status: Protocol
-revision r1, DRAFT for the PI's stamp, door (a) of the TR-003
-kickoff gate (TR003_KICKOFF_GATE.md), opened on the PI's explicit
-override of the FRONTIER-002 countersignature clause, 2026-09-08.
-**Becomes FROZEN upon stamp; the original TR003 file stands untouched
-as the pre-registration of record for what was planned.**
+revision r1, STAMPED 2026-09-08 with three conditions (confident-wrong
+rate given its native baseline; KILL and mismatched-anchor clauses
+confirmed legible as pre-registered), door (a) of the TR-003 kickoff
+gate (TR003_KICKOFF_GATE.md), opened on the PI's explicit override of
+the FRONTIER-002 countersignature clause. **FROZEN as of this commit;
+the original TR003 file stands untouched as the pre-registration of
+record for what was planned.**
 
 ## Question
 Zero-shot stitching of embedding spaces through shared anchors is
@@ -89,7 +91,11 @@ store has not been published at this scale.
 - **Confident-wrong rate:** fraction of queries whose top-1 is the
   wrong chunk AND the wrong work AND whose score margin over rank 2
   exceeds the native median margin: the memory system returning a
-  wrong memory with native-grade confidence.
+  wrong memory with native-grade confidence. **Native baseline
+  (stamp condition one):** the same statistic for C1 in the query
+  model, on the same queries, is the denominator every confident-
+  wrong number is read against; the excess (condition rate minus
+  native rate) is reported beside the rate for every configuration.
 - **Direction asymmetry:** absolute difference in Recall@5 between
   A->B and B->A. Reported.
 - Anchor-count curves for every metric; TR-002r's skyline census
@@ -101,7 +107,11 @@ store has not been published at this scale.
   in BOTH directions, at BOTH seeds, C3 satisfies all three:
   (i) retention >= 0.80 of native Recall@5;
   (ii) work-level provenance survival >= 0.90;
-  (iii) confident-wrong rate <= 0.05.
+  (iii) confident-wrong rate <= 0.05 absolute, with the native
+  baseline and the excess over it reported beside (stamp condition
+  one: the absolute bar is the harder of the two readings the stamp
+  allowed, since native confident-wrong is never below zero; the
+  excess is the mechanism that makes the number legible).
   Three clauses, one pair, one anchor count: no multiplicity across
   the grid.
 - **FAIL:** any clause misses on either direction or either seed
@@ -119,9 +129,15 @@ store has not been published at this scale.
    within 0.05 Recall@5 of C2 at every anchor count. If it does not,
    the anchor coordinates carry gallery geometry, not alignment.
 2. **Mismatched anchors (the house catcher, TR-002r's wrong-model
-   lesson):** side A and side B use DIFFERENT anchor texts paired
-   only by index; C3 must collapse as in control 1. Retrieval that
-   survives index-only pairing is hubness, not translation.
+   lesson; stamp condition three):** side A and side B use DIFFERENT
+   anchor texts paired only by index, drawn from disjoint halves of
+   the anchor pool. C3 under mismatched anchors must collapse to
+   within 0.05 Recall@5 of the C2 floor at EVERY anchor count on the
+   primary pair, both directions, both seeds, and its retention must
+   fall below 0.25 of native. A store that "survives translation"
+   through wrong anchors survived on gallery geometry, not memory
+   transfer. Red-then-green with its own fixture before any real
+   number counts.
 3. **Dimension-matched random projection:** seeded random orthogonal
    projections of the same rank as the anchor map on both sides must
    fall below C3 by at least 0.20 Recall@5 at 1,024 anchors on the

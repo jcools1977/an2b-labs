@@ -61,3 +61,20 @@ snapshots (manifest hashes), and the Procrustes skyline code
 (certified in TR-002r D11). Anything reused is named with its hash in
 this log before the first extraction; anything rewritten passes an
 exam first.
+
+## D7. Stamp received 2026-09-08 with three conditions; how each landed
+Condition one (confident-wrong floor tied to a mechanism): the native
+confident-wrong rate is pre-registered as the baseline companion, and
+the excess over it is reported for every configuration. The stamp
+allowed either a delta gate or the absolute 0.05; the absolute bar is
+kept because it is the harder reading (native is never below zero, so
+"excess <= 0.05" can only be looser), and the excess is reported so
+the number has its denominator. Condition two (KILL legible): the
+clause was complete in the draft and is unchanged; the chat summary
+had truncated it. Condition three (mismatched-anchor behavior
+frozen): the collapse criterion is now explicit in the control's own
+text (within 0.05 Recall@5 of C2 at every anchor count, retention
+under 0.25 of native, disjoint pool halves) rather than by reference
+to control 1. The file moved from drafts/ to the root and the freeze
+manifest was reissued in this commit, the stamp being the approval
+through a channel other than this seat.
