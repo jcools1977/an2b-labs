@@ -43,10 +43,14 @@ def make_world(root, seed, structured):
     B[off:off + N_Q] = B[:N_Q] + 0.1 * rng.standard_normal((N_Q, D))
     A[off + N_Q:off + 2 * N_Q] = A[N_Q + 1:2 * N_Q + 1] + 0.1 * rng.standard_normal((N_Q, D))
     B[off + N_Q:off + 2 * N_Q] = B[N_Q + 1:2 * N_Q + 1] + 0.1 * rng.standard_normal((N_Q, D))
-    # scrambled anchors: far-off random vectors, paired consistently
+    # scrambled anchors: nonsense strings do not embed consistently across
+    # real models, so the smoke world models them as UNPAIRED random vectors
+    # on each side. Whether real scrambled anchors collapse C3 is the
+    # empirical question control 1 pre-registers; the smoke only exercises
+    # the path.
     soff = off + 2 * N_Q
     A[soff:soff + 1344] = rng.standard_normal((1344, D)) * 6 + 20
-    B[soff:soff + 1344] = A[soff:soff + 1344] @ R if structured else rng.standard_normal((1344, D))
+    B[soff:soff + 1344] = rng.standard_normal((1344, D)) * 6 + 20
     emb = root / "emb"
     emb.mkdir(parents=True)
     np.savez(emb / "bge.npz", ids=np.array(ids), X=A[:len(ids)].astype(np.float32))
