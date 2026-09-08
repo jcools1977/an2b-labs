@@ -167,3 +167,63 @@ Chain nohup'd on legion with a 15-minute staleness supervisor
 (checkpoints every 500 texts; a healthy decoder forward never goes
 silent that long). Extraction order: encoders first, then Qwen3-1.7B,
 Llama-3.1-8B, gemma-2-9b, all 4-bit and already cached.
+
+## D14. Grid run on the three encoders first; decoders join the boundary map as they land
+The protocol's cost line estimated "under an hour per 4-bit decoder."
+Wrong: on legion (16 GB, 2.7 GB of swap in use during the Llama pass)
+the 8B decoder runs at about 45 texts per minute, five hours for the
+pass, with gemma-2-9b behind it. The gate reads on bge and MiniLM,
+which were done, and the decoders only fill the boundary map, so the
+grid ran on the encoders (492 configurations, one minute) and the
+gates were read cold before any decoder space existed. The grid is
+keyed per configuration and resumable; decoder pairs append without
+touching any encoder line. Nothing about the gate depends on the
+order, and the order is recorded here.
+
+## D15. Gates read cold 2026-09-08 (encoder grid); what the checkers said and what is reported beside
+PASS: red on clause (i) retention (0.19 and 0.19 bge->minilm; 0.015
+and 0.015 minilm->bge, seeds 41 and 43) and clause (ii) provenance
+(0.28/0.30 and 0.11/0.11) in every cell; clause (iii) confident-wrong
+0.000 with the native baseline 0.002 (excess -0.002): passes
+trivially because relative coordinates compress margins. KILL did not
+fire: C4 retention 0.69 to 0.86 on the primary pair, above 0.50.
+Native floor (control 5): bge 0.926, e5 0.972, MiniLM 0.974, all
+above 0.90. Disjointness (control 4): zeros by code.
+Controls 1 to 3 read literally by the checker and stated here
+without adjustment:
+- Control 2 (mismatched anchors): C3 at 0.000 everywhere and
+  retention 0.000: the collapse the control demands happened. The
+  literal clause "within 0.05 Recall@5 of C2" fails because C2 is
+  NOT a floor on these pairs: raw 384-dim vectors from these three
+  BERT-family encoders retrieve across models at 0.17 to 0.43 R@5
+  without any transform. The control presupposed a floor that the
+  data did not supply; the checker records the violation and the
+  mechanism is stated rather than excused (the TR-002r wrong-model
+  precedent, now in the other direction).
+- Control 1 (scrambled anchors): the same C2 degeneracy applies to
+  the literal clause, but the substantive finding is worse for H1:
+  scrambled nonsense anchors do NOT collapse C3 when the store is in
+  bge or e5 (at 1,024 anchors, scrambled 0.32 vs real 0.18
+  bge->minilm; 0.49 vs 0.24 e5->bge). Nonsense anchors translate
+  BETTER than real ones. Per the control's own text, the anchor
+  coordinates carry gallery geometry, not semantic alignment.
+- Control 3 (random projection): C3 exceeds random projection by
+  0.18 on bge->minilm and 0.01 on minilm->bge against a 0.20 bar. A
+  near-miss is a FAIL: relative representations barely beat noise on
+  the primary pair.
+Diagnostic run AFTER the gate read, reported only (D15a, script
+committed before running): same-space relative representations
+(store and queries in ONE model, both against the same anchors)
+retrieve 0.56 (bge), 0.78 (MiniLM), 0.72 (e5) at 1,024 anchors
+against natives above 0.92; anchor-mean centering does not help.
+Mean pairwise cosine in the stores is 0.64 (bge), 0.33 (MiniLM), 0.83
+(e5). The zero-fit coordinates are lossy before any translation, in
+proportion to anisotropy, and the cross-model loss sits on top. C3
+dies whenever MiniLM is the STORE (0.015 minilm->bge, 0.004
+minilm->e5), the least anisotropic space; reported as direction
+asymmetry. C4 at 64 anchors returns confidently wrong memories at
+0.12 to 0.21 (native 0.002): the fitted ceiling with few anchors is
+the memory-safety failure the confident-wrong clause was written to
+catch, in the reported column. No threshold, checker, or grid line
+was altered after the read; the diagnostic is a separate script and
+a separate results file.
