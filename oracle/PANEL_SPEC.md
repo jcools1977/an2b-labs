@@ -84,6 +84,11 @@ protocol texts destined for publication and their forecasts, and
 stated here rather than discovered. If OpenRouter is down at a
 kickoff, the standing single-seat oracle procedure applies and the
 missing panel seal is recorded as absent, never backfilled.
+Disclosed limitation (estate audit 2026-09-01, F127/F131): the
+EngramPort Git-v0 bus cannot authenticate the actor named in an
+event, so bus identity is untrusted; the seal's integrity rests on
+the repo-committed hashes and reviewer-fetched receipts, not on bus
+attribution, until Voltron's signed actor admission fronts the bus.
 
 ## What the pilot must prove before the panel becomes standing law
 

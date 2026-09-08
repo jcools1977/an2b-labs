@@ -70,6 +70,20 @@ adjudication holds until it lands.**
    EngramPort bus needs the PI's explicit word on that hold, on the
    record, before greenlight.
 
+7. **The Voltron conformance line (wired 2026-09-08).** The
+   portfolio's trust/evidence control plane
+   (products/eidetic/voltron: twelve protocol artifact families,
+   signed actor admission, hash-chained events, gated canaries,
+   1,026 tests on 2026-09-08, authority boundary NOT_AUTHORIZED
+   throughout) runs the lab's own epistemology on the orchestration
+   side. Candidate: the lab adopts Voltron families as its seal and
+   receipt infrastructure through certification exams, closing the
+   independent review's B1/B4 findings and EngramPort's measured
+   impersonation gap (audit F127/F131) with product machinery
+   instead of hand-rolled lab plumbing. See ARENA.md's portfolio
+   section; the AEGIS Gate 2 hold and Voltron's own authority
+   boundary both remain blocking until the PI's named words.
+
 ## Wave 2 taught, Wave 3 inherits
 
 - The radar works: TR-002 as written would have been a

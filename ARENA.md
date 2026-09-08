@@ -78,6 +78,40 @@ verdict already flows through them.
    than the seat they constrain, and every seal hashes the policy
    in force (review B4).
 
+## The portfolio, through Voltron (wired 2026-09-08 on the PI's word)
+
+The estate converged on one epistemology twice, independently: the
+lab applies preregistration, adversarial controls, and receipts to
+SCIENCE; Voltron (products/eidetic/voltron) applies the identical
+discipline to ORCHESTRATION — preregistrations with checksummed
+results, gated canaries (G1-G6 accepted), 1,026 passing tests dated
+2026-09-08, and an authority boundary that currently reads
+NOT_AUTHORIZED / NOT_ADMITTED across every consequential workflow.
+Voltron's binding rule is this document's rules 6-7 stated as
+protocol: "a component may provide signed evidence to the next
+stage; it may not silently inherit that stage's authority."
+
+The organ map, per Voltron's own structure: Eidetic supplies memory
+EVIDENCE; AEGIS (vendored snapshot inside Voltron) supplies
+grounding, abstention, and source precedence; Procura supplies
+intake through a read-only adapter; ClawTex supplies execution with
+atomic one-use admission; CadenceAuth supplies identity proofs;
+EngramPort supplies the collaboration surface. Voltron binds their
+proofs before any consequential action.
+
+What this settles for the arena: the seal-receipt provisions this
+spec hand-rolled (policy hashing, watched DENYs, non-self-editable
+constraints) are not to be rebuilt in the lab; they are Voltron
+protocol families (signed actor admission, hash-chained events,
+pinned Trust Bundles with rotation) to be ADOPTED through the lab's
+exam discipline, component by component, the way every estimator
+and translator earned its post. EngramPort's measured impersonation
+gap is precisely what signed admission closes. Autonomy grows at
+the speed of receipts; Voltron is where the receipts come from.
+Standing constraints honored on both sides: Voltron's README states
+no EngramPort integration is in its current implementation, and the
+lab's AEGIS Gate 2 hold remains blocking until the PI's named word.
+
 ## The road there
 
 - **Wave 3 (if the review slates TR-003r and TR-006 on their
