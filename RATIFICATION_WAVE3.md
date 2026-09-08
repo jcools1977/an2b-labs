@@ -14,18 +14,23 @@ the right chair. The builder seat holds until then.**
 The hold line names the thing it lifts and its scope, per review
 A8. The slate line is the harvest review's decision, scientific
 merits per the corrected packet. The cap makes custody mechanism.
+Standing regardless of any card (the reviewer's correction,
+adopted): money, credentials, and the standing-up of seats that can
+act are the PI's alone; no reviewer signature ratifies them, and no
+document may frame it otherwise.
 
-## Word 2 — the reviewer, through their channel (relay card)
+## Word 2 — the reviewer, in their own form, after their own checks
 
-> FRONTIER-002 countersignature requested: builder-seat scan of
-> 2026-09-08, at commit aa91e55, charter as amended at e7c47f3.
-> Countersigning includes spot-checking the cited identifiers
-> (arXiv 2510.02348, 2605.30596, 2505.10354, 2604.08206, 2603.15371,
-> 2608.22160, 2509.08682, preprints.org 202601.1683). Also
-> requested: stamp or amend oracle/PANEL_SPEC.md and ARENA.md as
-> corrected after the independent review (reviews/
-> 2026-09-08_wave3_package_review.md). The TR-003 gate adjudication
-> releases on this countersignature.
+STRUCK AND REWRITTEN 2026-09-08 after the reviewer refused the
+original card, correctly: it pre-scripted their consent, the exact
+laundering the architecture exists to stop, and a countersignature
+has meaning only because it is not automatic. What stands instead:
+the reviewer verifies whatever they choose, by whatever path they
+trust (the repo is public; the builder's narration is not a source),
+and countersigns in their own words or declines with reasons.
+Nothing in this document schedules, scripts, or "releases on" their
+signature. Their refusal of the first card is filed as part of the
+record it improved.
 
 ## Word 3 — the kickoff, after words 1 and 2
 
