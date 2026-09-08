@@ -305,3 +305,21 @@ pinned snapshots. Transient logs (extract.log, supervise.log,
 grid.log, model_pulls.log) sweepable without ceremony. Deletions on
 the PI's word only. The decision log closes at ratification with
 the publication entry.
+
+## D20. Publication and utilization, ratified; log closed
+2026-09-08, on the PI's word: "Approve." Utilization stands as
+drafted (credibility-asset); report header flipped to v1.0
+published. Recorded plainly: the reviewer's repo-channel stamp had
+not landed at flip time, so this publication runs on the PI's final
+override per the lab's architecture; the reviewer's context-rich
+forecast scoring remains PENDING their plaintext against hash
+a98fb8fd..., to be finalized in the ledger whenever it is pasted.
+The ledger's sixth row flips through the reviewer's channel.
+
+---
+**Decision log closed 2026-09-08.** Verdict FAIL in the
+pre-registered H0 shape, published; utilization credibility-asset,
+ratified; the radar's first rescope ran gate to verdict in five
+days. Twenty decisions; the mid-flight ones (D9, D10/D15, D14/D17,
+D16, D18) each logged at the moment of the event, adjudicated where
+adjudication was due.
