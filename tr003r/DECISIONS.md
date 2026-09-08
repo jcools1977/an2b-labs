@@ -13,13 +13,19 @@ shared anchors established; refinement active, arXiv:2605.30596 and
 arXiv:2505.10354) and named the sharper rescope, what survives
 translation, with TR-002r's skylines as priors. FRONTIER-002 is
 same-day fresh and names this kickoff explicitly, satisfying the
-fresh-entry requirement as TR-002r's D1 did with FRONTIER-001. Its
-reviewer countersignature has NOT landed; the PI overrode that hold
-explicitly on 2026-09-08 (RATIFICATION_WAVE3.md), so this experiment
-carries the disclosed exposure that its radar entry was written by
-the builder seat and spot-checked by no one else yet. If the
-countersignature later finds a cited identifier false, that is
-logged here and reported. Sensing only; no threshold derives from it.
+fresh-entry requirement as TR-002r's D1 did with FRONTIER-001.
+CORRECTED 2026-09-08, same day: this entry first recorded the
+reviewer's countersignature as not landed, and the PI's explicit
+override of the hold (RATIFICATION_WAVE3.md) as the basis for
+opening. That was a stale-channel error on the builder's side: the
+reviewer had countersigned FRONTIER-002 in their own channel before
+the kickoff, with the citations spot-checked (arXiv:2510.02348
+fetched and verified against the source; an independent search
+finding no desk-scale or quantized translation test), and the PI
+relayed it after the kickoff. TR-003r's frontier basis is verified,
+not open; the override stands in history as what was spoken, now
+moot in effect. No exposure remains on this line. Sensing only; no
+threshold derives from it.
 
 ## D2. Door and mechanics
 Door (a) per the PI's Word 1 slate. The rescope lands as a NEW frozen

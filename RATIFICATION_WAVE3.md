@@ -126,3 +126,14 @@ pilot's first subject (e4bdb00), three vendors, three hashes pushed.
 The pilot's live-seal leg now has something the reviewer's channel
 can fetch; the score-at-closeout leg waits on the verdict. Build
 opens per tr003r/PLAN.md, red controls first.
+
+## Word 2 landed, relayed 2026-09-08
+
+The reviewer countersigned FRONTIER-002 in their own form and on
+their own checks (mini-vec2vec verified against arXiv:2510.02348; an
+independent search finding no desk-scale or quantized translation
+test) before the TR-003r kickoff; the relay reached this seat after
+it. The PI's override, spoken in between, stands as history and is
+moot in effect. tr003r/DECISIONS.md D1 corrected; FRONTIER.md
+annotated. The cutoff self-report exposure in the seals stands
+unchanged, as it should.

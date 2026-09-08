@@ -144,5 +144,16 @@
   TR-002r's reception lane (a desk-scale boundary the majors did
   not publish) is evidence the aim is right.
 
+### COUNTERSIGNED by the reviewer instance, relayed by the PI
+### 2026-09-08 (the reviewer's own text lives in the reviewer's
+### channel record). Spot-checks the reviewer performed and named:
+### arXiv:2510.02348 fetched and mini-vec2vec verified against the
+### source; an independent search that failed to surface any
+### desk-scale or quantized translation test, which is the negative
+### claim TR-002r's niche and TR-003r's rescope rest on. The builder
+### seat's first record of TR-003r's D1 called this entry
+### uncountersigned; that was a stale-channel error, corrected the
+### same day in tr003r/DECISIONS.md D1.
+
 ### Next scan due: before the Wave 3 slate freezes at the harvest
 ### review's close, or 2026-09-15, whichever comes first.
