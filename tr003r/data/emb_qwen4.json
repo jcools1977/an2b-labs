@@ -1,0 +1,7 @@
+{
+  "space": "qwen4",
+  "n": 16847,
+  "dim": 2048,
+  "model": "mlx-community/Qwen3-1.7B-4bit",
+  "sha256": "647af56b022eb598b504f4787106bb9aebfaedd67655536a9f55fcce439008d3"
+}

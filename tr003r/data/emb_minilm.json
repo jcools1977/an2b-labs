@@ -1,0 +1,7 @@
+{
+  "space": "minilm",
+  "n": 16847,
+  "dim": 384,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "sha256": "faf3e90d2fcd394dc2072d0682cba29dbabff06fc63f3e783b29d6ec24353efc"
+}

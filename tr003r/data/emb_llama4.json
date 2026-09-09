@@ -1,0 +1,7 @@
+{
+  "space": "llama4",
+  "n": 16847,
+  "dim": 4096,
+  "model": "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit",
+  "sha256": "0678611d9e33cfb658f5d97021d0995656258c39e18451c6149533f6204cf98d"
+}

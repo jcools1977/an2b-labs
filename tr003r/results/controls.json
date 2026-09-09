@@ -7,7 +7,10 @@
  "native_floor": {
   "bge": 0.926,
   "e5": 0.972,
-  "minilm": 0.974
+  "minilm": 0.974,
+  "llama4": 0.832,
+  "qwen4": 0.286,
+  "gemma4": 0.946
  },
  "cells": {
   "41": {

@@ -1,0 +1,7 @@
+{
+  "space": "gemma4",
+  "n": 16847,
+  "dim": 3584,
+  "model": "mlx-community/gemma-2-9b-it-4bit",
+  "sha256": "3ac80fbeeecae0e54b9ce1cab78f17f57427ccb013794d682e20b0d9d41d9d3f"
+}

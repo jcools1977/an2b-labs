@@ -1,0 +1,7 @@
+{
+  "space": "bge",
+  "n": 16847,
+  "dim": 384,
+  "model": "BAAI/bge-small-en-v1.5",
+  "sha256": "63d39582e782fa77ffd96b6fb5242721ffeabb7edfdc09213e8144e843e883d7"
+}

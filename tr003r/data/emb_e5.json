@@ -1,0 +1,7 @@
+{
+  "space": "e5",
+  "n": 16847,
+  "dim": 384,
+  "model": "intfloat/e5-small-v2",
+  "sha256": "c87e0861814440abd2df6febfdf6624d02793e743496fadf5e7f024a76b39264"
+}
