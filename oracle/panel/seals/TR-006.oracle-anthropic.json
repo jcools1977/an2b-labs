@@ -1,0 +1,112 @@
+{
+ "kind": "panel_seal",
+ "tr": "TR-006",
+ "seat": "oracle-anthropic",
+ "engine": {
+  "seat": "oracle-anthropic",
+  "routing_alias": "anthropic/claude-fable-5.1",
+  "canonical_slug": "anthropic/claude-fable-5.1-20260831",
+  "created_unix": 1788285838,
+  "created_iso": "2026-09-01",
+  "knowledge_cutoff_gateway": null,
+  "pricing_usd_per_token": {
+   "prompt": "0.00001",
+   "completion": "0.00005"
+  },
+  "supported_parameters": [
+   "include_reasoning",
+   "max_completion_tokens",
+   "max_tokens",
+   "reasoning",
+   "reasoning_effort",
+   "response_format",
+   "stop",
+   "structured_outputs",
+   "tools",
+   "verbosity"
+  ],
+  "reasoning": {
+   "mandatory": true,
+   "supported_efforts": [
+    "max",
+    "xhigh",
+    "high",
+    "medium",
+    "low"
+   ],
+   "default_effort": "high"
+  },
+  "resolution_rule": "newest_created",
+  "candidates_considered": [
+   "anthropic/claude-fable-5.1",
+   "anthropic/claude-opus-5",
+   "anthropic/claude-sonnet-5",
+   "anthropic/claude-fable-5",
+   "anthropic/claude-opus-4.8",
+   "anthropic/claude-opus-4.7",
+   "anthropic/claude-sonnet-4.6",
+   "anthropic/claude-opus-4.6"
+  ],
+  "resolved_at": "2026-09-09T12:10:04+00:00"
+ },
+ "engine_self_reported_cutoff": "2025-01",
+ "served": {
+  "served_model": "anthropic/claude-fable-5.1",
+  "served_provider": "Anthropic",
+  "gateway_id": "gen-1788955812-Bg4r8Lf1OZj0y1OSQ2sh",
+  "finish_reason": "stop",
+  "latency_s": 12.1,
+  "mock": false
+ },
+ "usage": {
+  "prompt_tokens": 1587,
+  "completion_tokens": 549,
+  "total_tokens": 2136,
+  "cost": 0.04332,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.04332,
+   "upstream_inference_prompt_cost": 0.01587,
+   "upstream_inference_completions_cost": 0.02745
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "sampling_requested": {
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "seed": 20260908,
+  "max_tokens": 6000,
+  "reasoning_effort": "medium",
+  "note": "remote frontier forecasts are unseeded in effect: parameters are sent only where the gateway lists them as supported, and the seal records which were sent"
+ },
+ "sampling_sent": [],
+ "response_format": "json_object",
+ "request_had_tools": false,
+ "tool_calls_in_response": 0,
+ "forecast_parse": "whole_message",
+ "schema_errors": [],
+ "protocol_file": "TR006_minimum_viable_workspace.md",
+ "protocol_sha256": "3b215a6b130d51859999fddc7e6ba5b1af287831d68cea1999f6c0668b773cfb",
+ "protocol_commit": "9a6b8ec16dc461f3c60492f4886f4820a9686efa",
+ "prompt_template_sha256": "721b8c389f45e5cc0d8dd0bef0359ba6d132268a3c09bd877a4c8c8799ed0f5b",
+ "prompt_sha256": "8d89fb9bfc1a741805c0bbaf120b893bec518e79b1be0017ad77f11e09f9de4d",
+ "policy_path": "oracle/panel/policies/oracle_deny_all.yaml",
+ "policy_sha256": "d6c5b4968f66902f453cea57e317a51536bfcb79c8ec32ebd63edb00d6054ac6",
+ "warden_mode": "strict",
+ "deny_control_record": "oracle/panel/controls/deny_control_2026-09-08T155456.json",
+ "plaintext_sha256": "e53f76196cf2163f559fd77123d58818c4c3243c9159e1c0b0c1824ef52a412a",
+ "plaintext_path_gitignored": "oracle/sealed/TR-006.oracle-anthropic.json",
+ "sealed_at": "2026-09-09T12:10:24+00:00",
+ "seal_becomes_seal_when": "hash pushed and fetched by the reviewer's channel before closeout work begins",
+ "scoring": "engine-stratified; always-FAIL baseline standing; consensus reported-only"
+}

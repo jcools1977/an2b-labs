@@ -1,0 +1,117 @@
+{
+ "kind": "panel_seal",
+ "tr": "TR-006",
+ "seat": "oracle-xai",
+ "engine": {
+  "seat": "oracle-xai",
+  "routing_alias": "x-ai/grok-4.6",
+  "canonical_slug": "x-ai/grok-4.6-20260810",
+  "created_unix": 1786548957,
+  "created_iso": "2026-08-12",
+  "knowledge_cutoff_gateway": null,
+  "pricing_usd_per_token": {
+   "prompt": "0.000002",
+   "completion": "0.000006"
+  },
+  "supported_parameters": [
+   "include_reasoning",
+   "logprobs",
+   "max_tokens",
+   "reasoning",
+   "reasoning_effort",
+   "response_format",
+   "seed",
+   "stop",
+   "structured_outputs",
+   "temperature",
+   "tool_choice",
+   "tools",
+   "top_k",
+   "top_logprobs",
+   "top_p"
+  ],
+  "reasoning": {
+   "mandatory": true,
+   "default_enabled": true,
+   "supported_efforts": [
+    "xhigh",
+    "high",
+    "medium",
+    "low"
+   ],
+   "default_effort": "high"
+  },
+  "resolution_rule": "newest_created",
+  "candidates_considered": [
+   "x-ai/grok-4.6",
+   "x-ai/grok-4.5",
+   "x-ai/grok-4.3",
+   "x-ai/grok-4.20"
+  ],
+  "resolved_at": "2026-09-09T12:10:38+00:00"
+ },
+ "engine_self_reported_cutoff": "2024-06",
+ "served": {
+  "served_model": "x-ai/grok-4.6",
+  "served_provider": "xAI",
+  "gateway_id": "gen-1788955847-GGZKK4p429K3paqtwLh4",
+  "finish_reason": "stop",
+  "latency_s": 35.6,
+  "mock": false
+ },
+ "usage": {
+  "prompt_tokens": 1171,
+  "completion_tokens": 1802,
+  "total_tokens": 2973,
+  "cost": 0.012962,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 128,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.012962,
+   "upstream_inference_prompt_cost": 0.00215,
+   "upstream_inference_completions_cost": 0.010812
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1553,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "sampling_requested": {
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "seed": 20260908,
+  "max_tokens": 6000,
+  "reasoning_effort": "medium",
+  "note": "remote frontier forecasts are unseeded in effect: parameters are sent only where the gateway lists them as supported, and the seal records which were sent"
+ },
+ "sampling_sent": [
+  "temperature",
+  "top_p",
+  "seed"
+ ],
+ "response_format": "json_object",
+ "request_had_tools": false,
+ "tool_calls_in_response": 0,
+ "forecast_parse": "whole_message",
+ "schema_errors": [],
+ "protocol_file": "TR006_minimum_viable_workspace.md",
+ "protocol_sha256": "3b215a6b130d51859999fddc7e6ba5b1af287831d68cea1999f6c0668b773cfb",
+ "protocol_commit": "9a6b8ec16dc461f3c60492f4886f4820a9686efa",
+ "prompt_template_sha256": "721b8c389f45e5cc0d8dd0bef0359ba6d132268a3c09bd877a4c8c8799ed0f5b",
+ "prompt_sha256": "8d89fb9bfc1a741805c0bbaf120b893bec518e79b1be0017ad77f11e09f9de4d",
+ "policy_path": "oracle/panel/policies/oracle_deny_all.yaml",
+ "policy_sha256": "d6c5b4968f66902f453cea57e317a51536bfcb79c8ec32ebd63edb00d6054ac6",
+ "warden_mode": "strict",
+ "deny_control_record": "oracle/panel/controls/deny_control_2026-09-08T155456.json",
+ "plaintext_sha256": "24740bc3473f4cef010d74604aae66974f2b83073a0c2e695920ad4f433d99b7",
+ "plaintext_path_gitignored": "oracle/sealed/TR-006.oracle-xai.json",
+ "sealed_at": "2026-09-09T12:11:22+00:00",
+ "seal_becomes_seal_when": "hash pushed and fetched by the reviewer's channel before closeout work begins",
+ "scoring": "engine-stratified; always-FAIL baseline standing; consensus reported-only"
+}
