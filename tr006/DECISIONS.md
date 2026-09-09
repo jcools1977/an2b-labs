@@ -22,3 +22,28 @@ TR-006) with no hold on it. The protocol is the original 2026-08-24
 text, unchanged; no rescope. Phase 0 is OPEN and closes only after
 the PI's three words in PLAN.md and both oracle seals. TR-003r's
 verdict is on the table awaiting ratification and is not affected.
+
+## D3. Machine, transfer, sweep: the PI's word of 2026-09-09
+The PI's word: the cockpit and legion are free from 5 pm and may be
+used as the builder judges best. Judgment, logged: the sweep runs on
+the cockpit (M5 Pro, 48 GB), the only machine holding the three
+models resident; the three 4-bit snapshots were copied from legion's
+cache over the tailnet (about 15 GB, no internet download); legion
+remains available for the panel and for any encoder-side work. The
+sweep launches at 17:00 EDT by a timer and runs checkpointed per
+configuration and per item so sleep or interruption loses at most
+one item.
+
+## D4. Rounds R = 4, fixed before any council run
+The protocol leaves the rounds per item unstated. R = 4 is the
+smallest count at which the broadcast-frequency sweep {1, 2, 4} is
+meaningful (F = 4 broadcasts once; F = 1 four times); fewer rounds
+would make two of three frequencies identical. Not a threshold; a
+design constant, and the volume estimate in PLAN.md (about 190,000
+generations) follows from it.
+
+## D5. Environment
+tr006/.venv on the cockpit: mlx 0.32.2, mlx-lm 0.31.3, numpy 2.5.3,
+scipy 1.18.1, transformers 5.16.1, pinned in requirements.txt. Model
+snapshots by HuggingFace hub commit: Llama-3.1-8B-Instruct-4bit
+241a666d, Qwen3-8B-4bit 545dc425, gemma-2-9b-it-4bit ff12eb39.
