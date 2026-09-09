@@ -47,3 +47,19 @@ tr006/.venv on the cockpit: mlx 0.32.2, mlx-lm 0.31.3, numpy 2.5.3,
 scipy 1.18.1, transformers 5.16.1, pinned in requirements.txt. Model
 snapshots by HuggingFace hub commit: Llama-3.1-8B-Instruct-4bit
 241a666d, Qwen3-8B-4bit 545dc425, gemma-2-9b-it-4bit ff12eb39.
+
+## D6. The transfer failed and a download happened; disclosed
+The rsync from legion's cache reported success line by line but
+copied nothing (its error, "source ... directory", was swallowed by
+a tail). The cockpit throughput benchmark then fetched all three
+models from HuggingFace, about 15 GB over the internet, which the
+plan had asked for as a tailnet transfer and not as a download. The
+snapshots that arrived are byte-for-byte the same hub commits legion
+pins (241a666d, 545dc425, ff12eb39; D5 holds). Logged because the
+route was not the one asked for, even though the bytes are.
+
+## D7. Phase 0 CLOSED 2026-09-09: seals of record
+Oracle of record sealed (oracle/sealed/TR006.sha256, one tool use,
+never in the builder's context). Panel sealed as its second live
+cycle against protocol commit 7b7262d: three seats, three hashes
+pushed from legion. Implementation code begins after this commit.
