@@ -1,0 +1,31 @@
+{
+ "seat": "oracle-xai",
+ "tr": "TR-003r",
+ "engine": "x-ai/grok-4.6",
+ "served_model": "x-ai/grok-4.6",
+ "sealed_at": "2026-09-08T17:04:42+00:00",
+ "forecast": {
+  "verdict_probabilities": {
+   "PASS": 0.27,
+   "FAIL": 0.61,
+   "SPLIT": 0.08,
+   "KILL": 0.04
+  },
+  "key_effect_directions": [
+   {
+    "claim": "C3 relative-representation retention of native Recall@5 meets or exceeds 0.80 at 1,024 random anchors on the primary pair in both directions and both seeds",
+    "probability": 0.42
+   },
+   {
+    "claim": "C3 work-level provenance survival is at least 0.90 under the frozen gate (primary pair, Q1, 1,024 random anchors, both directions, both seeds)",
+    "probability": 0.61
+   },
+   {
+    "claim": "C4 paired-anchor Procrustes retention stays at or above 0.50 of native Recall@5 on the primary pair in both directions, so the KILL criterion does not fire",
+    "probability": 0.93
+   }
+  ],
+  "rationale": "TR-002r already certified that paired-anchor Procrustes recovers retrieval on this encoder pair, so a C4 retention collapse below 0.50 is unlikely and KILL is a thin tail. Q1 cues are 60-word excerpts of the target chunk, so native Recall@5 will sit near ceiling and a large share of that signal can survive Moschella coordinates at 1,024 anchors; even so, the gate demands the conjunction of 0.80 retention, 0.90 work provenance, and 0.05 confident-wrong on random (not medoid) anchors in both directions and both seeds, and a near-miss is scored FAIL, which is the modal outcome."
+ },
+ "raw_text_sha256": "0f51169ba87fea3bcf9e61941a78b18573b2688d3550d463b906ce037fddc6db"
+}

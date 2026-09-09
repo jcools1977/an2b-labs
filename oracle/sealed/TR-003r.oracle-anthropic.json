@@ -1,0 +1,31 @@
+{
+ "seat": "oracle-anthropic",
+ "tr": "TR-003r",
+ "engine": "anthropic/claude-fable-5.1",
+ "served_model": "anthropic/claude-fable-5.1",
+ "sealed_at": "2026-09-08T17:03:12+00:00",
+ "forecast": {
+  "verdict_probabilities": {
+   "PASS": 0.35,
+   "FAIL": 0.55,
+   "SPLIT": 0.04,
+   "KILL": 0.06
+  },
+  "key_effect_directions": [
+   {
+    "claim": "C4 (paired-anchor Procrustes) at 1,024 anchors retains >= 0.80 of native Recall@5 on the bge-small <-> MiniLM pair in both directions, so the KILL clause does not fire",
+    "probability": 0.88
+   },
+   {
+    "claim": "C3 Recall@5 on the primary pair rises monotonically with anchor count (64 < 256 < 1,024) for random anchors, and C3 at 1,024 exceeds the C2 floor by more than 0.20",
+    "probability": 0.9
+   },
+   {
+    "claim": "C3 confident-wrong rate at 1,024 random anchors on the primary pair is <= 0.05 absolute in both directions and both seeds (margins compress cross-model, so clause iii is the easiest of the three)",
+    "probability": 0.75
+   }
+  ],
+  "rationale": "The two encoders are 384-d, same-domain sentence models whose anchor-similarity structures should be strongly correlated, and 60-word substring cues against a 5,000-chunk store make native recall near 1.0 and cross-model retrieval reasonably discriminative, so C4 will almost surely clear the KILL bar and C3 will land well above the naive floor. The decisive uncertainty is clause (i): relative representations without any fitted or centered transform are hurt by bge's anisotropic (high-baseline) cosine profile versus MiniLM's wider spread, which typically costs zero-fit Moschella-style stitching a noticeable margin relative to Procrustes; requiring >= 0.80 retention in both directions at both seeds with near-miss counting as FAIL makes a miss on at least one of the four cells somewhat more likely than a clean sweep. Provenance survival at work level is plausibly >= 0.90 and confident-wrong is likely low, so a FAIL would most probably come from retention alone."
+ },
+ "raw_text_sha256": "c3ea6187d85ef36be7a04ab78e989818732b88295643b4f3eaa1e5a3472d0b3b"
+}

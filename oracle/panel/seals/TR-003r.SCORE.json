@@ -1,0 +1,106 @@
+{
+ "tr": "TR-003r",
+ "verdict": "FAIL",
+ "scored_at": "2026-09-09T07:07:37+00:00",
+ "baselines": {
+  "uniform": 0.75,
+  "always_FAIL": 0.0
+ },
+ "seats": [
+  {
+   "seat": "oracle-anthropic",
+   "engine": "anthropic/claude-fable-5.1",
+   "served_model": "anthropic/claude-fable-5.1",
+   "probs": {
+    "PASS": 0.35,
+    "FAIL": 0.55,
+    "SPLIT": 0.04,
+    "KILL": 0.06
+   },
+   "brier": 0.3302,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "claims": [
+    {
+     "claim": "C4 (paired-anchor Procrustes) at 1,024 anchors retains >= 0.80 of native Recall@5 on the bge-small <-> MiniLM pair in both directions, so the KILL clause does not fire",
+     "probability": 0.88
+    },
+    {
+     "claim": "C3 Recall@5 on the primary pair rises monotonically with anchor count (64 < 256 < 1,024) for random anchors, and C3 at 1,024 exceeds the C2 floor by more than 0.20",
+     "probability": 0.9
+    },
+    {
+     "claim": "C3 confident-wrong rate at 1,024 random anchors on the primary pair is <= 0.05 absolute in both directions and both seeds (margins compress cross-model, so clause iii is the easiest of the three)",
+     "probability": 0.75
+    }
+   ]
+  },
+  {
+   "seat": "oracle-openai",
+   "engine": "openai/gpt-6-astra",
+   "served_model": "openai/gpt-6-astra",
+   "probs": {
+    "PASS": 0.15,
+    "FAIL": 0.83,
+    "SPLIT": 0.0,
+    "KILL": 0.02
+   },
+   "brier": 0.0518,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "claims": [
+    {
+     "claim": "On the primary pair, C3 with 1,024 random anchors will exceed C2 Recall@5 in both directions at both seeds.",
+     "probability": 0.97
+    },
+    {
+     "claim": "On the primary pair, C3 Q1 Recall@5 averaged across directions and seeds will increase from 64 to 1,024 random anchors.",
+     "probability": 0.88
+    },
+    {
+     "claim": "Scrambled-anchor C3 Recall@5 will exceed the C2 floor by more than 0.05 in at least one tested configuration, violating that control.",
+     "probability": 0.8
+    }
+   ]
+  },
+  {
+   "seat": "oracle-xai",
+   "engine": "x-ai/grok-4.6",
+   "served_model": "x-ai/grok-4.6",
+   "probs": {
+    "PASS": 0.27,
+    "FAIL": 0.61,
+    "SPLIT": 0.08,
+    "KILL": 0.04
+   },
+   "brier": 0.233,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "claims": [
+    {
+     "claim": "C3 relative-representation retention of native Recall@5 meets or exceeds 0.80 at 1,024 random anchors on the primary pair in both directions and both seeds",
+     "probability": 0.42
+    },
+    {
+     "claim": "C3 work-level provenance survival is at least 0.90 under the frozen gate (primary pair, Q1, 1,024 random anchors, both directions, both seeds)",
+     "probability": 0.61
+    },
+    {
+     "claim": "C4 paired-anchor Procrustes retention stays at or above 0.50 of native Recall@5 on the primary pair in both directions, so the KILL criterion does not fire",
+     "probability": 0.93
+    }
+   ]
+  }
+ ],
+ "consensus_reported_only": {
+  "probs": {
+   "PASS": 0.25666666666666665,
+   "FAIL": 0.6633333333333333,
+   "SPLIT": 0.04,
+   "KILL": 0.04
+  },
+  "brier": 0.1824,
+  "modal": "FAIL"
+ },
+ "note": "engine-stratified: each row is one seat under one served engine; never aggregate across engine changes"
+}

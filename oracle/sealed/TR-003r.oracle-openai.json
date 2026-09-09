@@ -1,0 +1,31 @@
+{
+ "seat": "oracle-openai",
+ "tr": "TR-003r",
+ "engine": "openai/gpt-6-astra",
+ "served_model": "openai/gpt-6-astra",
+ "sealed_at": "2026-09-08T17:03:27+00:00",
+ "forecast": {
+  "verdict_probabilities": {
+   "PASS": 0.15,
+   "FAIL": 0.83,
+   "SPLIT": 0.0,
+   "KILL": 0.02
+  },
+  "key_effect_directions": [
+   {
+    "claim": "On the primary pair, C3 with 1,024 random anchors will exceed C2 Recall@5 in both directions at both seeds.",
+    "probability": 0.97
+   },
+   {
+    "claim": "On the primary pair, C3 Q1 Recall@5 averaged across directions and seeds will increase from 64 to 1,024 random anchors.",
+    "probability": 0.88
+   },
+   {
+    "claim": "Scrambled-anchor C3 Recall@5 will exceed the C2 floor by more than 0.05 in at least one tested configuration, violating that control.",
+    "probability": 0.8
+   }
+  ],
+  "rationale": "The reported paired-anchor retrieval strength makes KILL unlikely and supports substantial C3 improvement over naive translation, but does not establish zero-fit retention or provenance at the frozen thresholds. The conjunction across directions and seeds leaves substantial failure risk, especially for provenance. Shared random-word anchors can retain cross-model lexical structure, making the required scrambled-anchor collapse particularly doubtful. SPLIT has zero probability because the protocol explicitly classifies partial gate success as FAIL."
+ },
+ "raw_text_sha256": "60431c3cb1dd0897d10fcd9a437026a5e5cd439690fe626e4e3b8d8d5ee107d4"
+}
