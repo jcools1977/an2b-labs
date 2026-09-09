@@ -1,0 +1,32 @@
+{
+ "seeds": {
+  "41": {
+   "hotpot": {
+    "aic_smooth": 120.0,
+    "aic_regime": 104.0,
+    "aic_margin": 16.0,
+    "breakpoint_S": 8,
+    "best_bounded_acc": 0.62,
+    "best_bounded": {
+     "S": 8,
+     "F": 1
+    },
+    "unlimited_log_best_acc": 0.55,
+    "single_best_acc": 0.4
+   },
+   "puzzles": {
+    "aic_smooth": 120.0,
+    "aic_regime": 104.0,
+    "aic_margin": 16.0,
+    "breakpoint_S": 8,
+    "best_bounded_acc": 0.62,
+    "best_bounded": {
+     "S": 8,
+     "F": 1
+    },
+    "unlimited_log_best_acc": 0.55,
+    "single_best_acc": 0.4
+   }
+  }
+ }
+}

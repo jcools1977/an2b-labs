@@ -1,0 +1,32 @@
+{
+ "raw_hotpot_sha256": "c20b638ca82b21d0",
+ "screening_rule": "hardest by single-agent confidence",
+ "families": 2,
+ "seeds": {
+  "41": {
+   "hotpot": {
+    "scored": 200,
+    "screened_pool": 320,
+    "screen_disjoint": true
+   },
+   "puzzles": {
+    "scored": 200,
+    "unique_solutions": true,
+    "screened_pool": 300
+   }
+  },
+  "43": {
+   "hotpot": {
+    "scored": 200,
+    "screened_pool": 320,
+    "screen_disjoint": true
+   },
+   "puzzles": {
+    "scored": 200,
+    "unique_solutions": true,
+    "screened_pool": 300
+   }
+  }
+ },
+ "cross_seed_overlap": 0
+}

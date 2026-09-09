@@ -1,5 +1,6 @@
-mlx==0.32.2
 mlx-lm==0.31.3
+mlx==0.32.2
 numpy==2.5.3
+pyarrow==25.0.1
 scipy==1.18.1
 transformers==5.16.1
