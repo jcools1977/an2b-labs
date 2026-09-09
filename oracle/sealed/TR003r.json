@@ -1,0 +1,9 @@
+{
+  "verdict_probabilities": {"PASS": 0.33, "FAIL": 0.60, "SPLIT": 0.02, "KILL": 0.05},
+  "key_effect_directions": [
+    {"claim": "C4 (paired-anchor Procrustes) retention of native Recall@5 exceeds C3 (relative representations) retention at 1,024 random anchors on the primary pair in every direction-seed cell", "probability": 0.85},
+    {"claim": "C3 retention at 1,024 random anchors, Q1, clears 0.80 of native Recall@5 in all four primary-pair cells (both directions, both seeds)", "probability": 0.45},
+    {"claim": "C3 work-level provenance survival at 1,024 random anchors clears 0.90 in all four primary-pair cells", "probability": 0.40}
+  ],
+  "rationale": "Both primary encoders are 384-d sentence models on overlapping training lineages, native Q1 recall from a literal 60-word substring will sit near 1.0, and TR-002r already showed Procrustes retrieval holds on the MiniLM pairs, so KILL is unlikely. Zero-fit relative representations are noisier than the Procrustes ceiling: uncentered cosine-to-anchor coordinates in bge-small are compressed toward a common offset, which flattens ranking, and with 32 chunks per work the errors that do occur will split between same-work neighbors and unrelated works, putting work-level provenance near the 0.90 bar rather than safely above it. The confident-wrong clause is likely to pass because anchor-coordinate margins are small against a native median margin, so the verdict hinges on retention and provenance across four cells with no multiplicity relief; a single cell missing either bar is a FAIL, and the scrambled-anchor control may also refuse to collapse to the C2 floor because identical nonsense strings still carry lexical overlap in both spaces, which the protocol reads as a control violation. Net: FAIL favored, PASS a substantial minority."
+}

@@ -227,3 +227,37 @@ the memory-safety failure the confident-wrong clause was written to
 catch, in the reported column. No threshold, checker, or grid line
 was altered after the read; the diagnostic is a separate script and
 a separate results file.
+
+## D16. Native floor exclusions and a retention above 1.0
+Control 5 as frozen: Qwen3-1.7B-4bit (native Q1 Recall@5 0.294,
+confident-wrong 0.21) and Llama-3.1-8B-4bit (0.847) fall under 0.90
+and are excluded from the boundary map with their numbers published;
+gemma-2-9b (0.942) and the three encoders stay. Class means in the
+report are over the twelve retained ordered pairs; the excluded rows
+appear in results/summary.json and the report text. C4 "retention"
+above 1.0 on gemma->Qwen and Llama->Qwen is arithmetic, not a
+finding: a store translated from a healthy space retrieves better
+than Qwen's own store does, which is exactly why Qwen is excluded.
+
+## D17. Closeout, 2026-09-09
+verify.sh exit code 1 as built: instrument legs green (25 checker
+fixtures, anchor exam 9/9, plumbing smoke both worlds, store
+integrity), PASS clauses (i) and (ii) red in every cell, controls 1
+and 3 red for measured reasons, control 2 red on a degenerate
+literal clause with its mechanism satisfied, KILL quiet. Oracle of
+record revealed and scored (Brier 0.2718, modal FAIL); panel revealed
+(three hashes MATCH) and scored (0.3302 / 0.0518 / 0.2330, every seat
+modal FAIL; consensus reported-only 0.1824). Report draft v0.1,
+utilization draft (credibility-asset proposed), figures committed.
+Panel pilot proving cycle: legs 2 through 7 green on evidence; leg 1
+(hashes fetched by the reviewer's channel) is the reviewer's act and
+is recorded when they say so. Verdict pending PI ratification.
+
+## D18. Disk line (standing closeout rule)
+legion: tr003r 776 MB (corpus_store 774 MB, of which emb 707 MB in
+six float32 sidecar-hashed npz files; texts 75 MB); HF cache 23 GB
+shared with TR-002r, unchanged; oracle plaintext redundancy 12 KB;
+326 GB free. cockpit: tr003r 1.7 MB (results, figures, report).
+Sweepable on the PI's word: tr003r/corpus_store on legion (rebuildable
+from the committed builder, the TR-002r registry, and the pinned
+snapshots in about thirteen hours of extraction).

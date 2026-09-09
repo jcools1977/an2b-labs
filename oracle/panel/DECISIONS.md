@@ -140,3 +140,15 @@ every run. (b) The contamination rule (D5) ran entirely on
 self-reported cutoffs because the gateway field is null for every
 resolved engine; the flags are CLEAR and the summary says plainly that
 self-report is the weakest evidence the rule accepts.
+
+**D17 (2026-09-09). First live cycle complete: sealed at the TR-003r
+kickoff, scored at its closeout.** Reveal: all three plaintexts match
+their committed hashes and seal records. Scores against FAIL: 0.3302,
+0.0518, 0.2330; consensus reported-only 0.1824; every seat modal
+FAIL. Proving legs 2 through 7 green on evidence (DENY watched, exams
+passed, served backend and sampling and cutoff in every seal,
+always-FAIL baseline in the score, no plaintext through the builder's
+context, $1.24 of $10 spent with the key never at rest, README
+amended). Leg 1's second half, the reviewer's channel fetching the
+hashes, is theirs to state. The panel stays a pilot until the PI
+rules on the cycle.

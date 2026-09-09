@@ -137,3 +137,13 @@ it. The PI's override, spoken in between, stands as history and is
 moot in effect. tr003r/DECISIONS.md D1 corrected; FRONTIER.md
 annotated. The cutoff self-report exposure in the seals stands
 unchanged, as it should.
+
+## TR-003r verdict on the table, 2026-09-09
+
+FAIL in the H0 shape, KILL quiet, both seeds identical; report draft
+v0.1, utilization draft (credibility-asset), figures, decision log
+D1 to D18, verify.sh nonzero as built. All four forecasts opened and
+scored (oracle of record 0.2718; panel 0.3302 / 0.0518 / 0.2330, all
+modal FAIL). The panel's live cycle is complete on evidence; the
+reviewer's fetch of the seal hashes and the PI's ratification are the
+two words outstanding. TR-006 is next on the slate.
