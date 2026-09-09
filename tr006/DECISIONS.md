@@ -119,3 +119,37 @@ the round-1 buffer is broadcast every round thereafter. Traces record
 every submission's salience and rank at its cut, so the
 slot-competition statistic (final-broadcast items that held the last
 slot at their cut) is computed after the fact, never re-run.
+
+## D12. Role to model assignment and the answer step
+Fixed before any run: proposer = Llama-3.1-8B, critic = Qwen3-8B,
+synthesizer = gemma-2-9b. Role shuffle permutes this map per item.
+After round R a final broadcast always happens and the synthesizer
+answers in a separate answer step seeing it, so every broadcast
+frequency contains at least one exchange (with R = 4 and F = 4 the
+only exchange is that final one). Thirteen generations per item.
+
+## D13. gemma-2 batched attention: a certified one-line fix
+mlx-lm 0.31.3 cannot batch gemma-2 (grouped-query scores are five-
+dimensional, the batched mask four; the broadcast fails and surfaces
+as a ZeroDivisionError in the stats). workspace/gemma_batch_patch.py
+inserts the missing mask axis. Certified by tests/test_gemma_batch.py:
+batched greedy output equals sequential greedy output token for token
+on three prompts of unequal length; the exam also asserts the
+unpatched failure is real. verify.sh runs it. Without it, gemma would
+have run sequentially at about five seconds per generation.
+
+## D14. Screening candidates
+600 seeded HotpotQA candidates and 400 generated puzzles per seed;
+each model answers once, alone, in the answer-step format; items with
+at most one correct model are kept and the first 200 per family are
+scored, disjoint across seeds by content hash. The single-shot
+outcomes of every candidate are stored so the selection is auditable.
+
+## D15. Execution order and the clock
+Seed 41 runs completely (screening, main grid, baselines, controls)
+before seed 43 begins, so a partial run still yields one complete
+seed. Batched throughput measured at 0.67 seconds per generation at
+16 items; the plan's volume (about 190,000 generations with the
+answer step) reads as roughly 35 hours of machine time per seed,
+under caffeinate, checkpointed per item. Launch by timer at 17:00 EDT
+2026-09-09 on the PI's word.
