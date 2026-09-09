@@ -153,3 +153,23 @@ seed. Batched throughput measured at 0.67 seconds per generation at
 answer step) reads as roughly 35 hours of machine time per seed,
 under caffeinate, checkpointed per item. Launch by timer at 17:00 EDT
 2026-09-09 on the PI's word.
+
+## D16. First launch died of GPU memory at 18:40; cause, fix, and a corrected clock
+Launched 15:54 on the PI's word. Seed 41 screening completed and
+checkpointed (600 HotpotQA candidates, 246 pass the screen; 400
+puzzles, 301 pass; 200 scored each). Seed 43 screening then died with
+a Metal out-of-memory error. Measured cause: MLX's buffer cache grew
+to 23 to 34 GB after one batch of 16 to 32 prompts of about 950
+tokens, and with three models resident (14.3 GB) Metal could not wire
+more; no limit had been set. Fix: cache limit 3 GB, memory limit
+34 GB, batch 8, halve the batch and retry on any out-of-memory, and
+the rendered board text capped at 200 characters per item so the
+S = 32 prompts stay under about two thousand tokens. Screening is now
+checkpointed per family. Nothing scored changed: seed 41's task set
+is the one screened under the original settings.
+The clock, corrected on measurement: these prompts are prefill-bound
+at about one second per generation regardless of batch size (0.9 s
+Llama, 1.6 s gemma at batch 8), not the 0.67 s measured on short
+prompts. Roughly two days of machine time per seed; seed 41 lands
+about Friday night, seed 43 early the following week if the lid
+stays open. Relaunched at the time stamped in sweep.log.

@@ -50,15 +50,21 @@ def main():
             hot = [hotpot.format_item(rows[i], seed) for i in idx]
             hot = [h for h in hot if h["sha"] not in used]
             puz = [puzzles.generate(seed, i) for i in range(N_CAND["puzzles"])]
-            d = {"seed": seed, "families": {}}
+            part = TR / "data" / f"tasks_{seed}.partial.json"
+            d = json.load(open(part)) if part.exists() else {"seed": seed, "families": {}}
             for fam, cands in (("hotpot", hot), ("puzzles", puz)):
+                if fam in d["families"]:
+                    print(f"seed {seed} {fam}: screening already done (partial checkpoint)", flush=True)
+                    continue
                 corr = one_shot(seats, cands)
                 keep = [c for c in cands if sum(corr[c["id"]]) <= 1]
                 scored = keep[:N_SCORED]
                 d["families"][fam] = {"scored": scored, "screened_pool": len(cands), "kept": len(keep),
                                       "single_shot_correct": {c["id"]: corr[c["id"]] for c in cands}}
                 print(f"seed {seed} {fam}: {len(cands)} candidates, {len(keep)} pass the screen, {len(scored)} scored", flush=True)
+                json.dump(d, open(part, "w"))
             json.dump(d, open(out, "w"))
+            part.unlink(missing_ok=True)
         for fam in ("hotpot", "puzzles"):
             for c in d["families"][fam]["scored"]:
                 used.add(c["sha"])

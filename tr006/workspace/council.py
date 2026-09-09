@@ -29,6 +29,12 @@ from workspace import gemma_batch_patch
 
 gemma_batch_patch.apply()  # certified by tests/test_gemma_batch.py (D13)
 
+# D16: MLX's buffer cache grew to 23-34 GB after one long-prompt batch and
+# Metal ran out of memory with three models resident. Cap the cache and
+# the working set; halve the batch on any out-of-memory and retry.
+mx.set_cache_limit(int(3e9))
+mx.set_memory_limit(int(34e9))
+
 MODELS = {
     "llama": "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit",
     "qwen": "mlx-community/Qwen3-8B-4bit",
@@ -45,7 +51,8 @@ ROLE_TEXT = {
                    "coherent chain of reasoning and state your current best answer.",
 }
 MAX_TOKENS = 200
-BATCH = 16
+BATCH = 8
+BOARD_CHARS = 200  # D16: rendered item text on the board is capped so S=32 stays under ~2k tokens
 
 
 class Seats:
@@ -62,10 +69,20 @@ class Seats:
         prompts = [tok.apply_chat_template(msgs, add_generation_prompt=True, tokenize=True, **kw)
                    for msgs in messages_list]
         outs = []
-        for lo in range(0, len(prompts), BATCH):
-            res = batch_generate(model, tok, prompts=prompts[lo:lo + BATCH], max_tokens=MAX_TOKENS, verbose=False)
+        lo, bs = 0, BATCH
+        while lo < len(prompts):
+            try:
+                res = batch_generate(model, tok, prompts=prompts[lo:lo + bs], max_tokens=MAX_TOKENS, verbose=False)
+            except RuntimeError as exc:
+                if "Memory" not in str(exc) or bs == 1:
+                    raise
+                mx.clear_cache()
+                bs = max(1, bs // 2)
+                print(f"  OOM on {name}; retrying with batch {bs}", flush=True)
+                continue
             outs.extend(res.texts if hasattr(res, "texts") else res)
-        mx.clear_cache()
+            lo += bs
+            mx.clear_cache()
         return outs
 
 
@@ -91,7 +108,7 @@ def parse_submission(text):
 
 def build_messages(role, item, board, own_history, final=False):
     task = f"TASK CONTEXT:\n{item['context']}\n\nQUESTION: {item['question']}"
-    board_txt = "\n".join(f"[{b['id']}] (salience {b['salience']:.0f}, {b['author']}, round {b['round']}) {b['item']}"
+    board_txt = "\n".join(f"[{b['id']}] (salience {b['salience']:.0f}, {b['author']}, round {b['round']}) {b['item'][:BOARD_CHARS]}"
                           for b in board) or "(empty)"
     own = "\n".join(f"- round {h['round']}: {h['item'][:300]}" for h in own_history) or "(none)"
     if final:
