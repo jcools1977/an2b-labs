@@ -57,14 +57,40 @@ BOARD_CHARS = 200  # D16: rendered item text on the board is capped so S=32 stay
 
 
 class Seats:
-    def __init__(self, names=("llama", "qwen", "gemma")):
+    """Holds the role models. max_resident=3 keeps all three loaded (48 GB
+    class machines); max_resident=1 loads on demand and evicts the rest
+    (D19: legion, 16 GB), counting loads so the swap cost is measured."""
+
+    def __init__(self, names=("llama", "qwen", "gemma"), max_resident=3):
+        self.names = list(names)
+        self.max_resident = max_resident
         self.m = {}
-        for n in names:
-            t0 = time.time()
-            self.m[n] = load(MODELS[n])
-            print(f"loaded {n} in {time.time()-t0:.1f}s", flush=True)
+        self.order = []
+        self.n_loads = 0
+        self.load_seconds = 0.0
+        if max_resident >= len(self.names):
+            for n in self.names:
+                self._load(n)
+
+    def _load(self, n):
+        t0 = time.time()
+        self.m[n] = load(MODELS[n])
+        self.order.append(n)
+        self.n_loads += 1
+        self.load_seconds += time.time() - t0
+        print(f"loaded {n} in {time.time()-t0:.1f}s", flush=True)
+
+    def _ensure(self, n):
+        if n in self.m:
+            return
+        while len(self.m) >= self.max_resident and self.order:
+            old = self.order.pop(0)
+            del self.m[old]
+            mx.clear_cache()
+        self._load(n)
 
     def template(self, name, content, tokenize=True):
+        self._ensure(name)
         model, tok = self.m[name]
         kw = {"enable_thinking": False} if name == "qwen" else {}
         return tok.apply_chat_template([{"role": "user", "content": content}], add_generation_prompt=True,
@@ -74,6 +100,7 @@ class Seats:
         """Prefill the chat-template head plus the prefix text once (D17).
         Returns (cache, prefix_ids) or (None, None) if the boundary does not
         tokenize cleanly; the caller then runs that item uncached."""
+        self._ensure(name)
         model, tok = self.m[name]
         full_probe = self.template(name, prefix_text + "PROBE", tokenize=False)
         head_plus_prefix = full_probe[:full_probe.index("PROBE")]
@@ -85,6 +112,7 @@ class Seats:
     def generate(self, name, prompts_text, caches=None, prefix_ids=None):
         """prompts_text: full user contents. With caches, each prompt's
         tokens are split at its prefix and only the suffix is fed."""
+        self._ensure(name)
         model, tok = self.m[name]
         full = [self.template(name, c) for c in prompts_text]
         if caches is None:
