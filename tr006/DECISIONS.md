@@ -196,3 +196,24 @@ minutes per family per configuration, 1.5 hours per (S, F) point,
 roughly 58 hours per seed of continuous running (main grid 27,
 baselines 4, controls 27), five days for both seeds; nights only
 doubles it. This is the floor for this prompt size on this hardware.
+
+## D18. The PI's word of 2026-09-10: no TR-006 compute on the cockpit; artifacts removed
+The PI reversed D3: the cockpit is the working machine that travels
+and holds every key, and a sweep that loads it for days is the wrong
+shape (the estate rule in the orchestrator's CLAUDE.md, now applied to
+the lab). One further fault forced the point: after the pause, a
+block-size diagnostic's Python child survived its killed shell as an
+orphan for 23 minutes at 38 GB and a full core, while this seat
+reported nothing running because its process checks matched script
+text rather than the interpreter's command line. Corrected rule:
+a stopped process is verified gone by PID before it is reported gone.
+Executed: everything committed and pushed (HEAD 00d3bfa on origin);
+the unrevealed oracle-of-record plaintext copied to legion's
+redundancy directory and clone with its hash verified
+(27de79260aae...); then removed from the cockpit: the three 4-bit
+model snapshots (13.4 GB), the tr006 virtual environment, the raw
+HotpotQA parquet (re-fetchable by hash), sweep.log, and the local
+sealed plaintext. The lab clone stays as the PI's seat. Where and
+whether TR-006 runs next (legion holds one 8B model at a time; a
+three-model council there means model swapping or R = 2 and days) is
+the PI's call and is not decided here.

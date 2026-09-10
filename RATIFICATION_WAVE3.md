@@ -147,3 +147,13 @@ scored (oracle of record 0.2718; panel 0.3302 / 0.0518 / 0.2330, all
 modal FAIL). The panel's live cycle is complete on evidence; the
 reviewer's fetch of the seal hashes and the PI's ratification are the
 two words outstanding. TR-006 is next on the slate.
+
+## TR-006 status, 2026-09-10
+
+Phase 0 closed and sealed (oracle of record 27de7926..., panel three
+seats). Harness built and certified, screening done for both seeds,
+11 configurations run under the first prompt and discarded on the
+prefix-cache reorder. The PI then ruled that no lab compute runs on
+the cockpit; all TR-006 artifacts were removed from it (D18) and the
+sealed plaintext moved to legion. The sweep is suspended pending the
+PI's word on where it runs. TR-003r's ratification remains open.
