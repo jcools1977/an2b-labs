@@ -157,3 +157,10 @@ prefix-cache reorder. The PI then ruled that no lab compute runs on
 the cockpit; all TR-006 artifacts were removed from it (D18) and the
 sealed plaintext moved to legion. The sweep is suspended pending the
 PI's word on where it runs. TR-003r's ratification remains open.
+
+## TR-006 feasibility, 2026-09-10 evening
+
+Measured on legion (D19): about 450 hours per seed at R = 4, 228 at
+R = 2; three to six weeks for both seeds. The cockpit is ruled out by
+the PI's word. TR-006 waits on the PI's decision: another machine, a
+design constant (R = 2, shorter QA context), or deferral. Nothing runs.

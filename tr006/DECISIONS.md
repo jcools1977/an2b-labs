@@ -217,3 +217,21 @@ sealed plaintext. The lab clone stays as the PI's seat. Where and
 whether TR-006 runs next (legion holds one 8B model at a time; a
 three-model council there means model swapping or R = 2 and days) is
 the PI's call and is not decided here.
+
+## D19. Legion feasibility, measured 2026-09-10 16:10 to 17:33 on the PI's word (legion only)
+One model resident at a time (loads on demand, the others evicted),
+no prefix cache, 16 real items per family in lockstep through the
+full council. Model loads are cheap (12 loads, 24 s per family); the
+machine is not: 11.2 s per generation on the QA family and 4.6 s on
+puzzles at R = 4 (145 s and 60 s per item), peak 12.9 GB of 16, ten
+times the cockpit's pace. Projection from the measured per-item
+times: 11.4 hours per (S, F) point, 205 hours for one seed's main
+grid, about 450 hours per seed for all stages at R = 4; about 228
+hours per seed at R = 2. Two seeds: between three and six weeks of
+continuous legion time. Conclusion, stated for the PI's decision:
+TR-006 as pre-registered (three 7B-class models, 200 items per
+configuration, the full S x F grid, three controls, two seeds) does
+not fit the estate's non-cockpit hardware in any useful time. No
+threshold, item count, or grid point is changed here; the options
+(another machine, a design constant such as R = 2 or a shorter QA
+context, or deferral behind the rest of the slate) are the PI's.
