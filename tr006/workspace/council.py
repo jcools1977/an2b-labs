@@ -26,6 +26,7 @@ from mlx_lm import load
 from mlx_lm.generate import batch_generate
 
 from workspace import gemma_batch_patch
+from workspace.prefix_cache import prefill, split_tokens
 
 gemma_batch_patch.apply()  # certified by tests/test_gemma_batch.py (D13)
 
@@ -63,22 +64,63 @@ class Seats:
             self.m[n] = load(MODELS[n])
             print(f"loaded {n} in {time.time()-t0:.1f}s", flush=True)
 
-    def generate(self, name, messages_list):
+    def template(self, name, content, tokenize=True):
         model, tok = self.m[name]
         kw = {"enable_thinking": False} if name == "qwen" else {}
-        prompts = [tok.apply_chat_template(msgs, add_generation_prompt=True, tokenize=True, **kw)
-                   for msgs in messages_list]
-        outs = []
-        lo, bs = 0, BATCH
+        return tok.apply_chat_template([{"role": "user", "content": content}], add_generation_prompt=True,
+                                       tokenize=tokenize, **kw)
+
+    def prefix_cache(self, name, prefix_text):
+        """Prefill the chat-template head plus the prefix text once (D17).
+        Returns (cache, prefix_ids) or (None, None) if the boundary does not
+        tokenize cleanly; the caller then runs that item uncached."""
+        model, tok = self.m[name]
+        full_probe = self.template(name, prefix_text + "PROBE", tokenize=False)
+        head_plus_prefix = full_probe[:full_probe.index("PROBE")]
+        pre, _ = split_tokens(tok, head_plus_prefix, full_probe)
+        if pre is None:
+            return None, None
+        return prefill(model, pre), pre
+
+    def generate(self, name, prompts_text, caches=None, prefix_ids=None):
+        """prompts_text: full user contents. With caches, each prompt's
+        tokens are split at its prefix and only the suffix is fed."""
+        model, tok = self.m[name]
+        full = [self.template(name, c) for c in prompts_text]
+        if caches is None:
+            return self._batched(model, tok, full, None)
+        suffix, use_cache = [], []
+        for ids, pre, c in zip(full, prefix_ids, caches):
+            if c is not None and pre is not None and ids[:len(pre)] == pre:
+                suffix.append(ids[len(pre):]); use_cache.append(c)
+            else:
+                suffix.append(ids); use_cache.append(None)
+        outs = [None] * len(full)
+        cached_idx = [i for i, c in enumerate(use_cache) if c is not None]
+        plain_idx = [i for i, c in enumerate(use_cache) if c is None]
+        if cached_idx:
+            res = self._batched(model, tok, [suffix[i] for i in cached_idx], [use_cache[i] for i in cached_idx])
+            for i, t in zip(cached_idx, res):
+                outs[i] = t
+        if plain_idx:
+            res = self._batched(model, tok, [full[i] for i in plain_idx], None)
+            for i, t in zip(plain_idx, res):
+                outs[i] = t
+        self.n_uncached = getattr(self, "n_uncached", 0) + len(plain_idx) * (1 if caches is not None else 0)
+        return outs
+
+    def _batched(self, model, tok, prompts, caches):
+        outs, lo, bs = [], 0, BATCH
         while lo < len(prompts):
             try:
-                res = batch_generate(model, tok, prompts=prompts[lo:lo + bs], max_tokens=MAX_TOKENS, verbose=False)
+                kw = {"prompt_caches": caches[lo:lo + bs]} if caches is not None else {}
+                res = batch_generate(model, tok, prompts=prompts[lo:lo + bs], max_tokens=MAX_TOKENS, verbose=False, **kw)
             except RuntimeError as exc:
                 if "Memory" not in str(exc) or bs == 1:
                     raise
                 mx.clear_cache()
                 bs = max(1, bs // 2)
-                print(f"  OOM on {name}; retrying with batch {bs}", flush=True)
+                print(f"  OOM; retrying with batch {bs}", flush=True)
                 continue
             outs.extend(res.texts if hasattr(res, "texts") else res)
             lo += bs
@@ -106,8 +148,10 @@ def parse_submission(text):
     return {"item": text.strip()[:600], "salience": 50.0, "answer": ans, "parsed": False}
 
 
-def build_messages(role, item, board, own_history, final=False):
-    task = f"TASK CONTEXT:\n{item['context']}\n\nQUESTION: {item['question']}"
+def build_prompt_parts(role, item, board, own_history, final=False):
+    """(prefix_text, suffix_text): the prefix is identical for every
+    generation of an item, so it can be KV-cached (D17)."""
+    prefix = f"TASK CONTEXT:\n{item['context']}\n\nQUESTION: {item['question']}\n\n"
     board_txt = "\n".join(f"[{b['id']}] (salience {b['salience']:.0f}, {b['author']}, round {b['round']}) {b['item'][:BOARD_CHARS]}"
                           for b in board) or "(empty)"
     own = "\n".join(f"- round {h['round']}: {h['item'][:300]}" for h in own_history) or "(none)"
@@ -119,14 +163,26 @@ def build_messages(role, item, board, own_history, final=False):
         ask = ("Reply with a JSON object only: "
                '{"item": "your contribution in at most three sentences", "salience": 0-100, "answer": "your current best short answer"}. '
                "Salience is your honest estimate of how much this contribution matters for reaching the correct answer.")
-    return [{"role": "user", "content":
-             f"{ROLE_TEXT[role]}\n\n{task}\n\nSHARED WORKSPACE (broadcast items):\n{board_txt}\n\n"
-             f"YOUR OWN EARLIER CONTRIBUTIONS:\n{own}\n\n{ask}"}]
+    suffix = (f"{ROLE_TEXT[role]}\n\nSHARED WORKSPACE (broadcast items):\n{board_txt}\n\n"
+              f"YOUR OWN EARLIER CONTRIBUTIONS:\n{own}\n\n{ask}")
+    return prefix, suffix
 
 
-def run_config(seats, items, S, F, R, mode="main", seed=41, single_model=None, log=None):
-    """Run every item through one configuration in lockstep. Returns
-    one record per item with the final answer and a compact trace."""
+def build_messages(role, item, board, own_history, final=False):
+    prefix, suffix = build_prompt_parts(role, item, board, own_history, final=final)
+    return [{"role": "user", "content": prefix + suffix}]
+
+
+def run_config(seats, items, S, F, R, mode="main", seed=41, single_model=None, log=None, block=BATCH, use_cache=True):
+    """Run every item through one configuration, in blocks of `block`
+    items held in lockstep so only a block's prefix caches are resident."""
+    out = []
+    for lo in range(0, len(items), block):
+        out.extend(_run_block(seats, items[lo:lo + block], S, F, R, mode, seed, single_model, use_cache))
+    return out
+
+
+def _run_block(seats, items, S, F, R, mode, seed, single_model, use_cache):
     n = len(items)
     rng = random.Random(f"{mode}:{seed}:{S}:{F}")
     role_map = []
@@ -140,17 +196,32 @@ def run_config(seats, items, S, F, R, mode="main", seed=41, single_model=None, l
     state = [{"buffer": [], "broadcast": [], "frozen": None, "all": [], "hist": {r: [] for r in ROLES},
               "trace": [], "counter": 0} for _ in items]
     roles_active = ROLES if mode != "single" else ["synthesizer"]
+    # prefix caches: one per (item, model) actually used in this block
+    caches = {}
+    if use_cache:
+        needed = set()
+        for i in range(n):
+            for role in roles_active:
+                needed.add((i, single_model if mode == "single" else role_map[i][role]))
+        for i, mdl in sorted(needed):
+            prefix, _ = build_prompt_parts("proposer", items[i], [], [])
+            caches[(i, mdl)] = seats.prefix_cache(mdl, prefix)
 
     def submissions_for(role, r, final=False):
         by_model = {}
         for i, it in enumerate(items):
             mdl = single_model if mode == "single" else role_map[i][role]
             board = state[i]["broadcast"] if mode != "single" else []
-            msgs = build_messages(role, it, board, state[i]["hist"][role], final=final)
-            by_model.setdefault(mdl, []).append((i, msgs))
+            prefix, suffix = build_prompt_parts(role, it, board, state[i]["hist"][role], final=final)
+            by_model.setdefault(mdl, []).append((i, prefix + suffix))
         out = [None] * n
         for mdl, lst in by_model.items():
-            texts = seats.generate(mdl, [m for _, m in lst])
+            if use_cache:
+                cs = [caches[(i, mdl)][0] for i, _ in lst]
+                ps = [caches[(i, mdl)][1] for i, _ in lst]
+                texts = seats.generate(mdl, [c for _, c in lst], caches=cs, prefix_ids=ps)
+            else:
+                texts = seats.generate(mdl, [c for _, c in lst])
             for (i, _), t in zip(lst, texts):
                 out[i] = t
         return out
@@ -174,7 +245,6 @@ def run_config(seats, items, S, F, R, mode="main", seed=41, single_model=None, l
             continue
         for i in range(n):
             st = state[i]
-            # the cut
             cand = sorted(st["buffer"], key=lambda b: (-b["salience"], -b["round"]))
             for rank, b in enumerate(cand, 1):
                 b.setdefault("rank_at_cut", []).append(rank)
@@ -186,7 +256,6 @@ def run_config(seats, items, S, F, R, mode="main", seed=41, single_model=None, l
                 st["frozen"] = list(survivors)
             if r % F == 0:
                 st["broadcast"] = st["frozen"] if (mode == "frozen" and st["frozen"] is not None) else list(survivors)
-    # final broadcast and answer step
     for i in range(n):
         st = state[i]
         if mode == "single":
@@ -205,4 +274,6 @@ def run_config(seats, items, S, F, R, mode="main", seed=41, single_model=None, l
                         "role_map": role_map[i], "n_items_submitted": len(st["all"]),
                         "trace": st["trace"],
                         "submissions": [{k: (v[:300] if k == "item" else v) for k, v in a.items()} for a in st["all"]]})
+    caches.clear()
+    mx.clear_cache()
     return records

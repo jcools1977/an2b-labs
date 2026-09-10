@@ -173,3 +173,26 @@ Llama, 1.6 s gemma at batch 8), not the 0.67 s measured on short
 prompts. Roughly two days of machine time per seed; seed 41 lands
 about Friday night, seed 43 early the following week if the lid
 stays open. Relaunched at the time stamped in sweep.log.
+
+## D17. Paused 2026-09-10 08:2x on the PI's word; prompt reordered for prefix caching; prompt-v1 results discarded
+The PI works on the cockpit by day; the run was paused after 11 of
+36 main configurations (about 1.7 s per generation on the QA family,
+1.0 s on puzzles, 1.9 hours per (S, F) point). To cut the repeated
+950-token prefill, the prompt was reordered so the task context and
+question lead and are KV-cached once per item and model; every
+generation then feeds only its suffix. Certified token for token
+against uncached output on all three models (tests/test_prefix_cache.py,
+in verify.sh). Because the prompt text changed, the 11 configurations
+already run under the old order are set aside in
+results/discarded/promptv1_seed41_raw and never mixed with the new
+run; the task sets (screened under prompts that are unchanged by this
+reorder, the single-shot answer step) stand.
+Measured after the change: block of 8 items through the full four-
+round council, 1.04 s per generation on QA and 0.98 s on puzzles with
+prefill included, 13 s per item; block 16 peaks at 40 GB, trips the
+out-of-memory fallback and ends slower (1.79 s). Block 8 is the
+ceiling with three models resident. Honest clock at R = 4: about 45
+minutes per family per configuration, 1.5 hours per (S, F) point,
+roughly 58 hours per seed of continuous running (main grid 27,
+baselines 4, controls 27), five days for both seeds; nights only
+doubles it. This is the floor for this prompt size on this hardware.
