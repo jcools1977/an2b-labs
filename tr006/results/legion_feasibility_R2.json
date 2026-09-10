@@ -1,0 +1,31 @@
+{
+ "hotpot": {
+  "n": 16,
+  "R": 2,
+  "seconds": 1212.6358110904694,
+  "per_item": 75.78973819315434,
+  "per_generation": 10.827105456164904,
+  "loads": 6,
+  "load_seconds": 11.807328939437866,
+  "peak_gb": 12.91913103,
+  "acc": 0.0,
+  "parse_fail": 0
+ },
+ "puzzles": {
+  "n": 16,
+  "R": 2,
+  "seconds": 445.9973130226135,
+  "per_item": 27.874832063913345,
+  "per_generation": 3.982118866273335,
+  "loads": 6,
+  "load_seconds": 11.604841709136963,
+  "peak_gb": 9.403870704,
+  "acc": 0.25,
+  "parse_fail": 6
+ },
+ "projection": {
+  "hours_per_SF_point": 5.759142792059316,
+  "hours_main_grid_per_seed": 103.66457025706768,
+  "hours_per_seed_all_stages": 228.0620545655489
+ }
+}
