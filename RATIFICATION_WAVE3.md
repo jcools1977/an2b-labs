@@ -164,3 +164,10 @@ Measured on legion (D19): about 450 hours per seed at R = 4, 228 at
 R = 2; three to six weeks for both seeds. The cockpit is ruled out by
 the PI's word. TR-006 waits on the PI's decision: another machine, a
 design constant (R = 2, shorter QA context), or deferral. Nothing runs.
+
+## TR-003r ratified, 2026-09-11
+
+"print TR-003R. Ratified." Report v1.0 on the public repository,
+utilization credibility-asset, decision log closed (D20), bench
+cleared. TR-006 launched on legion the same day at R = 2 on the PI's
+word, to run to completion; HARVEST_WAVE3.md opened.

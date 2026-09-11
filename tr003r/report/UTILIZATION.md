@@ -1,6 +1,6 @@
-# TR-003r utilization verdict (draft for PI ratification; CREDO section 3)
+# TR-003r utilization verdict (RATIFIED by the PI 2026-09-11; CREDO section 3)
 
-**Ruling proposed: credibility-asset.**
+**Ruling: credibility-asset.**
 
 What was learned that is worth building: a memory store does not
 survive zero-fit translation between embedding models at desk scale,

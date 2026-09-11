@@ -2,7 +2,7 @@
 ## What Survives Translation: A Memory Store Crossing Embedding Models Keeps Its Ceiling and Loses Its Zero-Fit Floor
 
 **J. DeVere Cooley, AN2B Labs**
-**Status: DRAFT v0.1, 2026-09-09; awaiting reviewer adjudication and PI ratification**
+**Status: v1.0, published 2026-09-11 on the PI's word (D20); ledger at an2b.com/labs**
 **Pre-registration: original TR-003 at commit `7b7262d` (2026-08-24); rescoped protocol TR-003r frozen at `05d156e` (2026-09-08) through the kickoff gate under FRONTIER-002 (countersigned by the reviewer), stamped with three conditions; oracle of record sealed at `ca801ab`, three-seat panel sealed at `e4bdb00`, both before Phase 0 closed**
 
 ---

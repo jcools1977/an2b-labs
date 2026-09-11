@@ -1,7 +1,7 @@
 # TR-003r forecast scoring
 
-Published verdict pending ratification: **FAIL** (H0 shape; KILL did
-not fire). Scored 2026-09-09 at closeout against the cold gate read.
+Published verdict: **FAIL** (H0 shape; KILL did not fire), ratified
+2026-09-11. Scored 2026-09-09 at closeout against the cold gate read.
 Brier baselines: uniform 0.75, always-FAIL 0.0 on this outcome.
 
 ## Oracle of record (single seat, sealed ca801ab before Phase 0

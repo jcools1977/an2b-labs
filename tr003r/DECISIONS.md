@@ -261,3 +261,15 @@ shared with TR-002r, unchanged; oracle plaintext redundancy 12 KB;
 Sweepable on the PI's word: tr003r/corpus_store on legion (rebuildable
 from the committed builder, the TR-002r registry, and the pinned
 snapshots in about thirteen hours of extraction).
+
+## D20. Closed 2026-09-11: ratified and published
+The PI's word: "print TR-003R. Ratified." Report v1.0 published on
+the public repository (status line set); utilization verdict
+credibility-asset ratified (report/UTILIZATION.md); report/RATIFIED
+written; the scorecard's pending line lifted. Open at closure and
+carried into the harvest packet: the reviewer's context-rich
+forecast (sealed through their channel, unscored until relayed) and
+the reviewer's fetch of the seal hashes (proving-cycle leg 1 for the
+panel pilot). Bench clearance follows in this closeout on legion and
+the cockpit; its disk line is the last entry below. Decision log
+closed.
