@@ -30,3 +30,5 @@ tr*/corpus_store/
 oracle/sealed/*.json
 tr006/data/raw/
 tr006/.venv/
+# run logs are bulk, never evidence (bench clearance)
+tr*/*.log
