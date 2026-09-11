@@ -1,0 +1,7 @@
+{
+  "space": "minilm",
+  "split": "eval",
+  "n": 2269,
+  "dim": 384,
+  "sha256": "75b99385744935bb2481e868ed8dbd5496b4592ba40c6ef4e90d05a13460f32f"
+}

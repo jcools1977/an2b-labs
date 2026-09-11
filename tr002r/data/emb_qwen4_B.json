@@ -1,0 +1,7 @@
+{
+  "space": "qwen4",
+  "split": "B",
+  "n": 8000,
+  "dim": 2048,
+  "sha256": "e62c968c0d774f6e4a7c5cad42a0d39e7c3f935b143a2f897dd3238ce94ce1e0"
+}

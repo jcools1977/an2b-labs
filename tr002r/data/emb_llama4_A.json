@@ -1,0 +1,7 @@
+{
+  "space": "llama4",
+  "split": "A",
+  "n": 16000,
+  "dim": 4096,
+  "sha256": "d28246010bf9824ce915c1ed8a58fa4bf4cb7168fef996606bca432d0a81b069"
+}

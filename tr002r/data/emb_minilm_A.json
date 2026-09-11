@@ -1,0 +1,7 @@
+{
+  "space": "minilm",
+  "split": "A",
+  "n": 8000,
+  "dim": 384,
+  "sha256": "d1f1caae9bff54621d9e868242d9f16f567de7c129a6da54313dc495feb9e3a2"
+}

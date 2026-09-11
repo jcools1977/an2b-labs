@@ -1,0 +1,7 @@
+{
+  "space": "minilm",
+  "split": "ood",
+  "n": 6522,
+  "dim": 384,
+  "sha256": "a90f3a86cc8d119383c051c56156b15402cbbd6cdec30ea5e44f37aa30167ccf"
+}

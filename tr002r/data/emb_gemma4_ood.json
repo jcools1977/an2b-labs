@@ -1,0 +1,7 @@
+{
+  "space": "gemma4",
+  "split": "ood",
+  "n": 6522,
+  "dim": 3584,
+  "sha256": "69c42097dba922bd3da846b58d582b0ebe5358b03a06b707777b76d9a098292d"
+}
