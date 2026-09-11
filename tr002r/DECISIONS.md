@@ -323,3 +323,7 @@ ratified; the radar's first rescope ran gate to verdict in five
 days. Twenty decisions; the mid-flight ones (D9, D10/D15, D14/D17,
 D16, D18) each logged at the moment of the event, adjudicated where
 adjudication was due.
+
+
+## Bench cleared 2026-09-11 09:32 on an2b-legion (estate/BENCH_CLEAR.md)
+Removed: tr002r/supervise.log (0.00 GB), tr002r/grid.log (0.00 GB), tr002r/extract.log (0.00 GB), tr002r/corpus_store (1.06 GB), tr002r/model_pulls.log (0.00 GB), hub/mlx-community/Meta-Llama-3.1-8B-Instruct-8bit (8.54 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 362.99 GB.

@@ -231,3 +231,7 @@ published; utilization credibility-asset, ratified; estate line
 executed. Twenty-three decisions, each logged before or honestly
 after the number it governed, with the after cases (D15, D19) stated
 as such and adjudicated.
+
+
+## Bench cleared 2026-09-11 09:32 on an2b-legion (estate/BENCH_CLEAR.md)
+Removed: tr015/topics.log (0.00 GB), tr015/corpus_store (0.03 GB), tr015/embed.log (0.00 GB), tr015/paraphrase.log (0.00 GB), tr015/analysis/__pycache__ (0.00 GB), hub/mlx-community/Meta-Llama-3.1-8B-Instruct-8bit (8.54 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 362.99 GB.

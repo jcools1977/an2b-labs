@@ -413,3 +413,7 @@ control 2 is red in exactly the way the paper says. A green control 2
 was never reachable for a prefix carrying no passage signal, and this
 entry says so rather than assumes it. The check that would have been
 moved is not moved; the interpretation layer is documented.
+
+
+## Bench cleared 2026-09-11 09:32 on an2b-legion (estate/BENCH_CLEAR.md)
+Removed: tr001/cache (0.05 GB), tr001/phase4_tier2.log (0.00 GB), tr001/seed2.log (0.00 GB), tr001/phase4_auto.log (0.00 GB), tr001/phase4.log (0.00 GB), tr001/b4bit_download.log (0.00 GB), tr001/phase4_tier3.log (0.00 GB), tr001/extraction.log (0.00 GB), tr001/phase5.log (0.00 GB), tr001/.venv (0.63 GB), tr001/model_download.log (0.00 GB), tr001/phase3.log (0.00 GB), tr001/scripts/__pycache__ (0.00 GB), tr001/lib/__pycache__ (0.00 GB), tr001/checks/__pycache__ (0.00 GB), hub/mlx-community/Meta-Llama-3.1-8B-Instruct-8bit (8.54 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 362.99 GB.

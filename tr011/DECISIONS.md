@@ -341,3 +341,7 @@ generational trend remains fenced per D13, unexercised. TR-011 is
 closed, Wave 1 is complete, and this log ends at twenty-two entries,
 every one committed before the number it governed.
 
+
+
+## Bench cleared 2026-09-11 09:32 on an2b-legion (estate/BENCH_CLEAR.md)
+Removed: tr011/corpus_store (0.01 GB), tr011/scoring.log (0.00 GB), tr011/memaudit.log (0.00 GB), hub/mlx-community/Meta-Llama-3.1-8B-Instruct-8bit (8.54 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 362.99 GB.

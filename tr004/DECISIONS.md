@@ -309,3 +309,7 @@ published under the materiality framing; utilization
 credibility-asset, ratified; both forecasts sealed before their
 subjects, verified, and scored. Twenty-four decisions, the mid-red
 ones (D14, D17, D19) stated as such and adjudicated.
+
+
+## Bench cleared 2026-09-11 09:32 on an2b-legion (estate/BENCH_CLEAR.md)
+Removed: tr004/corpus_store (0.19 GB), tr004/extract.log (0.00 GB), hub/mlx-community/Meta-Llama-3.1-8B-Instruct-8bit (8.54 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 362.99 GB.
