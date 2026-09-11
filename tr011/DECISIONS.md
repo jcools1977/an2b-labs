@@ -345,3 +345,7 @@ every one committed before the number it governed.
 
 ## Bench cleared 2026-09-11 09:32 on an2b-legion (estate/BENCH_CLEAR.md)
 Removed: tr011/corpus_store (0.01 GB), tr011/scoring.log (0.00 GB), tr011/memaudit.log (0.00 GB), hub/mlx-community/Meta-Llama-3.1-8B-Instruct-8bit (8.54 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 362.99 GB.
+
+
+## Bench cleared 2026-09-11 09:33 on an2b-cockpit (estate/BENCH_CLEAR.md)
+Removed: tr011/corpus_store (0.01 GB), tr011/.venv (0.30 GB), tr011/analysis/__pycache__ (0.00 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 739.86 GB.

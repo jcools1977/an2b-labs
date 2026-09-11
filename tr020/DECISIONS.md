@@ -493,3 +493,7 @@ legs green with the same two pre-registered reds and no other change.
 
 ## Bench cleared 2026-09-11 09:32 on an2b-legion (estate/BENCH_CLEAR.md)
 Removed: tr020/wild_install.log (0.00 GB), tr020/actor_download.log (0.00 GB), tr020/mlx_server.log (0.00 GB), tr020/.venv (0.42 GB), tr020/surrogate_a.log (0.00 GB), tr020/wild_audit.log (0.00 GB), tr020/seeded.log (0.00 GB), tr020/placebo8b.log (0.00 GB), tr020/cache (0.00 GB), tr020/surrogate_b.log (0.00 GB), tr020/embed_install.log (0.00 GB), tr020/wild/.venv (2.00 GB), tr020/seed_systems/__pycache__ (0.00 GB), tr020/wild/__pycache__ (0.00 GB), tr020/auditor/__pycache__ (0.00 GB), tr020/checks/__pycache__ (0.00 GB), tr020/scripts/__pycache__ (0.00 GB), hub/mlx-community/Meta-Llama-3.1-8B-Instruct-8bit (8.54 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 362.99 GB.
+
+
+## Bench cleared 2026-09-11 09:33 on an2b-cockpit (estate/BENCH_CLEAR.md)
+Removed: tr020/seed_systems/__pycache__ (0.00 GB), tr020/auditor/__pycache__ (0.00 GB), tr020/deadwood_audit/__pycache__ (0.00 GB), tr020/deadwood_audit/core/__pycache__ (0.00 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 739.86 GB.

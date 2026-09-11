@@ -327,3 +327,7 @@ adjudication was due.
 
 ## Bench cleared 2026-09-11 09:32 on an2b-legion (estate/BENCH_CLEAR.md)
 Removed: tr002r/supervise.log (0.00 GB), tr002r/grid.log (0.00 GB), tr002r/extract.log (0.00 GB), tr002r/corpus_store (1.06 GB), tr002r/model_pulls.log (0.00 GB), hub/mlx-community/Meta-Llama-3.1-8B-Instruct-8bit (8.54 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 362.99 GB.
+
+
+## Bench cleared 2026-09-11 09:33 on an2b-cockpit (estate/BENCH_CLEAR.md)
+Removed: tr002r/corpus_store (1.14 GB), tr002r/tests/__pycache__ (0.00 GB), tr002r/analysis/__pycache__ (0.00 GB), tr002r/scripts/__pycache__ (0.00 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 739.86 GB.
