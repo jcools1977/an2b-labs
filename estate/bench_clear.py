@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 BULK_DIRS = ["corpus_store", "data/raw", "cache", "checkpoints", ".venv", "build", "dist", "adapters"]
-BULK_GLOBS = ["*.egg-info", "*.log", "**/__pycache__", "**/*.log"]
+BULK_GLOBS = ["*.egg-info", "*.log", "**/.venv", "**/__pycache__", "**/*.log"]
 
 
 def sh(args, cwd):
