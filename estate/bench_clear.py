@@ -84,9 +84,10 @@ def bulk_for(repo: Path, tr: str):
     cands = [trd / d for d in BULK_DIRS]
     for g in BULK_GLOBS:
         cands.extend(trd.glob(g))
+    cands = sorted({c for c in cands if c.exists()}, key=lambda c: len(c.parts))
     for p in cands:
-        if not p.exists() or p in seen:
-            continue
+        if p in seen or any(str(p).startswith(str(q) + os.sep) for q in seen):
+            continue  # nested inside a directory already listed
         seen.add(p)
         rel = p.relative_to(trd).as_posix()
         if any(rel == k or rel.startswith(k + "/") for k in keep):
