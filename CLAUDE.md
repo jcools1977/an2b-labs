@@ -77,7 +77,7 @@ paths in trXXX/KEEP and estate/KEEP are never touched; a snapshot
 nothing references is reported, not swept. The tool refuses without
 the marker, with uncommitted files, or with HEAD off origin;
 estate/verify.sh proves the refusals. Full text: estate/BENCH_CLEAR.md
-(drafted 2026-09-11 on the PI's word, for the PI's ratification).
+(ratified by the PI 2026-09-11).
 Transient tarballs and scratch venvs are swept without ceremony.
 
 
