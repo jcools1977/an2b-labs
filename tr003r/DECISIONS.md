@@ -273,3 +273,7 @@ the reviewer's fetch of the seal hashes (proving-cycle leg 1 for the
 panel pilot). Bench clearance follows in this closeout on legion and
 the cockpit; its disk line is the last entry below. Decision log
 closed.
+
+
+## Bench cleared 2026-09-11 16:08 on an2b-legion (estate/BENCH_CLEAR.md)
+Removed: tr003r/supervise.log (0.00 GB), tr003r/corpus_store (0.76 GB), tr003r/extract.log (0.00 GB), tr003r/scripts/__pycache__ (0.00 GB), tr003r/analysis/__pycache__ (0.00 GB), hub/mlx-community/Qwen3-1.7B-4bit (0.98 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 365.21 GB.
