@@ -64,14 +64,21 @@ credibility-asset) drafted for PI ratification; harvest reviews happen at
 wave boundaries and are the PI's call. Never cite commercial value in
 DECISIONS, protocol readings, or threshold interpretations.
 
-## Estate hygiene (standing closeout rule)
+## Estate hygiene and bench clearance (standing closeout rule)
 Every TR closeout records a disk line: what the experiment leaves on
-each machine (model snapshots, entropy/latent caches, corpus stores,
-venvs, adapters, checkpoints), sized with du, and what may be swept.
-Wave boundaries include an estate audit; deletions of experiment
-artifacts happen only on the PI's word, recorded in the closing TR's
-decision log. Transient tarballs and scratch venvs are swept without
-ceremony.
+each machine, sized with du. When the PI ratifies the report, the
+session writes trXXX/report/RATIFIED, sets the status line to v1.0,
+and clears the bench with estate/bench_clear.py on every machine the
+experiment touched: rebuildable bulk (corpus stores, raw data,
+caches, checkpoints, venvs, adapters, logs) and model snapshots no
+open experiment references are removed, the disk line is appended to
+DECISIONS.md, and the entry is committed. Evidence is never touched;
+paths in trXXX/KEEP and estate/KEEP are never touched; a snapshot
+nothing references is reported, not swept. The tool refuses without
+the marker, with uncommitted files, or with HEAD off origin;
+estate/verify.sh proves the refusals. Full text: estate/BENCH_CLEAR.md
+(drafted 2026-09-11 on the PI's word, for the PI's ratification).
+Transient tarballs and scratch venvs are swept without ceremony.
 
 
 ## The macro-check (standing kickoff clause)

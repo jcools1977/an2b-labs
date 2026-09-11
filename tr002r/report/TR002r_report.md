@@ -2,7 +2,7 @@
 ## Platonic Convergence at Desk Scale: The Geometry Is There, and Unsupervised Access Is Not
 
 **J. DeVere Cooley, AN2B Labs**
-**Status: DRAFT v0.1, 2026-09-07; awaiting reviewer adjudication and PI ratification**
+**Status: v1.0, published 2026-09-08 on the PI's word (D20); status line corrected 2026-09-11, the ratification having been recorded in the decision log and commit 8d6665d but not here**
 **Pre-registration: original TR-002 at commit `7b7262d` (2026-08-24); rescoped protocol TR-002r frozen at `11b914d` (2026-09-03) through the kickoff gate under FRONTIER-001, the lab's first radar-driven rescope**
 
 ---
