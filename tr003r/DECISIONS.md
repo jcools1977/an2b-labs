@@ -277,3 +277,7 @@ closed.
 
 ## Bench cleared 2026-09-11 16:08 on an2b-legion (estate/BENCH_CLEAR.md)
 Removed: tr003r/supervise.log (0.00 GB), tr003r/corpus_store (0.76 GB), tr003r/extract.log (0.00 GB), tr003r/scripts/__pycache__ (0.00 GB), tr003r/analysis/__pycache__ (0.00 GB), hub/mlx-community/Qwen3-1.7B-4bit (0.98 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 365.21 GB.
+
+
+## Bench cleared 2026-09-11 16:08 on an2b-cockpit (estate/BENCH_CLEAR.md)
+Removed: tr003r/analysis/__pycache__ (0.00 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 737.96 GB.
