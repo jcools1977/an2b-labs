@@ -235,3 +235,18 @@ not fit the estate's non-cockpit hardware in any useful time. No
 threshold, item count, or grid point is changed here; the options
 (another machine, a design constant such as R = 2 or a shorter QA
 context, or deferral behind the rest of the slate) are the PI's.
+
+## D20. Launched on legion 2026-09-11 on the PI's word ("run TR006 on Legion over the weekend... start that now"); R = 2
+Legion runs the sweep continuously until done: one model resident at
+a time, no prefix cache (memory), all items of a configuration in
+lockstep at batch 8, seed 41 fully then seed 43, supervised for
+stalls at a six-hour silence threshold. R = 2 rounds, revising D4:
+the three frequencies remain distinct under R = 2 (two exchanges plus
+the final, one plus the final, the final only), and less exchange is
+the harder reading for H1. R was never a protocol constant; no
+threshold, item count, grid point, control, or seed changes. Expected
+from the D19 measurement: about 5.8 hours per (S, F) point, roughly
+228 hours per seed, three weeks for both; the weekend delivers about
+two thirds of seed 41's main grid and the run continues past it. No
+counted data exists under the current prompt before this launch; the
+prompt-v1 results stay discarded.

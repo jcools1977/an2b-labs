@@ -49,9 +49,14 @@ def main():
     ap.add_argument("--seeds", default="41,43")
     ap.add_argument("--tasks-dir", default=str(TR / "data"))
     ap.add_argument("--raw-dir", default=str(TR / "results" / "raw"))
+    ap.add_argument("--R", type=int, default=R)
+    ap.add_argument("--max-resident", type=int, default=3)
+    ap.add_argument("--no-cache", action="store_true")
+    ap.add_argument("--block", default="8", help="items per lockstep block, or all")
     a = ap.parse_args()
-    seats = Seats()
+    seats = Seats(max_resident=a.max_resident)
     t_start = time.time()
+    print(f"sweep settings: R={a.R} max_resident={a.max_resident} cache={not a.no_cache} block={a.block}", flush=True)
     for seed in [int(s) for s in a.seeds.split(",")]:
         tasks = json.load(open(Path(a.tasks_dir) / f"tasks_{seed}.json"))
         for stage, c in plan():
@@ -70,8 +75,9 @@ def main():
                 if not todo:
                     continue
                 t0 = time.time()
-                recs = run_config(seats, todo, S=c["S"], F=c["F"], R=R, mode=c["mode"], seed=seed,
-                                  single_model=c.get("single_model"))
+                blk = len(todo) if a.block == "all" else int(a.block)
+                recs = run_config(seats, todo, S=c["S"], F=c["F"], R=a.R, mode=c["mode"], seed=seed,
+                                  single_model=c.get("single_model"), block=max(1, blk), use_cache=not a.no_cache)
                 with open(out, "a") as fh:
                     for it, r in zip(todo, recs):
                         r["correct"] = bool(puzzles.score(r["answer"], it) if fam == "puzzles" else hotpot.score(r["answer"], it))
