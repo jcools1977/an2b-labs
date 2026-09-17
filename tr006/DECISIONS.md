@@ -250,3 +250,24 @@ from the D19 measurement: about 5.8 hours per (S, F) point, roughly
 two thirds of seed 41's main grid and the run continues past it. No
 counted data exists under the current prompt before this launch; the
 prompt-v1 results stay discarded.
+
+## D21. Early single-seed read, 2026-09-17, reported only
+With seed 41's main grid and baselines complete (controls in
+progress), the certified regime test was run on seed 41 alone via
+the committed read-only script (scripts/early_read.py), at the
+builder's initiative after the PI's Monday check-in raised the
+question of how long the run needs. It is NOT a gate read: the
+verdict reads on both seeds through the checkers at closeout. What it
+shows: no regime in either family. QA accuracy by S runs 0.117,
+0.113, 0.128, 0.135, 0.135, 0.135; puzzles 0.215, 0.243, 0.242,
+0.253, 0.253, 0.253. AIC margins -1.6 (QA) and -1.3 (puzzles): the
+smooth monotone fit wins narrowly, and the fitted "breakpoints" (S=4,
+S=2) sit on steps of about one accuracy point. The unlimited log
+equals the best bounded configuration in both families (0.140 and
+0.280), so the second PASS clause also fails on this seed; the best
+single agent sits within 0.5 to 1.5 points of the best council. What
+this implies for the run: PASS requires both seeds, so no outcome of
+seed 43 can produce a PASS; seed 43 tests whether the flat curve
+replicates, and seed 41's controls (frozen buffer, role shuffle, the
+now-vacuous random-salience arm) say whether the null is clean. The
+run continues as launched unless the PI rules otherwise.
