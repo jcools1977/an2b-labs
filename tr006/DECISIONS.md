@@ -271,3 +271,20 @@ seed 43 can produce a PASS; seed 43 tests whether the flat curve
 replicates, and seed 41's controls (frozen buffer, role shuffle, the
 now-vacuous random-salience arm) say whether the null is clean. The
 run continues as launched unless the PI rules otherwise.
+
+## D22. Standing word of 2026-09-17: run to completion, then close and publish
+The PI, in his words: "you're the CTO of this experiment, so you just
+continue. I give you full rein to make sure that whenever these lab
+results are done, you let me know, and then you publish them
+accordingly." Scope as this seat reads it and records it: the sweep
+runs to completion exactly as pre-registered (both seeds, all
+stages); at completion the gates read cold through the checkers,
+verify.sh runs end to end, the report is written in the lab's shape
+with the verdict stated plainly, the oracle of record and the panel
+are revealed and scored, the report goes to v1.0 with report/RATIFIED
+citing this word, the utilization verdict is drafted (still the PI's
+to ratify at the harvest review), the bench is cleared on legion, and
+the PI is notified. Not delegated: the harvest review, any change to
+a frozen criterion, and the reviewer's own acts. If anything in the
+data forces a judgment call the protocol does not settle, the seat
+logs it and asks rather than decides.

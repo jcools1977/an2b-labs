@@ -171,3 +171,10 @@ design constant (R = 2, shorter QA context), or deferral. Nothing runs.
 utilization credibility-asset, decision log closed (D20), bench
 cleared. TR-006 launched on legion the same day at R = 2 on the PI's
 word, to run to completion; HARVEST_WAVE3.md opened.
+
+## Standing word for TR-006, 2026-09-17
+
+The PI delegated the closeout and publication of TR-006 to the builder
+seat ("full rein... let me know, and then you publish them
+accordingly"); scope recorded in tr006/DECISIONS.md D22. Early read on
+seed 41 (D21): no regime; the run continues to completion.
