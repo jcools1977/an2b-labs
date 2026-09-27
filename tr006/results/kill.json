@@ -1,0 +1,25 @@
+{
+ "seeds": {
+  "41": {
+   "hotpot": {
+    "aic_margin": -1.6047216559639992,
+    "breakpoint_S": 4
+   },
+   "puzzles": {
+    "aic_margin": -1.3259042309978355,
+    "breakpoint_S": 2
+   }
+  },
+  "43": {
+   "hotpot": {
+    "aic_margin": -2.0002438557011146,
+    "breakpoint_S": 2
+   },
+   "puzzles": {
+    "aic_margin": -1.5424506345977136,
+    "breakpoint_S": 8
+   }
+  }
+ },
+ "killed": false
+}

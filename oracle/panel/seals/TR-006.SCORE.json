@@ -1,0 +1,106 @@
+{
+ "tr": "TR-006",
+ "verdict": "FAIL",
+ "scored_at": "2026-09-27T22:44:44+00:00",
+ "baselines": {
+  "uniform": 0.75,
+  "always_FAIL": 0.0
+ },
+ "seats": [
+  {
+   "seat": "oracle-anthropic",
+   "engine": "anthropic/claude-fable-5.1",
+   "served_model": "anthropic/claude-fable-5.1",
+   "probs": {
+    "PASS": 0.08,
+    "FAIL": 0.72,
+    "SPLIT": 0.05,
+    "KILL": 0.15
+   },
+   "brier": 0.1098,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "claims": [
+    {
+     "claim": "Accuracy vs S will be fit at least as well by a smooth monotone spline as by a piecewise regime model (piecewise AIC advantage < 10) on at least one of the two task families",
+     "probability": 0.8
+    },
+    {
+     "claim": "The unlimited shared-log baseline will match or exceed the best bounded-S configuration in accuracy on at least one task family",
+     "probability": 0.65
+    },
+    {
+     "claim": "The random-salience control will produce accuracy-vs-S curves statistically indistinguishable from self-assessed salience curves at most S values",
+     "probability": 0.6
+    }
+   ]
+  },
+  {
+   "seat": "oracle-openai",
+   "engine": "openai/gpt-6-astra",
+   "served_model": "openai/gpt-6-astra",
+   "probs": {
+    "PASS": 0.07,
+    "FAIL": 0.51,
+    "SPLIT": 0.07,
+    "KILL": 0.35
+   },
+   "brier": 0.3724,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "claims": [
+    {
+     "claim": "Accuracy at S=8 or S=16 will exceed accuracy at S=1 on average across task families and broadcast frequencies.",
+     "probability": 0.8
+    },
+    {
+     "claim": "The best bounded configuration will achieve higher measured accuracy than the unlimited-log baseline.",
+     "probability": 0.57
+    },
+    {
+     "claim": "The piecewise/regime model will fail to beat the smooth monotone fit by AIC >= 10 on both task families.",
+     "probability": 0.83
+    }
+   ]
+  },
+  {
+   "seat": "oracle-xai",
+   "engine": "x-ai/grok-4.6",
+   "served_model": "x-ai/grok-4.6",
+   "probs": {
+    "PASS": 0.1,
+    "FAIL": 0.5,
+    "SPLIT": 0.25,
+    "KILL": 0.15
+   },
+   "brier": 0.345,
+   "modal": "FAIL",
+   "modal_hit": true,
+   "claims": [
+    {
+     "claim": "Piecewise/regime model beats smooth monotone spline by AIC >= 10 on both task families",
+     "probability": 0.18
+    },
+    {
+     "claim": "Best bounded-S configuration outperforms the unlimited shared-log baseline",
+     "probability": 0.28
+    },
+    {
+     "claim": "Accuracy rises from near single-agent at S=1 to substantially higher by S>=8 on both families",
+     "probability": 0.72
+    }
+   ]
+  }
+ ],
+ "consensus_reported_only": {
+  "probs": {
+   "PASS": 0.08333333333333333,
+   "FAIL": 0.5766666666666667,
+   "SPLIT": 0.12333333333333334,
+   "KILL": 0.21666666666666665
+  },
+  "brier": 0.2483,
+  "modal": "FAIL"
+ },
+ "note": "engine-stratified: each row is one seat under one served engine; never aggregate across engine changes"
+}

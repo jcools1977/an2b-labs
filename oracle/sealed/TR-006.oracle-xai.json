@@ -1,0 +1,31 @@
+{
+ "seat": "oracle-xai",
+ "tr": "TR-006",
+ "engine": "x-ai/grok-4.6",
+ "served_model": "x-ai/grok-4.6",
+ "sealed_at": "2026-09-09T12:11:22+00:00",
+ "forecast": {
+  "verdict_probabilities": {
+   "PASS": 0.1,
+   "FAIL": 0.5,
+   "SPLIT": 0.25,
+   "KILL": 0.15
+  },
+  "key_effect_directions": [
+   {
+    "claim": "Piecewise/regime model beats smooth monotone spline by AIC >= 10 on both task families",
+    "probability": 0.18
+   },
+   {
+    "claim": "Best bounded-S configuration outperforms the unlimited shared-log baseline",
+    "probability": 0.28
+   },
+   {
+    "claim": "Accuracy rises from near single-agent at S=1 to substantially higher by S>=8 on both families",
+    "probability": 0.72
+   }
+  ],
+  "rationale": "Small 7B councils with discrete slot sweeps usually yield gradual capacity gains and context-length tradeoffs rather than a stable GWT-style jump; the dual PASS requirement (AIC>=10 on two families plus bottleneck beating unlimited log) is therefore unlikely, while family-wise differences in any apparent kink can produce SPLIT or KILL."
+ },
+ "raw_text_sha256": "1147b8fb6c7f71a1aa22935eb94f97acde29d5fe2642845ef6ea720ddbb32692"
+}

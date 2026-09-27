@@ -1,0 +1,31 @@
+{
+ "seat": "oracle-anthropic",
+ "tr": "TR-006",
+ "engine": "anthropic/claude-fable-5.1",
+ "served_model": "anthropic/claude-fable-5.1",
+ "sealed_at": "2026-09-09T12:10:24+00:00",
+ "forecast": {
+  "verdict_probabilities": {
+   "PASS": 0.08,
+   "FAIL": 0.72,
+   "SPLIT": 0.05,
+   "KILL": 0.15
+  },
+  "key_effect_directions": [
+   {
+    "claim": "Accuracy vs S will be fit at least as well by a smooth monotone spline as by a piecewise regime model (piecewise AIC advantage < 10) on at least one of the two task families",
+    "probability": 0.8
+   },
+   {
+    "claim": "The unlimited shared-log baseline will match or exceed the best bounded-S configuration in accuracy on at least one task family",
+    "probability": 0.65
+   },
+   {
+    "claim": "The random-salience control will produce accuracy-vs-S curves statistically indistinguishable from self-assessed salience curves at most S values",
+    "probability": 0.6
+   }
+  ],
+  "rationale": "With three 7B models and 200 items per configuration, accuracy curves will be noisy and most likely saturate smoothly with S; 7B self-assessed salience is weak, so top-S competition rarely beats an unlimited log, and the PASS condition requires both a strong AIC>=10 regime signal on two families and the bottleneck strictly beating unlimited sharing, a conjunction that is a priori unlikely. If apparent breakpoints do appear, they will likely fall at different S across multi-hop QA and constraint puzzles (different information demands), triggering KILL. SPLIT is possible only if one family shows a clean regime and the other does not, which the frozen text arguably folds into FAIL/KILL, so it gets low mass."
+ },
+ "raw_text_sha256": "9c5e6d12b00e852977d70dde1819331f207ccafab95276a3f9179f8d8e6305be"
+}

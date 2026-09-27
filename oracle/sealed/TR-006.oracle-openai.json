@@ -1,0 +1,31 @@
+{
+ "seat": "oracle-openai",
+ "tr": "TR-006",
+ "engine": "openai/gpt-6-astra",
+ "served_model": "openai/gpt-6-astra",
+ "sealed_at": "2026-09-09T12:10:38+00:00",
+ "forecast": {
+  "verdict_probabilities": {
+   "PASS": 0.07,
+   "FAIL": 0.51,
+   "SPLIT": 0.07,
+   "KILL": 0.35
+  },
+  "key_effect_directions": [
+   {
+    "claim": "Accuracy at S=8 or S=16 will exceed accuracy at S=1 on average across task families and broadcast frequencies.",
+    "probability": 0.8
+   },
+   {
+    "claim": "The best bounded configuration will achieve higher measured accuracy than the unlimited-log baseline.",
+    "probability": 0.57
+   },
+   {
+    "claim": "The piecewise/regime model will fail to beat the smooth monotone fit by AIC >= 10 on both task families.",
+    "probability": 0.83
+   }
+  ],
+  "rationale": "My prior favors capacity relieving information loss with diminishing returns rather than producing a reproducible transition. Bounded sharing could outperform unlimited logs by filtering distracting content, but that alone does not establish the required regime change. Six capacity levels and 200 items per configuration make model selection and breakpoint estimates sensitive to noise and task composition. Cross-family breakpoint instability therefore gives KILL substantial probability, while absent convincing regimes more naturally yields FAIL; SPLIT has limited weight because the protocol primarily specifies joint gates."
+ },
+ "raw_text_sha256": "ae7d66678857184993fa48ffddb088169cf04216ec0371f658a0be67602daa47"
+}

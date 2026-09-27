@@ -1,0 +1,9 @@
+{
+  "verdict_probabilities": {"PASS": 0.10, "FAIL": 0.55, "SPLIT": 0.12, "KILL": 0.23},
+  "key_effect_directions": [
+    {"claim": "The unlimited shared-log baseline matches or exceeds the best bounded-S configuration on at least one of the two task families, so the 'bottleneck helps' leg of PASS is not met.", "probability": 0.65},
+    {"claim": "On at least one task family the piecewise/regime model fails to beat the smooth monotone spline by AIC >= 10 (the accuracy-vs-S curve reads as noisy and roughly monotone rather than stepped).", "probability": 0.80},
+    {"claim": "The frozen-buffer control drops accuracy to within 3 points of the single best agent on both task families, confirming live broadcast carries whatever council gain exists.", "probability": 0.70}
+  ],
+  "rationale": "With three 7B-class models and 200 items per configuration, per-cell accuracy has a standard error near 3 points, which is comparable to the plausible gain from any S change, so the curves are more likely to look like a noisy, gently rising or flat function of S than a sharp step; the AIC >= 10 margin on two families is a demanding gate that a modest piecewise improvement will not clear. The second PASS leg is harder still: unlimited sharing tends to be at least as good as competition-limited sharing at this scale unless context bloat degrades the 7B models, which is possible but not the default. If some regime-like structure does appear, its location is unlikely to coincide across multi-hop QA and constraint puzzles given the noise, which gives KILL meaningful weight. Negative controls (frozen buffer, random salience) will likely behave as expected, but they cannot rescue the primary gates."
+}
