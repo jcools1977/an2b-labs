@@ -307,3 +307,7 @@ drafted (credibility-asset) for the harvest review; figures committed.
 Panel pilot: second live cycle complete on evidence. Bench cleared on
 legion and the cockpit; the disk lines are the last entries below.
 Decision log closed.
+
+
+## Bench cleared 2026-09-27 19:03 on an2b-legion (estate/BENCH_CLEAR.md)
+Removed: tr006/feasibility.log (0.00 GB), tr006/.venv (0.66 GB), tr006/sweep.log (0.00 GB), tr006/supervise.log (0.00 GB), tr006/workspace/__pycache__ (0.00 GB), tr006/tasks/__pycache__ (0.00 GB), tr006/analysis/__pycache__ (0.00 GB), hub/mlx-community/Meta-Llama-3.1-8B-Instruct-4bit (4.53 GB), hub/mlx-community/Qwen3-8B-4bit (4.62 GB), hub/mlx-community/gemma-2-9b-it-4bit (5.22 GB). Kept: evidence, KEEP entries, sealed plaintexts. Free after: 377.93 GB.
