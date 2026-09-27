@@ -288,3 +288,22 @@ the PI is notified. Not delegated: the harvest review, any change to
 a frozen criterion, and the reviewer's own acts. If anything in the
 data forces a judgment call the protocol does not settle, the seat
 logs it and asks rather than decides.
+
+## D23. Closed 2026-09-27 on the PI's standing word (D22)
+Sweep complete on legion 16:35: 168 configurations, 384 hours, no
+restart, 42-plus out-of-memory fallbacks handled. Gates read cold
+through the checkers: PASS red on the regime clause in every cell
+(AIC margins -1.6, -1.3, -2.0, -1.5) and on the bottleneck clause in
+three of four; KILL quiet; controls as the report states (control 1
+vacuous, control 2 violated upward on seed 43 puzzles, control 3
+withdraws specialization on QA); verify.sh nonzero as built. The
+traces exposed that the cut never binds above S = 4 at R = 2 (at most
+six candidates), stated in the report as a limitation and a finding.
+Oracle of record revealed on legion, hash verified, Brier 0.2798,
+modal FAIL; panel revealed (three hashes MATCH), Briers 0.1098 /
+0.3724 / 0.3450, every seat modal FAIL. Report v1.0 published on the
+PI's standing word with report/RATIFIED citing D22; utilization
+drafted (credibility-asset) for the harvest review; figures committed.
+Panel pilot: second live cycle complete on evidence. Bench cleared on
+legion and the cockpit; the disk lines are the last entries below.
+Decision log closed.

@@ -178,3 +178,11 @@ The PI delegated the closeout and publication of TR-006 to the builder
 seat ("full rein... let me know, and then you publish them
 accordingly"); scope recorded in tr006/DECISIONS.md D22. Early read on
 seed 41 (D21): no regime; the run continues to completion.
+
+## TR-006 closed, 2026-09-27
+
+FAIL in the H0 shape at both seeds; published v1.0 on the PI's
+standing word (D22, D23); bench cleared; harvest packet updated. Wave
+3's two experiments are closed. The harvest review waits on the PI,
+with FRONTIER-003 due before it convenes and the reviewer's items
+still open.

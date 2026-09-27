@@ -11,11 +11,14 @@ This packet fills as Wave 3 closes; a fresh FRONTIER entry
 | TR | Verdict | Utilization (ratified) | The asset |
 |---|---|---|---|
 | TR-003r | FAIL (H0 shape), KILL quiet, seeds identical | credibility-asset (2026-09-11) | A memory store does not survive zero-fit translation between near-twin encoders (retention 0.19 and 0.015); the paired-anchor ceiling keeps 0.69 to 0.89. The loss is in the anchor coordinates (measurable within one model, proportional to anisotropy). Scrambled nonsense anchors beat real anchors wherever raw coordinates already align; the raw-vector "floor" is not a floor for BERT-family encoders. The dangerous failure (confident wrong memories, 9 to 30 percent) lives in a thin fit, not in the zero-fit method. Two instruments join the kit: the raw-vector baseline beside any cross-encoder claim, and the scrambled-anchor catcher. |
-| TR-006 | in flight on legion from 2026-09-11 (R = 2, D20) | | |
+| TR-006 | FAIL (H0 shape), KILL quiet, seeds identical | credibility-asset (proposed; the review's to ratify) | A bounded broadcast buffer is a scratchpad at desk scale: flat accuracy at every capacity that binds, the unlimited log ties the best bounded buffer, the best single model within one to three points of the council. Self-assessed salience equals random salience; the first broadcast carries the whole effect; roles are dead weight on QA and a synthesizer effect on puzzles. The trace arithmetic (candidates must exceed slots; S cannot bind above 3R) is a design check every GWT-agent capacity claim must clear. |
 
 ## Build candidates on the table (PI's call, in no order)
 
-1. **The oracle panel's first live cycle is complete on evidence.**
+1. **The oracle panel has two live cycles complete on evidence.**
+   TR-006: every seat modal FAIL, Briers 0.11 / 0.37 / 0.35 beside the
+   oracle of record's 0.28; nobody over-priced PASS this time; the
+   spread was on KILL. Two live points per engine now exist.
    Sealed at the TR-003r kickoff, scored at its closeout: three
    vendors, every seat modal FAIL, Briers 0.33 / 0.05 / 0.23 beside
    the oracle of record's 0.27; consensus reported-only 0.18. Every
@@ -56,5 +59,5 @@ This packet fills as Wave 3 closes; a fresh FRONTIER entry
 - Reviewer's context-rich forecasts for TR-002r and TR-003r: scoring
   pending relayed plaintext.
 - Reviewer's fetch of the TR-003r and TR-006 panel hashes (pilot leg 1).
-- TR-006 verdict, closeout, and clearance.
+- TR-006 verdict published 2026-09-27; clearance done.
 - FRONTIER-003 before the review convenes.
