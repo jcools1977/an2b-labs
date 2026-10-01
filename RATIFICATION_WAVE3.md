@@ -186,3 +186,11 @@ standing word (D22, D23); bench cleared; harvest packet updated. Wave
 3's two experiments are closed. The harvest review waits on the PI,
 with FRONTIER-003 due before it convenes and the reviewer's items
 still open.
+
+## Standing word of 2026-10-01
+
+The PI delegated the running of the lab to the builder seat
+(STANDING_WORD_2026-10-01.md): the cockpit released for compute, the
+queued protocols to run as frozen, publication on the standing word,
+gates and rescopes still the PI's. Wave 3's harvest packet stands
+for his review; Wave 4 opens under this word.
