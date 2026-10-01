@@ -94,3 +94,23 @@ run's own turn-to-turn noise level (median distance over the prefix);
 capped at 10. The trend statistic is Spearman's rho between recovery
 time and PROXIMITY to collapse (negative turns-to-collapse), so that
 "recovery lengthens approaching collapse" reads as rho >= 0.4.
+
+## D8. The corpus is the token stream the model consumed; chained caches certified for framing, numerics disclosed
+Generation chains each run's prompt cache turn to turn and appends
+turn framing to the exact token stream rather than re-rendering the
+history through the chat template (whose rendering of past assistant
+turns differs from the generation prompt it emits, for Qwen3's
+thinking stub). The exam (tests/test_chain.py) compares the chained
+stream against a full-stream prefill from scratch at every turn, same
+batched kernel, greedy: six legs (two models, three tasks), zero cache
+fallbacks, and the first eight tokens of every turn identical on
+every leg, which is what a framing error would break. Five of six
+legs are identical end to end; the sixth (Qwen3, self-dialogue)
+diverges at token 29 of its second turn on a near-tie
+("responsibility" against "consciousness"), which is kernel numerics
+between one-shot and chunked prefill in MLX, not logic. Consequence
+stated for reproducibility: a run is reproducible given the same
+batch composition (fixed by the manifest's run order and batch size
+8); a different grouping may flip a near-tie. The corpus and its
+labels are what the models actually produced under that fixed
+procedure, which is all the protocol's claims need.
