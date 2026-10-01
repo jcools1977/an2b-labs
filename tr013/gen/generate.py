@@ -21,16 +21,34 @@ from pathlib import Path
 import mlx.core as mx
 from mlx_lm import load
 from mlx_lm.generate import batch_generate
-from mlx_lm.models.cache import make_prompt_cache
+from mlx_lm.models.cache import BatchKVCache, make_prompt_cache
 from mlx_lm.sample_utils import make_sampler
 
 TR = Path(__file__).resolve().parents[1]
 
-# D9: MLX's buffer cache is unbounded by default; the first smoke batch hit
-# a 60x slowdown at turn 41 with 38 GB of swap in use. Cap the cache and the
-# working set (the TR-006 D16 lesson, applied before any counted run).
+# D9: buffer-cache and working-set caps (the TR-006 D16 lesson). First suspected
+# for the smoke-batch stall; measurement cleared them (cache memory never passed
+# 0.7 GB). They stay as a floor, not as the fix.
 mx.set_cache_limit(int(2e9))
 mx.set_memory_limit(int(30e9))
+
+
+# D9, the fix. mlx_lm 0.32.0 returns a finished run's cache as a LAZY slice of
+# the batched cache, then filters the batch by copying it. Eight runs finishing
+# at eight different steps leave eight generations of the batched cache alive,
+# each pinned by one unevaluated slice: measured at about 5x the live KV inside
+# every generate call, 37 GB by turn 57, Metal out of memory at turn 58.
+# Evaluating the slice at extraction lets each superseded copy die at once.
+_lazy_extract = BatchKVCache.extract
+
+
+def _eager_extract(self, idx):
+    c = _lazy_extract(self, idx)
+    mx.eval(c.keys, c.values)
+    return c
+
+
+BatchKVCache.extract = _eager_extract
 MODELS = {"qwen": "mlx-community/Qwen3-1.7B-4bit", "llama": "mlx-community/Llama-3.2-3B-Instruct-4bit"}
 TURN_TOKENS = 120
 BATCH = 8
@@ -165,6 +183,9 @@ def run_batch(model, tok, kw, runs, horizon, temperature, out_dir, seed):
         res = batch_generate(model, tok, prompts=prompts, prompt_caches=caches, max_tokens=TURN_TOKENS,
                              return_prompt_caches=True, return_token_ids=True, verbose=False, **kwargs)
         dt = time.time() - t0
+        mem = {"active_mb": int(mx.get_active_memory() / 2**20), "peak_mb": int(mx.get_peak_memory() / 2**20),
+               "cache_mb": int(mx.get_cache_memory() / 2**20)}
+        mx.reset_peak_memory()
         for i, c in enumerate(chains):
             gen_ids = list(res.token_ids[i]) if hasattr(res, "token_ids") else tok.encode(res.texts[i], add_special_tokens=False)
             text = res.texts[i].strip()
@@ -175,9 +196,14 @@ def run_batch(model, tok, kw, runs, horizon, temperature, out_dir, seed):
             c.commit(gen_ids, finished_eos, nc)
             c.user_next = next_user(c.run["task"], text)
             files[c.run["run_id"]].write(json.dumps({"turn": t, "text": text, "n_tokens": len(gen_ids), "eos": finished_eos,
-                                                    "fallbacks": c.fallbacks, "batch_seconds": round(dt, 2)}) + "\n")
+                                                    "fallbacks": c.fallbacks, "batch_seconds": round(dt, 2),
+                                                    "kv_mb": int(sum(k.nbytes for k in nc) / 2**20), **mem}) + "\n")
             files[c.run["run_id"]].flush()
+        del res, caches, prompts
         mx.clear_cache()
+        if t % 10 == 0 or t == 1:
+            print(f"    turn {t}: {dt:.2f}s active {mem['active_mb']} MB peak {mem['peak_mb']} MB cache {mem['cache_mb']} MB "
+                  f"kv/run {int(sum(k.nbytes for k in chains[0].cache) / 2**20)} MB dtype {chains[0].cache[0].keys.dtype}", flush=True)
     for f in files.values():
         f.close()
     return [c.fallbacks for c in chains]

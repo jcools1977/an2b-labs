@@ -128,3 +128,33 @@ Nothing about the corpus settings (D3) changes; the smoke output is
 scratch and is not part of the corpus. The smoke batch is rerun under
 the caps and its per-turn timing and swap are recorded below before
 generation proper starts.
+
+**D9 amended, same day, after measurement.** The diagnosis above was
+wrong and the caps did not fix it: the rerun under them died the same
+way, Metal out of memory at turn 58, and the per-turn trace added to
+the generator showed buffer-cache memory never above 0.7 GB. Active
+memory grew about 635 MB per turn against about 95 MB per turn of
+real KV across the eight runs, and a probe placed the growth inside
+each generate call, not between turns: at the start of every turn
+memory was exactly model plus live KV, at return it was model plus
+seven times KV for a batch of eight and plus a third of KV for a
+batch of one. Cause, in mlx_lm 0.32.0 as pinned: when a run finishes
+its reply mid-batch, the batched KV cache is filtered by copying it,
+and the finished run's cache is handed back as an unevaluated slice
+of the pre-filter array, so eight runs finishing at eight different
+steps keep eight superseded copies of the batched cache alive until
+the slices are evaluated. Evaluating the returned caches at the end
+of the turn freed the baseline but not the in-call peak, which is
+what kills the process. The fix evaluates the slice at extraction
+(BatchKVCache.extract wrapped in gen/generate.py), so each superseded
+copy dies when the next is made. Rerun of the same smoke batch: eight
+runs, eighty turns, 207 seconds, zero fallbacks, every turn ending on
+EOS, active memory linear in KV (15.6 GB at turn 80, in-call peak
+19.9 GB against a 40 GB working set), no swap added. Numerics are
+untouched by evaluating earlier; the generator now records active,
+peak and cache memory per turn in every run record; the smoke output
+lives in the session scratchpad and is not corpus.
+The D8 exam was rerun against the patched generator: six legs, zero
+fallbacks, framing exact on all six, five legs identical end to end
+and the Qwen3 self-dialogue leg diverging at the same token D8
+recorded (second turn, token 29). CERTIFIED, unchanged.
