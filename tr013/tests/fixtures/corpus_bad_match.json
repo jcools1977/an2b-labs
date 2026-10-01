@@ -1,0 +1,38 @@
+{
+ "models": [
+  "a",
+  "b"
+ ],
+ "task_types": [
+  "self_dialogue",
+  "loop",
+  "rephrase"
+ ],
+ "temperatures": [
+  0.0,
+  0.3
+ ],
+ "horizon": 80,
+ "turn_tokens": 120,
+ "runs_total": 1000,
+ "collapse_runs": 320,
+ "control_runs_matched": 320,
+ "matched_by": [
+  "model",
+  "task"
+ ],
+ "labeler": {
+  "ngram_overlap": 0.6,
+  "selfsim": 0.95,
+  "consecutive": 3
+ },
+ "audit_sample": {
+  "n": 64,
+  "fraction": 0.1,
+  "stratified": true
+ },
+ "seeds": [
+  41,
+  43
+ ]
+}

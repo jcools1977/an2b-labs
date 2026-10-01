@@ -1,0 +1,11 @@
+{
+ "main_auc": 0.81,
+ "reversed_auc": 0.55,
+ "turn_index_withheld": true,
+ "residualized_on_turn": true,
+ "audit": {
+  "agreement": 0.94,
+  "n": 64,
+  "auditor": "PI"
+ }
+}

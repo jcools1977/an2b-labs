@@ -152,3 +152,20 @@ context, $1.24 of $10 spent with the key never at rest, README
 amended). Leg 1's second half, the reviewer's channel fetching the
 hashes, is theirs to state. The panel stays a pilot until the PI
 rules on the cycle.
+
+**D18 (2026-10-01). Engine churn at the TR-013 seal; exam pending the
+PI's 1Password approval.** The live resolution rule now picks
+claude-sonnet-5.5, gpt-6.1-sol and grok-4.7 (newest created per
+vendor). Each is a new engine-stratified series for its seat; the
+seal (third live cycle) was taken with full seal records. Per ARENA
+rule 4 the retro-calibration exam for the new engines was launched
+the same hour and could not start: the 1Password desktop approval had
+lapsed with the PI away ("cannot read op://Personal/OpenRouter/
+credential"). The exam runs at the PI's next approval; until then
+these three seals are labeled "exam pending" in the ledger and are
+never selected over the oracle of record, which they never are
+anyway. One judgment logged for the PI: the newest-created rule
+admitted a Sonnet-class model as "latest Anthropic frontier"; the
+exclusion list names haiku but not sonnet. Changing the rule is a
+seat-policy edit under ARENA rule 7 (logged, approved outside this
+seat), so it is proposed here, not made.

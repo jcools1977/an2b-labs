@@ -1,0 +1,17 @@
+{
+ "firing": {
+  "variance": {
+   "collapse": 0.12,
+   "control": 0.1
+  },
+  "lag1_autocorr": {
+   "collapse": 0.12,
+   "control": 0.1
+  },
+  "distinct2": {
+   "collapse": 0.12,
+   "control": 0.1
+  }
+ },
+ "killed": true
+}

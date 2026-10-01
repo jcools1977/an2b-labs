@@ -1,0 +1,9 @@
+{
+ "auc_5turn": {
+  "41": 0.81,
+  "43": 0.79
+ },
+ "rho_recovery": 0.52,
+ "n_probe_runs": 50,
+ "audit_cleared": false
+}
