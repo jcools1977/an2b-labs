@@ -114,3 +114,17 @@ batch composition (fixed by the manifest's run order and batch size
 8); a different grouping may flip a near-tie. The corpus and its
 labels are what the models actually produced under that fixed
 procedure, which is all the protocol's claims need.
+
+## D9. First smoke batch stalled on memory; MLX cache and working set capped before any counted run
+The first smoke batch (one lockstep batch of eight runs, Qwen3-1.7B,
+self-dialogue, temperature 0.0, horizon 80, on the cockpit's 48 GB)
+slowed about sixty-fold at turn 41 with 38 GB of swap in use. MLX's
+Metal buffer cache is unbounded by default and the per-turn
+clear_cache call was not holding it down; the machine went to swap
+and the terminal session died with it. The TR-006 D16 lesson,
+applied here before any run counts: the generator now sets
+mx.set_cache_limit(2 GB) and mx.set_memory_limit(30 GB) at import.
+Nothing about the corpus settings (D3) changes; the smoke output is
+scratch and is not part of the corpus. The smoke batch is rerun under
+the caps and its per-turn timing and swap are recorded below before
+generation proper starts.

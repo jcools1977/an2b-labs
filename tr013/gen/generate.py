@@ -25,6 +25,12 @@ from mlx_lm.models.cache import make_prompt_cache
 from mlx_lm.sample_utils import make_sampler
 
 TR = Path(__file__).resolve().parents[1]
+
+# D9: MLX's buffer cache is unbounded by default; the first smoke batch hit
+# a 60x slowdown at turn 41 with 38 GB of swap in use. Cap the cache and the
+# working set (the TR-006 D16 lesson, applied before any counted run).
+mx.set_cache_limit(int(2e9))
+mx.set_memory_limit(int(30e9))
 MODELS = {"qwen": "mlx-community/Qwen3-1.7B-4bit", "llama": "mlx-community/Llama-3.2-3B-Instruct-4bit"}
 TURN_TOKENS = 120
 BATCH = 8
